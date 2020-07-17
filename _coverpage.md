@@ -1,5 +1,4 @@
 ![logo](_media/bonfire.gif)
-![color](#3f3f3f)
 
 # Bonfire <small>0.0.17</small>
 
@@ -9,4 +8,6 @@
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire)
 [Get Started](#bonfire)
+
+![color](#3f3f3f)
 
