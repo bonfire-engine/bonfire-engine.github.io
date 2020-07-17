@@ -2,10 +2,62 @@
 
 > An awesome project.
 
-## Install
+## Installing
 
-> An awesome project.
+1. Depend on it
 
-## Use
+Add this to your package's pubspec.yaml file:
 
-> An awesome project.
+```yaml
+dependencies:
+  bonfire: ^LATEST_VERSION
+```
+
+2. Install it
+
+You can install packages from the command line:
+
+```
+$ flutter pub get
+```
+
+3. Import it
+
+Now in your Dart code, you can use:
+
+```dart
+import 'package:bonfire/bonfire.dart';
+```
+
+4. Remove `flutter_test` and add `test: any` in your pubspec.yaml file.
+
+```yaml
+dev_dependencies:
+  test: any
+```
+
+## Using
+
+To use Bonfire, use the following widget:
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return BonfireTiledWidget(
+      gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
+      joystick: MyJoystick(), // required
+      map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
+      player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
+      interface: KnightInterface(),
+      decorations: <GameDecoration>[],
+      enemies: <Enemy>[],
+      background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`
+      constructionMode: false, // If true, activates hot reload to ease the map constructions and draws the grid
+      showCollisionArea: false, // If true, show collision area of the elements
+      constructionModeColor: Colors.blue, // If you wan customize the grid color.
+      collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
+      lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
+      zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+    );
+  }
+```
