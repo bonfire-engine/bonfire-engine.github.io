@@ -69,7 +69,7 @@ or to manual map:
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
       joystick: MyJoystick(), // required
       map: MapWorld(<Tile>[]), // required
