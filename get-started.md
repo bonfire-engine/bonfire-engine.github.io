@@ -38,7 +38,9 @@ import 'package:bonfire/bonfire.dart';
 
 ## Using
 
-To use Bonfire, use the following widget:
+To use Bonfire, use the following widget to map builded with [Tiled](https://www.mapeditor.org/):
+
+(RECOMMENDED)
 
 ```dart
 @override
@@ -47,6 +49,30 @@ To use Bonfire, use the following widget:
       gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
       joystick: MyJoystick(), // required
       map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
+      player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
+      interface: KnightInterface(),
+      background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`
+      constructionMode: false, // If true, activates hot reload to ease the map constructions and draws the grid
+      showCollisionArea: false, // If true, show collision area of the elements
+      constructionModeColor: Colors.blue, // If you wan customize the grid color.
+      collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
+      lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
+      zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      showFPS: false,
+      progress: Widget(), //progress that show while loading map.
+    );
+  }
+```
+
+or to manual map: 
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return BonfireTiledWidget(
+      gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
+      joystick: MyJoystick(), // required
+      map: MapWorld(<Tile>[]), // required
       player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
       interface: KnightInterface(),
       decorations: <GameDecoration>[],
@@ -58,6 +84,9 @@ To use Bonfire, use the following widget:
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
       zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      showFPS: false,
     );
   }
 ```
+
+Complete example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
