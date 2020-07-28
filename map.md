@@ -6,6 +6,8 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 
 ![](_media/map.png)
 
+## Using
+
 We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `TiledWorldMap` in `BonfireTiledWidget` in the `map` parameter:
 
 ```dart
