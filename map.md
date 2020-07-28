@@ -18,4 +18,24 @@ The first parameter (`tile/map.json`) is the path of the `.json` file exported b
 
 The second parameter (`Size(32,32)`) is optional and determines the size of each Tile on the map (squares). If not set it takes the default size defined by your TileSet.
 
+## Adding objects
+
+You can add objects like [Decorations](decoration) and [Enemies](enemy) to the map using the `registerObject` method:
+
+```dart
+
+    TiledWorldMap(
+        'tiled/map.json',
+        forceTileSize: Size(32,32),
+    )
+    ..registerObject(
+        'orc', // object name
+        (x, y, width, height){
+            return Orc(Position(x, y),); // create instance of your object (Decoration or Enemy)
+        },
+    )
+```
+
+Just create a layer of objects on your map and position it as in the example in the image above.
+
 For more details about our Tiled support click [here](tiled_support).
