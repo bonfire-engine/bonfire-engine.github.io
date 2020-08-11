@@ -137,6 +137,12 @@ void seeAndMoveToAttackRange({
   })
 ```
 
+If you want to add quick animations, as an effect of taking damage or making a special attack. You can use the method `addFastAnimation`:
+
+```dart 
+void addFastAnimation(FlameAnimation.Animation animation,{VoidCallback onFinish})
+```
+
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/enemy/goblin.dart).
 
 
@@ -177,3 +183,82 @@ class Tank extends RotationEnemy {
 }
 
 ```
+
+Now that we have our class that represents our enemy, we can configure their behavior.
+
+There are several useful extensions that we can use in `update` that will help us to configure these movements:
+
+```dart 
+void seePlayer({
+    Function(Player) observed,
+    Function() notObserved,
+    double radiusVision = 32,
+    int interval = 500,
+  })
+```
+
+```dart 
+ void seeAndMoveToPlayer({
+    Function(Player) closePlayer,
+    double radiusVision = 32,
+    double margin = 10,
+  })
+```
+
+```dart 
+void seeAndMoveToAttackRange(
+      {Function(Player) positioned,
+      double radiusVision = 32,
+      double minDistanceCellsFromPlayer})
+```
+
+```dart 
+void simpleAttackMelee({
+    @required FlameAnimation.Animation attackEffectTopAnim,
+    @required double damage,
+    int id,
+    double heightArea = 32,
+    double widthArea = 32,
+    bool withPush = false,
+    double radAngleDirection,
+    VoidCallback execute,
+    int interval = 1000,
+  })
+```
+
+```dart 
+void simpleAttackRange({
+    @required FlameAnimation.Animation animationTop,
+    @required FlameAnimation.Animation animationDestroy,
+    @required double width,
+    @required double height,
+    int id,
+    double speed = 150,
+    double damage = 1,
+    double radAngleDirection,
+    int interval = 1000,
+    bool withCollision = true,
+    bool collisionOnlyVisibleObjects = true,
+    VoidCallback destroy,
+    Collision collision,
+    VoidCallback execute,
+    LightingConfig lightingConfig,
+  })
+```
+
+
+## Custom
+
+If none of these types of enemies do not meet your needs. You can create your own by extending the Enemy class.
+
+With Enemy you will have access to the following methods:
+
+* void moveTop(double speed)
+* void moveBottom(double speed)
+* void moveLeft(double speed)
+* void moveRight(double speed)
+* void moveFromAngleDodgeObstacles(double speed, double angle,{Function notMove})
+* void moveFromAngle(double speed, double angle)
+* void receiveDamage(double damage, int from)
+* void addLife(double life)
+* void die()
