@@ -159,9 +159,6 @@ Other fuctions util:
   // Gives the direction of the player in relation to this enemy
   Direction directionThatPlayerIs()
   
-  // Executes an animation once.
-  void addFastAnimation(FlameAnimation.Animation animation)
-  
   // Applies damage to the enemy
   void receiveDamage(double damage)
   
