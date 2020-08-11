@@ -139,11 +139,58 @@ void seeAndMoveToAttackRange({
 Will seek for the player in the defined radius. When the player is found, will position itself to perform a distance attack. Once it reaches the attack position, will fire the `positioned` callback.
 
 
+Other fuctions util:
+
+```dart 
+  // Displays the damage value in the game with an animation.
+  void showDamage(
+    double damage,
+    {
+        TextConfig config = const TextConfig(
+          fontSize: 10,
+          color: Colors.white,
+        )
+    }
+  )
+  
+  // Add to `render` method if you want to draw the collision area.
+  void drawPositionCollision(Canvas canvas)
+  
+  // Gives the direction of the player in relation to this enemy
+  Direction directionThatPlayerIs()
+  
+  // Executes an animation once.
+  void addFastAnimation(FlameAnimation.Animation animation)
+  
+  // Applies damage to the enemy
+  void receiveDamage(double damage)
+  
+  // Restore life point to the enemy
+  void addLife(double life)
+
+  // Add to 'render' if you want to draw the collision area
+  void drawPositionCollision(Canvas canvas)
+
+
+  // Draws the default life bar, Should be used in the `render` method.
+  void drawDefaultLifeBar(
+    Canvas canvas,
+    {
+      bool drawInBottom = false,
+      double padding = 5,
+      double strokeWidth = 2,
+    }
+  )
+```
+
+
 If you want to add quick animations, as an effect of taking damage or making a special attack. You can use the method `addFastAnimation`:
 
 ```dart 
 void addFastAnimation(FlameAnimation.Animation animation,{VoidCallback onFinish})
 ```
+
+OBS: Enemies only move if visible on the camera. if you want to disable this add false in `collisionOnlyVisibleScreen`.
 
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/enemy/goblin.dart).
 
