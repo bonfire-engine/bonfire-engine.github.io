@@ -71,6 +71,8 @@ void seePlayer({
     int interval = 500,
   })
 ```
+Will observe the player when within the radius (radiusVision)
+
 
 ```dart 
 void seeAndMoveToPlayer({
@@ -79,6 +81,8 @@ void seeAndMoveToPlayer({
     double margin = 10,
   })
 ```
+Will move in the direction of the player once it gets close within the radiusVision radius . Once it gets to the player, `closePlayer` shall be fired 
+
 
 ```dart 
 void simpleAttackMelee({
@@ -97,6 +101,8 @@ void simpleAttackMelee({
     VoidCallback execute,
   })
 ```
+Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
+
 
 ```dart 
 void simpleAttackRange({
@@ -120,6 +126,8 @@ void simpleAttackRange({
     LightingConfig lightingConfig,
   })
 ```
+Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+
 
 ```dart 
 void seeAndMoveToAttackRange({
@@ -128,14 +136,8 @@ void seeAndMoveToAttackRange({
     double minDistanceCellsFromPlayer,
   })
 ```
+Will seek for the player in the defined radius. When the player is found, will position itself to perform a distance attack. Once it reaches the attack position, will fire the `positioned` callback.
 
-```dart 
-void seeAndMoveToAttackRange({
-    Function(Player) positioned,
-    double radiusVision = 32,
-    double minDistanceCellsFromPlayer,
-  })
-```
 
 If you want to add quick animations, as an effect of taking damage or making a special attack. You can use the method `addFastAnimation`:
 
