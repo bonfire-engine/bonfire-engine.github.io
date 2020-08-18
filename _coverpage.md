@@ -6,7 +6,7 @@
 
 - 2D game engine made on top of [Flame](https://flame-engine.org/)
 
-[![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=forks)](https://github.com/RafaelBarbosatec/bonfire)
+[![](https://img.shields.io/github/forks/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=forks)](https://github.com/RafaelBarbosatec/bonfire)
 [![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=stars)](https://github.com/RafaelBarbosatec/bonfire)
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire)
