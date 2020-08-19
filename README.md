@@ -15,3 +15,7 @@ This tool was built over [FlameEngine](https://flame-engine.org/) and all its re
 This is ideal for building games from the following perspectives:
 
 ![](_media/perspectiva.png)
+
+# WARN
+
+Due to changes in the Flutter engine in the latest versions that caused a loss of performance. We recommend using the `Channel stable version, v1.17.5`.
