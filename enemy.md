@@ -295,7 +295,7 @@ void simpleAttackRange({
 
 ## Custom
 
-If none of these types of enemies do not meet your needs. You can create your own by extending the Enemy class.
+If none of these types of enemies do not meet your needs. You can create your own by extending the `Enemy` class.
 
 With Enemy you will have access to the following methods:
 
