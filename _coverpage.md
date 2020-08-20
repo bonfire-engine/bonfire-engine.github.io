@@ -1,6 +1,6 @@
 ![logo](_media/bonfire.gif)
 
-# Bonfire <small>0.6.17</small>
+# Bonfire
 
 > (RPG maker) Create RPG-style or similar games with Flutter.
 
@@ -8,6 +8,7 @@
 
 [![](https://img.shields.io/github/forks/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=forks)](https://github.com/RafaelBarbosatec/bonfire)
 [![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=stars)](https://github.com/RafaelBarbosatec/bonfire)
+[![pub package](https://img.shields.io/pub/v/bonfire.svg)](https://pub.dev/packages/bonfire)
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire)
 [Get Started](#bonfire)
