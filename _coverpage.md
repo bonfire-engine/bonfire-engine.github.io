@@ -1,6 +1,6 @@
 ![logo](_media/bonfire.gif)
 
-# Bonfire
+# Bonfire <small></small>
 
 > (RPG maker) Create RPG-style or similar games with Flutter.
 

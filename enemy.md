@@ -54,6 +54,16 @@ class Goblin extends SimpleEnemy {
         // do anything
         super.render(canvas);
     }
+
+    @override
+    void receiveDamage(double damage, int from) {
+        super.receiveDamage(damage, from);
+    }
+
+    @override
+    void die() {
+        super.die();
+    }
 }
 
 ```
@@ -225,6 +235,16 @@ class Tank extends RotationEnemy {
     void render(Canvas canvas) {
         // do anything
         super.render(canvas);
+    }
+
+    @override
+    void receiveDamage(double damage, int from) {
+        super.receiveDamage(damage, from);
+    }
+
+    @override
+    void die() {
+        super.die();
     }
 }
 
