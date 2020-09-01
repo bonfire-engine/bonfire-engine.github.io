@@ -40,7 +40,6 @@ class Kinght extends SimplePlayer {
           animIdleBottom: FlameAnimation(),
           animRunTop: FlameAnimation(),
           animRunBottom: FlameAnimation(),
-          sizeCentralMovementWindow: Size(50,50),
       );
 
     @override

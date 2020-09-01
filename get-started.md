@@ -57,7 +57,9 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
       constructionModeColor: Colors.blue, // If you wan customize the grid color.
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      cameraZoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      cameraSizeMovementWindow: Size(50,50),
+      cameraMoveOnlyMapArea: false,
       showFPS: false,
       progress: Widget(), //progress that show while loading map.
     );
@@ -83,7 +85,9 @@ or to manual map:
       constructionModeColor: Colors.blue, // If you wan customize the grid color.
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      cameraZoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      cameraSizeMovementWindow: Size(50,50),
+      cameraMoveOnlyMapArea: false,
       showFPS: false,
     );
   }
