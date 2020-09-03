@@ -12,7 +12,6 @@ GameDecoration.sprite(
     @required this.height,
     @required this.width,
     this.frontFromPlayer = false, // 'true' if you want it to be drawn over the player
-    this.isSensor = false, //if you want to detect that any object has come into contact. To get the object that came into contact override the method 'void onContact(Collision collision)'.
     Collision collision, // if you want collision fill in with the settings.
   })
 
@@ -24,7 +23,6 @@ GameDecoration.sprite(
     @required this.height,
     @required this.width,
     this.frontFromPlayer = false,
-    this.isSensor = false,
     List<Collision> collisions,
   }) {
     if (frontFromPlayer) additionalPriority = 1;
@@ -48,7 +46,6 @@ GameDecoration.animation(
     @required this.initPosition,
     @required this.height,
     @required this.width,
-    this.isSensor = false,
     this.frontFromPlayer = false,
     Collision collision,
   })
@@ -60,7 +57,6 @@ GameDecoration.animation(
     @required this.initPosition,
     @required this.height,
     @required this.width,
-    this.isSensor = false,
     this.frontFromPlayer = false,
     List<Collision> collisions,
   })
