@@ -1,5 +1,5 @@
 ## Darkness Dungeon
-[GitHub](https://github.com/RafaelBarbosatec/darkness_dungeon)
+[GitHub](https://github.com/RafaelBarbosatec/darkness_dungeon) 
 
 ![](_media/example_darkness.gif)
 
@@ -9,7 +9,12 @@
 ![](_media/example_fight.gif)
 
 ## Mini Fantasy
-[GitHub](https://github.com/RafaelBarbosatec/mini_fantasy)
+[GitHub](https://github.com/RafaelBarbosatec/mini_fantasy) [Play](https://bonfire-engine.github.io/examples/mini_fantasy/)
 
 ![](_media/example_mini_fantasy.gif)
+
+## Multi Biome
+[GitHub](https://github.com/RafaelBarbosatec/multi-biome) [Play](https://bonfire-engine.github.io/examples/multi_biome/)
+
+![](_media/example_multi_biome.gif)
 
