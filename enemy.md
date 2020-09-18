@@ -25,22 +25,24 @@ class Goblin extends SimpleEnemy {
           speed: 100,
           collision: Collision(),
           initDirection: Direction.right,
-          animIdleRight: FlameAnimation(), //required
-          animIdleLeft: FlameAnimation(), //required
-          animIdleTopLeft: FlameAnimation(),
-          animIdleBottomLeft: FlameAnimation(),
-          animIdleTopRight: FlameAnimation(),
-          animIdleBottomRight: FlameAnimation(),
-          animRunRight: FlameAnimation(), //required
-          animRunLeft: FlameAnimation(), //required
-          animRunTopLeft: FlameAnimation(),
-          animRunBottomLeft: FlameAnimation(),
-          animRunTopRight: FlameAnimation(),
-          animRunBottomRight: FlameAnimation(),
-          animIdleTop: FlameAnimation(),
-          animIdleBottom: FlameAnimation(),
-          animRunTop: FlameAnimation(),
-          animRunBottom: FlameAnimation(),
+          animation: SimpleDirectionAnimation(
+            idleLeft: FlameAnimation(), //required
+            idleRight: FlameAnimation(), //required
+            runLeft: FlameAnimation(), //required
+            runRight: FlameAnimation(), //required
+            idleTop: FlameAnimation(),
+            idleBottom: FlameAnimation(),
+            idleTopLeft: FlameAnimation(),
+            idleTopRight: FlameAnimation(),
+            idleBottomLeft: FlameAnimation(),
+            idleBottomRight: FlameAnimation(),
+            runTop: FlameAnimation(),
+            runBottom: FlameAnimation(),
+            runTopLeft: FlameAnimation(),
+            runTopRight: FlameAnimation(),
+            runBottomLeft: FlameAnimation(),
+            runBottomRight: FlameAnimation(),
+          ), //required
       );
 
     @override
