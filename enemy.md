@@ -312,6 +312,11 @@ void simpleAttackRange({
     VoidCallback execute,
     LightingConfig lightingConfig,
   })
+
+  String tileTypeBelow()
+
+  List<String> tileTypesBelow()
+  
 ```
 
 

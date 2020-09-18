@@ -62,6 +62,7 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
       cameraMoveOnlyMapArea: false,
       showFPS: false,
       progress: Widget(), //progress that show while loading map.
+      colorFilter: GameColorFilter(),
     );
   }
 ```
@@ -89,6 +90,7 @@ or to manual map:
       cameraSizeMovementWindow: Size(50,50),
       cameraMoveOnlyMapArea: false,
       showFPS: false,
+      colorFilter: GameColorFilter(),
     );
   }
 ```

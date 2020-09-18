@@ -304,6 +304,10 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
     // Restore life point
     void addLife(double life)
 
+    String tileTypeBelow()
+
+    List<String> tileTypesBelow()
+
 ```
 
 ## Custom
