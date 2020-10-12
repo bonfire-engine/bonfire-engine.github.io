@@ -1,6 +1,6 @@
 # Tiled support
 
-> Documentation in progress
+> Tiled version `1.3.5`
 
 
 Support for maps built with Tiled using the extension .json.
