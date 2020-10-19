@@ -1,8 +1,8 @@
 # Tiled support
 
-> Tiled version ![1.3.5](https://github.com/bjorn/tiled/releases/tag/v1.3.5)
+> Tiled version [1.3.5](https://github.com/bjorn/tiled/releases/tag/v1.3.5)
 
-![Video example](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
+[Video example](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
 
 Support for maps built with Tiled using the extension .json.
 
