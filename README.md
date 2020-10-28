@@ -16,3 +16,5 @@ This is ideal for building games from the following perspectives:
 ![](_media/perspectiva.png)
 
 We have a Bonfire help channel on Fireslime's Discord, join it [here](https://discord.gg/8HXD2t).
+
+Bonfire presentation at [FlameCon](https://www.youtube.com/watch?v=2DdiNrAAuBg&t=2s).
