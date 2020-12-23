@@ -10,6 +10,7 @@ Support for maps built with Tiled using the extension .json.
 - [x] Multi ObjectLayer
 - [x] TileSet
 - [x] Tile Animated
+- [x] Load Map from URL
 
 Collision
    - [x] MultiCollision
