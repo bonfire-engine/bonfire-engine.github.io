@@ -6,6 +6,10 @@ This section is intended to list some Objects already implemented and that can b
 
 Are they:
 
+## SpriteObject
+
+// TODO
+
 ## AnimatedObject
 
 // TODO
@@ -24,12 +28,8 @@ Are they:
 
 ## FlyingAttackObject
 
-    // TODO
-
-## FlyingAttackAngleObject
-
 // TODO
 
-## SpriteObject
+## FlyingAttackAngleObject
 
 // TODO
