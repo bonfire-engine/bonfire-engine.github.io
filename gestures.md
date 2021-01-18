@@ -2,7 +2,7 @@
 
 > At Bonfire we use mixins to enable this interaction.
 
-There are basically two::
+There are basically two:
 
 ## TapGesture
 
