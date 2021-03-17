@@ -93,3 +93,12 @@ For more details click [here](game_interface).
 The player-controlling component.
 
 For more details click [here](joystick).
+
+
+## Dynamically adding game elements
+
+If it is necesssary to add a instance of a Bonfire's basic component class (Decorations, Enemy, etc), one shall use:
+
+```dart
+this.gameRef.addGameComponent(COMPONENT);
+```

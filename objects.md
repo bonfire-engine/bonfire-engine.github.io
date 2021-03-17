@@ -16,20 +16,62 @@ Are they:
 
 ## AnimatedObjectOnce
 
-// TODO
+To run an animation once before it destroys itself
+
+```dart
+AnimatedObjectOnce(
+   {
+      Rect position,
+      FlameAnimation.Animation animation,
+      VoidCallback onFinish,
+      bool onlyUpdate = false,
+   }
+)
+```
 
 ## FollowerObject
 
-// TODO
+Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
+
+
+```dart
+AnimatedFollowerObject(
+    {
+      FlameAnimation.Animation animation,
+      AnimatedObject target,
+      Rect positionFromTarget,
+      bool loopAnimation = false
+   }
+)
+```
 
 ## AnimatedFollowerObject
 
-// TODO
+The same `FollowerObject` with animation.
 
 ## FlyingAttackObject
 
-// TODO
+Componente que anda em determinada direção configurada em uma determinada velocidade também configurável e somente para ao atingir um inimigo ou player infligindo dano, ou pode se destruir ao atigir algum componente que tenha colisão (Tiles,Decorations).
+
+```dart
+
+FlyingAttackObject(
+   {
+      @required this.initPosition,
+      @required FlameAnimation.Animation flyAnimation,
+      @required Direction direction,
+      @required double width,
+      @required double height,
+      FlameAnimation.Animation this.destroyAnimation,
+      double speed = 1.5,
+      double damage = 1,
+      bool damageInPlayer = true,
+      bool damageInEnemy = true,
+  }
+)
+
+```
 
 ## FlyingAttackAngleObject
 
-// TODO
+The same `FlyingAttackObject` with angle.
