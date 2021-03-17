@@ -10,5 +10,6 @@
 * [Game interface](game_interface.md)
 * [Joystick](joystick.md)
 * [Gestures](gestures.md)
+* [Useful components](useful_components.md)
 * [Tiled support](tiled_support.md)
 * [Examples](examples.md)
