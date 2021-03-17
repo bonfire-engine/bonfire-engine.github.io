@@ -18,3 +18,5 @@ By setting the `lightingColorGame` property on BofireWidget you automatically en
        pulseSpeed: 1,
      );
 ```
+
+## GameColorFilter
