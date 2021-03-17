@@ -5,9 +5,6 @@
 ## Camera
 
 
-## GameColorFilter
-
-
 ## ValueGeneratorComponent
 
 
