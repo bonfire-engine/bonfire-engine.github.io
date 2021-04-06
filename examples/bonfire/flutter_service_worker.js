@@ -3,20 +3,22 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "index.html": "926cd8008bef60a4e735ba8d18fbac9c",
-"/": "926cd8008bef60a4e735ba8d18fbac9c",
-"main.dart.js": "9f42e3c727ff81c9362868c93007c623",
+  "version.json": "4b6db237b3514a88107a422469adfb0f",
+"index.html": "e915b0c4bdf129856ce9462e124029f0",
+"/": "e915b0c4bdf129856ce9462e124029f0",
+"main.dart.js": "aaddbfeac8fa77e2c5a7689b647c9cd5",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "00e0b69b49487ce4f9ff0c5fac8fda49",
-"assets/AssetManifest.json": "f971bbbd0bb80d824726ebd2a26376e7",
-"assets/NOTICES": "055746d1a4aec996bd011597b2e301c1",
+"assets/AssetManifest.json": "f76ddcb9d959ba81c3df9b4f176f7e58",
+"assets/NOTICES": "9e186a76e4683b32c47f86837c89506b",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/fonts/MaterialIcons-Regular.otf": "a68d2a28c526b3b070aefca4bac93d25",
+"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/assets/images/smoke_explosin.png": "555a8a42b72e662af232dc2092103c2a",
+"assets/assets/images/tiled/mapa2.json": "5c02d815bdf167ec434020c6f9086fad",
 "assets/assets/images/tiled/0x72_DungeonTilesetII_v1.json": "a5d0f9fc17e624e38f68f84ff7871bdd",
-"assets/assets/images/tiled/mapa1.json": "78ae05e1046e9e1b933db14d3a28e987",
+"assets/assets/images/tiled/mapa1.json": "e35c97d6baf6fbbdd9ec1975564b31b7",
 "assets/assets/images/tiled/0x72_DungeonTilesetII_v1.3.png": "e569500a4e5ee213c821388a51c08765",
 "assets/assets/images/joystick_background.png": "8c9aa78348b48e03f06bb97f74b819c9",
 "assets/assets/images/joystick_atack.png": "0f5325cb2ddcba703e4c9d7d2dd266df",
@@ -58,6 +60,7 @@ const RESOURCES = {
 "assets/assets/images/itens/spikes.png": "8ee92dd121da5fc50964a6a68e3e262c",
 "assets/assets/images/itens/chest_spritesheet.png": "bcc8785d27d816e23eca114dd4e708ed",
 "assets/assets/images/itens/prisoner.png": "45dcdd9a419bcd1f39cfd78024865578",
+"assets/assets/images/itens/column.png": "2ccdc666f36fef12bb99345d4c6c9d66",
 "assets/assets/images/itens/table.png": "5e22fb237c60943f46ba18d5e176c10c",
 "assets/assets/images/itens/barrel.png": "dc4d5a9e456b6f1c6ec6fdcc66af7727",
 "assets/assets/images/itens/bookshelf.png": "ce2fc17cb8251da9966a3e91bb0b2272",
@@ -93,13 +96,13 @@ const CORE = [
 "assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
-
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
-      // Provide a 'reload' param to ensure the latest version is downloaded.
-      return cache.addAll(CORE.map((value) => new Request(value, {'cache': 'reload'})));
+      return cache.addAll(
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
@@ -114,7 +117,6 @@ self.addEventListener("activate", function(event) {
       var tempCache = await caches.open(TEMP);
       var manifestCache = await caches.open(MANIFEST);
       var manifest = await manifestCache.match('manifest');
-
       // When there is no prior manifest, clear the entire cache.
       if (!manifest) {
         await caches.delete(CACHE_NAME);
@@ -128,7 +130,6 @@ self.addEventListener("activate", function(event) {
         await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
         return;
       }
-
       var oldManifest = await manifest.json();
       var origin = self.location.origin;
       for (var request of await contentCache.keys()) {
@@ -166,24 +167,33 @@ self.addEventListener("activate", function(event) {
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
   var origin = self.location.origin;
   var key = event.request.url.substring(origin.length + 1);
   // Redirect URLs to the index.html
-  if (event.request.url == origin || event.request.url.startsWith(origin + '/#')) {
+  if (key.indexOf('?v=') != -1) {
+    key = key.split('?v=')[0];
+  }
+  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
     key = '/';
   }
-  // If the URL is not the RESOURCE list, skip the cache.
+  // If the URL is not the RESOURCE list then return to signal that the
+  // browser should take over.
   if (!RESOURCES[key]) {
-    return event.respondWith(fetch(event.request));
+    return;
+  }
+  // If the URL is the index.html, perform an online-first request.
+  if (key == '/') {
+    return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache. Ensure the resources are not cached
-        // by the browser for longer than the service worker expects.
-        var modifiedRequest = new Request(event.request, {'cache': 'reload'});
-        return response || fetch(modifiedRequest).then((response) => {
+        // lazily populate the cache.
+        return response || fetch(event.request).then((response) => {
           cache.put(event.request, response.clone());
           return response;
         });
@@ -196,11 +206,12 @@ self.addEventListener('message', (event) => {
   // SkipWaiting can be used to immediately activate a waiting service worker.
   // This will also require a page refresh triggered by the main worker.
   if (event.data === 'skipWaiting') {
-    return self.skipWaiting();
+    self.skipWaiting();
+    return;
   }
-
-  if (event.message === 'downloadOffline') {
+  if (event.data === 'downloadOffline') {
     downloadOffline();
+    return;
   }
 });
 
@@ -217,10 +228,32 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
   }
   return contentCache.addAll(resources);
+}
+
+// Attempt to download the resource online before falling back to
+// the offline cache.
+function onlineFirst(event) {
+  return event.respondWith(
+    fetch(event.request).then((response) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }).catch((error) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((response) => {
+          if (response != null) {
+            return response;
+          }
+          throw error;
+        });
+      });
+    })
+  );
 }
