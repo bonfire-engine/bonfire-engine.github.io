@@ -15,67 +15,66 @@ To use it, simply create a class that will represent your enemy and extend Simpl
 
 class Kinght extends SimplePlayer {
 
-    Kinght(Position initPosition)
+    Kinght(Vector2 position)
       : super(
-          initPosition:initPosition, //required
-          height:32, //required
-          width:32, //required
+          position: position, //required
+          height: 32.0, //required
+          width: 32.0, //required
           life: 100,
           speed: 100,
-          collision: Collision(),
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
-            idleLeft: FlameAnimation(), //required
-            idleRight: FlameAnimation(), //required
-            runLeft: FlameAnimation(), //required
-            runRight: FlameAnimation(), //required
-            idleTop: FlameAnimation(),
-            idleBottom: FlameAnimation(),
-            idleTopLeft: FlameAnimation(),
-            idleTopRight: FlameAnimation(),
-            idleBottomLeft: FlameAnimation(),
-            idleBottomRight: FlameAnimation(),
-            runTop: FlameAnimation(),
-            runBottom: FlameAnimation(),
-            runTopLeft: FlameAnimation(),
-            runTopRight: FlameAnimation(),
-            runBottomLeft: FlameAnimation(),
-            runBottomRight: FlameAnimation(),
+            idleLeft: Future<SpriteAnimation>(), //required
+            idleRight: Future<SpriteAnimation>(), //required
+            runLeft: Future<SpriteAnimation>(), //required
+            runRight: Future<SpriteAnimation>(), //required
+            idleUp: Future<SpriteAnimation>(),
+            idleDown: Future<SpriteAnimation>(),
+            idleUpLeft: Future<SpriteAnimation>(),
+            idleUpRight: Future<SpriteAnimation>(),
+            idleDownLeft: Future<SpriteAnimation>(),
+            idleDownRight: Future<SpriteAnimation>(),
+            runUp: Future<SpriteAnimation>(),
+            runDown: Future<SpriteAnimation>(),
+            runUpLeft: Future<SpriteAnimation>(),
+            runUpRight: Future<SpriteAnimation>(),
+            runDownLeft: Future<SpriteAnimation>(),
+            runDowntRight: Future<SpriteAnimation>(),
           ), //required
       );
 
     @override
     void update(double dt) {
-        // do anything
-        super.update(dt);
+      // do anything
+      super.update(dt);
     }
 
     @override
     void render(Canvas canvas) {
-        // do anything
-        super.render(canvas);
+      // do anything
+      super.render(canvas);
     }
 
     @override
     void joystickChangeDirectional(JoystickDirectionalEvent event) {
-        // do anything with event of the joystick
-        super.joystickChangeDirectional(event);
+      // do anything with event of the joystick
+      super.joystickChangeDirectional(event);
     }
 
     @override
     void joystickAction(JoystickActionEvent event) {
-        // do anything with event of the joystick
-        super.joystickAction(event);
+      // do anything with event of the joystick
+      super.joystickAction(event);
     }
 
     @override
     void receiveDamage(double damage, int from) {
-        super.receiveDamage(damage, from);
+      super.receiveDamage(damage, from);
     }
 
     @override
     void die() {
-        super.die();
+      super.die();
     }
 }
 
@@ -87,8 +86,8 @@ Player instances can receive action configured on the Joystick (read more about 
 
 ```dart
 
-    @override
-    void joystickAction(JoystickActionEvent event) {}
+  @override
+  void joystickAction(JoystickActionEvent event) {}
 
 ```
 
@@ -100,65 +99,71 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 // Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
   void simpleAttackMelee(
      {
-       FlameAnimation.Animation animationRight,
-       FlameAnimation.Animation animationBottom,
-       FlameAnimation.Animation animationLeft,
-       FlameAnimation.Animation animationTop,
-       @required double damage,
-       int id,
-       Direction direction,
-       double heightArea = 32,
-       double widthArea = 32,
-       bool withPush = true,
+      required double damage,
+      Future<SpriteAnimation>? animationRight,
+      Future<SpriteAnimation>? animationBottom,
+      Future<SpriteAnimation>? animationLeft,
+      Future<SpriteAnimation>? animationTop,
+      dynamic id,
+      Direction? direction,
+      double heightArea = 32,
+      double widthArea = 32,
+      bool withPush = true,
      }
   )
   
   // Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
   void simpleAttackRange(
-     {
-       @required FlameAnimation.Animation animationRight,
-       @required FlameAnimation.Animation animationLeft,
-       @required FlameAnimation.Animation animationTop,
-       @required FlameAnimation.Animation animationBottom,
-       @required FlameAnimation.Animation animationDestroy,
-       @required double width,
-       @required double height,
-       double speed = 150,
-       double damage = 1,
-       int id,
-       Direction direction,
-       bool withCollision = true,
-       VoidCallback destroy,
-       Collision collision,
-       LightingConfig lightingConfig,
-     }
+    {
+      required Future<SpriteAnimation> animationRight,
+      required Future<SpriteAnimation> animationLeft,
+      required Future<SpriteAnimation> animationUp,
+      required Future<SpriteAnimation> animationDown,
+      required Future<SpriteAnimation> animationDestroy,
+      required double width,
+      required double height,
+      int? id,
+      double speed = 150,
+      double damage = 1,
+      Direction? direction,
+      int interval = 1000,
+      bool withCollision = true,
+      CollisionConfig? collision,
+      VoidCallback? destroy,
+      VoidCallback? execute,
+      LightingConfig? lightingConfig,
+    }
   )
 
   // Shows the damage value as an animation on the game.
-   void showDamage(
-      double damage,
-      {
-         TextConfig config = const TextConfig(
-           fontSize: 10,
-           color: Colors.white,
-         )
-      }
-    )
+  void showDamage(
+    double damage, {
+    TextConfig? config,
+    double initVelocityTop = -5,
+    double gravity = 0.5,
+    double maxDownSize = 20,
+    DirectionTextDamage direction = DirectionTextDamage.RANDOM,
+    bool onlyUp = false,
+  })
     
     // Will observe enemies when within the radius (radiusVision)
     void seeEnemy(
-       {
-          Function(List<Enemy>) observed,
-          Function() notObserved,
-          int radiusVision = 32,
-       }
+      {
+        required Function(List<Enemy>) observed,
+        VoidCallback? notObserved,
+        double radiusVision = 32,
+      }
     )
     
-    // Add to `render` method if you want to draw the collision area.
-    void drawPositionCollision(Canvas canvas)
-    
     // Executes an animation once.
-    void addFastAnimation(FlameAnimation.Animation animation)
+    this.animation.playOnce(
+      Future<SpriteAnimation> animation,
+      Vector2Rect position, 
+      {
+        VoidCallback? onFinish,
+        bool runToTheEnd = false,
+      }
+    )
     
     // Applies damage
     void receiveDamage(double damage)
@@ -176,51 +181,50 @@ Used for 90º perspectives. And we can configure Motion animations for run and i
 
 class PlayerTank extends RotationEnemy {
 
-    PlayerTank(Position initPosition)
+    PlayerTank(vector2 position)
       : super(
-          initPosition:initPosition, //required
-          height:32, 
-          width:32, 
-          life: 100,
-          speed: 100,
-          collision: Collision(),
-          currentRadAngle: -1.55,
-          animIdle: FlameAnimation(), //required
-          animRun: FlameAnimation(), //required
+        position: position, //required
+        animIdle: Future<SpriteAnimation>(), //required
+        animRun: Future<SpriteAnimation>(), //required
+        height: 32.0, 
+        width: 32.0, 
+        life: 100,
+        speed: 100,
+        currentRadAngle: -1.55,
       );
 
     @override
     void update(double dt) {
-        // do anything
-        super.update(dt);
+      // do anything
+      super.update(dt);
     }
 
     @override
     void render(Canvas canvas) {
-        // do anything
-        super.render(canvas);
+      // do anything
+      super.render(canvas);
     }
 
     @override
     void joystickChangeDirectional(JoystickDirectionalEvent event) {
-        // do anything with event of the joystick
-        super.joystickChangeDirectional(event);
+      // do anything with event of the joystick
+      super.joystickChangeDirectional(event);
     }
 
     @override
     void joystickAction(JoystickActionEvent event) {
-        // do anything with event of the joystick
-        super.joystickAction(event);
+      // do anything with event of the joystick
+      super.joystickAction(event);
     }
 
     @override
     void receiveDamage(double damage, int from) {
-        super.receiveDamage(damage, from);
+      super.receiveDamage(damage, from);
     }
 
     @override
     void die() {
-        super.die();
+      super.die();
     }
 }
 
@@ -244,59 +248,68 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 // Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
   void simpleAttackMelee(
      {
-       FlameAnimation.Animation animationTop,
-       @required double damage,
-       int id,
-       double radAngleDirection,
-       double heightArea = 32,
-       double widthArea = 32,
-       bool withPush = true,
+      required Future<SpriteAnimation> attackEffectTopAnim,
+      required double damage,
+      required double height,
+      required double width,
+      int? id,
+      bool withPush = false,
+      double? radAngleDirection,
+      VoidCallback? execute,
+      int interval = 1000,
      }
   )
   
   // Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
   void simpleAttackRange(
      {
-       @required FlameAnimation.Animation animationTop,
-       FlameAnimation.Animation animationDestroy,
-       @required double width,
-       @required double height,
-       double speed = 150,
-       double damage = 1,
-       int id,
-       double radAngleDirection,
-       bool withCollision = true,
-       VoidCallback destroy,
-       Collision collision,
-       LightingConfig lightingConfig,
-     }
+      required Future<SpriteAnimation> animationTop,
+      required Future<SpriteAnimation> animationDestroy,
+      required double width,
+      required double height,
+      int? id,
+      double speed = 150,
+      double damage = 1,
+      double? radAngleDirection,
+      int interval = 1000,
+      bool withCollision = true,
+      bool collisionOnlyVisibleObjects = true,
+      VoidCallback? destroy,
+      CollisionConfig? collision,
+      VoidCallback? execute,
+      LightingConfig? lightingConfig,
+    }
   )
 
   // Shows the damage value as an animation on the game.
    void showDamage(
-      double damage,
-      {
-         TextConfig config = const TextConfig(
-           fontSize: 10,
-           color: Colors.white,
-         )
-      }
-    )
+      double damage, {
+      TextConfig? config,
+      double initVelocityTop = -5,
+      double gravity = 0.5,
+      double maxDownSize = 20,
+      DirectionTextDamage direction = DirectionTextDamage.RANDOM,
+      bool onlyUp = false,
+    })
     
     // Will observe enemies when within the radius (radiusVision)
     void seeEnemy(
        {
-          Function(List<Enemy>) observed,
-          Function() notObserved,
-          int radiusVision = 32,
+          required Function(List<Enemy>) observed,
+          VoidCallback? notObserved,
+          double radiusVision = 32,
        }
     )
     
-    // Add to `render` method if you want to draw the collision area.
-    void drawPositionCollision(Canvas canvas)
-    
     // Executes an animation once.
-    void addFastAnimation(FlameAnimation.Animation animation)
+    this.animation.playOnce(
+      Future<SpriteAnimation> animation,
+      Vector2Rect position, 
+      {
+        VoidCallback? onFinish,
+        bool runToTheEnd = false,
+      }
+    )
     
     // Applies damage
     void receiveDamage(double damage)
@@ -316,10 +329,14 @@ If none of these types of enemies do not meet your needs. You can create your ow
 
 With Enemy you will have access to the following methods:
 
-* void moveTop(double speed)
-* void moveBottom(double speed)
+* void moveUp(double speed)
+* void moveDown(double speed)
 * void moveLeft(double speed)
 * void moveRight(double speed)
+* void moveUpLeft(double speed)
+* void moveUpRight(double speed)
+* void moveDownRight(double speed)
+* void moveDownLeft(double speed)
 * void moveFromAngle(double speed, double angle)
 * void receiveDamage(double damage, int from)
 * void addLife(double life)
