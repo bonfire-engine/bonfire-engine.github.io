@@ -7,14 +7,14 @@
 Camera control.
 
 ```dart
- ameRef.gameCamera.moveToPosition(Position(X,Y));
+ ameRef.gameCamera.moveToPosition(Offset(X,Y));
 
  gameRef.gameCamera.moveToPlayer();
 
  gameRef.gameCamera.moveToTarget(GameComponent());
 
  gameRef.gameCamera.moveToPositionAnimated(
-    Position(X,Y),
+    Offset(X,Y),
     zoom: 1,
     finish: (){},
     duration: Duration(seconds: 1),
