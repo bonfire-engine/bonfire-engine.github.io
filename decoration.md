@@ -46,8 +46,6 @@ class MyCustomDecoration extends GameDecoration {
           position: position,
         );
 
-        // do anything
-
     @override
     void update(double dt) {
         // do anything

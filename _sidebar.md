@@ -9,6 +9,7 @@
 * [Lighting](lighting.md)
 * [Game interface](game_interface.md)
 * [Joystick](joystick.md)
+* [Collision System](collision_system.md)
 * [Gestures](gestures.md)
 * [Useful components](useful_components.md)
 * [Tiled support](tiled_support.md)

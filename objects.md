@@ -21,10 +21,12 @@ To run an animation once before it destroys itself
 ```dart
 AnimatedObjectOnce(
    {
-      Rect position,
-      FlameAnimation.Animation animation,
-      VoidCallback onFinish,
-      bool onlyUpdate = false,
+      Vector2Rect position,
+      Future<SpriteAnimation>? animation,
+      VoidCallback? onFinish,
+      VoidCallback? onStartAnimation,
+      double? rotateRadAngle,
+      LightingConfig? lightingConfig,
    }
 )
 ```
@@ -36,11 +38,11 @@ Like the previous one, this can play an animation once before it destroys itself
 
 ```dart
 AnimatedFollowerObject(
-    {
-      FlameAnimation.Animation animation,
-      AnimatedObject target,
-      Rect positionFromTarget,
-      bool loopAnimation = false
+   {
+      required Future<SpriteAnimation> animation,
+      required GameComponent target,
+      Vector2Rect? positionFromTarget,
+      bool loopAnimation = false,
    }
 )
 ```
@@ -57,16 +59,20 @@ Componente que anda em determinada direção configurada em uma determinada velo
 
 FlyingAttackObject(
    {
-      @required this.initPosition,
-      @required FlameAnimation.Animation flyAnimation,
-      @required Direction direction,
-      @required double width,
-      @required double height,
-      FlameAnimation.Animation this.destroyAnimation,
-      double speed = 1.5,
+      required Vector2 position,
+      required Future<SpriteAnimation> flyAnimation,
+      required this.direction,
+      required this.width,
+      required this.height,
+      dynamic id,
+      Future<SpriteAnimation>? destroyAnimation,
+      double speed = 150,
       double damage = 1,
-      bool damageInPlayer = true,
-      bool damageInEnemy = true,
+      AttackFromEnum attackFrom = AttackFromEnum.ENEMY,
+      bool withDecorationCollision = true,
+      VoidCallback? onDestroyedObject,
+      LightingConfig? lightingConfig,
+      CollisionConfig? collision,
   }
 )
 
