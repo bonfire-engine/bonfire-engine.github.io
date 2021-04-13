@@ -17,7 +17,7 @@ Bonfire, is basically a Widget that passing the parameters and configuring accor
       constructionModeColor: Colors.blue, // If you wan customize the grid color.
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      zoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+      cameraConfig: CameraConfig(),
       showFPS: false, // If you wan show FPS.
       progress: Widget(), //progress that show while loading map.
     );
@@ -30,6 +30,12 @@ Bonfire, is basically a Widget that passing the parameters and configuring accor
 
 We will understand each layer of this studying from the bottom up starting with the map.
 
+## Background
+
+> render_priority = 10
+
+Your can add a component that represents a background. It's useful to create parallax and interactive backgrounds
+
 ## Map
 
 > render_priority = 20
@@ -40,7 +46,7 @@ For more details click [here](map).
 
 ## Decoration
 
-> render_priority = 30
+> render_priority = Dynamic (Axis Y)
 
 Anything that you may add to the scenery. For example a Barrel in the way or even a NPC in which you can use to interact with your player.
 
@@ -48,7 +54,7 @@ For more details click [here](decoration).
 
 ## Enemy
 
-> render_priority = 40
+> render_priority = Dynamic (Axis Y)
 
 Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
 
@@ -56,7 +62,7 @@ For more details click [here](enemy).
 
 ## Player
 
-> render_priority = 50
+> render_priority = Dynamic (Axis Y)
 
 Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured.
 
@@ -64,7 +70,7 @@ For more details click [here](player).
 
 ## Objects
 
-> render_priority = 60
+> render_priority = Dynamic (Axis Y)
 
 In this layer the components that `AnimatedObject` extends such as player attacks and enemies are rendered.
 
@@ -72,7 +78,7 @@ For more details click [here](Objects).
 
 ## Lighting
 
-> render_priority = 80
+> render_priority = (highestPriority + 10)
 
 Layer responsible for adding lighting to the game.
 
@@ -80,7 +86,7 @@ For more details click [here](lighting).
 
 ## Game interface
 
-> render_priority = 90
+> render_priority = (highestPriority + 30)
 
 The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
 
@@ -88,7 +94,7 @@ For more details click [here](game_interface).
 
 ## Joystick
 
-> render_priority = 100
+> render_priority = highestPriority + 40
 
 The player-controlling component.
 
@@ -97,8 +103,12 @@ For more details click [here](joystick).
 
 ## Dynamically adding game elements
 
-If it is necesssary to add a instance of a Bonfire's basic component class (Decorations, Enemy, etc), one shall use:
+If it is necesssary to add a instance of a Bonfire's basic component class (Decorations, Enemy, etc), use:
 
 ```dart
 this.gameRef.addGameComponent(COMPONENT);
+
+/// or simply
+
+this.gameRef.add(COMPONENT)
 ```

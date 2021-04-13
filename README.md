@@ -9,7 +9,7 @@
 
 > Build RPG games and similar with the power of [FlameEngine](https://flame-engine.org/)!
 
-This tool was built over [FlameEngine](https://flame-engine.org/) and all its resources and classes are available to be used along with Bonfire. With that said, it is recommended to give a look into [FlameEngine](https://flame-engine.org/) before start rocking with Bonfire.  
+This tool was built over [FlameEngine](https://flame-engine.org/) and all its resources and classes are available to be used along with Bonfire. With that said, it is recommended to give a look into [FlameEngine](https://flame-engine.org/) before you start doing something with Bonfire.
 
 This is ideal for building games from the following perspectives:
 

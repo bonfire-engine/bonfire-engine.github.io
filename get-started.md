@@ -57,9 +57,12 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
       constructionModeColor: Colors.blue, // If you wan customize the grid color.
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      cameraZoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
-      cameraSizeMovementWindow: Size(50,50),
-      cameraMoveOnlyMapArea: false,
+      cameraConfig: CameraConfig(
+        sizeMovementWindow: Size(50,50),
+        moveOnlyMapArea: false,
+        zoom: 1.0, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+        target: GameComponent(),
+      ),
       showFPS: false,
       progress: Widget(), //progress that show while loading map.
       colorFilter: GameColorFilter(),
@@ -86,13 +89,16 @@ or to manual map:
       constructionModeColor: Colors.blue, // If you wan customize the grid color.
       collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      cameraZoom: 1, // here you can set the default zoom for the camera. You can still zoom directly on the camera
-      cameraSizeMovementWindow: Size(50,50),
-      cameraMoveOnlyMapArea: false,
+      cameraConfig: CameraConfig(
+        sizeMovementWindow: Size(50,50),
+        moveOnlyMapArea: false,
+        zoom: 1.0, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+        target: GameComponent(),
+      ),
       showFPS: false,
       colorFilter: GameColorFilter(),
     );
   }
 ```
 
-Complete example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
+Complete example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/1.0.0-rc/example).

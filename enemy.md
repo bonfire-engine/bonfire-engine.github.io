@@ -8,7 +8,7 @@ We can create two types of enemies `SimpleEnemy` and `RotationEnemy`:
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
-Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
+Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
 
 To use it, simply create a class that will represent your enemy and extend SimpleEnemy:
 
@@ -16,55 +16,56 @@ To use it, simply create a class that will represent your enemy and extend Simpl
 
 class Goblin extends SimpleEnemy {
 
-    Goblin(Position initPosition)
+    Goblin(Vector2 position)
       : super(
-          initPosition:initPosition, //required
-          height:32, //required
-          width:32, //required
+          position: position, //required
+          height: 32.0, //required
+          width: 32.0, //required
           life: 100,
           speed: 100,
-          collision: Collision(),
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
-            idleLeft: FlameAnimation(), //required
-            idleRight: FlameAnimation(), //required
-            runLeft: FlameAnimation(), //required
-            runRight: FlameAnimation(), //required
-            idleTop: FlameAnimation(),
-            idleBottom: FlameAnimation(),
-            idleTopLeft: FlameAnimation(),
-            idleTopRight: FlameAnimation(),
-            idleBottomLeft: FlameAnimation(),
-            idleBottomRight: FlameAnimation(),
-            runTop: FlameAnimation(),
-            runBottom: FlameAnimation(),
-            runTopLeft: FlameAnimation(),
-            runTopRight: FlameAnimation(),
-            runBottomLeft: FlameAnimation(),
-            runBottomRight: FlameAnimation(),
+            idleLeft: Future<SpriteAnimation>(), //required
+            idleRight: Future<SpriteAnimation>(), //required
+            runLeft: Future<SpriteAnimation>(), //required
+            runRight: Future<SpriteAnimation>(), //required
+            idleUp: Future<SpriteAnimation>(),
+            idleDown: Future<SpriteAnimation>(),
+            idleUpLeft: Future<SpriteAnimation>(),
+            idleUpRight: Future<SpriteAnimation>(),
+            idleDownLeft: Future<SpriteAnimation>(),
+            idleDownRight: Future<SpriteAnimation>(),
+            runUp: Future<SpriteAnimation>(),
+            runDown: Future<SpriteAnimation>(),
+            runUpLeft: Future<SpriteAnimation>(),
+            runUpRight: Future<SpriteAnimation>(),
+            runDownLeft: Future<SpriteAnimation>(),
+            runDownRight: Future<SpriteAnimation>(),
           ), //required
       );
 
     @override
     void update(double dt) {
-        // do anything
-        super.update(dt);
+      // do anything
+      super.update(dt);
     }
 
     @override
     void render(Canvas canvas) {
-        // do anything
-        super.render(canvas);
+      // do anything
+      super.render(canvas);
     }
 
     @override
     void receiveDamage(double damage, int from) {
-        super.receiveDamage(damage, from);
+      /// Called when the enemy receive damage
+      super.receiveDamage(damage, from);
     }
 
     @override
     void die() {
-        super.die();
+      /// Called when the enemy die
+      super.die();
     }
 }
 
@@ -77,10 +78,9 @@ There are several useful extensions that we can use in `update` that will help u
 
 ```dart 
 void seePlayer({
-    Function(Player) observed,
-    Function() notObserved,
+    required Function(Player) observed,
+    VoidCallback? notObserved,
     double radiusVision = 32,
-    int interval = 500,
   })
 ```
 Will observe the player when within the radius (radiusVision)
@@ -88,7 +88,7 @@ Will observe the player when within the radius (radiusVision)
 
 ```dart 
 void seeAndMoveToPlayer({
-    Function(Player) closePlayer,
+    required Function(Player) closePlayer,
     double radiusVision = 32,
     double margin = 10,
   })
@@ -98,19 +98,19 @@ Will move in the direction of the player once it gets close within the radiusVis
 
 ```dart 
 void simpleAttackMelee({
-    @required double damage,
-    double heightArea = 32,
-    double widthArea = 32,
-    int id,
+    required double damage,
+    required height = 32,
+    required width = 32,
+    int? id,
     int interval = 1000,
     bool withPush = false,
-    double sizePush,
-    Direction direction,
-    FlameAnimation.Animation attackEffectRightAnim,
-    FlameAnimation.Animation attackEffectBottomAnim,
-    FlameAnimation.Animation attackEffectLeftAnim,
-    FlameAnimation.Animation attackEffectTopAnim,
-    VoidCallback execute,
+    double? sizePush,
+    Direction? direction,
+    Future<SpriteAnimation>? attackEffectRightAnim,
+    Future<SpriteAnimation>? attackEffectBottomAnim,
+    Future<SpriteAnimation>? attackEffectLeftAnim,
+    Future<SpriteAnimation>? attackEffectTopAnim,
+    VoidCallback? execute,
   })
 ```
 Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
@@ -118,24 +118,23 @@ Executes a physical attack to the player, making the configured damage with the 
 
 ```dart 
 void simpleAttackRange({
-    @required FlameAnimation.Animation animationRight,
-    @required FlameAnimation.Animation animationLeft,
-    @required FlameAnimation.Animation animationTop,
-    @required FlameAnimation.Animation animationBottom,
-    @required FlameAnimation.Animation animationDestroy,
-    @required double width,
-    @required double height,
-    int id,
+    required Future<SpriteAnimation> animationRight,
+    required Future<SpriteAnimation> animationLeft,
+    required Future<SpriteAnimation> animationTop,
+    required Future<SpriteAnimation> animationBottom,
+    required Future<SpriteAnimation> animationDestroy,
+    required double width,
+    required double height,
+    int? id,
     double speed = 150,
     double damage = 1,
-    Direction direction,
+    Direction? direction,
     int interval = 1000,
     bool withCollision = true,
-    bool collisionOnlyVisibleObjects = true,
-    Collision collision,
-    VoidCallback destroy,
-    VoidCallback execute,
-    LightingConfig lightingConfig,
+    CollisionConfig? collision,
+    VoidCallback? destroy,
+    VoidCallback? execute,
+    LightingConfig? lightingConfig,
   })
 ```
 Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
@@ -143,9 +142,9 @@ Executes a distance attack. Will add a `FlyingAttackObject` to the game and will
 
 ```dart 
 void seeAndMoveToAttackRange({
-    Function(Player) positioned,
+    required Function(Player) positioned,
     double radiusVision = 32,
-    double minDistanceCellsFromPlayer,
+    double? minDistanceCellsFromPlayer,
   })
 ```
 Will seek for the player in the defined radius. When the player is found, will position itself to perform a distance attack. Once it reaches the attack position, will fire the `positioned` callback.
@@ -158,28 +157,20 @@ Other fuctions util:
   void showDamage(
     double damage,
     {
-        TextConfig config = const TextConfig(
-          fontSize: 10,
-          color: Colors.white,
-        )
+      TextConfig? config,
+      double initVelocityTop = -5,
+      double gravity = 0.5,
+      double maxDownSize = 20,
+      DirectionTextDamage direction = DirectionTextDamage.RANDOM,
+      bool onlyUp = false,
     }
   )
-  
-  // Add to `render` method if you want to draw the collision area.
-  void drawPositionCollision(Canvas canvas)
   
   // Gives the direction of the player in relation to this enemy
   Direction directionThatPlayerIs()
   
-  // Applies damage to the enemy
-  void receiveDamage(double damage)
-  
   // Restore life point to the enemy
   void addLife(double life)
-
-  // Add to 'render' if you want to draw the collision area
-  void drawPositionCollision(Canvas canvas)
-
 
   // Draws the default life bar, Should be used in the `render` method.
   void drawDefaultLifeBar(
@@ -196,10 +187,17 @@ Other fuctions util:
 If you want to add quick animations, as an effect of taking damage or making a special attack. You can use the method `addFastAnimation`:
 
 ```dart 
-void addFastAnimation(FlameAnimation.Animation animation,{VoidCallback onFinish})
+this.animation.playOnce(
+  Future<SpriteAnimation> animation,
+  Vector2Rect position, 
+  {
+    VoidCallback? onFinish,
+    bool runToTheEnd = false,
+  }
+)
 ```
 
-OBS: Enemies only move if visible on the camera. if you want to disable this add false in `collisionOnlyVisibleScreen`.
+OBS: Enemies only move if visible on the camera. if you want to disable this add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](collision_system).
 
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/enemy/goblin.dart).
 
@@ -214,39 +212,38 @@ Used for 90º perspectives. And we can configure Motion animations for run and i
 
 class Tank extends RotationEnemy {
 
-    Tank(Position initPosition)
+    Tank(Vector2 position)
       : super(
-          initPosition:initPosition, //required
-          height:32, 
-          width:32, 
+          position: position, //required
+          animIdle: Future<SpriteAnimation>(), //required
+          animRun: Future<SpriteAnimation>(), //required
+          height: 32.0, 
+          width: 32.0, 
           life: 100,
           speed: 100,
-          collision: Collision(),
-          currentRadAngle: -1.55,
-          animIdle: FlameAnimation(), //required
-          animRun: FlameAnimation(), //required
+          currentRadAngle: -1.55, 
       );
 
     @override
     void update(double dt) {
-        // do anything
-        super.update(dt);
+      // do anything
+      super.update(dt);
     }
 
     @override
     void render(Canvas canvas) {
-        // do anything
-        super.render(canvas);
+      // do anything
+      super.render(canvas);
     }
 
     @override
     void receiveDamage(double damage, int from) {
-        super.receiveDamage(damage, from);
+      super.receiveDamage(damage, from);
     }
 
     @override
     void die() {
-        super.die();
+      super.die();
     }
 }
 
@@ -258,59 +255,59 @@ There are several useful extensions that we can use in `update` that will help u
 
 ```dart 
 void seePlayer({
-    Function(Player) observed,
-    Function() notObserved,
+    required Function(Player) observed,
+    VoidCallback? notObserved,
     double radiusVision = 32,
-    int interval = 500,
   })
 ```
 
 ```dart 
  void seeAndMoveToPlayer({
-    Function(Player) closePlayer,
+    required Function(Player) closePlayer,
     double radiusVision = 32,
     double margin = 10,
   })
 ```
 
 ```dart 
-void seeAndMoveToAttackRange(
-      {Function(Player) positioned,
-      double radiusVision = 32,
-      double minDistanceCellsFromPlayer})
+void seeAndMoveToAttackRange({
+    required Function(Player) positioned,
+    double radiusVision = 32,
+    double? minDistanceCellsFromPlayer,
+  })
 ```
 
 ```dart 
 void simpleAttackMelee({
-    @required FlameAnimation.Animation attackEffectTopAnim,
-    @required double damage,
-    int id,
-    double heightArea = 32,
-    double widthArea = 32,
+    required Future<SpriteAnimation> attackEffectTopAnim,
+    required double damage,
+    required double height,
+    required double width,
+    int? id,
     bool withPush = false,
-    double radAngleDirection,
-    VoidCallback execute,
+    double? radAngleDirection,
+    VoidCallback? execute,
     int interval = 1000,
   })
 ```
 
 ```dart 
 void simpleAttackRange({
-    @required FlameAnimation.Animation animationTop,
-    @required FlameAnimation.Animation animationDestroy,
-    @required double width,
-    @required double height,
-    int id,
+    required Future<SpriteAnimation> animationTop,
+    required Future<SpriteAnimation> animationDestroy,
+    required double width,
+    required double height,
+    int? id,
     double speed = 150,
     double damage = 1,
-    double radAngleDirection,
+    double? radAngleDirection,
     int interval = 1000,
     bool withCollision = true,
     bool collisionOnlyVisibleObjects = true,
-    VoidCallback destroy,
-    Collision collision,
-    VoidCallback execute,
-    LightingConfig lightingConfig,
+    VoidCallback? destroy,
+    CollisionConfig? collision,
+    VoidCallback? execute,
+    LightingConfig? lightingConfig,
   })
 
   String tileTypeBelow()
@@ -326,10 +323,14 @@ If none of these types of enemies do not meet your needs. You can create your ow
 
 With Enemy you will have access to the following methods:
 
-* void moveTop(double speed)
-* void moveBottom(double speed)
+* void moveUp(double speed)
+* void moveDown(double speed)
 * void moveLeft(double speed)
 * void moveRight(double speed)
+* void moveUpRight(double speedX, double speedY)
+* void moveUpLeft(double speedX, double speedY)
+* void moveDownLeft(double speedX, double speedY)
+* void moveDownRight(double speedX, double speedY)
 * void moveFromAngleDodgeObstacles(double speed, double angle,{Function notMove})
 * void moveFromAngle(double speed, double angle)
 * void receiveDamage(double damage, int from)
