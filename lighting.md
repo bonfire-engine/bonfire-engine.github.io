@@ -4,7 +4,7 @@
 
 <img width=400 src="_media/example_lighting.jpg"></img>
 
-By setting the `lightingColorGame` property on BofireWidget you automatically enable this lighting system. and to add light to the objects, just add the `Lighting` mixin to the component and configure its light using `setupLighting()` method:
+By setting the `lightingColorGame` property on BofireWidget you automatically enable this lighting system. and to add light to the objects, just add the `Lighting` mixin to the component and configure it using `setupLighting()` method:
 
 ```dart
 
