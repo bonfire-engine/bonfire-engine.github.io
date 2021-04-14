@@ -2,7 +2,7 @@
 
 > System responsible for determining and configuring the collision between objects
 
-To anable collision in your component just add the `ObjectCollision` mixin to the component and configure its light using `setupCollision()` method:
+To anable collision in your component just add the `ObjectCollision` mixin to the component and configure it using `setupCollision()` method:
 
 ```dart
 
