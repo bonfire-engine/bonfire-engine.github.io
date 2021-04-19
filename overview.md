@@ -46,7 +46,7 @@ For more details click [here](map).
 
 ## Decoration
 
-> render_priority = Dynamic (Axis Y)
+> render_priority = Dynamic ( 30 + Axis Y)
 
 Anything that you may add to the scenery. For example a Barrel in the way or even a NPC in which you can use to interact with your player.
 
@@ -54,7 +54,7 @@ For more details click [here](decoration).
 
 ## Enemy
 
-> render_priority = Dynamic (Axis Y)
+> render_priority = Dynamic ( 30 + Axis Y)
 
 Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
 
@@ -62,7 +62,7 @@ For more details click [here](enemy).
 
 ## Player
 
-> render_priority = Dynamic (Axis Y)
+> render_priority = Dynamic (30 + Axis Y)
 
 Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured.
 
@@ -70,7 +70,7 @@ For more details click [here](player).
 
 ## Objects
 
-> render_priority = Dynamic (Axis Y)
+> render_priority = Dynamic (30 +  Axis Y)
 
 In this layer the components that `AnimatedObject` extends such as player attacks and enemies are rendered.
 
