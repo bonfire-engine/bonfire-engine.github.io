@@ -19,10 +19,9 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
                     collisionOnlyVisibleScreen: true,
                     enable: true,
                     collisions: [ //required
-                        CollisionArea(
-                            height: 32,
-                            width: 32,
-                            align: Offset(0,0),
+                        CollisionArea.rectangle(
+                            size: Size(32,32),
+                            align: Vector2(0,0),
                         ),
                     ],
                 ),
@@ -30,4 +29,38 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
         }
 
 }
+```
+
+
+## Types of shapes available
+
+```dart
+    // Rectangle
+    CollisionArea.rectangle(
+        size: Size(32,32),
+        align: Vector2(0,0),
+    ),  
+
+    // Circle
+    CollisionArea.circle(
+        radius: 16,
+        align: Vector2(0,0),
+    ), 
+
+    // Polygon
+    CollisionArea.polygon(
+        points: [
+            Vector2(25, 0),
+            Vector2(31, 18),
+            Vector2(50, 18),
+            Vector2(34, 31),
+            Vector2(40, 50),
+            Vector2(25, 38),
+            Vector2(10, 50),
+            Vector2(14, 31),
+            Vector2(0, 18),
+            Vector2(18, 18),
+        ],
+        align: Vector2(0,0),
+    ), 
 ```

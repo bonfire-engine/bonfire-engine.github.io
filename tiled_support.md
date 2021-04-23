@@ -13,9 +13,10 @@ Support for maps built with Tiled using the extension .json.
 Collision
    - [x] MultiCollision
    - [x] Retangle Collision
+   - [x] Circle Collision
+   - [x] Polygon Collision
    - [ ] Point Collision
-   - [ ] Ellipse Collision
-   - [ ] Polygon Collision
+
 
 ## Using
 
