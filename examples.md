@@ -7,7 +7,7 @@
 ![](_media/example_darkness.gif)
 
 ## Mountain Fight (Multiplayer with Socket.io)
-[GitHub](https://github.com/RafaelBarbosatec/mountain_fight)   -   [apk](https://bonfire-engine.github.io/apk/mountain.apk)   -   [PLAY](https://bonfire-engine.github.io/examples/mountain_fight/)
+[GitHub](https://github.com/RafaelBarbosatec/mountain_fight)   -   [apk](https://bonfire-engine.github.io/apk/mountain.apk)   -   [PLAY](http://rafaelbarbosatec.github.io/mountain_fight/)
 
 ![](_media/example_fight.gif)
 
