@@ -3,13 +3,13 @@
 > Camera control.
 
 ```dart
- ameRef.gameCamera.moveToPosition(Offset(X,Y));
+ ameRef.camera.moveToPosition(Offset(X,Y));
 
- gameRef.gameCamera.moveToPlayer();
+ gameRef.camera.moveToPlayer();
 
- gameRef.gameCamera.moveToTarget(GameComponent());
+ gameRef.camera.moveToTarget(GameComponent());
 
- gameRef.gameCamera.moveToPositionAnimated(
+ gameRef.camera.moveToPositionAnimated(
     Offset(X,Y),
     zoom: 1,
     finish: (){},
@@ -17,14 +17,14 @@
     curve: Curves.decelerate,
  );
 
- gameRef.gameCamera.moveToPlayerAnimated(
+ gameRef.camera.moveToPlayerAnimated(
     zoom: 1,
     finish: (){},
     duration: Duration(seconds: 1),
     curve: Curves.decelerate,
  );
 
- gameRef.gameCamera.moveToTargetAnimated(
+ gameRef.camera.moveToTargetAnimated(
     GameComponent(),
     zoom: 1,
     finish: (){},
