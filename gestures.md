@@ -58,10 +58,26 @@ Your component can be automatically dragged on the map with the drag gesture.
 If you want to listen to the interactions with the object, you can override these methods:
 
 ```dart
-
 void startDrag(int pointer, Offset position) {}
 void moveDrag(int pointer, Offset position) {}
 void endDrag(int pointer) {}
 void cancelDrag(int pointer) {}
+```
 
+## Custom
+
+All components extends `PointerDetectorHandler`,so, to recieve gestures events do override `hasGesture` returning `true`:
+
+```dart
+  @override
+  bool hasGesture() => true;
+```
+
+this way you can listen gestures events on the screen doing override this methods:
+
+```dart
+  void handlerPointerDown(PointerDownEvent event) {}
+  void handlerPointerMove(PointerMoveEvent event) {}
+  void handlerPointerUp(PointerUpEvent event) {}
+  void handlerPointerCancel(PointerCancelEvent event) {}
 ```

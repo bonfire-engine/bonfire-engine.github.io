@@ -26,7 +26,7 @@ Bonfire, is basically a Widget that passing the parameters and configuring accor
 
 > It is composed of several components that are rendered according to the layer diagram below.
 
-<img src="_media/layers.png" width="400"/>
+<img src="_media/layers.png" width="600"/>
 
 We will understand each layer of this studying from the bottom up starting with the map.
 

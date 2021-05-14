@@ -1,13 +1,14 @@
 # Lighting
 
-> Layer responsible for adding lighting to the game.
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart)</small>
+
+Layer responsible for adding lighting to the game.
 
 <img width=400 src="_media/example_lighting.jpg"></img>
 
 By setting the `lightingColorGame` property on BofireWidget you automatically enable this lighting system. and to add light to the objects, just add the `Lighting` mixin to the component and configure it using `setupLighting()` method:
 
 ```dart
-
 class MyCustomDecoration extends GameDecoration with Lighting {
   MyCustomDecoration(Position position)
       : super.withAnimation(
@@ -29,3 +30,24 @@ class MyCustomDecoration extends GameDecoration with Lighting {
 ```
 
 ## GameColorFilter
+
+You can apply color filter in your game programmatically.
+
+### Color
+
+```dart
+  gameRef.colorFilter.color = Colors.blue;
+```
+
+### BlendMode
+
+```dart
+  gameRef.colorFilter.BlendMode = BlendMode.colorBurn;
+```
+
+And can change this params in animated way:
+
+```dart
+  gameRef.colorFilter.animateTo(Colors.blue, BlendMode.colorBurn);
+```
+

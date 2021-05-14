@@ -1,6 +1,12 @@
-# Joystick
+# Joysticks
 
-> The player-controlling component.
+> <small>This is a [JoystickController](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/joystick/joystick_controller.dart)</small>
+
+The player-controlling component.
+
+## Joystick
+
+<img src="_media/screeShot_joystick.jpg" width="600"/>
 
 There is a pre-included implementation (`Joystick`) ready to use, but also configurable to add a custom looking or even add as many actions as you will.
 
@@ -8,8 +14,8 @@ Or you can implement `JoystickController` yourself and emit event trough a `Joys
 
 Joystick is configurable by the following parameters:
 ```dart
-
-    Joystick(
+  return BonfireTiledWidget(
+    joystick: Joystick(
         keyboardEnable: false, // Here you enable receive keyboard interaction
         directional: JoystickDirectional(
           spriteBackgroundDirectional: Sprite.load('joystick_background.png'), //directinal control background
@@ -31,8 +37,22 @@ Joystick is configurable by the following parameters:
             margin: EdgeInsets.only(bottom: 50, right: 160),
           )
         ],
-    )
-
+    ),
+    ...
+  );
 ```
 
 Check a [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/main.dart).
+
+## JoystickMoveToPosition
+
+Use this joystick to moviment your player with touch to a position.
+
+<img src="_media/git_move_along_the_path.gif" width="600"/>
+
+```dart
+  return BonfireTiledWidget(
+    joystick: JoystickMoveToPosition(),
+    ...
+  );
+```

@@ -1,11 +1,11 @@
 # Player
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) and use [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart), [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart), [MoveToPositionAlongThePath](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/move_to_position_along_the_path.dart) and [JoystickListener](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/joystick/joystick_controller.dart)</small>
 
-> Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured.
-
-
+Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured. 
 We can create two types of enemies `SimplePlayer` and `RotationPlayer`:
 
-## SimplePlayer
+## SimplePlayer 
+> <small>This is a [Player](#Player)</small>
 
 Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
 
@@ -174,6 +174,8 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 ```
 
 ## RotationPlayer
+
+> <small>This is a [Player](#Player)</small>
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 

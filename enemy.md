@@ -1,10 +1,13 @@
 # Enemy
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) and use [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart)</small>
 
-> Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
+Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
 
 We can create two types of enemies `SimpleEnemy` and `RotationEnemy`:
 
 ## SimpleEnemy
+
+> <small>This is a [Enemy](#Enemy)</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
@@ -203,6 +206,8 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 
 
 ## RotationEnemy
+
+> <small>This is a [Enemy](#Enemy)</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 

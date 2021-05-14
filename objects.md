@@ -1,6 +1,6 @@
 # Objects
 
-> All objects in Bonfire are `GameComponent`, he is the basis of everything.
+> All objects in Bonfire are [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart), he is the basis of everything.
 
 This section is intended to list some Objects already implemented and that can be reused to meet a similar need.
 
@@ -8,13 +8,19 @@ Are they:
 
 ## SpriteObject
 
-// TODO
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+
+Object tha render a `SpriteAnimation`.
 
 ## AnimatedObject
 
-// TODO
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+
+Object tha render a `Sprite`.
 
 ## AnimatedObjectOnce
+
+> <small> This is a [AnimatedObject](#AnimatedObject) </small>
 
 To run an animation once before it destroys itself
 
@@ -33,6 +39,8 @@ AnimatedObjectOnce(
 
 ## FollowerObject
 
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+
 Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
 
 
@@ -49,9 +57,13 @@ AnimatedFollowerObject(
 
 ## AnimatedFollowerObject
 
+> <small> This is a [FollowerObject](#FollowerObject) </small>
+
 The same `FollowerObject` with animation.
 
 ## FlyingAttackObject
+
+> <small> This is a [FollowerObject](#AnimatedObject) and use [ObjectCollision](collision_system), [Lighting](lighting) </small>
 
 Componente que anda em determinada direção configurada em uma determinada velocidade também configurável e somente para ao atingir um inimigo ou player infligindo dano, ou pode se destruir ao atigir algum componente que tenha colisão (Tiles,Decorations).
 
@@ -80,4 +92,6 @@ FlyingAttackObject(
 
 ## FlyingAttackAngleObject
 
-The same `FlyingAttackObject` with angle.
+> <small> This is a [FollowerObject](#AnimatedObject) and use [ObjectCollision](collision_system), [Lighting](lighting) </small>
+
+The same `FlyingAttackObject` with movement by angle.

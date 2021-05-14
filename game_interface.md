@@ -1,6 +1,8 @@
 # Game Interface
 
-> The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart)</small>
+
+The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
 
 To create your interface you must create a class and extend it from ```GameInterface``` like this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/knight_interface.dart).
 

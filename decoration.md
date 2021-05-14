@@ -1,6 +1,8 @@
 # Decoration
 
-> Anything that you may add to the scenery. For example a Barrel in the way or a NPC in which you can use to interact with your player.
+> <small>This is a [AnimatedObject](objects#AnimatedObject)</small>
+
+Anything that you may add to the scenery. For example a Barrel in the way or a NPC in which you can use to interact with your player.
 
 We can create our decorative or interactable objects using the following builders:
 
