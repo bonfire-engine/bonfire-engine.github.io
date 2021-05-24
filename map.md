@@ -27,14 +27,12 @@ You can add objects like [Decorations](decoration) and [Enemies](enemy) to the m
 ```dart
     return BonfireTiledWidget(
         map: TiledWorldMap(
-        'tiled/map.json',
-        forceTileSize: Size(32,32),
-        )..registerObject(
-                'orc', // object name
-                (x, y, width, height){
-                    return Orc(Position(x, y),); // create instance of your object (Decoration or Enemy)
-                },
-            ),
+            'tiled/map.json',
+            forceTileSize: Size(32,32),
+            objectsBuilder: {
+                'orc': (x, y, width, height) => Orc(Vector2(x, y)),
+            },
+        ),
         ...
     );
 ```

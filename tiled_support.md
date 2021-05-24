@@ -34,12 +34,14 @@ For maps built with Tiled we must use the Widget `BonfireTiledWidget` (example [
 
 ```dart
 TiledWorldMap map = TiledWorldMap(
-        'tiled/mapa.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
-        forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
-      )
-        ..registerObject('goblin', (x, y, width, height) => Goblin(Position(x, y))) // Records objects that will be placed on the map when the name is found.
-        ..registerObject('torch', (x, y, width, height) => Torch(Position(x, y)))
-        ..registerObject('barrel', (x, y, width, height) => BarrelDraggable(Position(x, y)));
+    'tiled/mapa.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
+    forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
+    objectsBuilder: {
+        'goblin': (x, y, width, height) => Goblin(Vector2(x, y)),
+        'torch': (x, y, width, height) => Torch(Vector2(x, y)),
+        'barrel': (x, y, width, height) => BarrelDraggable(Vector2(x, y),),
+    },
+  );
 
 return BonfireTiledWidget(
       joystick: Joystick(
@@ -61,3 +63,8 @@ If you want the Tile to be drawn above the player add type: `above` in your tile
 Result:
 
 ![](_media/print_result_tiled.png)
+
+
+## Useful
+
+You can set type in your tile to `above` to render this tile above all components in your game.
