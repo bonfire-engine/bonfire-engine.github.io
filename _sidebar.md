@@ -12,6 +12,7 @@
 * [Collision System](collision_system.md)
 * [Gestures](gestures.md)
 * [Camera](camera.md)
+* [Sensor](sensor.md)
 * [Useful](useful_components.md)
 * [Tiled support](tiled_support.md)
 * [Examples](examples.md)

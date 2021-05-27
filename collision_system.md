@@ -67,3 +67,43 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
         align: Vector2(0,0),
     ), 
 ```
+
+## Knowing who crashed
+
+You can know what component enter in conllision with you component doinh the override of the `void onCollision(GameComponent component, bool active)`
+
+
+```dart
+
+class MyCustomDecoration extends GameDecoration with ObjectCollision {
+  MyCustomDecoration(Position position)
+      : super.withAnimation(
+          Future<SpriteAnimation>(),
+          width: 32,
+          height: 32,
+          position: position,
+        ){
+            setupCollision(
+                CollisionConfig(
+                    collisionOnlyVisibleScreen: true,
+                    enable: true,
+                    collisions: [ //required
+                        CollisionArea.rectangle(
+                            size: Size(32,32),
+                            align: Vector2(0,0),
+                        ),
+                    ],
+                ),
+            );
+        }
+
+    @override
+    void onCollision(GameComponent component, bool active) {
+        // do enything
+        // active = true : this component enter in collision with param component 
+        // active = false : param component enter in collision with this
+        super.onCollision(component, active);
+    }
+
+}
+```
