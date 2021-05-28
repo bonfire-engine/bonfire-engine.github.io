@@ -50,6 +50,7 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
       joystick: MyJoystick(), // required
       map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
       player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
+      components: <GameComponent>[],
       interface: KnightInterface(),
       background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`
       constructionMode: false, // If true, activates hot reload to ease the map constructions and draws the grid
