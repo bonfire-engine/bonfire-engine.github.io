@@ -107,3 +107,17 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
 }
 ```
+
+## Testing and debugging
+
+To verify if collisions are in correct position, you can enable `showCollisionArea` in `BonfireTiledWidget`:
+
+```dart
+    BonfireTiledWidget(
+        ...
+        showCollisionArea:true,
+        ...
+    ),
+```
+
+![](_media/show_collision.png)
