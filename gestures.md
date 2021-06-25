@@ -129,4 +129,6 @@ this way you can listen gestures events on the screen doing override this method
   void handlerPointerMove(PointerMoveEvent event) {}
   void handlerPointerUp(PointerUpEvent event) {}
   void handlerPointerCancel(PointerCancelEvent event) {}
+  void handlerPointerHover(PointerHoverEvent event) {}
+  void handlerPointerSignal(PointerSignalEvent event) {}
 ```
