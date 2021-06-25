@@ -64,6 +64,43 @@ void endDrag(int pointer) {}
 void cancelDrag(int pointer) {}
 ```
 
+## MouseGesture
+
+To enable DragGesture just add `MouseGesture` mixin in your component like this:
+
+```dart
+
+class MyCustomDecoration extends GameDecoration with MouseGesture {
+  MyCustomDecoration(Position position)
+      : super.withAnimation(
+          Future<SpriteAnimation>(),
+          width: 32,
+          height: 32,
+          position: position,
+        );
+
+}
+```
+
+If you want to listen to the interactions with the object, you can override these methods:
+
+```dart
+  /// Listen to the mouse cursor across the screen
+  void onHoverScreen(int pointer, Offset position) {}
+
+  /// Listen when the mouse cursor hover in this component
+  void onHoverEnter(int pointer, Offset position);
+
+  /// Listen when the mouse cursor passes outside this component
+  void onHoverExit(int pointer, Offset position);
+
+  /// Listen when use scroll of the mouse across the screen
+  void onScrollScreen(int pointer, Offset position, Offset scrollDelta) {}
+
+  /// Listen when use scroll of the mouse in your component
+  void onScroll(int pointer, Offset position, Offset scrollDelta);
+```
+
 ## Custom
 
 All components extends `PointerDetectorHandler`,so, to recieve gestures events do override `hasGesture` returning `true`:
