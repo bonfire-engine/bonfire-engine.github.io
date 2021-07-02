@@ -47,3 +47,37 @@ class MyInterface extends GameInterface {
 OBS: It is recommended to add it to the ```onLoad```, there you will have access to ```size``` of the game to be able to calculate the position of its component on the screen if necessary.
 
 If you want to create a more complex and customizable interface component, just create your own extender class ```InterfaceComponent``` like this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/bar_life_component.dart).
+
+
+## Using Widgets
+
+You can use widgets to create your game interface using `overlayBuilderMap`:
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return BonfireTiledWidget(
+      ...
+      overlayBuilderMap: {
+        'buttons': (BonfireGame game, BuildContext context) {
+          return MyWidget();
+        }
+      }
+      initialActiveOverlays: [
+        'buttons'
+      ],
+    );
+  }
+```
+
+To show or hide overlays programmatic using:
+
+```dart
+  /// to show
+  gameRef.overlays.add('overlayName');
+
+  /// to hide
+  gameRef.overlays.remove('overlayName');
+```
+
+

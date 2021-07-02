@@ -67,6 +67,14 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
       showFPS: false,
       progress: Widget(), //progress that show while loading map.
       colorFilter: GameColorFilter(),
+      overlayBuilderMap: {
+        'buttons':  (BonfireGame game, BuildContext context) {
+          return MyWidget();
+        }
+      }
+      initialActiveOverlays: [
+        'buttons'
+      ],
     );
   }
 ```
