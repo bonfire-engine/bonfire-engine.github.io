@@ -19,8 +19,6 @@
 
 ## Multi Biome
 
-> (NOT UPDATED TO 1.0.0 VERSION)
-
 [GitHub](https://github.com/RafaelBarbosatec/multi-biome)   -   [PLAY](https://bonfire-engine.github.io/examples/multi_biome/)
 
 ![](_media/example_multi_biome.gif)
