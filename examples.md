@@ -13,8 +13,6 @@
 
 ## Mini Fantasy
 
-> (NOT UPDATED TO 1.0.0 VERSION)
-
 [GitHub](https://github.com/RafaelBarbosatec/mini_fantasy)   -   [PLAY](https://bonfire-engine.github.io/examples/mini_fantasy/)
 
 ![](_media/example_mini_fantasy.gif)
