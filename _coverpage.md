@@ -11,6 +11,7 @@
 [![pub package](https://img.shields.io/pub/v/bonfire.svg)](https://pub.dev/packages/bonfire)
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire)
+[Demo](https://bonfire-engine.github.io/examples/bonfire/)
 [Get Started](#bonfire)
 
 ![color](#3f3f3f)
