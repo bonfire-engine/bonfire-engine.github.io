@@ -4,22 +4,22 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "4b6db237b3514a88107a422469adfb0f",
-"index.html": "dd1be1c923ba8a67ceba2a531878fb99",
-"/": "dd1be1c923ba8a67ceba2a531878fb99",
-"main.dart.js": "62575f3c242291bc207241a80940979f",
+"index.html": "7fdd2037434fc571f0a5003eeae26fe0",
+"/": "7fdd2037434fc571f0a5003eeae26fe0",
+"main.dart.js": "e6b0f84b218f6ae38269a48f5715b999",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "00e0b69b49487ce4f9ff0c5fac8fda49",
-"assets/AssetManifest.json": "f76ddcb9d959ba81c3df9b4f176f7e58",
-"assets/NOTICES": "9e186a76e4683b32c47f86837c89506b",
+"assets/AssetManifest.json": "44fd919108b4ec4bf026e492ce9a9cd2",
+"assets/NOTICES": "a6db3260e2a44ff7ddacc5209a3a9010",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/images/smoke_explosin.png": "555a8a42b72e662af232dc2092103c2a",
-"assets/assets/images/tiled/mapa2.json": "5c02d815bdf167ec434020c6f9086fad",
-"assets/assets/images/tiled/0x72_DungeonTilesetII_v1.json": "a5d0f9fc17e624e38f68f84ff7871bdd",
-"assets/assets/images/tiled/mapa1.json": "e35c97d6baf6fbbdd9ec1975564b31b7",
-"assets/assets/images/tiled/0x72_DungeonTilesetII_v1.3.png": "e569500a4e5ee213c821388a51c08765",
+"assets/assets/images/tiled/mapa2.json": "8adc49b5a4d88734d8475e5b600ea798",
+"assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.json": "735a0f953d79b51c1ebd8fd8cc378bbd",
+"assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.3.png": "99ee27544da829bed54efd1f22e5a588",
+"assets/assets/images/tiled/mapa1.json": "3dddda1ad518fec26285ca131b5c0aef",
 "assets/assets/images/joystick_background.png": "8c9aa78348b48e03f06bb97f74b819c9",
 "assets/assets/images/joystick_atack.png": "0f5325cb2ddcba703e4c9d7d2dd266df",
 "assets/assets/images/health_ui.png": "219e39516312f2f6bc264357497b99cb",
@@ -102,7 +102,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
