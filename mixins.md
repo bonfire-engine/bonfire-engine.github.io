@@ -60,6 +60,31 @@ Mixin responsible for find path using `a_star_algorithm` and moving the componen
 
 See [PathFinding](path_finding)
 
+## AutomaticRandomMovement
+
+> To use this mixin your component must contain `Movement` mixin.
+
+Mixin responsible for adding random movement like enemy walking through the scene.
+
+To use just need add `runRandomMovement` method in your update:
+
+```dart
+
+class MyComponent extends GameComponent with Movement, AutomaticRandomMovement{
+    
+    @override
+    void update(double dt) {
+        this.runRandomMovement(
+            dt,
+            speed: 20,
+            maxDistance: 100,
+        );
+        super.update(dt);
+    }
+}
+
+```
+
 ## MovementByJoystick
 
 > To use this mixin your component must contain `Movement` and `JoystickListener` mixin.
