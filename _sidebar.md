@@ -14,6 +14,7 @@
 * [Camera](camera.md)
 * [Sensor](sensor.md)
 * [Mixins](mixins.md)
+* [Extensions](extensions.md)
 * [Useful](useful_components.md)
 * [PathFinding](path_finding.md)
 * [Tiled support](tiled_support.md)
