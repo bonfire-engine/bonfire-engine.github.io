@@ -3,7 +3,7 @@
 > Camera control.
 
 ```dart
- ameRef.camera.moveToPosition(Offset(X,Y));
+ gameRef.camera.moveToPosition(Offset(X,Y));
 
  gameRef.camera.moveToPlayer();
 
