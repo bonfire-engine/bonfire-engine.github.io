@@ -3,7 +3,7 @@
 > System responsible for determining and configuring the collision between objects
 
 
-## How to Use
+## How to use
 
 To enable collisions in your components, add the `ObjectCollision` mixin to the component and configure it using the `setupCollision()` method:
 

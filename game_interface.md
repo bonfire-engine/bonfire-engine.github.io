@@ -2,32 +2,35 @@
 
 > <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart)</small>
 
-The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+The way you can draw components like a life bar or settings buttons. In other words, anything that you may add to the game interface.
 
-To create your interface you must create a class and extend it from ```GameInterface``` like this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/knight_interface.dart).
+## How to use
 
-To add elements to your interface we use ```InterfaceComponent```:
+First, you need to create an interface component. In order to create interface components, use ```InterfaceComponent```:
 
 ```dart
     InterfaceComponent(
-      sprite: Sprite.load('blue_button1.png'), // Sprite que será desenhada.
-      spriteSelected: Sprite.load('blue_button2.png'), // Sprite que será desenhada ao pressionar.
+      // Sprite to be rendered.
+      sprite: Sprite.load('blue_button1.png'), 
+      // Sprite to be rendered while its being pressed
+      spriteSelected: Sprite.load('blue_button2.png'), 
       height: 40.0,
       width: 40.0,
       id: 5,
-      position: Vector2(150, 20), // Posição na tela que deseja desenhar.
+      // Position on screen where it will be rendered
+      position: Vector2(150, 20), 
       onTapComponent: () {
         print('Test button');
       },
     )
 ```
 
-Adding them to the interface:
+Then, add your component to the game interface:
 
 ```dart
 class MyInterface extends GameInterface {
   @override
-  void resize(Size size) {
+  Future<void> onLoad() {
     add(InterfaceComponent(
       sprite: Sprite.load('blue_button1.png'),
       spriteSelected: Sprite.load('blue_button2.png'),
@@ -39,19 +42,32 @@ class MyInterface extends GameInterface {
         print('Test button');
       },
     ));
-    super.resize(size);
+    super.onLoad();
   }
 }
 ```
 
-OBS: It is recommended to add it to the ```onLoad```, there you will have access to ```size``` of the game to be able to calculate the position of its component on the screen if necessary.
+Finally, add your Interface to the game by passing it to the ```interface``` property in ```BonfiredTiledWidget```:
 
-If you want to create a more complex and customizable interface component, just create your own extender class ```InterfaceComponent``` like this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/bar_life_component.dart).
+```dart
+@override
+  Widget build(BuildContext context) {
+    return BonfireTiledWidget(
+     ...
+      interface: MyInterface(),
+     ...
+    );
+  }
+```
+
+Note: It is recommended to add it to the ```onLoad``` method because there you will have access to the ```size``` property of the game, which is helpful to calculate the position that the component will be rendered on the screen, if needed.
+
+If you want to create a more complex and customizable interface component, check this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/bar_life_component.dart).
 
 
 ## Using Widgets
 
-You can use widgets to create your game interface using `overlayBuilderMap`:
+You can use Flutter widgets to create your game interface through `overlayBuilderMap` in `BonfireTiledWidget`:
 
 ```dart
 @override
@@ -70,13 +86,13 @@ You can use widgets to create your game interface using `overlayBuilderMap`:
   }
 ```
 
-To show or hide overlays programmatic using:
+To show or hide overlays programmatically, use the following:
 
 ```dart
-  /// to show
+  /// Show overlay
   gameRef.overlays.add('overlayName');
 
-  /// to hide
+  /// Hide overlay
   gameRef.overlays.remove('overlayName');
 ```
 
