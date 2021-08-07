@@ -46,6 +46,7 @@ class MyInterface extends GameInterface {
   }
 }
 ```
+Note: It is recommended to add it to the ```onLoad``` method because there you will have access to the ```size``` property of the game, which is helpful to calculate the position that the component will be rendered on the screen, if needed.
 
 Finally, add your Interface to the game by passing it to the ```interface``` property in ```BonfiredTiledWidget```:
 
@@ -59,8 +60,6 @@ Finally, add your Interface to the game by passing it to the ```interface``` pro
     );
   }
 ```
-
-Note: It is recommended to add it to the ```onLoad``` method because there you will have access to the ```size``` property of the game, which is helpful to calculate the position that the component will be rendered on the screen, if needed.
 
 If you want to create a more complex and customizable interface component, check this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/bar_life_component.dart).
 
