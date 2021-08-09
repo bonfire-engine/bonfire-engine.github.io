@@ -1,17 +1,17 @@
 # Enemy
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) and use [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart)</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) that uses [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart) mixins.</small>
 
-Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
+Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
 
-We can create two types of enemies `SimpleEnemy` and `RotationEnemy`:
+There are two types of enemies: `SimpleEnemy` and `RotationEnemy`:
 
 ## SimpleEnemy
 
-> <small>This is a [Enemy](#Enemy)</small>
+> <small>This is an [Enemy](#Enemy)</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
-Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
+Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
 
 To use it, simply create a class that will represent your enemy and extend SimpleEnemy:
 
@@ -44,18 +44,18 @@ class Goblin extends SimpleEnemy {
             runUpRight: Future<SpriteAnimation>(),
             runDownLeft: Future<SpriteAnimation>(),
             runDownRight: Future<SpriteAnimation>(),
-          ), //required
+          ),
       );
 
     @override
     void update(double dt) {
-      // do anything
+      // Do anything
       super.update(dt);
     }
 
     @override
     void render(Canvas canvas) {
-      // do anything
+      // Do anything
       super.render(canvas);
     }
 
@@ -74,9 +74,9 @@ class Goblin extends SimpleEnemy {
 
 ```
 
-Now that we have our class that represents our enemy, we can configure their behavior.
+Now that you have a class that represents your enemy, you can configure their behavior.
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+There are several useful extensions that you can use inside the `update` method that will help you with this task:
 
 
 ```dart 
@@ -86,7 +86,7 @@ void seePlayer({
     double radiusVision = 32,
   })
 ```
-Will observe the player when within the radius (radiusVision)
+It will trigger a callback function once the player is within the enemy's radiusVision.
 
 
 ```dart 
@@ -96,7 +96,7 @@ void seeAndMoveToPlayer({
     double margin = 10,
   })
 ```
-Will move in the direction of the player once it gets close within the radiusVision radius . Once it gets to the player, `closePlayer` shall be fired 
+The enemy will move in the direction of the player once it gets within the radiusVision. When it gets close to the player, `closePlayer` will be fired.
 
 
 ```dart 
@@ -140,7 +140,7 @@ void simpleAttackRange({
     LightingConfig? lightingConfig,
   })
 ```
-Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+Executes a distance attack. It will add a `FlyingAttackObject` to the game and this will be sent in the configured direction, making some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
@@ -150,10 +150,10 @@ void seeAndMoveToAttackRange({
     double? minDistanceCellsFromPlayer,
   })
 ```
-Will seek for the player in the defined radius. When the player is found, will position itself to perform a distance attack. Once it reaches the attack position, will fire the `positioned` callback.
+When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-Other fuctions util:
+Other useful functions:
 
 ```dart 
   // Displays the damage value in the game with an animation.
@@ -172,10 +172,10 @@ Other fuctions util:
   // Gives the direction of the player in relation to this enemy
   Direction directionThatPlayerIs()
   
-  // Restore life point to the enemy
+  // Restore life points to the enemy
   void addLife(double life)
 
-  // Draws the default life bar, Should be used in the `render` method.
+  // Draws the default life bar. Should be used inside the `render` method.
   void drawDefaultLifeBar(
     Canvas canvas,
     {
@@ -187,7 +187,7 @@ Other fuctions util:
 ```
 
 
-If you want to add quick animations, as an effect of taking damage or making a special attack. You can use the method `addFastAnimation`:
+If you want to add quick animations, like effects of taking damage or making a special attack, you can use the method `addFastAnimation`:
 
 ```dart 
 this.animation.playOnce(
@@ -200,14 +200,14 @@ this.animation.playOnce(
 )
 ```
 
-OBS: Enemies only move if visible on the camera. if you want to disable this add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](collision_system).
+Note: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](collision_system).
 
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/enemy/goblin.dart).
 
 
 ## RotationEnemy
 
-> <small>This is a [Enemy](#Enemy)</small>
+> <small>This is an [Enemy](#Enemy)</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 

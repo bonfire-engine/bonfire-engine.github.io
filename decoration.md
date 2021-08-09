@@ -1,12 +1,12 @@
 # Decoration
 
-> <small>This is a [AnimatedObject](objects#AnimatedObject)</small>
+> <small>This is an [AnimatedObject](objects#AnimatedObject)</small>
 
-Anything that you may add to the scenery. For example a Barrel in the way or a NPC in which you can use to interact with your player.
+Anything that you may want to add to your scenery. For example, a simple barrel or a NPC that interacts with your player.
 
-We can create our decorative or interactable objects using the following builders:
+You can create decorative or interactive objects using the following builders:
 
-To decoration with Sprite:
+Decoration with a common Sprite:
 ```dart
 GameDecoration.withSprite(
     Future<Sprite> sprite, {
@@ -16,8 +16,7 @@ GameDecoration.withSprite(
   })
 ```
 
-To decoration with Animation:
-
+Decoration with a SpriteAnimation:
 ```dart
 import 'package:flame/animation.dart' as FlameAnimation;
 
@@ -29,8 +28,7 @@ GameDecoration.withAnimation(
   })
 ```
 
-If you want to add custom behaviors to your Decoration. You can create your own class as follows:
-
+To add custom behaviors to your Decoration, just extend from `GameDecoration` and create your own class:
 ```dart
 class MyCustomDecoration extends GameDecoration {
   MyCustomDecoration(Position position)
@@ -62,4 +60,4 @@ class MyCustomDecoration extends GameDecoration {
 }
 ```
 
-examples of custom Decorations: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/torch.dart), [chest](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/chest.dart)
+See more examples of custom Decorations: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/torch.dart) & [chest](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/chest.dart)

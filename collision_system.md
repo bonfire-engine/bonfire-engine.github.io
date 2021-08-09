@@ -3,9 +3,9 @@
 > System responsible for determining and configuring the collision between objects
 
 
-## Using
+## How to use
 
-To anable collision in your component just add the `ObjectCollision` mixin to the component and configure it using `setupCollision()` method:
+To enable collisions in your components, add the `ObjectCollision` mixin to the component and configure it using the `setupCollision()` method:
 
 ```dart
 
@@ -36,6 +36,12 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
 
 ## Types of shapes available
+
+There are 3 types of Collision Shapes available: 
+
+- `Rectangle`
+- `Circle`
+- `Polygon`
 
 ```dart
     // Rectangle
@@ -70,7 +76,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
 ## Knowing who crashed
 
-You can know what component enter in conllision with you component doinh the override of the `void onCollision(GameComponent component, bool active)`
+You can know what `GameComponent` collided by overriding `void onCollision(GameComponent component, bool active)`:
 
 
 ```dart
@@ -87,7 +93,8 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
                 CollisionConfig(
                     collisionOnlyVisibleScreen: true,
                     enable: true,
-                    collisions: [ //required
+                    //required
+                    collisions: [ 
                         CollisionArea.rectangle(
                             size: Size(32,32),
                             align: Vector2(0,0),
@@ -99,7 +106,12 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
     @override
     void onCollision(GameComponent component, bool active) {
-        // do enything
+       
+        if (component is Player) {
+            print('Player collided!');
+            // Do anything you want
+        }
+
         // active = true : this component enter in collision with param component 
         // active = false : param component enter in collision with this
         super.onCollision(component, active);
@@ -110,7 +122,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
 ## Testing and debugging
 
-To verify if collisions are in correct position, you can enable `showCollisionArea` in `BonfireTiledWidget`:
+To verify if collisions are in the right position, you can enable `showCollisionArea` in `BonfireTiledWidget`:
 
 ```dart
     BonfireTiledWidget(
