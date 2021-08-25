@@ -12,7 +12,7 @@
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire)
 [Demo](https://bonfire-engine.github.io/examples/bonfire/)
-[Get Started](#bonfire)
+[Get Started](#welcome-to-bonfire)
 
 ![color](#3f3f3f)
 
