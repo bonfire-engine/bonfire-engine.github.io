@@ -10,7 +10,7 @@ You can configure some settings in the camera:
    cameraConfig: CameraConfig(
       moveOnlyMapArea: false,
       sizeMovementWindow: Size(50,50),
-      smoothCameraEnable: false,
+      smoothCameraEnable: false, // default = false
       smoothCameraSpeed: 1.0,
       zoom:  1.0,
       target: GameComponent(), // per default the target is the Player.

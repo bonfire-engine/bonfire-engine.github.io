@@ -62,6 +62,8 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
         sizeMovementWindow: Size(50,50),
         moveOnlyMapArea: false,
         zoom: 1.0, // here you can set the default zoom for the camera. You can still zoom directly on the camera
+        smoothCameraEnable: false, // default = false
+        smoothCameraSpeed: 1.0,
         target: GameComponent(),
       ),
       showFPS: false,
