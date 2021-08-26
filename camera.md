@@ -2,6 +2,24 @@
 
 > Camera control.
 
+You can configure some settings in the camera:
+
+```dart
+  return BonfireTiledWidget(
+    ...
+   cameraConfig: CameraConfig(
+      moveOnlyMapArea: false,
+      sizeMovementWindow: Size(50,50),
+      smoothCameraEnable: false,
+      smoothCameraSpeed: 1.0,
+      zoom:  1.0,
+      target: GameComponent(), // per default the target is the Player.
+   ),
+  );
+```
+
+Useful functions to be used during the game:
+
 ```dart
  gameRef.camera.moveToPosition(Offset(X,Y));
 
