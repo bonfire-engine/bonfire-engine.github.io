@@ -13,14 +13,7 @@ dependencies:
   bonfire: ^LATEST_VERSION
 ```
 
-2. Remove `flutter_test` and add `test: any` in your pubspec.yaml file.
-
-```yaml
-dev_dependencies:
-  test: any
-```
-
-3. Install it
+2. Install it
 
 You can install packages from the command line:
 
@@ -28,7 +21,7 @@ You can install packages from the command line:
 $ flutter pub get
 ```
 
-4. Import it
+3. Import it
 
 Now in your Dart code, you can use:
 
