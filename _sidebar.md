@@ -1,4 +1,4 @@
-* [Home](/#bonfire)
+* [Home](/#welcome-to-bonfire)
 * [Get Started](get-started.md)
 * [Overview](overview.md)
 * [Map](map.md)
