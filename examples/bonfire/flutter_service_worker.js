@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "4b6db237b3514a88107a422469adfb0f",
-"index.html": "6290befa3c419c09c9bfea340e69cfc4",
-"/": "6290befa3c419c09c9bfea340e69cfc4",
-"main.dart.js": "33a872cef92cf638b5057a7a7c4cc691",
+"index.html": "ba0ee78fb42b7611552f2113d48c6a89",
+"/": "ba0ee78fb42b7611552f2113d48c6a89",
+"main.dart.js": "fee427fe3ce5dd8334371501d26cff08",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
@@ -20,7 +20,7 @@ const RESOURCES = {
 "assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.json": "2cc6c4861d740a661713061e42009d00",
 "assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.3.png": "99ee27544da829bed54efd1f22e5a588",
 "assets/assets/images/tiled/bigMap.json": "17dd8bc9210702de42f27e1b62bab5bc",
-"assets/assets/images/tiled/mapa1.json": "6a03c2b843002d7c29fc59e61723215a",
+"assets/assets/images/tiled/mapa1.json": "4d4a5c69636e0ebe941a16a308a38f55",
 "assets/assets/images/joystick_background.png": "8c9aa78348b48e03f06bb97f74b819c9",
 "assets/assets/images/joystick_atack.png": "0f5325cb2ddcba703e4c9d7d2dd266df",
 "assets/assets/images/health_ui.png": "219e39516312f2f6bc264357497b99cb",
