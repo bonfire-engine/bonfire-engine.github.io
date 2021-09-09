@@ -4,17 +4,17 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "b63ae99890573ef15a70533299dc7b77",
-"index.html": "7f260ebd2bac8cd07a401f4afb33dfcd",
-"/": "7f260ebd2bac8cd07a401f4afb33dfcd",
-"main.dart.js": "c9fa124c2a71db01f104f2f34f009918",
+"index.html": "474a512806c58dc5c361a8f937e8e5ba",
+"/": "474a512806c58dc5c361a8f937e8e5ba",
+"main.dart.js": "ef35679de6c9b88b619e6a83bb784cba",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "c889aac3fdcce9e7271024c37f6c6dc2",
 "assets/AssetManifest.json": "cae444811b4dc0e914496cd7337fe92b",
-"assets/NOTICES": "f79e952590f55f09c62263f64d667c27",
+"assets/NOTICES": "8d0ea61175c08bdb107d634d08a2210f",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/images/smoke_explosin.png": "555a8a42b72e662af232dc2092103c2a",
 "assets/assets/images/joystick_background.png": "2eef7b32e484d81f07eeb405b39c83a4",
 "assets/assets/images/heroes/hero10.png": "bf949848b0a13de3a8bffe24611db304",
@@ -23,15 +23,15 @@ const RESOURCES = {
 "assets/assets/images/heroes/hero9.png": "5a38ce62ec643aa2982972a3320edc0a",
 "assets/assets/images/heroes/hero8.png": "362d63a6c59c26d42a5b3109bb67e7d3",
 "assets/assets/images/heroes/hero12.png": "713e1261e45f5f1b15717b3f00c31fb7",
-"assets/assets/images/heroes/hero5.png": "4fbdf2789aae98473b0248d9f9af3298",
-"assets/assets/images/heroes/hero4.png": "f5af3146dc8505248eab0fa95914afe9",
-"assets/assets/images/heroes/hero3.png": "c0ca63db931c61b67e0efde9f1597e6d",
-"assets/assets/images/heroes/hero2.png": "d743fe1720c1562cfefe972d688d85ff",
-"assets/assets/images/heroes/hero1.png": "08730d084495a7ccc2c7c283c3822d25",
+"assets/assets/images/heroes/hero5.png": "4b1e643e9917ee466cabed30bb0acdd4",
+"assets/assets/images/heroes/hero4.png": "7c9a14e46cc31bf2c0e0a5d802d6453f",
+"assets/assets/images/heroes/hero3.png": "1ebf54f2dce44650993f2beaa92168d0",
+"assets/assets/images/heroes/hero2.png": "4076b68d71b5353af27b7b5ed3a2f549",
+"assets/assets/images/heroes/hero1.png": "3129a70b4ba971c0b0f99c386fb4b2ab",
 "assets/assets/images/joystick_atack.png": "a525ebd6bd0a9014c513884b7811f019",
 "assets/assets/images/tile/tilesetAlistair.png": "9c5398c3e08ba859e5072bb3adb6515c",
-"assets/assets/images/tile/tilesetAlistair.json": "cf70cee31e64e9b1be4d58ba4bae30d3",
-"assets/assets/images/tile/map.json": "8235322669c77cfe0b958debf368b39e",
+"assets/assets/images/tile/tilesetAlistair.json": "3fc1c9ac2ee89bd850cfd4f0cc29f330",
+"assets/assets/images/tile/map.json": "0c12d215fd7dcd4ac8e2213243de0c8a",
 "assets/assets/images/tile/spritesheet.png": "de7eda3f898211a7c2b49309a9799886",
 "assets/assets/images/joystick_atack_selected.png": "5196050c562862a670e7757392710c4d",
 "assets/assets/images/emote.png": "b2b88a8c9b5508e34c89c44efc2fc51d",
@@ -70,7 +70,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
