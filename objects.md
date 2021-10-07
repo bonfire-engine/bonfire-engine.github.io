@@ -10,13 +10,13 @@ Are they:
 
 > <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
 
-Object tha render a `SpriteAnimation`.
+Object tha render a `Sprite`.
 
 ## AnimatedObject
 
 > <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
 
-Object tha render a `Sprite`.
+Object tha render a `SpriteAnimation`.
 
 ## AnimatedObjectOnce
 
