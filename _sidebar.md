@@ -1,6 +1,7 @@
 * [Home](/#welcome-to-bonfire)
 * [Get Started](get-started.md)
 * [Overview](overview.md)
+* [BonfireTiledWidget](bonfire_tiled_widget.md)
 * [Map](map.md)
 * [Decoration](decoration.md)
 * [Enemy](enemy.md)

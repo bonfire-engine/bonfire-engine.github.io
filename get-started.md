@@ -31,78 +31,128 @@ import 'package:bonfire/bonfire.dart';
 
 ## Using
 
-To use Bonfire, use the following widget to map builded with [Tiled](https://www.mapeditor.org/):
+### Creating your map
+You need create your map using [Tiled](https://www.mapeditor.org/). After that you can export your map in json file. [See more detail about Tiled in Bonfire](tiled_support)
 
-(RECOMMENDED)
+Now you can run to see your map:
+
 
 ```dart
 @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
-      gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
-      joystick: MyJoystick(), // required
-      map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
-      player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
-      components: <GameComponent>[],
-      interface: KnightInterface(),
-      background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`
-      constructionMode: false, // If true, activates hot reload to ease the map constructions and draws the grid
-      showCollisionArea: false, // If true, show collision area of the elements
-      constructionModeColor: Colors.blue, // If you wan customize the grid color.
-      collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
-      lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      cameraConfig: CameraConfig(
-        sizeMovementWindow: Size(50,50),
-        moveOnlyMapArea: false,
-        zoom: 1.0, // here you can set the default zoom for the camera. You can still zoom directly on the camera
-        smoothCameraEnable: false, // default = false
-        smoothCameraSpeed: 1.0,
-        target: GameComponent(),
-      ),
-      showFPS: false,
-      progress: Widget(), //progress that show while loading map.
-      colorFilter: GameColorFilter(),
-      overlayBuilderMap: {
-        'buttons':  (BonfireGame game, BuildContext context) {
-          return MyWidget();
-        }
-      }
-      initialActiveOverlays: [
-        'buttons'
-      ],
+      joystick: Joystick(
+        directional: JoystickDirectional(),
+      ), // required
+      map: TiledWorldMap('tile/map.json', forceTileSize: 32),
     );
   }
 ```
 
-or to manual map: 
+This way you can see your map be rendering and can use directional joystick to explorer.
+
+
+### Creating your player
+
+To create a player you will need SpriteAnimations. You can see how load Sprites in [Flame doc](https://docs.flame-engine.org/1.0.0-releasecandidate.15/images.html)
+
+- [IMAGES USED](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/assets/images/player)
+
+```dart
+class PlayerSpriteSheet {
+  static Future<SpriteAnimation> get idleLeft => SpriteAnimation.load(
+        "player/knight_idle_left.png",
+        SpriteAnimationData.sequenced(
+          amount: 6,
+          stepTime: 0.1,
+          textureSize: Vector2(16, 16),
+        ),
+      );
+
+  static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
+        "player/knight_idle.png",
+        SpriteAnimationData.sequenced(
+          amount: 6,
+          stepTime: 0.1,
+          textureSize: Vector2(16, 16),
+        ),
+      );
+
+  static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
+        "player/knight_run.png",
+        SpriteAnimationData.sequenced(
+          amount: 6,
+          stepTime: 0.1,
+          textureSize: Vector2(16, 16),
+        ),
+      );
+
+  static Future<SpriteAnimation> get runLeft => SpriteAnimation.load(
+        "player/knight_run_left.png",
+        SpriteAnimationData.sequenced(
+          amount: 6,
+          stepTime: 0.1,
+          textureSize: Vector2(16, 16),
+        ),
+      );
+
+  static SimpleDirectionAnimation get simpleDirectionAnimation =>
+      SimpleDirectionAnimation(
+        idleLeft: idleLeft,
+        idleRight: idleRight,
+        runLeft: runLeft,
+        runRight: runRight,
+      );
+}
+```
+
+
+To create a player just need create a class and extends by `Player`. [See more detail about Player in Bonfire](player)
+
+
+```dart
+
+final a = SpriteAnimation.fromFrameData(
+    imageInstance,
+    SpriteAnimationFrame.sequenced(
+      amount: amountOfFrames,
+      textureSize: Vector2(16.0, 16.0),
+      stepTime: 0.1,
+    ),
+);
+
+class Kinght extends SimplePlayer {
+
+    Kinght(Vector2 position)
+      : super(
+          position: position, 
+          height: 32.0, 
+          width: 32.0, 
+          animation: PlayerSpriteSheet.simpleDirectionAnimation,
+      );
+}
+
+```
+
+Now only adds your player in the game:
+
 
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireWidget(
-      gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
-      joystick: MyJoystick(), // required
-      map: MapWorld(<Tile>[]), // required
-      player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
-      interface: KnightInterface(),
-      decorations: <GameDecoration>[],
-      enemies: <Enemy>[],
-      background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`
-      constructionMode: false, // If true, activates hot reload to ease the map constructions and draws the grid
-      showCollisionArea: false, // If true, show collision area of the elements
-      constructionModeColor: Colors.blue, // If you wan customize the grid color.
-      collisionAreaColor: Colors.blue, // If you wan customize the collision area color.
-      lightingColorGame: Colors.black.withOpacity(0.4), // if you want to add general lighting for the game
-      cameraConfig: CameraConfig(
-        sizeMovementWindow: Size(50,50),
-        moveOnlyMapArea: false,
-        zoom: 1.0, // here you can set the default zoom for the camera. You can still zoom directly on the camera
-        target: GameComponent(),
-      ),
-      showFPS: false,
-      colorFilter: GameColorFilter(),
+    return BonfireTiledWidget(
+      joystick: Joystick(
+        directional: JoystickDirectional(),
+      ), 
+      map: TiledWorldMap('tile/map.json', forceTileSize: 32),
+      player: Kinght(Vector2(40,40))
     );
   }
 ```
+
+And then you can see your player in the map and move that with directional of the Joystick.
+
+### Next step
+Know all components that you can use in Bonfire [See here](oerview)
 
 Complete example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/1.0.0-rc/example).
