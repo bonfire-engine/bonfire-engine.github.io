@@ -112,15 +112,6 @@ To create a player just need create a class and extends by `Player`. [See more d
 
 ```dart
 
-final a = SpriteAnimation.fromFrameData(
-    imageInstance,
-    SpriteAnimationFrame.sequenced(
-      amount: amountOfFrames,
-      textureSize: Vector2(16.0, 16.0),
-      stepTime: 0.1,
-    ),
-);
-
 class Kinght extends SimplePlayer {
 
     Kinght(Vector2 position)
