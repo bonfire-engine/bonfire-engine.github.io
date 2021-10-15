@@ -107,7 +107,7 @@ class PlayerSpriteSheet {
 ```
 
 
-To create a player just need create a class and extends by `Player`. [See more detail about Player in Bonfire](player)
+To create a player just need create a class and extends by `SimplePlayer`. [See more detail about Player in Bonfire](player)
 
 
 ```dart
