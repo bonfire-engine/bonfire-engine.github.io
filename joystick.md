@@ -16,7 +16,13 @@ Joystick is configurable by the following parameters:
 ```dart
   return BonfireTiledWidget(
     joystick: Joystick(
-        keyboardEnable: false, // Here you enable receive keyboard interaction
+        keyboardConfig: KeyboardConfig(
+          enable: true, // Use to enable ou disable keyboard events (default is true)
+          acceptedKeys: [ // You can pass specific Keys accepted. If null accept all keys
+            LogicalKeyboardKey.space,
+          ],
+          keyboardDirectionalType: KeyboardDirectionalType.arrows, // Type of the directional (arrows or wasd)
+        ), // Here you enable receive keyboard interaction
         directional: JoystickDirectional(
           spriteBackgroundDirectional: Sprite.load('joystick_background.png'), //directinal control background
           spriteKnobDirectional: Sprite.load('joystick_knob.png'), // directional indicator circle background
