@@ -146,4 +146,4 @@ And then you can see your player in the map and move that with directional of th
 ### Next step
 Know all components that you can use in Bonfire [See here](oerview)
 
-Complete example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/1.0.0-rc/example).
+Complete simple example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/simple_example).
