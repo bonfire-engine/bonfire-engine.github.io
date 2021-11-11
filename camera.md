@@ -13,6 +13,7 @@ You can configure some settings in the camera:
       smoothCameraEnable: false, // default = false
       smoothCameraSpeed: 1.0,
       zoom:  1.0,
+      angle: 45 * pi/180, // rotate view 45 degrees
       target: GameComponent(), // per default the target is the Player.
    ),
   );
