@@ -19,4 +19,5 @@
 * [Useful Components](useful_components.md)
 * [PathFinding](path_finding.md)
 * [Tiled Support](tiled_support.md)
+* [Loading Sprites](loading_assets.md)
 * [Examples](examples.md)
