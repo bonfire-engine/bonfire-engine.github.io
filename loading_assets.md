@@ -14,7 +14,7 @@ flutter:
 
 ## Sprites
 
-To load yours Sprites you can use these way:
+To load yours Sprites:
 
 ```dart
 
@@ -102,3 +102,9 @@ finalPlayer = await finalPlayer.overlap(imagePlayerArmorGold);
 SpriteAnimation runLeft = finalPlayer.getAnimation(...);
 
 ```
+
+## FireAtlas
+
+You can use [FireAtlas](https://github.com/flame-engine/fire-atlas).
+
+Fire Atlas is a tool to create Texture Atlases for games.
