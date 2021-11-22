@@ -65,7 +65,7 @@ The same `FollowerObject` with animation.
 
 > <small> This is a [FollowerObject](#AnimatedObject) and use [ObjectCollision](collision_system), [Lighting](lighting) </small>
 
-Componente que anda em determinada direção configurada em uma determinada velocidade também configurável e somente para ao atingir um inimigo ou player infligindo dano, ou pode se destruir ao atigir algum componente que tenha colisão (Tiles,Decorations).
+ Component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
 
 ```dart
 

@@ -74,7 +74,7 @@ For more details click [here](player).
 
 In this layer the components that `AnimatedObject` extends such as player attacks and enemies are rendered.
 
-For more details click [here](Objects).
+For more details click [here](objects).
 
 ## Lighting
 

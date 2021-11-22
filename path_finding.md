@@ -7,7 +7,7 @@
 Bonfire uses the package [a_star_algorithm](https://pub.dev/packages/a_star_algorithm) to find  the path.
 
 
-To uses just add the Mixin `MoveToPositionAlongThePath`(by defauld `Player` uses) and call the method `moveToPositionAlongThePath`. 
+To uses just add the Mixin `MoveToPositionAlongThePath`(by default `Player` uses) and call the method `moveToPositionAlongThePath`. 
 To this work, the component must contain the Mixin `Movement` (by defauld `Player` and `Enemy` uses).
 
 When you use the JoystickMoveToPosition joystick this functionality is activated in the Player. See [here](joystick?id=joystickmovetoposition).
