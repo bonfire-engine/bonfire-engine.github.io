@@ -106,9 +106,5 @@ For more details click [here](joystick).
 If it is necesssary to add a instance of a Bonfire's basic component class (Decorations, Enemy, etc), use:
 
 ```dart
-this.gameRef.addGameComponent(COMPONENT);
-
-/// or simply
-
 this.gameRef.add(COMPONENT)
 ```
