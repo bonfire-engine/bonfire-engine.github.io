@@ -33,19 +33,7 @@ class MyCustomDecoration extends GameDecoration with Lighting {
 
 You can apply color filter in your game programmatically.
 
-### Color
-
-```dart
-  gameRef.colorFilter.color = Colors.blue;
-```
-
-### BlendMode
-
-```dart
-  gameRef.colorFilter.BlendMode = BlendMode.colorBurn;
-```
-
-And can change this params in animated way:
+### BlendMode and Color
 
 ```dart
   gameRef.colorFilter.animateTo(Colors.blue, BlendMode.colorBurn);

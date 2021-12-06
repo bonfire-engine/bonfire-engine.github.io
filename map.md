@@ -30,7 +30,7 @@ You can add objects like [Decorations](decoration) and [Enemies](enemy) to the m
             'tiled/map.json',
             forceTileSize: Size(32,32),
             objectsBuilder: {
-                'orc': (x, y, width, height) => Orc(Vector2(x, y)),
+                'orc': (TiledObjectProperties properties) => Orc(properties.position),
             },
         ),
         ...

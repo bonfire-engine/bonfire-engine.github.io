@@ -109,10 +109,10 @@ void simpleAttackMelee({
     bool withPush = false,
     double? sizePush,
     Direction? direction,
-    Future<SpriteAnimation>? attackEffectRightAnim,
-    Future<SpriteAnimation>? attackEffectBottomAnim,
-    Future<SpriteAnimation>? attackEffectLeftAnim,
-    Future<SpriteAnimation>? attackEffectTopAnim,
+    Future<SpriteAnimation>? animationRight,
+    Future<SpriteAnimation>? animationDown,
+    Future<SpriteAnimation>? animationLeft,
+    Future<SpriteAnimation>? animationUp,
     VoidCallback? execute,
   })
 ```
@@ -123,8 +123,8 @@ Executes a physical attack to the player, making the configured damage with the 
 void simpleAttackRange({
     required Future<SpriteAnimation> animationRight,
     required Future<SpriteAnimation> animationLeft,
-    required Future<SpriteAnimation> animationTop,
-    required Future<SpriteAnimation> animationBottom,
+    required Future<SpriteAnimation> animationUp,
+    required Future<SpriteAnimation> animationDown,
     required Future<SpriteAnimation> animationDestroy,
     required double width,
     required double height,

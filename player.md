@@ -101,9 +101,9 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
      {
       required double damage,
       Future<SpriteAnimation>? animationRight,
-      Future<SpriteAnimation>? animationBottom,
+      Future<SpriteAnimation>? animationDown,
       Future<SpriteAnimation>? animationLeft,
-      Future<SpriteAnimation>? animationTop,
+      Future<SpriteAnimation>? animationUp,
       dynamic id,
       Direction? direction,
       double heightArea = 32,

@@ -9,6 +9,7 @@ Support for maps built with Tiled using the extension .json.
 - [x] TileSet
 - [x] Tile Animated
 - [x] Load Map from URL
+- [x] Image Layer
 
 Collision
    - [x] MultiCollision
@@ -37,9 +38,9 @@ TiledWorldMap map = TiledWorldMap(
     'tiled/mapa.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
     forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
     objectsBuilder: {
-        'goblin': (x, y, width, height) => Goblin(Vector2(x, y)),
-        'torch': (x, y, width, height) => Torch(Vector2(x, y)),
-        'barrel': (x, y, width, height) => BarrelDraggable(Vector2(x, y),),
+        'goblin': (TiledObjectProperties properties) => Goblin(properties.position),
+        'torch': (TiledObjectProperties properties) => Torch(properties.position),
+        'barrel': (TiledObjectProperties properties) => BarrelDraggable(properties.position,),
     },
   );
 
