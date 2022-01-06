@@ -120,13 +120,30 @@ Your component will gain properties like:
     double life;
 ```
 
-And methods to movement your component:
+Ands these methods in your component:
 
 ```dart
     void initialLife(double life)
     void addLife(double life)
     void receiveDamage(double damage, dynamic from)
     void die()
+```
+
+## Pushable
+
+Mixin responsible for adding  to push behavior to the component.
+
+Your component will gain properties like:
+
+```dart
+    bool enablePushable;
+```
+
+Ands these methods in your component:
+
+```dart
+    /// Returns true if the component is pushable, false otherwise.
+    bool onPush(GameComponent component)
 ```
 
 ## Sensor

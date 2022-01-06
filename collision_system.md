@@ -105,7 +105,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
         }
 
     @override
-    void onCollision(GameComponent component, bool active) {
+    bool onCollision(GameComponent component, bool active) {
        
         if (component is Player) {
             print('Player collided!');
@@ -114,7 +114,9 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
 
         // active = true : this component enter in collision with param component 
         // active = false : param component enter in collision with this
-        super.onCollision(component, active);
+
+        // if return `false` so the object will not collide with anything or block the passage
+        return super.onCollision(component, active);
     }
 
 }
