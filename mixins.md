@@ -120,7 +120,7 @@ Your component will gain properties like:
     double life;
 ```
 
-Ands these methods in your component:
+Adds these methods in your component:
 
 ```dart
     void initialLife(double life)
@@ -139,7 +139,7 @@ Your component will gain properties like:
     bool enablePushable;
 ```
 
-Ands these methods in your component:
+Adds these methods in your component:
 
 ```dart
     /// Returns true if the component is pushable, false otherwise.
