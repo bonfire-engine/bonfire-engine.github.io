@@ -23,7 +23,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
                     enable: true,
                     collisions: [ //required
                         CollisionArea.rectangle(
-                            size: Size(32,32),
+                            size: Vector2(32,32),
                             align: Vector2(0,0),
                         ),
                     ],
@@ -46,7 +46,7 @@ There are 3 types of Collision Shapes available:
 ```dart
     // Rectangle
     CollisionArea.rectangle(
-        size: Size(32,32),
+        size: Vector2(32,32),
         align: Vector2(0,0),
     ),  
 
@@ -85,8 +85,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         ){
             setupCollision(
@@ -96,7 +95,7 @@ class MyCustomDecoration extends GameDecoration with ObjectCollision {
                     //required
                     collisions: [ 
                         CollisionArea.rectangle(
-                            size: Size(32,32),
+                            size: Vector2(32,32),
                             align: Vector2(0,0),
                         ),
                     ],

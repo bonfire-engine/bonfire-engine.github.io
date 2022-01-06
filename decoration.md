@@ -9,10 +9,9 @@ You can create decorative or interactive objects using the following builders:
 Decoration with a common Sprite:
 ```dart
 GameDecoration.withSprite(
-    Future<Sprite> sprite, {
+    FutureOr<Sprite> sprite, {
     required Vector2 position, // initial position in world
-    required double height,
-    required double width,
+    required Vector2 size,
   })
 ```
 
@@ -21,17 +20,16 @@ Decoration with a SpriteAnimation:
 import 'package:flame/animation.dart' as FlameAnimation;
 
 GameDecoration.withAnimation(
-    Future<SpriteAnimation> animation, {
+    FutureOr<SpriteAnimation> animation, {
     required Vector2 position, // initial position in world
-    required double height,
-    required double width,
+    required Vector2 size,
   })
 ```
 
 To add custom behaviors to your Decoration, just extend from `GameDecoration` and create your own class:
 ```dart
 class MyCustomDecoration extends GameDecoration {
-  MyCustomDecoration(Position position)
+  MyCustomDecoration(Vector2 position)
       : super.withAnimation(
           SpriteAnimation.load(
             "itens/chest_spritesheet.png",
@@ -41,8 +39,7 @@ class MyCustomDecoration extends GameDecoration {
               textureSize: Vector2(16, 16),
             ),
           ),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         );
 

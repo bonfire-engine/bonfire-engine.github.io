@@ -13,8 +13,7 @@ class MyCustomDecoration extends GameDecoration with Lighting {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         ){
           setupLighting(

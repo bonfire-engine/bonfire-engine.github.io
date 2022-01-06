@@ -11,20 +11,19 @@ To enable TapGesture just add `TapGesture` mixin in your component like this:
 ```dart
 
 class MyCustomDecoration extends GameDecoration with TapGesture {
-  MyCustomDecoration(Position position)
+  MyCustomDecoration(Vector2 position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         );
 
 
   @override
-  void onTapDown(int pointer, Offset position){}
+  void onTapDown(int pointer, Vector2 position){}
 
   @override
-  void onTapUp(int pointer, Offset position){}
+  void onTapUp(int pointer, Vector2 position){}
 
   @override
   void onTapCancel(){}
@@ -42,11 +41,10 @@ To enable DragGesture just add `DragGesture` mixin in your component like this:
 ```dart
 
 class MyCustomDecoration extends GameDecoration with DragGesture {
-  MyCustomDecoration(Position position)
+  MyCustomDecoration(Vector2 position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         );
 
@@ -58,8 +56,8 @@ Your component can be automatically dragged on the map with the drag gesture.
 If you want to listen to the interactions with the object, you can override these methods:
 
 ```dart
-void startDrag(int pointer, Offset position) {}
-void moveDrag(int pointer, Offset position) {}
+void startDrag(int pointer, Vector2 position) {}
+void moveDrag(int pointer, Vector2 position) {}
 void endDrag(int pointer) {}
 void cancelDrag(int pointer) {}
 ```
@@ -74,8 +72,7 @@ class MyCustomDecoration extends GameDecoration with MouseGesture {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         );
 
@@ -86,26 +83,26 @@ If you want to listen to the interactions with the object, you can override thes
 
 ```dart
   /// Listen to the mouse cursor across the screen
-  void onHoverScreen(int pointer, Offset position) {}
+  void onHoverScreen(int pointer, Vector2 position) {}
 
   /// Listen when the mouse cursor hover in this component
-  void onHoverEnter(int pointer, Offset position);
+  void onHoverEnter(int pointer, Vector2 position);
 
   /// Listen when the mouse cursor passes outside this component
-  void onHoverExit(int pointer, Offset position);
+  void onHoverExit(int pointer, Vector2 position);
 
   /// Listen when use scroll of the mouse across the screen
-  void onScrollScreen(int pointer, Offset position, Offset scrollDelta) {}
+  void onScrollScreen(int pointer, Vector2 position, Vector2 scrollDelta) {}
 
   /// Listen when use scroll of the mouse in your component
-  void onScroll(int pointer, Offset position, Offset scrollDelta);
+  void onScroll(int pointer, Vector2 position, Vector2 scrollDelta);
 
-  void onMouseTapDownLeft(int pointer, Offset position) {}
-  void onMouseTapDownRight(int pointer, Offset position) {}
-  void onMouseTapDownMiddle(int pointer, Offset position) {}
-  void onMouseTapUpLeft(int pointer, Offset position) {}
-  void onMouseTapUpRight(int pointer, Offset position) {}
-  void onMouseTapUpMiddle(int pointer, Offset position) {}
+  void onMouseTapDownLeft(int pointer, Vector2 position) {}
+  void onMouseTapDownRight(int pointer, Vector2 position) {}
+  void onMouseTapDownMiddle(int pointer, Vector2 position) {}
+  void onMouseTapUpLeft(int pointer, Vector2 position) {}
+  void onMouseTapUpRight(int pointer, Vector2 position) {}
+  void onMouseTapUpMiddle(int pointer, Vector2 position) {}
 
   void onMouseTapLeft();
   void onMouseTapRight();

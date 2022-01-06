@@ -9,7 +9,7 @@ You can configure some settings in the camera:
     ...
    cameraConfig: CameraConfig(
       moveOnlyMapArea: false,
-      sizeMovementWindow: Size(50,50),
+      sizeMovementWindow: Vector2(50,50),
       smoothCameraEnable: false, // default = false
       smoothCameraSpeed: 1.0,
       zoom:  1.0,

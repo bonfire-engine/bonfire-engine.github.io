@@ -9,6 +9,7 @@ Support for maps built with Tiled using the extension .json.
 - [x] TileSet
 - [x] Tile Animated
 - [x] Load Map from URL
+- [x] Text
 - [x] Image Layer
 
 Collision

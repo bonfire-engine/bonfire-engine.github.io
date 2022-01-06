@@ -14,8 +14,7 @@ First, you need to create an interface component. In order to create interface c
       sprite: Sprite.load('blue_button1.png'), 
       // Sprite to be rendered while its being pressed
       spriteSelected: Sprite.load('blue_button2.png'), 
-      height: 40.0,
-      width: 40.0,
+      size: Vector2(40,40),
       id: 5,
       // Position on screen where it will be rendered
       position: Vector2(150, 20), 
@@ -34,8 +33,7 @@ class MyInterface extends GameInterface {
     add(InterfaceComponent(
       sprite: Sprite.load('blue_button1.png'),
       spriteSelected: Sprite.load('blue_button2.png'),
-      height: 40,
-      width: 40,
+      size: Vector2(40,40),
       id: 5,
       position: Vector2(150, 20),
       onTapComponent: () {

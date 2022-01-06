@@ -11,17 +11,17 @@ class Spikes extends GameDecoration with Sensor {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
-          width: 32,
-          height: 32,
+          size: Vector2(32,32),
           position: position,
         ){
 
             // call this method to configure sensor area.
             setupSensorArea(
-                Vector2Rect(
-                    Vector2.zero(),
-                    Vector2(width, height),
-                ),
+                areaSensor: [
+                    CollisionArea.rectangle(
+                        size: Vector2(32,32),
+                    ),
+                ]
             );
         }
 

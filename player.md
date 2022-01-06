@@ -18,15 +18,14 @@ class Kinght extends SimplePlayer {
     Kinght(Vector2 position)
       : super(
           position: position, //required
-          height: 32.0, //required
-          width: 32.0, //required
+          size: Vector2(32.0,32.0), //required
           life: 100,
           speed: 100,
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
-            idleLeft: Future<SpriteAnimation>(), //required
+            idleLeft: Future<SpriteAnimation>(), 
             idleRight: Future<SpriteAnimation>(), //required
-            runLeft: Future<SpriteAnimation>(), //required
+            runLeft: Future<SpriteAnimation>(), 
             runRight: Future<SpriteAnimation>(), //required
             idleUp: Future<SpriteAnimation>(),
             idleDown: Future<SpriteAnimation>(),
@@ -106,8 +105,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
       Future<SpriteAnimation>? animationUp,
       dynamic id,
       Direction? direction,
-      double heightArea = 32,
-      double widthArea = 32,
+      required Vector2 size,
       bool withPush = true,
      }
   )
@@ -120,8 +118,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
       required Future<SpriteAnimation> animationUp,
       required Future<SpriteAnimation> animationDown,
       required Future<SpriteAnimation> animationDestroy,
-      required double width,
-      required double height,
+      required Vector2 size,
       int? id,
       double speed = 150,
       double damage = 1,
@@ -188,8 +185,7 @@ class PlayerTank extends RotationEnemy {
         position: position, //required
         animIdle: Future<SpriteAnimation>(), //required
         animRun: Future<SpriteAnimation>(), //required
-        height: 32.0, 
-        width: 32.0, 
+        required Vector2 size,
         life: 100,
         speed: 100,
         currentRadAngle: -1.55,
@@ -252,8 +248,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
      {
       required Future<SpriteAnimation> attackEffectTopAnim,
       required double damage,
-      required double height,
-      required double width,
+      required Vector2 size,
       int? id,
       bool withPush = false,
       double? radAngleDirection,
@@ -267,8 +262,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
      {
       required Future<SpriteAnimation> animationTop,
       required Future<SpriteAnimation> animationDestroy,
-      required double width,
-      required double height,
+      required Vector2 size,
       int? id,
       double speed = 150,
       double damage = 1,

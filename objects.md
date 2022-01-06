@@ -27,7 +27,8 @@ To run an animation once before it destroys itself
 ```dart
 AnimatedObjectOnce(
    {
-      Vector2Rect position,
+      required Vector2 position,
+      required Vector2 size,
       Future<SpriteAnimation>? animation,
       VoidCallback? onFinish,
       VoidCallback? onStartAnimation,
@@ -49,7 +50,8 @@ AnimatedFollowerObject(
    {
       required Future<SpriteAnimation> animation,
       required GameComponent target,
-      Vector2Rect? positionFromTarget,
+      required Vector2 size,
+      Vector2? positionFromTarget,
       bool loopAnimation = false,
    }
 )
@@ -74,8 +76,7 @@ FlyingAttackObject(
       required Vector2 position,
       required Future<SpriteAnimation> flyAnimation,
       required this.direction,
-      required this.width,
-      required this.height,
+      required Vector2 size,
       dynamic id,
       Future<SpriteAnimation>? destroyAnimation,
       double speed = 150,

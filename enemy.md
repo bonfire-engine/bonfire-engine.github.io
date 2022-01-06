@@ -22,15 +22,14 @@ class Goblin extends SimpleEnemy {
     Goblin(Vector2 position)
       : super(
           position: position, //required
-          height: 32.0, //required
-          width: 32.0, //required
+          size: Vector2(32.0,32.0), //required
           life: 100,
           speed: 100,
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
-            idleLeft: Future<SpriteAnimation>(), //required
+            idleLeft: Future<SpriteAnimation>(), 
             idleRight: Future<SpriteAnimation>(), //required
-            runLeft: Future<SpriteAnimation>(), //required
+            runLeft: Future<SpriteAnimation>(), 
             runRight: Future<SpriteAnimation>(), //required
             idleUp: Future<SpriteAnimation>(),
             idleDown: Future<SpriteAnimation>(),
@@ -102,8 +101,7 @@ The enemy will move in the direction of the player once it gets within the radiu
 ```dart 
 void simpleAttackMelee({
     required double damage,
-    required height = 32,
-    required width = 32,
+    required Vector2 size,
     int? id,
     int interval = 1000,
     bool withPush = false,
@@ -126,8 +124,7 @@ void simpleAttackRange({
     required Future<SpriteAnimation> animationUp,
     required Future<SpriteAnimation> animationDown,
     required Future<SpriteAnimation> animationDestroy,
-    required double width,
-    required double height,
+    required Vector2 size,
     int? id,
     double speed = 150,
     double damage = 1,
@@ -222,8 +219,7 @@ class Tank extends RotationEnemy {
           position: position, //required
           animIdle: Future<SpriteAnimation>(), //required
           animRun: Future<SpriteAnimation>(), //required
-          height: 32.0, 
-          width: 32.0, 
+          size: Vector2(32.0,32.0), //required
           life: 100,
           speed: 100,
           currentRadAngle: -1.55, 
@@ -286,8 +282,7 @@ void seeAndMoveToAttackRange({
 void simpleAttackMelee({
     required Future<SpriteAnimation> attackEffectTopAnim,
     required double damage,
-    required double height,
-    required double width,
+    required Vector2 size,
     int? id,
     bool withPush = false,
     double? radAngleDirection,
@@ -300,8 +295,7 @@ void simpleAttackMelee({
 void simpleAttackRange({
     required Future<SpriteAnimation> animationTop,
     required Future<SpriteAnimation> animationDestroy,
-    required double width,
-    required double height,
+    required Vector2 size,
     int? id,
     double speed = 150,
     double damage = 1,
