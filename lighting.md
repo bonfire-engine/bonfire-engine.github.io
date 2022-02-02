@@ -22,7 +22,7 @@ class MyCustomDecoration extends GameDecoration with Lighting {
               color: Colors.transparent,
               // blurBorder: 20, // this is a default value
               // type: LightingType.circle, // this is a default value
-              // useComponentAngle: false, // this is a default value. When true light rotate together component
+              // useComponentAngle: false, // this is a default value. When true light rotate together component when change `angle` param.
             ),
           );
         }
