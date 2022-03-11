@@ -1,5 +1,5 @@
 # Enemy
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) that uses [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart) mixins.</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) that uses [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/util/mixins/attackable.dart) mixins.</small>
 
 Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
 
