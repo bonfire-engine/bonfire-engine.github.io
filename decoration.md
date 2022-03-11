@@ -57,4 +57,4 @@ class MyCustomDecoration extends GameDecoration {
 }
 ```
 
-See more examples of custom Decorations: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/torch.dart) & [chest](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/example/lib/decoration/chest.dart)
+See more examples of custom Decorations: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/torch.dart) & [chest](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/chest.dart)

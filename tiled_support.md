@@ -32,7 +32,7 @@ flutter:
     - assets/images/tiled/img_tile_set.png
 ```
 
-For maps built with Tiled we must use the Widget `BonfireTiledWidget` (example [here]()):
+For maps built with Tiled we must use the Widget `BonfireTiledWidget` (example [here](https://bonfire-engine.github.io/#/get-started?id=creating-your-map)):
 
 ```dart
 TiledWorldMap map = TiledWorldMap(

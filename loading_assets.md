@@ -2,7 +2,7 @@
 
 > Loading your images to create your sprite or animations
 
-To load any images you need to follow a pattern of folders defined by [flame](https://docs.flame-engine.org/1.0.0-releasecandidate.16/images.html#images) (base `assets/images/`).
+To load any images you need to follow a pattern of folders defined by [flame](https://docs.flame-engine.org/main/flame/rendering/images.html) (base `assets/images/`).
 
 ```yaml
 

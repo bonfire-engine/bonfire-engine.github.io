@@ -1,6 +1,6 @@
 # Lighting
 
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart)</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart)</small>
 
 Layer responsible for adding lighting to the game.
 

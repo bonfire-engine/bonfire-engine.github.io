@@ -1,6 +1,6 @@
 # Objects
 
-> All objects in Bonfire are [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart), he is the basis of everything.
+> All objects in Bonfire are [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart), he is the basis of everything.
 
 This section is intended to list some Objects already implemented and that can be reused to meet a similar need.
 
@@ -8,13 +8,13 @@ Are they:
 
 ## SpriteObject
 
-> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) </small>
 
 Object tha render a `Sprite`.
 
 ## AnimatedObject
 
-> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) </small>
 
 Object tha render a `SpriteAnimation`.
 
@@ -40,7 +40,7 @@ AnimatedObjectOnce(
 
 ## FollowerObject
 
-> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) </small>
+> <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) </small>
 
 Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
 
