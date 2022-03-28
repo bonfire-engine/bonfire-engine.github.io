@@ -1,6 +1,6 @@
 # Game Interface
 
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart)</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart)</small>
 
 The way you can draw components like a life bar or settings buttons. In other words, anything that you may add to the game interface.
 
@@ -59,7 +59,7 @@ Finally, add your Interface to the game by passing it to the ```interface``` pro
   }
 ```
 
-If you want to create a more complex and customizable interface component, check this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/interface/bar_life_component.dart).
+If you want to create a more complex and customizable interface component, check this [example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/interface/bar_life_component.dart).
 
 
 ## Using Widgets

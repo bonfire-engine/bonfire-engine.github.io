@@ -1,6 +1,6 @@
 # Joysticks
 
-> <small>This is a [JoystickController](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/joystick/joystick_controller.dart)</small>
+> <small>This is a [JoystickController](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/joystick/joystick_controller.dart)</small>
 
 The player-controlling component.
 

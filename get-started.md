@@ -54,7 +54,7 @@ This way you can see your map be rendering and can use directional joystick to e
 
 ### Creating your player
 
-To create a player you will need SpriteAnimations. You can see how load Sprites in [Flame doc](https://docs.flame-engine.org/1.0.0-releasecandidate.15/images.html)
+To create a player you will need SpriteAnimations. You can see how load Sprites in [Flame doc](https://docs.flame-engine.org/main/flame/rendering/images.html)
 
 - [IMAGES USED](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/assets/images/player)
 
@@ -124,6 +124,6 @@ Now only adds your player in the game:
 And then you can see your player in the map and move that with directional of the Joystick.
 
 ### Next step
-Know all components that you can use in Bonfire [See here](oerview)
+Know all components that you can use in Bonfire [See here](overview)
 
 Complete simple example you can see [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/simple_example).

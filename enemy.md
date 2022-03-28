@@ -1,5 +1,7 @@
 # Enemy
+
 > <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/attackable.dart) mixin.</small>
+
 
 Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
 
