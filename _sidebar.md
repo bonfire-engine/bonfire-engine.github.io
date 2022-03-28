@@ -4,6 +4,7 @@
 * [BonfireTiledWidget](bonfire_tiled_widget.md)
 * [Map](map.md)
 * [Decoration](decoration.md)
+* [NPC](npc.md)
 * [Enemy](enemy.md)
 * [Player](player.md)
 * [Objects](objects.md)
