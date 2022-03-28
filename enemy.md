@@ -1,5 +1,5 @@
 # Enemy
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/base/game_component.dart) that uses [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/movement.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/1.0.0-rc/lib/util/mixins/attackable.dart) mixins.</small>
+> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/attackable.dart) mixin.</small>
 
 Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
 
@@ -7,7 +7,7 @@ There are two types of enemies: `SimpleEnemy` and `RotationEnemy`:
 
 ## SimpleEnemy
 
-> <small>This is an [Enemy](#Enemy)</small>
+> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and [DirectionAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/direction_animation.dart) mixin.</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
@@ -204,7 +204,7 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 
 ## RotationEnemy
 
-> <small>This is an [Enemy](#Enemy)</small>
+> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and [UseSpriteAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/use_sprite_animation.dart) mixin.</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
