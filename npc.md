@@ -56,11 +56,6 @@ class Wizard extends SimpleNpc {
       super.render(canvas);
     }
 
-    @override
-    void die() {
-      /// Called when the enemy die
-      super.die();
-    }
 }
 
 ```
@@ -138,10 +133,6 @@ class Wizard extends RotationNpc {
       super.render(canvas);
     }
 
-    @override
-    void die() {
-      super.die();
-    }
 }
 
 ```
