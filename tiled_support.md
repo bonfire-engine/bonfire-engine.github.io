@@ -71,4 +71,6 @@ Result:
 
 You can set type in your tile to `above` to render this tile above all components in your game.
 
+You can set type in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
+
 You can set type in your Object to `collision`. This object will be add in the game with transparency and collision.

@@ -21,4 +21,5 @@
 * [PathFinding](path_finding.md)
 * [Tiled Support](tiled_support.md)
 * [Loading Sprites](loading_assets.md)
+* [Mini map](minimap.md)
 * [Examples](examples.md)
