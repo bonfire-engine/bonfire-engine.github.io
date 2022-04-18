@@ -22,4 +22,5 @@
 * [Tiled Support](tiled_support.md)
 * [Loading Sprites](loading_assets.md)
 * [Mini map](minimap.md)
+* [StateController](state_controller.md)
 * [Examples](examples.md)
