@@ -3,23 +3,24 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "608e8773db890063601a3fbb189752ae",
-"index.html": "7198e865ab25dd64c2cd63cf758b9090",
-"/": "7198e865ab25dd64c2cd63cf758b9090",
-"main.dart.js": "0c64d8d1440fd4def5e6d0b0253baed9",
+  "version.json": "b02944aedf0c999fc526b35574d5b0e5",
+"index.html": "d2e1b4384c2da007cb443aa5cdb51051",
+"/": "d2e1b4384c2da007cb443aa5cdb51051",
+"main.dart.js": "60e6f210504f86e74087b6dc574d0fc5",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "d10367407862aab0e3754042dda217db",
-"assets/AssetManifest.json": "a946bb1cf36e40ce1cf689004f44b590",
-"assets/NOTICES": "7d3e6f0679b7af61c95e47047c0ab52a",
+"assets/AssetManifest.json": "ad3410b0a46a081ef0e09b96285e50aa",
+"assets/NOTICES": "ce14658bab94cc731fb36ea14d554429",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
 "assets/assets/images/orc_run.png": "ba2e0a4fbb0428d2dff08f8ddb7b892c",
 "assets/assets/images/human_run.png": "32e476b5e280f24c464e4c7d8c41d94e",
 "assets/assets/images/orc_idle.png": "e2dd39317053d71bf9b442d717ce21a1",
 "assets/assets/images/tile/spriteSheet.json": "3f10c287c384eb2ee4f6a07bd6dcf2cb",
-"assets/assets/images/tile/map.json": "c2e0f898b9b901a00ac1371235f78e1c",
+"assets/assets/images/tile/map.json": "42a22911d0337d448be8982191bd06cd",
+"assets/assets/images/tile/bg.jpeg": "a90ba3fa799c17f1a9f7faddc0c222ba",
 "assets/assets/images/tile/spriteSheet.png": "0c77ea149a321f49c18b0ddc182c98ac",
 "assets/assets/images/human_damage.png": "2c6b95f1644731eb83fc093132d61a9d",
 "assets/assets/images/human_die.png": "4795797c3b3745e39a3d1052c6c4c83e",
@@ -28,7 +29,10 @@ const RESOURCES = {
 "assets/assets/images/orc_attack.png": "648b11699a1712524a9871731f8ae845",
 "assets/assets/images/human_attack.png": "239733cf0e48d635ebfaa3ed981c0b22",
 "assets/assets/images/orc_die.png": "1db10de46a3ea31d1a7bda7c8bb084f4",
-"assets/assets/images/bg.jpeg": "a90ba3fa799c17f1a9f7faddc0c222ba"
+"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
+"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
+"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
+"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba"
 };
 
 // The application shell files that are downloaded before a service worker can
