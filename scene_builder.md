@@ -45,3 +45,12 @@ status.isRuning;
 status.currentAction;
 
 ```
+
+## SceneAction
+
+Already exist basic actions created:
+
+- CameraSceneAction // Used to move camera to position or to follow a target.
+- DelaySceneAction // Used to apply delay
+- MoveComponentSceneAction // Used to move any component that use `Movement` mixin
+- AwaitCallbackSceneAction // Used to do anything and when completed just call the function `completed` that will pass to next action.

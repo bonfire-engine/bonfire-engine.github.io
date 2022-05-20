@@ -23,4 +23,5 @@
 * [Loading Sprites](loading_assets.md)
 * [Mini map](minimap.md)
 * [StateController](state_controller.md)
+* [SceneBuilder](scene_builder.md)
 * [Examples](examples.md)
