@@ -58,7 +58,15 @@ Use this joystick to moviment your player with touch to a position.
 
 ```dart
   return BonfireTiledWidget(
-    joystick: JoystickMoveToPosition(),
+    joystick: JoystickMoveToPosition(
+      enabledMoveCameraWithClick = false,
+      mouseButtonUsedToMoveCamera = MouseButton.primary,
+      mouseButtonUsedToMoveToPosition = MouseButton.secondary,
+    ),
     ...
   );
 ```
+
+- With `enabledMoveCameraWithClick` enabled:
+
+<img src="_media/joystick_2_example.gif" width="600"/>
