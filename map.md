@@ -120,6 +120,7 @@ return BonfireWidget(
                 x: prop.position.x,
                 y: prop.position.y,
                 sprite: sprite,
+                // color: Colors.blue, // You could use only color also
             );
         },
       ),
