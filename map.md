@@ -69,7 +69,7 @@ And to stay better we implement a class that help to adds sprites in this maps. 
 
 ### Basic use
 
-To use this resounce is very easy:
+To use this resource is very easy:
 
 ```dart
 
