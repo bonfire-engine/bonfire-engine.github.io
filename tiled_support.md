@@ -1,4 +1,5 @@
 # Tiled support
+> Tested in Tiled version `1.9.0`
 
 [Video example](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
 
@@ -69,7 +70,7 @@ Result:
 
 ## Useful
 
-You can set type in your tile to `above` to render this tile above all components in your game.
+You can set type in your tile to `above` to render this tile above all components in your game. If you need that the all tiles of layer render above all components you can create a `Custom Property` in your layer and create one named `type` with value `above`.
 
 You can set type in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
 
