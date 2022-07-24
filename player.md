@@ -149,6 +149,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
         required Function(List<Enemy>) observed,
         VoidCallback? notObserved,
         double radiusVision = 32,
+        double? visionAngle, // default 6,28319 (360 graus)
       }
     )
     

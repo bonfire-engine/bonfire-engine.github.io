@@ -85,6 +85,7 @@ void seePlayer({
     required Function(Player) observed,
     VoidCallback? notObserved,
     double radiusVision = 32,
+    double? visionAngle, // default 6,28319 (360 graus)
   })
 ```
 It will trigger a callback function once the player is within the enemy's radiusVision.
@@ -95,6 +96,7 @@ void seeAndMoveToPlayer({
     required Function(Player) closePlayer,
     double radiusVision = 32,
     double margin = 10,
+    double? visionAngle, // default 6,28319 (360 graus)
   })
 ```
 The enemy will move in the direction of the player once it gets within the radiusVision. When it gets close to the player, `closePlayer` will be fired.

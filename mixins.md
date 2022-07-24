@@ -129,22 +129,19 @@ Adds these methods in your component:
     void die()
 ```
 
-## Pushable
+## Vision
 
-Mixin responsible for adding  to push behavior to the component.
+Mixin responsible for adding vision to component. Components like `Player`, `Npc` and `Decoration` use this mixin.
 
-Your component will gain properties like:
-
-```dart
-    bool enablePushable;
-```
-
-Adds these methods in your component:
+Your can draw the component vision do this:
 
 ```dart
-    /// Returns true if the component is pushable, false otherwise.
-    bool onPush(GameComponent component)
+    setuoVision(
+        drawVision:true,
+    );
 ```
+
+When you use any method that use `seeComponent` or `seeComponentType` will draw the vision.
 
 ## Sensor
 
