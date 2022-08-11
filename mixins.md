@@ -207,3 +207,24 @@ class MyComponent extends GameComponent with UseSpriteAnimation{
 }
 
 ```
+
+## UseSprite
+
+Mixin that adds to your Component the use of the Sprite in easier way.
+Your Component gains the `sprite`.
+
+```dart
+
+class MyComponent extends GameComponent with UseSprite{
+    MyComponent(Vector2 position){
+        this.position = position;
+    }
+
+    @override
+    Future onLoad() async {
+        sprite = await MySpriteSheetLoader.geSrite();
+        return super.onLoad();
+    }
+}
+
+```
