@@ -19,8 +19,11 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
         );
 
 
+  // If return 'true' this event is not relay to others components.(default = false)
   @override
-  void onTapDown(int pointer, Vector2 position){}
+  bool onTapDown(int pointer, Vector2 position){
+    return super.onTapDown(pointer,position);
+  }
 
   @override
   void onTapUp(int pointer, Vector2 position){}
@@ -56,7 +59,10 @@ Your component can be automatically dragged on the map with the drag gesture.
 If you want to listen to the interactions with the object, you can override these methods:
 
 ```dart
-void startDrag(int pointer, Vector2 position) {}
+// If return 'true' this event is not relay to others components.(default = false)
+bool startDrag(int pointer, Vector2 position) {
+  return super.startDrag(pointer,position);
+}
 void moveDrag(int pointer, Vector2 position) {}
 void endDrag(int pointer) {}
 void cancelDrag(int pointer) {}
