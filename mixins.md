@@ -163,4 +163,41 @@ See [ObjectCollision](collision_system)
 
 ## UseAssetsLoader
 
+Mixin used to load assets:
+
+```dart
+class MyComponent extends GameComponent with UseAssetsLoader{
+    SpriteAnimation animation;
+    MyComponent(Vector2 position,Future<SpriteAnimation> animIdle){
+        this.position = position;
+        loader?.add(AssetToLoad(animIdle, (value) {
+            animation = value;
+        }));
+    }
+}
+```
+
 ## UseSpriteAnimation
+
+Mixin that adds to your Component the use of the SpriteAnimation in easier way.
+Your Component gains the `animation` property and `playSpriteAnimationOnce` method
+
+```dart
+
+class MyComponent extends GameComponent with UseSpriteAnimation{
+    MyComponent(Vector2 position){
+        this.position = position;
+    }
+
+    void playJump(){
+        playSpriteAnimationOnce(MySpriteSheetLoader.getJumpAnimation());
+    }
+
+    @override
+    Future onLoad() async {
+        animation = await MySpriteSheetLoader.geAnimation();
+        return super.onLoad();
+    }
+}
+
+```

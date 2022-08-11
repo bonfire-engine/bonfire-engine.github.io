@@ -72,3 +72,13 @@ Use this joystick to moviment your player with touch to a position.
 <img src="_media/joystick_2_example.gif" width="600"/>
 
 ## JoystickListener
+
+Mixin used to listen the joystick interactions.
+
+A component that use this mixin can listen the Joystick events adding as observer:
+
+```dart
+
+gameRef.addJoystickObserver(myComponentJoystickListener);
+
+```
