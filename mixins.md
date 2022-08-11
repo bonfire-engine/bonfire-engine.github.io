@@ -132,6 +132,7 @@ Adds these methods in your component:
 ## Vision
 
 Mixin responsible for adding vision to component. Components like `Player`, `Npc` and `Decoration` use this mixin.
+Your component gain `seeComponent` and `seeComponentType` method.
 
 Your can draw the component vision do this:
 
