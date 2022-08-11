@@ -161,6 +161,12 @@ Mixin responsible for adding collision.
 
 See [ObjectCollision](collision_system)
 
+## Pushable
+
+Mixin responsible for enable push in the component.
+
+You can do override the method `bool onPush(GameComponent component)` to control when can pushable. Returning true if the component is pushable, false otherwise. (default return true).
+
 ## UseAssetsLoader
 
 Mixin used to load assets:
