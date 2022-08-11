@@ -70,3 +70,5 @@ Use this joystick to moviment your player with touch to a position.
 - With `enabledMoveCameraWithClick` enabled:
 
 <img src="_media/joystick_2_example.gif" width="600"/>
+
+## JoystickListener

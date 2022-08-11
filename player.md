@@ -1,11 +1,17 @@
 # Player
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) and use [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/util/mixins/movement.dart), [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/util/mixins/attackable.dart), [MoveToPositionAlongThePath](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/util/mixins/move_to_position_along_the_path.dart) and [JoystickListener](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/joystick/joystick_controller.dart)</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) and use 
+[Movement](mixins?id=movement), 
+[Attackable](mixins?id=attackable), 
+[Vision](mixins?id=vision), 
+[MoveToPositionAlongThePath](mixins?id=movetoalongthepath),
+[MovementByJoystick](mixins?id=movementbyjoystick) and 
+[JoystickListener](joystick?id=joysticklistener)</small>
 
 Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured. 
 We can create two types of enemies `SimplePlayer` and `RotationPlayer`:
 
 ## SimplePlayer 
-> <small>This is a [Player](#Player)</small>
+> <small>This is a [Player](#Player) and use [DirectionAnimation](mixins?id=directionanimation)</small>
 
 Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
 
@@ -173,7 +179,9 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ## RotationPlayer
 
-> <small>This is a [Player](#Player)</small>
+> <small>This is a [Player](#Player) and use
+[UseSpriteAnimation](mixins?id=usespriteanimation),
+[UseAssetsLoader](mixins?id=useassetsloader)</small>
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 
@@ -191,18 +199,6 @@ class PlayerTank extends RotationEnemy {
         speed: 100,
         currentRadAngle: -1.55,
       );
-
-    @override
-    void update(double dt) {
-      // do anything
-      super.update(dt);
-    }
-
-    @override
-    void render(Canvas canvas) {
-      // do anything
-      super.render(canvas);
-    }
 
     @override
     void joystickChangeDirectional(JoystickDirectionalEvent event) {
@@ -235,8 +231,8 @@ Player instances can receive action configured on the Joystick (read more about 
 
 ```dart
 
-    @override
-    void joystickAction(JoystickActionEvent event) {}
+  @override
+  void joystickAction(JoystickActionEvent event) {}
 
 ```
 
@@ -322,19 +318,4 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ## Custom
 
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Player` class.
-
-With Enemy you will have access to the following methods:
-
-* void moveUp(double speed)
-* void moveDown(double speed)
-* void moveLeft(double speed)
-* void moveRight(double speed)
-* void moveUpLeft(double speed)
-* void moveUpRight(double speed)
-* void moveDownRight(double speed)
-* void moveDownLeft(double speed)
-* void moveFromAngle(double speed, double angle)
-* void receiveDamage(double damage, int from)
-* void addLife(double life)
-* void die()
+If none of these types of player do not meet your needs. You can create your own by extending the `Player` class.

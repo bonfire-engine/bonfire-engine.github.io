@@ -1,5 +1,7 @@
 # Npc
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/base/game_component.dart) and [Movement](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/movement.dart) mixin.</small>
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/base/game_component.dart) and use 
+[Movement](mixins?id=movement) and 
+[Vision](mixins?id=vision).</small>
 
 Create an Npc in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
 
@@ -7,7 +9,8 @@ There are two types of enemies: `SimpleNpc` and `RotationNpc`:
 
 ## SimpleNpc
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and [DirectionAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/direction_animation.dart) mixin.</small>
+> <small>This is a [Npc](#npc) and use 
+[DirectionAnimation](mixins?id=directionanimation).</small>
 
 Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
 
@@ -104,7 +107,9 @@ Complete SimpleNpc example [here](https://github.com/RafaelBarbosatec/bonfire/bl
 
 ## RotationNpc
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and [UseSpriteAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/use_sprite_animation.dart) mixin.</small>
+> <small>This is a [Npc](#npc) and use 
+[UseSpriteAnimation](mixins?id=usespriteanimation),
+[UseAssetsLoader](mixins?id=useassetsloader).</small>
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 
@@ -161,17 +166,4 @@ void seePlayer({
 
 ## Custom
 
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Npc` class.
-
-With Npc you will have access to the following methods:
-
-* void moveUp(double speed)
-* void moveDown(double speed)
-* void moveLeft(double speed)
-* void moveRight(double speed)
-* void moveUpRight(double speedX, double speedY)
-* void moveUpLeft(double speedX, double speedY)
-* void moveDownLeft(double speedX, double speedY)
-* void moveDownRight(double speedX, double speedY)
-* void moveFromAngleDodgeObstacles(double speed, double angle,{Function notMove})
-* void moveFromAngle(double speed, double angle)
+If none of these types of Npc do not meet your needs. You can create your own by extending the `Npc` class.

@@ -136,12 +136,12 @@ Mixin responsible for adding vision to component. Components like `Player`, `Npc
 Your can draw the component vision do this:
 
 ```dart
-    setuoVision(
+    setupVision(
         drawVision:true,
     );
 ```
 
-When you use any method that use `seeComponent` or `seeComponentType` will draw the vision.
+When you use any method like `seeComponent` or `seeComponentType` will draw the vision.
 
 ## Sensor
 
@@ -160,3 +160,7 @@ See [Lighting](lighting)
 Mixin responsible for adding collision.
 
 See [ObjectCollision](collision_system)
+
+## UseAssetsLoader
+
+## UseSpriteAnimation

@@ -1,6 +1,7 @@
 # Enemy
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and [Attackable](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/attackable.dart) mixin.</small>
+> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/npc.dart) and use
+[Attackable](mixins?id=attackable) mixin.</small>
 
 
 Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
@@ -9,7 +10,8 @@ There are two types of enemies: `SimpleEnemy` and `RotationEnemy`:
 
 ## SimpleEnemy
 
-> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and [DirectionAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/direction_animation.dart) mixin.</small>
+> <small>This is a [Enemy](#enemy) and use 
+[DirectionAnimation](mixins?id=directionanimation) mixin.</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
@@ -47,18 +49,6 @@ class Goblin extends SimpleEnemy {
             runDownRight: Future<SpriteAnimation>(),
           ),
       );
-
-    @override
-    void update(double dt) {
-      // Do anything
-      super.update(dt);
-    }
-
-    @override
-    void render(Canvas canvas) {
-      // Do anything
-      super.render(canvas);
-    }
 
     @override
     void receiveDamage(double damage, int from) {
@@ -208,7 +198,9 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 
 ## RotationEnemy
 
-> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and [UseSpriteAnimation](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/util/mixins/use_sprite_animation.dart) mixin.</small>
+> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and use 
+[UseSpriteAnimation](mixins?id=usespriteanimation),
+[UseAssetsLoader](mixins?id=useassetsloader).</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
