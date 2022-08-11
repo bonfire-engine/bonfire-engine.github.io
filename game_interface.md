@@ -87,10 +87,10 @@ To show or hide overlays programmatically, use the following:
 
 ```dart
   /// Show overlay
-  gameRef.overlays.add('overlayName');
+  gameRef.overlayManager.add('overlayName');
 
   /// Hide overlay
-  gameRef.overlays.remove('overlayName');
+  gameRef.overlayManager.remove('overlayName');
 ```
 
 
