@@ -52,7 +52,7 @@ class MyComponent extends GameComponent with Movement, DirectionAnimation{
 }
 ```
 
-## MoveToAlongThePath
+## MoveToPositionAlongThePath
 
 > To use this mixin your component must contain `Movement` mixin.
 
@@ -163,10 +163,31 @@ Mixin responsible for adding collision.
 See [ObjectCollision](collision_system)
 
 ## Pushable
+> To use this mixin your component must contain `Movement` mixin.
 
 Mixin responsible for enable push in the component.
 
 You can do override the method `bool onPush(GameComponent component)` to control when can pushable. Returning true if the component is pushable, false otherwise. (default return true).
+
+## AutomaticRandomMovement
+
+> To use this mixin your component must contain `Movement` mixin.
+
+Adds the basic implementation  of randomic movement. You component gain `runRandomMovement` method. You can use this un your `update` method to do movement in randomic way. It's useful to enemy, npc, decorations.
+
+## Follower
+
+This mixin do your component follow the position of the yout target.
+Your component gain the properties: `followerTarget` and `followerOffset`.
+You can configure your target like this:
+
+```dart
+
+setupFollower(target: myPLayer, offset: Vector2());
+
+```
+
+If a component that have this mixin is added as a child of other component. He will follow the parent position.
 
 ## UseAssetsLoader
 
