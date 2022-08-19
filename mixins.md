@@ -189,6 +189,19 @@ setupFollower(target: myPLayer, offset: Vector2());
 
 If a component that have this mixin is added as a child of other component. He will follow the parent position.
 
+
+## Acceleration
+
+> To use this mixin your component must contain `Movement` mixin.
+
+Mixin used to apply acceleration in your component
+
+Your component gain this methods:
+    - `applyAcceleration`
+    - `applyAccelerationByDirection`
+    - `applyAccelerationByAngle`
+    - `applyAccelerationByFunction`
+
 ## UseAssetsLoader
 
 Mixin used to load assets:
