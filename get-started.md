@@ -40,11 +40,11 @@ Now you can run to see your map:
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       joystick: Joystick(
         directional: JoystickDirectional(),
       ), // required
-      map: TiledWorldMap('tile/map.json', forceTileSize: 32),
+      map: WorldMapByTiled('tile/map.json', forceTileSize: 32),
     );
   }
 ```
@@ -111,11 +111,11 @@ Now only adds your player in the game:
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       joystick: Joystick(
         directional: JoystickDirectional(),
       ), 
-      map: TiledWorldMap('tile/map.json', forceTileSize: 32),
+      map: WorldMapByTiled('tile/map.json', forceTileSize: 32),
       player: Kinght(Vector2(40,40))
     );
   }

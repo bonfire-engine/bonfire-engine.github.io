@@ -33,10 +33,10 @@ flutter:
     - assets/images/tiled/img_tile_set.png
 ```
 
-For maps built with Tiled we must use the Widget `BonfireTiledWidget` (example [here](https://bonfire-engine.github.io/#/get-started?id=creating-your-map)):
+For maps built with Tiled we must use the Widget `BonfireWidget` (example [here](https://bonfire-engine.github.io/#/get-started?id=creating-your-map)):
 
 ```dart
-TiledWorldMap map = TiledWorldMap(
+WorldMapByTiled map = WorldMapByTiled(
     'tiled/mapa.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
     forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
     objectsBuilder: {
@@ -46,7 +46,7 @@ TiledWorldMap map = TiledWorldMap(
     },
   );
 
-return BonfireTiledWidget(
+return BonfireWidget(
       joystick: Joystick(
         directional: JoystickDirectional(
           size: 100,

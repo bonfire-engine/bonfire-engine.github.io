@@ -5,7 +5,7 @@
 <img src="_media/minimap.png" width="600"/>
 
 ```dart
- return BonfireTiledWidget(
+ return BonfireWidget(
    ...
     overlayBuilderMap: {
     'miniMap': (context, game) => MiniMap(

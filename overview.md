@@ -5,10 +5,10 @@ Bonfire, is basically a Widget that passing the parameters and configuring accor
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
       joystick: MyJoystick(), // required
-      map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
+      map: WorldMapByTiled('tile/map.json', forceTileSize: tileSize), // required
       player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
       interface: KnightInterface(),
       background: GameComponent(), // to color you can use `BackgroundColorGame(Colors.blue)` or create your own background (to use parallax for example) extending from `GameComponent`

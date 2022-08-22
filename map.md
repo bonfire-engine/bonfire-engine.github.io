@@ -8,10 +8,10 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 
 ## Using
 
-We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `TiledWorldMap` in `BonfireTiledWidget` in the `map` parameter:
+We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `MapWordByTiled` in `BonfireWidget` in the `map` parameter:
 
 ```dart
-TiledWorldMap('tile/map.json', forceTileSize: Size(32,32))
+WorldMapByTiled('tile/map.json', forceTileSize: Size(32,32))
 ```
 
 The first parameter (`tile/map.json`) is the path of the `.json` file exported by Tiled.
@@ -25,8 +25,8 @@ The second parameter (`Size(32,32)`) is optional and determines the size of each
 You can add objects like [Decorations](decoration) and [Enemies](enemy) to the map using the `registerObject` method:
 
 ```dart
-    return BonfireTiledWidget(
-        map: TiledWorldMap(
+    return BonfireWidget(
+        map: WorldMapByTiled(
             'tiled/map.json',
             forceTileSize: Size(32,32),
             objectsBuilder: {

@@ -5,7 +5,7 @@
 You can configure some settings in the camera:
 
 ```dart
-  return BonfireTiledWidget(
+  return BonfireWidget(
     ...
    cameraConfig: CameraConfig(
       moveOnlyMapArea: false,

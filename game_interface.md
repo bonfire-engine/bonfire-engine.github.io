@@ -51,7 +51,7 @@ Finally, add your Interface to the game by passing it to the ```interface``` pro
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
      ...
       interface: MyInterface(),
      ...
@@ -64,12 +64,12 @@ If you want to create a more complex and customizable interface component, check
 
 ## Using Widgets
 
-You can use Flutter widgets to create your game interface through `overlayBuilderMap` in `BonfireTiledWidget`:
+You can use Flutter widgets to create your game interface through `overlayBuilderMap` in `BonfireWidget`:
 
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       ...
       overlayBuilderMap: {
         'buttons': (BonfireGame game, BuildContext context) {

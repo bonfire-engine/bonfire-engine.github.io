@@ -14,7 +14,7 @@ Or you can implement `JoystickController` yourself and emit event trough a `Joys
 
 Joystick is configurable by the following parameters:
 ```dart
-  return BonfireTiledWidget(
+  return BonfireWidget(
     joystick: Joystick(
         keyboardConfig: KeyboardConfig(
           enable: true, // Use to enable ou disable keyboard events (default is true)
@@ -57,7 +57,7 @@ Use this joystick to moviment your player with touch to a position.
 <img src="_media/git_move_along_the_path.gif" width="600"/>
 
 ```dart
-  return BonfireTiledWidget(
+  return BonfireWidget(
     joystick: JoystickMoveToPosition(
       enabledMoveCameraWithClick = false,
       mouseButtonUsedToMoveCamera = MouseButton.primary,

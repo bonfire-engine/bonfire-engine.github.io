@@ -1,4 +1,4 @@
-# BonfireTiledWidget
+# BonfireWidget
 
 >  Widget that is used to work with Bonfire
 
@@ -10,10 +10,10 @@ To use Bonfire, use the following widget to map builded with [Tiled](https://www
 ```dart
 @override
   Widget build(BuildContext context) {
-    return BonfireTiledWidget(
+    return BonfireWidget(
       gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
       joystick: Joystick(), // required
-      map: TiledWorldMap('tile/map.json', forceTileSize: tileSize), // required
+      map: WorldMapByTiled('tile/map.json', forceTileSize: tileSize), // required
       player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
       components: <GameComponent>[],
       interface: KnightInterface(),
@@ -54,7 +54,7 @@ or to manual map:
     return BonfireWidget(
       gameController: GameController(), // with the controller you can listen to all components of the game, control them and or add new ones.
       joystick: MyJoystick(), // required
-      map: MapWorld(<Tile>[]), // required
+      map: WorldMap(<Tile>[]), // required
       player: Knight(), // If player is omitted, the joystick directional will control the map view, being very useful in the process of building maps
       interface: KnightInterface(),
       decorations: <GameDecoration>[],
