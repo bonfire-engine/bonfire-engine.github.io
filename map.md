@@ -283,3 +283,8 @@ MapTerrainCorners(
 )
 
 ```
+
+## Custom
+
+You can create your own map creating a class extending of `WordMap` and fill `List<TileModel> tiles`. This way your will reuse QuadTree algorithm used to draw map.
+Or you can use the base creating your own map extending of `GameMap`.
