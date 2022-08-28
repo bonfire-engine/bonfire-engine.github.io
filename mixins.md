@@ -108,6 +108,8 @@ That way if you add this component as a Joystick observer it will move when inte
 
 ```
 
+You can disable this behavior setting `movementByJoystickEnabled` false.
+
 ## Attackable
 
 Mixin responsible for adding damage-taking behavior to the component.
