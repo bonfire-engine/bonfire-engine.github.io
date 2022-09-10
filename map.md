@@ -8,7 +8,7 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 
 ## Using
 
-We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `MapWordByTiled` in `BonfireWidget` in the `map` parameter:
+We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget` in the `map` parameter:
 
 ```dart
 WorldMapByTiled('tile/map.json', forceTileSize: Size(32,32))
@@ -19,6 +19,15 @@ The first parameter (`tile/map.json`) is the path of the `.json` file exported b
 > IMPORTANT: Bonfire only supports .json files.
 
 The second parameter (`Size(32,32)`) is optional and determines the size of each Tile on the map (squares). If not set it takes the default size defined by your TileSet.
+
+You can load a map from url. Just pass the url in path. Example:
+
+```dart
+WorldMapByTiled(
+    'https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json',
+    forceTileSize: Size(32,32),
+)
+```
 
 ## Adding objects
 
