@@ -30,3 +30,15 @@
 
 ![](_media/example_multi_biome.gif)
 
+## Defector
+
+[GitHub](https://github.com/RafaelBarbosatec/defector)   -   [PLAY](https://rafaelbarbosatec.itch.io/defector)
+
+![](_media/defector.gif)
+
+## PacMan
+
+[GitHub](https://github.com/RafaelBarbosatec/pacman)   -   [PLAY](https://rafaelbarbosatec.itch.io/pacman-bonfire)
+
+![](_media/pacman.png)
+

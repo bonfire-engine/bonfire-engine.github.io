@@ -21,19 +21,19 @@ Your component will gain properties like:
     Direction lastDirectionHorizontal = Direction.right;
 ```
 
-And methods to movement your component. (These movements take collisions into account.)
+And methods to movement your component. (These movements take collisions into account. If returns `true` the movement was did with success)
 
 ```dart
-    void moveUp(double speed, {VoidCallback? onCollision})
-    void moveDown(double speed, {VoidCallback? onCollision})
-    void moveLeft(double speed, {VoidCallback? onCollision})
-    void moveRight(double speed, {VoidCallback? onCollision})
-    void moveUpRight(double speedX, double speedY, {VoidCallback? onCollision})
-    void moveUpLeft(double speedX, double speedY, {VoidCallback? onCollision})
-    void moveDownLeft(double speedX, double speedY, {VoidCallback? onCollision})
-    void moveDownRight(double speedX, double speedY,{VoidCallback? onCollision})
-    void moveFromAngle(double speed, double angle, {VoidCallback? onCollision})
-    void moveFromAngleDodgeObstacles(double speed, double angle, {VoidCallback? onCollision,})
+    bool moveUp(double speed, {VoidCallback? onCollision})
+    bool moveDown(double speed, {VoidCallback? onCollision})
+    bool moveLeft(double speed, {VoidCallback? onCollision})
+    bool moveRight(double speed, {VoidCallback? onCollision})
+    bool moveUpRight(double speedX, double speedY, {VoidCallback? onCollision})
+    bool moveUpLeft(double speedX, double speedY, {VoidCallback? onCollision})
+    bool moveDownLeft(double speedX, double speedY, {VoidCallback? onCollision})
+    bool moveDownRight(double speedX, double speedY,{VoidCallback? onCollision})
+    bool moveFromAngle(double speed, double angle, {VoidCallback? onCollision})
+    bool moveFromAngleDodgeObstacles(double speed, double angle, {VoidCallback? onCollision,})
 ```
 
 ## DirectionAnimation
@@ -117,7 +117,7 @@ Mixin responsible for adding damage-taking behavior to the component.
 Your component will gain properties like:
 
 ```dart
-    double get maxLife;
+    double maxLife;
     bool isDead;
     double life;
 ```
@@ -127,7 +127,22 @@ Adds these methods in your component:
 ```dart
     void initialLife(double life)
     void addLife(double life)
+    void updateLife(double life)
+    void removeLife(double life)
+
+    /// This method is used to check if this component can receive damage from any attacker.
+    bool checkCanReceiveDamage(
+        AttackFromEnum attacker,
+        double damage,
+        dynamic from,
+    )
+    
+    /// You can listen if this component receive attack
+    @override
     void receiveDamage(double damage, dynamic from)
+
+    /// If your life stay minor than 0 this method is called
+    @override
     void die()
 ```
 
