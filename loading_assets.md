@@ -93,6 +93,8 @@ Image imagePlayerGreenHair = await Flame.images.load('player/hair/green.png');
 Image imagePlayerArmorGold = await Flame.images.load('player/armor/gold.png');
 
 
+// WARN: To `overlap` works in web you need add the flag `--dart-define=BROWSER_IMAGE_DECODING_ENABLED=false` when run or build.
+// Full command: `flutter run -d chrome --web-renderer canvaskit --dart-define=BROWSER_IMAGE_DECODING_ENABLED=false --release`
 
 Image finalPlayer = await imagePlayerBase.overlap(imagePlayerGreenHair);
 
