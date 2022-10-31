@@ -52,6 +52,48 @@ class MyComponent extends GameComponent with Movement, DirectionAnimation{
 }
 ```
 
+You can replace the `SimpleDirectionAnimation` using:
+
+```dart
+
+Future<void> replaceAnimation(
+    SimpleDirectionAnimation newAnimation, {
+    bool doIdle = true,
+})
+
+```
+
+In the `SimpleDirectionAnimation` there are some methods util to control the animation:
+
+```dart
+
+/// Method used to play animation once time
+animation.playOnce(
+    FutureOr<SpriteAnimation> animation, {
+    VoidCallback? onFinish,
+    VoidCallback? onStart,
+    bool runToTheEnd = false,
+    bool flipX = false,
+    bool flipY = false,
+    Vector2? size,
+    Vector2? offset,
+  });
+
+/// Method used to play specific animation registred in `others`
+animation.playOther(String key, {bool flipX = false, bool flipY = false});
+
+/// Method used to register new animation in others
+animation.addOtherAnimation(
+    String key,
+    FutureOr<SpriteAnimation> animation,
+);
+
+animation.pause();
+
+animation.resume();
+
+```
+
 ## MoveToPositionAlongThePath
 
 > To use this mixin your component must contain `Movement` mixin.
