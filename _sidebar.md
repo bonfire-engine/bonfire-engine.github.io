@@ -21,7 +21,7 @@
 * [PathFinding](path_finding.md)
 * [Tiled Support](tiled_support.md)
 * [Loading Sprites](loading_assets.md)
-* [Mini map](minimap.md)
+* [widgets](widgets.md)
 * [StateController](state_controller.md)
 * [SceneBuilder](scene_builder.md)
 * [Examples](examples.md)

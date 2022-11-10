@@ -1,4 +1,4 @@
-# MiniMap
+## MiniMap
 
 > Widget useful to show a mini-map in yout game.
 
@@ -30,11 +30,11 @@
 );
 ```
 
-## Custom
+### Custom
 
 If you can customize your map, you can use the params `tileRender` and `componentsRender`.
 
-### Default `tileRender`
+#### Default `tileRender`
 
 ```dart
 
@@ -54,7 +54,7 @@ MiniMapCustomRender<Tile> tilesRenderDefault() => (canvas, component) {
 
 ```
 
-### Default `componentsRender`
+#### Default `componentsRender`
 
 ```dart
 
@@ -89,5 +89,29 @@ MiniMapCustomRender componentsRenderDefault() => (canvas, component) {
           }
         }
       };
+
+```
+
+## TypeWriter
+
+```dart
+
+TypeWriter({
+    Key? key,
+    this.style,
+    required this.text,
+    this.speed = 50,
+    this.autoStart = true,
+    this.onFinish,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.softWrap = true,
+    this.overflow = TextOverflow.clip,
+    this.textScaleFactor = 1.0,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+    this.textWidthBasis = TextWidthBasis.parent,
+  })
 
 ```
