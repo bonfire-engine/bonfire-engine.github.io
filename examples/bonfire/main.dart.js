@@ -37070,7 +37070,7 @@ $1(a){return new A.fm(A.a([],t.mq),$.aa())},
 $S:166}
 A.F5.prototype={
 R(a){var s,r,q=this,p=null,o=A.cm(p,p,B.i,p,p,p,p,p,p,p,p,30,p,p,p,p,p,!0,p,p,p,p,p,p,p,p)
-o=A.ou(A.a26(p,p,B.cS,p,p,!0,p,A.dz(A.a([A.dz(p,A.cm(p,p,B.i,p,p,p,p,p,p,p,p,15,p,p,p,p,p,!0,p,p,p,p,p,p,p,p),"  v2.11.1")],t.VO),o,"Bonfire"),B.aW,p,p,1,B.aX),p,p)
+o=A.ou(A.a26(p,p,B.cS,p,p,!0,p,A.dz(A.a([A.dz(p,A.cm(p,p,B.i,p,p,p,p,p,p,p,p,15,p,p,p,p,p,!0,p,p,p,p,p,p,p,p),"  v2.11.1")],t.VO),o,"Bonfire."),B.aW,p,p,1,B.aX),p,p)
 s=t.p
 r=A.a([q.ni(a,"Simple example",new A.a_7(q,a)),new A.dl(p,10,p,p),q.ni(a,"Manual Map",new A.a_8(q,a)),new A.dl(p,10,p,p),q.ni(a,"Random Map",new A.a_9(q,a)),new A.dl(p,10,p,p),q.ni(a,"Tiled Map",new A.a_a(q,a)),new A.dl(p,10,p,p),q.ni(a,"Top down game",new A.a_b(q,a))],s)
 return new A.wg(A.ou(A.St(A.a([o,new A.dl(p,40,p,p),new A.Hn(new A.IW(20,20,r,p),p)],s),B.bC,B.dC),p,p),B.yp,A.dQ(p,A.ou(A.fU("Keyboard: directional and Space Bar to attack",A.cm(p,p,p,p,p,p,p,p,p,p,p,18,p,p,p,p,p,!0,p,p,p,p,p,p,p,p)),p,p),p,p,p,40,p,p,p,p),p)},
