@@ -322,3 +322,28 @@ class MyComponent extends GameComponent with UseSprite{
 }
 
 ```
+
+### UseBarLife
+
+Mixin use to adds BarLife in a Attackable component.
+You configure the BarLife called `setupBarLife`:
+
+```dart
+
+void setupBarLife({
+    Vector2? size,
+    Color? backgroundColor,
+    Color? borderColor,
+    double borderWidth = 2,
+    double margin = 4,
+    List<Color>? colors,
+    BorderRadius? borderRadius,
+    BarLifePorition barLifePosition = BarLifePorition.top,
+    Vector2? offset,
+    Vector2? textOffset,
+    TextStyle? textStyle,
+    bool showLifeText = true,
+    BarLifeTextBuilder? barLifetextBuilder,
+  })
+
+```
