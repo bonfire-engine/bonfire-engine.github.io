@@ -25,7 +25,7 @@ Useful for generating animations.
 
 You can show a widget to follow a component in the game. This is useful to create dialogs, inventory, interactions, etc.
 
-To show is easy, just call `FollowerWidget.show`. See bellow:
+To show is easy, just call `FollowerWidget.show`. See below:
 
 ```dart
    FollowerWidget.show(
