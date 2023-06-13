@@ -10,13 +10,13 @@ Are they:
 
 > <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) </small>
 
-Object tha render a `Sprite`.
+Object that renders a `Sprite`.
 
 ## AnimatedObject
 
 > <small> This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) </small>
 
-Object tha render a `SpriteAnimation`.
+Object that renders a `SpriteAnimation`.
 
 ## AnimatedObjectOnce
 
@@ -67,7 +67,7 @@ The same `FollowerObject` with animation.
 
 > <small> This is a [FollowerObject](#AnimatedObject) and use [ObjectCollision](collision_system), [Lighting](lighting) </small>
 
- Component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
+Component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
 
 ```dart
 
