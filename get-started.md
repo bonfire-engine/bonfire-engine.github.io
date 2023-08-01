@@ -93,9 +93,9 @@ To create a player just need create a class and extends by `SimplePlayer`. [See 
 
 ```dart
 
-class Kinght extends SimplePlayer {
+class Knight extends SimplePlayer {
 
-    Kinght(Vector2 position)
+    Knight(Vector2 position)
       : super(
           position: position, 
           size: Vector2(32,32),
@@ -116,7 +116,7 @@ Now only adds your player in the game:
         directional: JoystickDirectional(),
       ), 
       map: WorldMapByTiled('tile/map.json', forceTileSize: 32),
-      player: Kinght(Vector2(40,40))
+      player: Knight(Vector2(40,40))
     );
   }
 ```
