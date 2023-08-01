@@ -105,7 +105,7 @@ class Knight extends SimplePlayer {
 
 ```
 
-Now only adds your player in the game:
+Now only add your player in the game:
 
 
 ```dart
