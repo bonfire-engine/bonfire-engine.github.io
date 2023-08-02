@@ -238,14 +238,14 @@ return BonfireWidget(
     );
 ```
 
-And then, this the result:
+And then, this is the result:
 
 ![](_media/random_map_example.png)
 
 
 ### MapTerrain
 
-`MapTerrain` is each tipe of terrain that you map could have.
+`MapTerrain` is each type of terrain that you map could have.
 Basic exist to types:
 
 - MapTerrain: The basic terrain when have no corners.
