@@ -6,7 +6,7 @@ Layer responsible for adding lighting to the game.
 
 <img width=400 src="_media/example_lighting.jpg"></img>
 
-By setting the `lightingColorGame` property on BofireWidget you automatically enable this lighting system. and to add light to the objects, just add the `Lighting` mixin to the component and configure it using `setupLighting()` method:
+By setting the `lightingColorGame` property on BonfireWidget you automatically enable this lighting system. To add light to objects, just add the `Lighting` mixin to the component and configure it using `setupLighting()` method:
 
 ```dart
 class MyCustomDecoration extends GameDecoration with Lighting {
