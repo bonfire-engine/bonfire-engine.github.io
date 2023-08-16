@@ -26,24 +26,45 @@
   <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/custom-style.css">
+  <style>
+    .version-selector {
+      width: 100%;
+    }
+    </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script>
+    let versions = [
+      { folder: '', label: 'v2.x', default: true },
+      { folder: 'v3.0/', label: 'v3.x', default: false }
+    ];
+    let basePath = sessionStorage.getItem("basePath");
+    if (basePath == null) {
+      let defaultVersion = versions.find((v) => v.default).folder;
+      sessionStorage.setItem("basePath", defaultVersion);
+    }
+    const versionFolder = sessionStorage.getItem("basePath");
+  
     window.$docsify = {
       name: 'Bonfire',
-      repo: 'https://github.com/bonfire-engine/bonfire-engine.github.io'
-    }
-    window.$docsify = {
+      repo: 'https://github.com/bonfire-engine/bonfire-engine.github.io',
       loadSidebar: true,
       coverpage: true,
-      auto2top: true,
+      // auto2top: true,
+      loadNavbar: true,
       maxLevel: 4,
       subMaxLevel: 2,
+      basePath: sessionStorage.getItem("basePath"),
+      versions: versions,
+      versionSelectorLabel: 'Version',
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
 </body>
 
 </html>

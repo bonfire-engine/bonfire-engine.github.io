@@ -1,6 +1,6 @@
-![logo](_media/bonfire.gif)
+![logo](../_media/bonfire.gif)
 
-# Bonfire <small>v2.x</small>
+# Bonfire <small>v3.x</small>
 
 > Create RPG-style or similar games easily with Flutter.
 
@@ -8,10 +8,10 @@
 
 [![](https://img.shields.io/github/forks/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=forks)](https://github.com/RafaelBarbosatec/bonfire)
 [![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=stars)](https://github.com/RafaelBarbosatec/bonfire)
-[![pub package](https://img.shields.io/pub/v/bonfire.svg)](https://pub.dev/packages/bonfire)
+
 
 [Demo](https://bonfire-engine.github.io/examples/bonfire/)
-[Get Started](#welcome-to-bonfire)
+[Get Started](#welcome-to-bonfire-under-construction)
 
 ![color](#3f3f3f)
 
