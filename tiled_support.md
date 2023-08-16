@@ -37,7 +37,7 @@ For maps built with Tiled we must use the Widget `BonfireWidget` (example [here]
 
 ```dart
 WorldMapByTiled map = WorldMapByTiled(
-    'tiled/mapa.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
+    'tiled/map.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
     forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
     objectsBuilder: {
         'goblin': (TiledObjectProperties properties) => Goblin(properties.position),
