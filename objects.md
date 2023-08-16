@@ -1,10 +1,10 @@
 # Objects
 
-> All objects in Bonfire are [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart), he is the basis of everything.
+> All objects in Bonfire are [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart), it is the basis of everything.
 
 This section is intended to list some Objects already implemented and that can be reused to meet a similar need.
 
-Are they:
+They are:
 
 ## SpriteObject
 
@@ -65,9 +65,9 @@ The same `FollowerObject` with animation.
 
 ## FlyingAttackObject
 
-> <small> This is a [FollowerObject](#AnimatedObject) and use [ObjectCollision](collision_system), [Lighting](lighting) </small>
+> <small> This is a [FollowerObject](#AnimatedObject) and it uses [ObjectCollision](collision_system), [Lighting](lighting) </small>
 
-Component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
+A component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
 
 ```dart
 
