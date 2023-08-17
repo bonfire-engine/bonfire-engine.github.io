@@ -23,6 +23,10 @@ This is ideal for building games from the following perspectives:
 
 Check out the web [Examples](/doc/examples) to see Bonfire in use.
 
+## Donate
+
+Please consider donating if you think Bonfire is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://www.buymeacoffee.com/rafaelbarbosa). ❤️
+
 ## Community
 
 We have a Bonfire help channel on Fireslime's Discord, join it [here](https://discord.com/invite/pxrBmy4) or telegram group [here](https://t.me/bonfire_engine)

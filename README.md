@@ -1,5 +1,5 @@
 
-# Welcome to Bonfire (Under construction)
+# Welcome to Bonfire
 
 > Build RPG games and similar with the power of [FlameEngine](https://flame-engine.org/)!
 
@@ -22,6 +22,10 @@ This is ideal for building games from the following perspectives:
 ## Examples
 
 Check out the web [Examples](/doc/examples) to see Bonfire in use.
+
+## Donate
+
+Please consider donating if you think Bonfire is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://www.buymeacoffee.com/rafaelbarbosa). ❤️
 
 ## Community
 

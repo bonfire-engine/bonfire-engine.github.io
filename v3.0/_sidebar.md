@@ -1,3 +1,4 @@
-* [Home](/#welcome-to-bonfire-under-construction)
+
+* [Welcome](/?id=welcome-to-bonfire-under-construction)
 * [Get Started](doc/getting-started.md)
 * [Examples](doc/examples.md)

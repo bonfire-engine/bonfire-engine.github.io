@@ -11,7 +11,7 @@
 
 
 [Demo](https://bonfire-engine.github.io/examples/bonfire-v3/)
-[Get Started](#welcome-to-bonfire-under-construction)
+[Know more](#welcome-to-bonfire-under-construction)
 
 ![color](#3f3f3f)
 
