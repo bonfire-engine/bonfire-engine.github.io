@@ -1,3 +1,5 @@
+# Examples
+
 ## SunnyPlace [In development]
 > Game case
 
@@ -6,7 +8,9 @@
 ![](../../_media/sunnyplace.gif)
 
 ## Bonfire Example
-[GitHub](https://github.com/RafaelBarbosatec/bonfire/tree/master/example)    -   [PLAY](https://bonfire-engine.github.io/examples/bonfire-v3/)
+[GitHub](https://github.com/RafaelBarbosatec/bonfire/tree/v3.0.0/example)    -   [Play](https://bonfire-engine.github.io/examples/bonfire-v3/)
+
+![Bonfire example](https://bonfire-engine.github.io/examples/bonfire-v3 ':include :type=iframe width=100% height=500px') 
 
 ## Darkness Dungeon
 [GitHub](https://github.com/RafaelBarbosatec/darkness_dungeon) - [PlayStore](https://play.google.com/store/apps/details?id=com.rafaelbarbosatec.darkness_dungeon) - [AppleStore](https://apps.apple.com/us/app/darkness-dungeon/id1506675248)
