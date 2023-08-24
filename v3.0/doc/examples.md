@@ -25,6 +25,8 @@
 
 ## Light Shooter
 
+Online game that use [Nakama game server](https://flutter-nakama.gitbook.io/flutter-nakama/)
+
 [GitHub](https://github.com/RafaelBarbosatec/light_shooter) - 
 [Video](https://twitter.com/RafaBarbosaTec/status/1656049304413274113)
 
@@ -32,13 +34,27 @@
 
 ## Defector
 
+Game submitted to [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-game-jam/rate/1672215)
+
 [GitHub](https://github.com/RafaelBarbosatec/defector)   -   [PLAY](https://rafaelbarbosatec.itch.io/defector)
 
 ![](../../_media/defector.gif)
 
 ## PacMan
 
+Clone Pacman game
+
 [GitHub](https://github.com/RafaelBarbosatec/pacman)   -   [PLAY](https://rafaelbarbosatec.itch.io/pacman-bonfire)
 
 ![](../../_media/pacman.png)
+
+
+## Npc neural
+
+Simple implementation of the training of NPC using Neural Network perceptron and Bonfire
+
+
+[GitHub](https://github.com/RafaelBarbosatec/npc_neural_training)    -   [Play](https://bonfire-engine.github.io/examples/neural-network)
+
+![Bonfire example](https://bonfire-engine.github.io/examples/neural-network ':include :type=iframe width=100% height=600px') 
 
