@@ -42,7 +42,7 @@ Game submitted to [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-ga
 
 ## PacMan
 
-Clone Pacman game
+Pacman Clone game
 
 [GitHub](https://github.com/RafaelBarbosatec/pacman)   -   [PLAY](https://rafaelbarbosatec.itch.io/pacman-bonfire)
 
