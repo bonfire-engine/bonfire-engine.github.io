@@ -10,7 +10,8 @@
 [![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=stars)](https://github.com/RafaelBarbosatec/bonfire)
 
 
-[Demo](https://bonfire-engine.github.io/examples/bonfire-v3/)
+[Github](https://github.com/RafaelBarbosatec/bonfire)
+[Demo](https://bonfire-engine.github.io/examples/bonfire-v3)
 [Know more](#welcome-to-bonfire-under-construction)
 
 ![color](#3f3f3f)
