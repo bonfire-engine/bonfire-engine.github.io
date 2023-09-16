@@ -2,6 +2,9 @@
 
 Bonfire is basically a Widget where you passing the parameters and configuring according you want that you game be.
 
+
+## BonfireWidget
+
 ```dart
 @override
   Widget build(BuildContext context) {
