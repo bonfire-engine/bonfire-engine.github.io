@@ -52,7 +52,7 @@ or you can add components inside other components like a child just using this:
 
 ---
 
-It is composed of several components that are rendered according to the layer diagram below.
+Bonfire is composed of several components that are rendered according to the layer diagram below.
 
 <img src="_media/layers.png" width="600"/>
 
