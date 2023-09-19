@@ -1,7 +1,7 @@
 
 * [Welcome](/?id=welcome-to-bonfire-under-construction)
-* [Get Started](doc/getting-started.md)
-* [Overview](doc/overview.md)
-* [Map](doc/map.md)
-* [Decoration](doc/decoration.md)
-* [Examples](doc/examples.md)
+* [Get Started](doc/getting-started.md?id=get-started)
+* [Overview](doc/overview.md?id=overview)
+* [Map](doc/map.md?id=map)
+* [Decoration](doc/decoration.md?id=decoration)
+* [Examples](doc/examples.md?id=bonfire-example)
