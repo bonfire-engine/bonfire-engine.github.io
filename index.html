@@ -48,8 +48,8 @@
   <div id="app"></div>
   <script>
     let versions = [
-      { folder: '', label: 'v2.x', default: true },
-      { folder: 'v3.0/', label: 'v3.x', default: false }
+      { folder: '', label: 'v2.x', default: false },
+      { folder: 'v3.0/', label: 'v3.x', default: true }
     ];
     let basePath = sessionStorage.getItem("basePath");
     if (basePath == null) {

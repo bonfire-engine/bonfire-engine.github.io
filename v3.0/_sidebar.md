@@ -9,5 +9,5 @@
 * [Decoration](doc/decoration.md?id=decoration)
 * [Gestures](doc/gestures.md?id=gestures)
 * [Collision system](doc/collision_system.md?id=collision-system)
-* [Loading assets](doc/loading_assets.md)
+* [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)
 * [Examples](doc/examples.md?id=bonfire-example)

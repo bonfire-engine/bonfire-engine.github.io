@@ -21,7 +21,7 @@ This is ideal for building games from the following perspectives:
 
 ## Examples
 
-Check out the web [Examples](/doc/examples?id=examples) to see Bonfire in use.
+Check out the web [Examples](/doc/examples?id=bonfire-example) to see Bonfire in use.
 
 ## Donate
 
