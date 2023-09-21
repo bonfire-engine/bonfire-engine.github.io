@@ -15,7 +15,7 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
           position: position,
         ){
             // call this method to configure interval sensor check contact. default 100 milliseconds.
-            setupSensorArea(100);
+            setSensorInterval(100);
         }
 
     @override
