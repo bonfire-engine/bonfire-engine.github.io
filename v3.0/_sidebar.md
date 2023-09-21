@@ -8,4 +8,5 @@
 * [Ally](doc/ally.md?id=ally)
 * [Decoration](doc/decoration.md?id=decoration)
 * [Gestures](doc/gestures.md?id=gestures)
+* [Loading assets](doc/loading_assets.md)
 * [Examples](doc/examples.md?id=bonfire-example)
