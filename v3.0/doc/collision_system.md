@@ -5,7 +5,7 @@
 
 ## How to use
 
-In the 3.0 version all collision system used is by [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
+In the 3.0 version all collision system using [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
 
 To add collision in your component just adds a `ShapeHitbox` (PolygonHitbox,RectangleHitbox or CircleHitbox) like this:
 
@@ -14,8 +14,9 @@ To add collision in your component just adds a `ShapeHitbox` (PolygonHitbox,Rect
 class MyComponent extends SimplePlayer {
   //...
   @override
-  void onLoad() {
+  Future<void> onLoad() {
     add(RectangleHitbox(size:size));
+    return super.onLoad();
   }
 }
 
@@ -49,15 +50,16 @@ class MyCollidable extends SimplePlayer {
 
 ```
 
-So, now you can know when happen collision, but it not do components stop your movement when it happen. To o it just adds the `BlockMovementCollision` mixin like this:
+So, now you can know when happen collision, but it not do components stop your movement when it happen. To do it just adds the `BlockMovementCollision` mixin like this:
 
 ```dart
 
 class MyComponent extends SimplePlayer with  BlockMovementCollision{
   //...
   @override
-  void onLoad() {
+  Future<void> onLoad() {
     add(RectangleHitbox(size:size));
+    return super.onLoad();
   }
 }
 
@@ -75,8 +77,9 @@ You can know what `GameComponent` collided by overriding `onBlockMovement` or `o
 class MyComponent extends SimplePlayer with  BlockMovementCollision{
   //...
   @override
-  void onLoad() {
+  Future<void> onLoad() {
     add(RectangleHitbox(size:size));
+    return super.onLoad();
   }
 
   @override
@@ -112,4 +115,4 @@ To verify if collisions are in the right position, you can enable `showCollision
     ),
 ```
 
-![](_media/show_collision.png)
+![](../../_media/show_collision.png)
