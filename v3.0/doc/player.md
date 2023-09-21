@@ -13,6 +13,7 @@ We can create three types of enemies `SimplePlayer`, `RotationPlayer` and `Platf
 ## SimplePlayer 
 > <small>This is a [Player](#Player) and use [DirectionAnimation](mixins?id=directionanimation)</small>
 
+
 Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
 
 To use it, simply create a class that will represent your enemy and extend SimplePlayer:
@@ -155,7 +156,7 @@ To update the `SimplePlayer` animation you should use this method:
 
 ```
 
-To change the SimplePlayer animation you should use the `SimpleDirectionAnimation` methods. For example:
+To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
 
 ```dart
 
@@ -300,7 +301,7 @@ To update the `PlatformPlayer` animation you should use this method:
 
 ```
 
-To change the SimplePlayer animation you should use the `SimpleDirectionAnimation` methods. For example:
+To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
 
 ```dart
 

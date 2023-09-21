@@ -4,5 +4,8 @@
 * [Overview](doc/overview.md?id=overview)
 * [Map](doc/map.md?id=map)
 * [Player](doc/player.md?id=player)
+* [Enemy](doc/enemy.md?id=enemy)
+* [Ally](doc/ally.md?id=ally)
 * [Decoration](doc/decoration.md?id=decoration)
+* [Gestures](doc/gestures.md?id=gestures)
 * [Examples](doc/examples.md?id=bonfire-example)
