@@ -7,7 +7,7 @@
 * [Enemy](doc/enemy.md?id=enemy)
 * [Ally](doc/ally.md?id=ally)
 * [Decoration](doc/decoration.md?id=decoration)
-* [Gestures](doc/gestures.md?id=gestures)
+* [Input](doc/input.md?id=input)
 * [Joystick](doc/joystick.md?id=joystick)
 * [Camera](doc/camera.md?id=camera)
 * [Collision system](doc/collision_system.md?id=collision-system)

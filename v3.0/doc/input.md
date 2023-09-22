@@ -1,10 +1,13 @@
-# Gestures
+# Input
+
+
+## Gestures
 
 > At Bonfire we use mixins to enable this interaction.
 
 Bonfire use [Listener](https://api.flutter.dev/flutter/widgets/Listener-class.html) Widget to recieve gestures.
 
-## TapGesture
+### TapGesture
 
 To enable TapGesture just add `TapGesture` mixin in your component like this:
 
@@ -46,7 +49,7 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
 }
 ```
 
-## DragGesture
+### DragGesture
 
 To enable DragGesture just add `DragGesture` mixin in your component like this:
 
@@ -81,13 +84,33 @@ void endDrag(int pointer) {}
 void cancelDrag(int pointer) {}
 ```
 
-## MouseGesture
+### Custom
 
-To enable DragGesture just add `MouseGesture` mixin in your component like this:
+All components extends `PointerDetectorHandler`,so, to recieve gestures events do override `hasGesture` returning `true`:
+
+```dart
+  @override
+  bool hasGesture() => true;
+```
+
+this way you can listen gestures events on the screen doing override this methods:
+
+```dart
+  void handlerPointerDown(PointerDownEvent event) {}
+  void handlerPointerMove(PointerMoveEvent event) {}
+  void handlerPointerUp(PointerUpEvent event) {}
+  void handlerPointerCancel(PointerCancelEvent event) {}
+  void handlerPointerHover(PointerHoverEvent event) {}
+  void handlerPointerSignal(PointerSignalEvent event) {}
+```
+
+## Mouse
+
+To enable DragGesture just add `MouseListener` mixin in your component like this:
 
 ```dart
 
-class MyCustomDecoration extends GameDecoration with MouseGesture {
+class MyCustomDecoration extends GameDecoration with MouseListener {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
@@ -131,22 +154,23 @@ If you want to listen to the interactions with the object, you can override thes
   void onMouseCancel() {}
 ```
 
-## Custom
+## Keyboard
 
-All components extends `PointerDetectorHandler`,so, to recieve gestures events do override `hasGesture` returning `true`:
+To listen keyboard events just use the mixin `KeyboardEventListener`.
 
 ```dart
+
+class HumanPlayer extends SimplePlayer with KeyboardEventListener{
+  //...
   @override
-  bool hasGesture() => true;
-```
+  bool onKeyboard(
+    RawKeyEvent event,
+    Set<LogicalKeyboardKey> keysPressed,
+  ) {
+    return super.onKeyboard(event,keysPressed);
+  }
 
-this way you can listen gestures events on the screen doing override this methods:
+}
 
-```dart
-  void handlerPointerDown(PointerDownEvent event) {}
-  void handlerPointerMove(PointerMoveEvent event) {}
-  void handlerPointerUp(PointerUpEvent event) {}
-  void handlerPointerCancel(PointerCancelEvent event) {}
-  void handlerPointerHover(PointerHoverEvent event) {}
-  void handlerPointerSignal(PointerSignalEvent event) {}
+
 ```
