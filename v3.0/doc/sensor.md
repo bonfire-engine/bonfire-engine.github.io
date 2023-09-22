@@ -21,6 +21,12 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
     @override
     void onContact(Myplayer component) {
         // do anything with the Myplayer that take contact
+        super.onContact(component);
+    }
+
+    void onContactExit(Myplayer component) {
+         // do anything with the Myplayer that exit contact
+         super.onContactExit(component);
     }
 
     @override
