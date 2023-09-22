@@ -9,6 +9,7 @@
 * [Decoration](doc/decoration.md?id=decoration)
 * [Gestures](doc/gestures.md?id=gestures)
 * [Joystick](doc/joystick.md?id=joystick)
+* [Camera](doc/camera.md?id=camera)
 * [Collision system](doc/collision_system.md?id=collision-system)
 * [Lighting](doc/lighting.md?id=lighting)
 * [Sensor](doc/sensor.md?id=sensor)
