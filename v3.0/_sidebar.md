@@ -15,4 +15,5 @@
 * [Sensor](doc/sensor.md?id=sensor)
 * [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)
 * [Tiled Support](doc/tiled_support.md?id=tiled-support)
+* [Scene builder](doc/scene_builder.md?id=scene_builder)
 * [Examples](doc/examples.md?id=bonfire-example)
