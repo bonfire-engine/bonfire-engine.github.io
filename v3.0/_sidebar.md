@@ -14,4 +14,5 @@
 * [Lighting](doc/lighting.md?id=lighting)
 * [Sensor](doc/sensor.md?id=sensor)
 * [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)
+* [Tiled Support](doc/tiled_support.md?id=tiled-support)
 * [Examples](doc/examples.md?id=bonfire-example)
