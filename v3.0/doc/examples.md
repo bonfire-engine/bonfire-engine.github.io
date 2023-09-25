@@ -11,7 +11,7 @@
 ![](../../_media/sunnyplace.gif)
 
 ## Darkness Dungeon
-[GitHub](https://github.com/RafaelBarbosatec/darkness_dungeon) - [PlayStore](https://play.google.com/store/apps/details?id=com.rafaelbarbosatec.darkness_dungeon) - [AppleStore](https://apps.apple.com/us/app/darkness-dungeon/id1506675248)
+[GitHub](https://github.com/RafaelBarbosatec/darkness_dungeon) - [PlayStore](https://play.google.com/store/apps/details?id=com.rafaelbarbosatec.darkness_dungeon)
 
 ![](../../_media/example_darkness.gif)
 
