@@ -14,6 +14,7 @@
 * [Lighting](doc/lighting.md?id=lighting)
 * [Sensor](doc/sensor.md?id=sensor)
 * [Forces](doc/forces.md?id=forces)
+* [Useful mixins](doc/mixins.md?id=mixins)
 * [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)
 * [Tiled Support](doc/tiled_support.md?id=tiled-support)
 * [Scene builder](doc/scene_builder.md?id=scene_builder)
