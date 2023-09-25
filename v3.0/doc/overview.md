@@ -6,7 +6,7 @@ Bonfire is basically a Widget where you passing the parameters and configuring a
 ## BonfireWidget
 
 ```dart
-@override
+  @override
   Widget build(BuildContext context) {
     return BonfireWidget(
       map: WorldMapByTiled('tile/map.json'), // required
