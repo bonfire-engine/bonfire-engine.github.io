@@ -2,6 +2,10 @@
 
 Bonfire have a simple forces system. You can add in your games linear, acceleration or resistance forces.
 
+| AccelerationForce2D | LinearForce2D    | ResistanceForce2D    |
+| :---:   | :---: | :---: |
+| ![](../../_media/force_acceleration.gif) | ![](../../_media/force_linear.gif)   | ![](../../_media/force_resistance.gif)   |
+
 
 ## Using
 
