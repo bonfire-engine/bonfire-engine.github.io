@@ -15,25 +15,41 @@ Mixin responsible for adding movements.
 Your component will gain properties like:
 
 ```dart
-    bool isIdle = true;
     double speed = 100;
     Direction lastDirection = Direction.right;
     Direction lastDirectionHorizontal = Direction.right;
+    Direction lastDirectionVertical = Direction.down;
 ```
 
 And methods to movement your component. (These movements take collisions into account. If returns `true` the movement was did with success)
 
 ```dart
-    bool moveUp(double speed, {VoidCallback? onCollision})
-    bool moveDown(double speed, {VoidCallback? onCollision})
-    bool moveLeft(double speed, {VoidCallback? onCollision})
-    bool moveRight(double speed, {VoidCallback? onCollision})
-    bool moveUpRight(double speedX, double speedY, {VoidCallback? onCollision})
-    bool moveUpLeft(double speedX, double speedY, {VoidCallback? onCollision})
-    bool moveDownLeft(double speedX, double speedY, {VoidCallback? onCollision})
-    bool moveDownRight(double speedX, double speedY,{VoidCallback? onCollision})
-    bool moveFromAngle(double speed, double angle, {VoidCallback? onCollision})
-    bool moveFromAngleDodgeObstacles(double speed, double angle, {VoidCallback? onCollision,})
+    void moveUp({double? speed})
+    void moveDown({double? speed})
+    void moveLeft({double? speed})
+    void moveRight({double? speed})
+    void moveUpRight({double? speed})
+    void moveUpLeft({double? speed})
+    void moveDownLeft({double? speed})
+    void moveDownRight({double? speed})
+    void moveFromAngle({double? speed})
+    void stopMove({bool forceIdle = false, bool isX = true, bool isY = true})
+    void moveFromAngle(double angle, {double? speed})
+    void moveFromDirection(Direction direction, {bool enabledDiagonal = true})
+    bool moveToPosition(Vector2 position, {double? speed,bool useCenter = true})
+```
+
+You can listen the movement is changing:
+
+```dart
+@override
+void onMove(
+    double speed,
+    Vector2 displacement,
+    Direction direction,
+    double angle,
+  ) {}
+
 ```
 
 ## DirectionAnimation
@@ -75,9 +91,10 @@ animation.playOnce(
     bool runToTheEnd = false,
     bool flipX = false,
     bool flipY = false,
+    bool useCompFlip = false,
     Vector2? size,
     Vector2? offset,
-  });
+  );
 
 /// Method used to play specific animation registred in `others`
 animation.playOther(String key, {bool flipX = false, bool flipY = false});
@@ -116,14 +133,32 @@ class MyComponent extends GameComponent with Movement, AutomaticRandomMovement{
     
     @override
     void update(double dt) {
-        this.runRandomMovement(
-            dt,
-            speed: 20,
-            maxDistance: 100,
-        );
+        this.runRandomMovement(dt);
         super.update(dt);
     }
 }
+
+```
+
+All parameters:
+
+```dart
+
+void runRandomMovement(
+    double dt, {
+    bool runOnlyVisibleInCamera = true,
+    double? speed,
+    int maxDistance = 50,
+    int minDistance = 25,
+
+    /// milliseconds
+    int timeKeepStopped = 2000,
+    bool updateAngle = false,
+    bool checkPositionWithRaycast = false,
+    RandomMovementDirectionEnum direction = RandomMovementDirectionEnum.all,
+    Function(Vector2 target)? onStartMove,
+    Function()? onArrivedTarget,
+  })
 
 ```
 
@@ -169,10 +204,11 @@ Adds these methods in your component:
 ```dart
     void initialLife(double life)
     void addLife(double life)
-    void updateLife(double life)
+    void updateLife(double life,{bool verifyDieOrRevive = true})
     void removeLife(double life)
 
     /// This method is used to check if this component can receive damage from any attacker.
+    @override
     bool checkCanReceiveDamage(
         AttackFromEnum attacker,
         double damage,
@@ -219,9 +255,9 @@ Mixin used to configure lighting in your component.
 
 See [Lighting](lighting)
 
-## ObjectCollision
+## BlockMovementCollision
 
-Mixin responsible for adding collision.
+Mixin responsible for adding stop the movement when happen collision.
 
 See [ObjectCollision](collision_system)
 
@@ -231,12 +267,6 @@ See [ObjectCollision](collision_system)
 Mixin responsible for enable push in the component.
 
 You can do override the method `bool onPush(GameComponent component)` to control when can pushable. Returning true if the component is pushable, false otherwise. (default return true).
-
-## AutomaticRandomMovement
-
-> To use this mixin your component must contain `Movement` mixin.
-
-Adds the basic implementation  of randomic movement. You component gain `runRandomMovement` method. You can use this un your `update` method to do movement in randomic way. It's useful to enemy, npc, decorations.
 
 ## Follower
 
@@ -287,11 +317,18 @@ class MyComponent extends GameComponent with UseSpriteAnimation{
 
     @override
     Future onLoad() async {
-        animation = await MySpriteSheetLoader.geAnimation();
+        setAnimation(await MySpriteSheetLoader.geAnimation());
         return super.onLoad();
     }
 }
 
+```
+
+You can know the current index animation or if is the last frame:
+
+```dart
+  bool get isAnimationLastFrame
+  int get animationCurrentIndex
 ```
 
 ## UseSprite
