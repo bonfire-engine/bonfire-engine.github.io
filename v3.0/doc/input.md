@@ -110,7 +110,7 @@ To enable DragGesture just add `MouseListener` mixin in your component like this
 
 ```dart
 
-class MyCustomDecoration extends GameDecoration with MouseListener {
+class MyCustomDecoration extends GameDecoration with MouseEventListener {
   MyCustomDecoration(Position position)
       : super.withAnimation(
           Future<SpriteAnimation>(),
