@@ -25,7 +25,7 @@ You can configure some settings in the camera:
 Useful functions to be used during the game:
 
 ```dart
-   gameRef.bonfireCamera.moveToPositionAnimated(
+   gameRef.camera.moveToPositionAnimated(
    {
       required Vector2 position,
       EffectController? effectController,
@@ -35,7 +35,7 @@ Useful functions to be used during the game:
    }
    )
 
-   gameRef.bonfireCamera.moveToTargetAnimated({
+   gameRef.camera.moveToTargetAnimated({
       required PositionComponent target,
       EffectController? effectController,
       double? zoom,
@@ -44,28 +44,28 @@ Useful functions to be used during the game:
       bool followTarget = true,
    })
 
-   gameRef.bonfireCamera.moveToPlayer();
+   gameRef.camera.moveToPlayer();
 
-   gameRef.bonfireCamera.moveToPlayerAnimated({
+   gameRef.camera.moveToPlayerAnimated({
       EffectController? effectController,
       Function()? onComplete,
       double? zoom,
       double? angle,
    })
 
-   gameRef.bonfireCamera.animateZoom({
+   gameRef.camera.animateZoom({
       required Vector2 zoom,
       EffectController? effectController,
       Function()? onComplete,
    })
 
-   gameRef.bonfireCamera.animateAngle({
+   gameRef.camera.animateAngle({
       required double angle,
       EffectController? effectController,
       Function()? onComplete,
    })
 
-   gameRef.bonfireCamera.follow(
+   gameRef.camera.follow(
       PositionProvider target, {
       double maxSpeed = double.infinity,
       bool horizontalOnly = false,
@@ -73,5 +73,5 @@ Useful functions to be used during the game:
       bool snap = false,
    })
 
-   gameRef.bonfireCamera.shake({double intensity = 10.0, Duration? duration})
+   gameRef.camera.shake({double intensity = 10.0, Duration? duration})
 ```
