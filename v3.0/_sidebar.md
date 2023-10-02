@@ -18,4 +18,5 @@
 * [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)
 * [Tiled Support](doc/tiled_support.md?id=tiled-support)
 * [Scene builder](doc/scene_builder.md?id=scene_builder)
+<!-- * [Path finding](doc/path_finding.md?id=pathfinding) -->
 * [Examples](doc/examples.md?id=bonfire-example)
