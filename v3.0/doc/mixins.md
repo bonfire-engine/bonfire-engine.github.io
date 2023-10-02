@@ -189,6 +189,8 @@ You can disable this behavior setting `movementByJoystickEnabled` false.
 
 ## Attackable
 
+> how use it: `Player`, `Ally`, `Enemy`
+
 Mixin responsible for adding damage-taking behavior to the component.
 
 Your component will gain properties like:
@@ -329,6 +331,7 @@ You can know the current index animation or if is the last frame:
 ```dart
   bool get isAnimationLastFrame
   int get animationCurrentIndex
+  int get isPaused
 ```
 
 ## UseSprite
@@ -374,5 +377,26 @@ void setupBarLife({
     bool showLifeText = true,
     BarLifeTextBuilder? barLifetextBuilder,
   })
+
+```
+
+### TileRecognizer
+
+Mixin used to recognize the of tiles is below.
+
+In the Tiled program used to build your map, you can set a `class` or set custom properties. With this mixin you can access this `Tile` information that the component is above.
+
+```dart
+
+/// Method that checks what type map tile is currently
+ String? tileTypeBelow();
+ /// Method that checks what types map tile is currently
+ List<String> tileTypeListBelow()
+ /// Method that checks what properties map tile is currently
+ Map<String, dynamic>? tilePropertiesBelow()
+ /// Method that checks what properties list map tile is currently
+ List<Map<String, dynamic>>? tilePropertiesListBelow()
+ /// Method that checks what map tiles is below
+ Iterable<Tile> tileListBelow()
 
 ```
