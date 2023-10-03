@@ -21,24 +21,13 @@ class Kinght extends SimplePlayer with PathFinding, TapGesture{
     Kinght(Vector2 position)
     : super(
         ...
-    ), //required
-    ){
-
-        setupMoveToPositionAlongThePath(
-            pathLineColor: Colors.lightBlueAccent.withOpacity(0.5),
-            barriersCalculatedColor: Colors.blue.withOpacity(0.5),
-            pathLineStrokeWidth: 4,
-            showBarriersCalculated: false, // uses this to debug. This enable show in the map the tiles considered collision by algorithm.
-            tileSizeIsSizeCollision: false,
-        )
-        
-    }
+    );
 
     @override
     void onTap() {}
 
     @override
-    void onTapDownScreen(TapGestureEvent event) {
+    void onTapDownScreen(GestureEvent event) {
         moveToPositionWithPathFinding(event.worldPosition);
         super.onTapDownScreen(event);
     }
@@ -46,4 +35,16 @@ class Kinght extends SimplePlayer with PathFinding, TapGesture{
 
 ```
 
+You can do settings using the method `setupPathFinding`:
+
+``` dart
+
+setupPathFinding(
+    pathLineColor: Colors.lightBlueAccent.withOpacity(0.5),
+    barriersCalculatedColor: Colors.blue.withOpacity(0.5),
+    pathLineStrokeWidth: 4,
+    showBarriersCalculated: false, // uses this to debug. This enable show in the map the tiles considered collision by algorithm.
+    tileSizeIsSizeCollision: false,
+)
+```
 

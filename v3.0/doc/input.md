@@ -25,13 +25,13 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
   // It's called when happen tap down in the component
   // If return 'true' this event is not relay to others components.(default = false)
   @override
-  bool onTapDown(int pointer, Vector2 position){
-    return super.onTapDown(pointer,position);
+  bool onTapDown(GestureEvent event){
+    return super.onTapDown(event);
   }
 
   // It's called when happen tap up in the component
   @override
-  void onTapUp(int pointer, Vector2 position){}
+  void onTapUp(GestureEvent event){}
 
   // It's called when happen canceled tap in the component
   @override
@@ -42,9 +42,9 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
   void onTap(){}
 
   // It's called when happen tap down in the screen
-  void onTapDownScreen(int pointer, Vector2 position) {}
+  void onTapDownScreen(GestureEvent event) {}
   // It's called when happen tap up in the screen
-  void onTapUpScreen(int pointer, Vector2 position) {}
+  void onTapUpScreen(GestureEvent event) {}
 
 }
 ```
@@ -73,20 +73,20 @@ If you want to listen to the interactions with the object, you can override thes
 ```dart
 // Called when star drag gesture in the component
 // If return 'true' this event is not relay to others components.(default = false)
-bool startDrag(int pointer, Vector2 position) {
-  return super.startDrag(pointer,position);
+bool startDrag(GestureEvent event) {
+  return super.startDrag(event);
 }
 // Called when component is moved
-void moveDrag(int pointer, Vector2 position) {}
+void moveDrag(GestureEvent event) {}
 // Called when component finish drag
-void endDrag(int pointer) {}
+void endDrag(GestureEvent event) {}
 // Called when drag is canceled
-void cancelDrag(int pointer) {}
+void cancelDrag(GestureEvent event) {}
 ```
 
 ### Custom
 
-All components extends `PointerDetectorHandler`,so, to recieve gestures events do override `hasGesture` returning `true`:
+All components extends `PointerDetectorHandler`,so to recieve gestures events do override `hasGesture` returning `true`:
 
 ```dart
   @override
