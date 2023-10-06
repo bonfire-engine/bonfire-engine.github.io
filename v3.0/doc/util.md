@@ -21,6 +21,65 @@ Vector2 vector2ByAngle(double angle, {double intencity = 1})
 
 ```
 
+GameComponets extensions:
+
+```dart
+/// Used to generate numbers to create your animations or anythings
+  ValueGeneratorComponent generateValues(
+    Duration duration, {
+    double begin = 0.0,
+    double end = 1.0,
+    Curve curve = Curves.linear,
+    bool autoStart = true,
+    VoidCallback? onFinish,
+    ValueChanged<double>? onChange,
+  })
+
+  /// Used to add particles in your component.
+  void addParticle(
+    Particle particle, {
+    Vector2? position,
+    Vector2? size,
+    Vector2? scale,
+    double? angle,
+    Anchor? anchor,
+    int? priority,
+  })
+
+  /// Add in the game a text with animation representing damage received
+  void showDamage(
+    double damage, {
+    TextStyle? config,
+    double initVelocityTop = -5,
+    double gravity = 0.5,
+    double maxDownSize = 20,
+    DirectionTextDamage direction = DirectionTextDamage.RANDOM,
+    bool onlyUp = false,
+  })
+
+```
+
+Others:
+
+```dart
+// Help you to calculate zoom by max tiles can be visible
+double getZoomFromMaxVisibleTile(
+  BuildContext context,
+  double tileSize,
+  int maxTile,
+)
+
+// Could be helpful to render some sprite rotanting using angle.
+void renderSpriteByRadAngle(
+  Canvas canvas,
+  double radAngle,
+  Rect rect,
+  Sprite sprite, {
+  Paint? overridePaint,
+})
+
+```
+
 
 ## Components
 
