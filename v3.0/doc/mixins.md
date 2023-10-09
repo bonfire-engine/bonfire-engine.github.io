@@ -381,14 +381,14 @@ class MyComponent extends GameComponent with UseSprite{
 
 ```
 
-### UseBarLife
+### UseLifeBar
 
 Mixin use to adds BarLife in a Attackable component.
-You configure the BarLife called `setupBarLife`:
+With this mixin you can configure the life bar view using the method `setupLifeBar`:
 
 ```dart
 
-void setupBarLife({
+void setupLifeBar({
     Vector2? size,
     Color? backgroundColor,
     Color? borderColor,
