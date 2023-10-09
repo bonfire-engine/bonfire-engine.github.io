@@ -426,3 +426,16 @@ In the Tiled program used to build your map, you can set a `class` or set custom
  Iterable<Tile> tileListBelow()
 
 ```
+
+### BouncingObject
+
+Mixin responsable to give the bounce behavior. (experimental). You can configure ir using the method `setupBouncingObject`.
+
+```dart
+
+void setupBouncingObject({
+    bool enabled = true,
+    double reflectFactor = 1.0,
+  })
+
+```
