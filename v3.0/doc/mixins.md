@@ -119,6 +119,32 @@ Mixin responsible for find path using `a_star_algorithm` and moving the componen
 
 See [PathFinding](path_finding)
 
+## UseLifeBar
+
+Mixin used to adds a BarLife to the attacable component
+
+With this mixin you can configure the life bar view using the method `setupBarLife`:
+
+```dart
+
+void setupBarLife({
+    Vector2? size,
+    Color? backgroundColor,
+    Color? borderColor,
+    double borderWidth = 2,
+    List<Color>? colors,
+    BorderRadius? borderRadius,
+    BarLifeDrawPorition barLifeDrawPosition = BarLifeDrawPorition.top,
+    Vector2? position,
+    Vector2? textOffset,
+    TextStyle? textStyle,
+    bool showLifeText = true,
+    BarLifeTextBuilder? barLifetextBuilder,
+  })
+
+```
+
+
 ## AutomaticRandomMovement
 
 > To use this mixin your component must contain `Movement` mixin.
