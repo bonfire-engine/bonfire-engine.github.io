@@ -78,6 +78,17 @@ void renderSpriteByRadAngle(
   Paint? overridePaint,
 })
 
+// Useful for generating animations.
+ValueGeneratorComponent generateValues(
+    Duration duration, {
+    double begin = 0.0,
+    double end = 1.0,
+    Curve curve = Curves.linear,
+    bool autoStart = true,
+    VoidCallback? onFinish,
+    ValueChanged<double>? onChange,
+  })
+
 ```
 
 
@@ -210,4 +221,27 @@ FlyingAttackGameObject({
   })
 
 ```
+
+## FollowerWidget
+
+You can show a widget to follow a component in the game. This is useful to create dialogs, inventory, interactions, etc.
+
+To show is easy, just call `FollowerWidget.show`. See below:
+
+```dart
+   FollowerWidget.show(
+      identify: 'PLAYER_INVENTORY', // identify used to remove
+      context: context,
+      target: player, // You can add here any GameComponent
+      child: MyWidget(), // Add here your widget
+      align: Offset.zero, // Align from targe
+   );
+```
+
+To hide:
+
+```dart
+   FollowerWidget.remove('PLAYER_INVENTORY');
+```
+
 
