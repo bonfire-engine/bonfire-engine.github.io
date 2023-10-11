@@ -1,0 +1,56 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+
+  .nav-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-dropdown-container > a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .nav-dropdown-container > a:hover {
+    background-color: #e7e7e7;
+  }
+
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    z-index: 1000;
+    text-align: start;
+  }
+
+  .nav-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .nav-dropdown a:hover {
+    background-color: #e7e7e7;
+  }
+
+  /* 마우스 호버 시 드롭다운 표시 */
+  .nav-dropdown-container:hover .nav-dropdown {
+    display: block;
+  }
+
+  .version-selector {
+    width: 100%;
+  }
