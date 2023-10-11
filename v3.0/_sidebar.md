@@ -21,5 +21,6 @@
 * [Path finding](doc/path_finding.md?id=pathfinding)
 * [Effects](doc/effects.md?id=effects)
 * [Ray casting](doc/ray_casting.md?id=ray-casting)
+* [Particles](doc/particles.md?id=particles)
 * [Util](doc/util.md?id=util)
 * [Examples](doc/examples.md?id=bonfire-example)
