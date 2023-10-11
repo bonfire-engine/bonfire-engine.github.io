@@ -1,5 +1,5 @@
 
-# Welcome to Bonfire (Under construction)
+# Welcome to Bonfire
 
 > Build RPG games and similar with the power of [FlameEngine](https://flame-engine.org/)!
 
