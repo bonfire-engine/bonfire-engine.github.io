@@ -19,5 +19,7 @@
 * [Tiled Support](doc/tiled_support.md?id=tiled-support)
 * [Scene builder](doc/scene_builder.md?id=scene_builder)
 * [Path finding](doc/path_finding.md?id=pathfinding)
+* [Effects](doc/effects.md?id=effects)
+* [Ray casting](doc/ray_casting.md?id=ray-casting)
 * [Util](doc/util.md?id=util)
 * [Examples](doc/examples.md?id=bonfire-example)
