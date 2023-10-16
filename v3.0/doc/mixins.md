@@ -83,6 +83,9 @@ In the `SimpleDirectionAnimation` there are some methods util to control the ani
 
 ```dart
 
+/// Method used to play animation once time using `other` map
+animation.playOnceOther()
+
 /// Method used to play animation once time
 animation.playOnce(
     FutureOr<SpriteAnimation> animation, {
