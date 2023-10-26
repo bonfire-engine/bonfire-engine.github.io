@@ -74,3 +74,4 @@ If you need that the all tiles of layer render above all components you can crea
 You can set `class` in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
 
 You can set `class` in your Object to `collision`. This object will be add in the game with transparency and collision.
+You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be add in the game with transparency and collision.

@@ -120,7 +120,7 @@ animation.resume();
 
 Mixin responsible for find path using `a_star_algorithm` and moving the component through the path.
 
-See [PathFinding](path_finding)
+See [PathFinding](doc/path_finding)
 
 ## UseLifeBar
 
@@ -278,19 +278,19 @@ When you use any method like `seeComponent` or `seeComponentType` will draw the 
 
 Mixin responsible for adding trigger to detect other objects above.
 
-See [Sensor](sensor)
+See [Sensor](doc/sensor)
 
 ## Lighting
 
 Mixin used to configure lighting in your component.
 
-See [Lighting](lighting)
+See [Lighting](doc/lighting)
 
 ## BlockMovementCollision
 
 Mixin responsible for adding stop the movement when happen collision.
 
-See [ObjectCollision](collision_system)
+See [ObjectCollision](doc/collision_system)
 
 ## Pushable
 > To use this mixin your component must contain `Movement` mixin.
