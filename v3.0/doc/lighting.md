@@ -32,6 +32,12 @@ class MyCustomDecoration extends GameDecoration with Lighting {
 }
 ```
 
+You can access the game lighting and change it like this:
+
+```dart
+  gameRef.lighting.animateToColor(Colors.blue.withOpacity(0.7));
+```
+
 ## GameColorFilter
 
 You can apply color filter in your game programmatically.
