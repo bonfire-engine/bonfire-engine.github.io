@@ -31,6 +31,8 @@ GameComponets extensions:
     double end = 1.0,
     Curve curve = Curves.linear,
     bool autoStart = true,
+    bool infinite = false,
+    Curve? reverseCurve,
     VoidCallback? onFinish,
     ValueChanged<double>? onChange,
   })
