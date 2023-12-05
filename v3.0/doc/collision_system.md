@@ -94,11 +94,13 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
   @override
   void onBlockedMovement(
     GameComponent other,
-    Direction direction,
-    Vector2 lastDisplacement,
+    CollisionData collisionData,
   ) {
-     super.onBlockedMovement(other,direction,lastDisplacement);
+     super.onBlockedMovement(other,collisionData);
      // You can do something when movement is bloked by collision.
+     // data.direction
+     // data.normal
+     // data.intersectionPoints 
   }
 }
 ```
