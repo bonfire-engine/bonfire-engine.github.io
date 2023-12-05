@@ -52,7 +52,8 @@ GameComponets extensions:
   void showDamage(
     double damage, {
     TextStyle? config,
-    double initVelocityTop = -5,
+    double initVelocityVertical = -5,
+    double initVelocityHorizontal = 1,
     double gravity = 0.5,
     double maxDownSize = 20,
     DirectionTextDamage direction = DirectionTextDamage.RANDOM,

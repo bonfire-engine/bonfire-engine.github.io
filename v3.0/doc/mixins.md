@@ -138,7 +138,7 @@ void setupBarLife({
     List<Color>? colors,
     BorderRadius? borderRadius,
     BarLifeDrawPorition barLifeDrawPosition = BarLifeDrawPorition.top,
-    Vector2? position,
+    Vector2? offset,
     Vector2? textOffset,
     TextStyle? textStyle,
     bool showLifeText = true,
