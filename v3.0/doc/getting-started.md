@@ -32,7 +32,7 @@ import 'package:bonfire/bonfire.dart';
 ## Using
 
 ### Creating your map
-You need create your map using [Tiled](https://www.mapeditor.org/). After that you can export your map to json file. [You might see more detail about using Tiled in Bonfire](tiled_support) [Take a look the tutorial video about export map to json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
+You need create your map using [Tiled](https://www.mapeditor.org/). After that you can export your map to json file. [You might see more detail about using Tiled in Bonfire](doc/tiled_support?id=tiled-support) [Take a look the tutorial video about export map to json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
 
 Now you can run to see your map:
 
@@ -94,7 +94,7 @@ class PlayerSpriteSheet {
 ```
 
 
-To create a player just need create a class and extends by `SimplePlayer`. [See more detail about Player in Bonfire](player)
+To create a player just need create a class and extends by `SimplePlayer`. [See more detail about Player in Bonfire](doc/player?id=player)
 
 
 ```dart
@@ -130,6 +130,6 @@ And then you can see your player in the map and move that with directional of th
 
 ## Next step
 
-Know all components that you can use in Bonfire [See here](overview)
+Know all components that you can use in Bonfire [See here](doc/overview?id=overview)
 
 You might see all examples [here](doc/examples?id=bonfire-example).

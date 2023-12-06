@@ -1,7 +1,7 @@
 # Enemy
 
 > <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and use
-[Attackable](mixins?id=attackable) mixin.</small>
+[Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
 Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
@@ -11,7 +11,7 @@ There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEn
 ## SimpleEnemy
 
 > <small>This is a [Enemy](#enemy) and use 
-[DirectionAnimation](mixins?id=directionanimation) mixin.</small>
+[DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
@@ -151,7 +151,7 @@ Executes a distance attack. It will add a `FlyingAttackObject` to the game and t
 When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](#TODO)
+And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
@@ -184,7 +184,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-Note: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](collision_system).
+Note: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
 
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
 
@@ -192,8 +192,8 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 ## RotationEnemy
 
 > <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and use 
-[UseSpriteAnimation](mixins?id=usespriteanimation),
-[UseAssetsLoader](mixins?id=useassetsloader).</small>
+[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
+[UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
@@ -300,15 +300,15 @@ There are several useful extensions that we can use in `update` that will help u
   
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](#TODO)
+And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ## PlatformEnemy
 
 > <small>This is a [SimpleEnemy](#SimpleEnemy) and use
-[BlockMovementCollision](#TODO),
-[Jump](#TODO)
-and [JumpAnimation](#TODO)</small>
+[BlockMovementCollision](doc/collision_system?id=collision-system),
+Jump
+and JumpAnimation</small>
 
 Used for platform games. And we can configure Motion animations for run, idle and jump.
 
@@ -369,7 +369,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](#TODO)
+> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](doc/forces?id=forces)
 
 
 ## Custom
