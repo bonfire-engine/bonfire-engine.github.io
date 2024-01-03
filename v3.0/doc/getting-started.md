@@ -44,7 +44,9 @@ Now you can run to see your map:
       joystick: Joystick(
         directional: JoystickDirectional(),
       ), // required
-      map: WorldMapByTiled('tile/map.json'),
+      map: WorldMapByTiled(
+        TiledReader.asset('tile/map.json')
+      ),
     );
   }
 ```
