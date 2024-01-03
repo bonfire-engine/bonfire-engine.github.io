@@ -74,7 +74,7 @@ You can storage your map files in a server and load. Just load using `TiledReade
     ),
     map: WorldMapByTiled(
       TiledReader.network(
-        'http://rafaelbarbosatec.github.io/tiled/my_map.json',
+         Uri.parse('http://rafaelbarbosatec.github.io/tiled/my_map.json'),
        // cacheProvider: TiledMemoryCacheProvider()
       ),
     ),

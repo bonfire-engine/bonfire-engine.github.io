@@ -24,7 +24,7 @@ You can load a map from url. Just pass the url in path. Example:
 
 ```dart
 WorldMapByTiled(
-    TiledReader.network('https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json'),
+    TiledReader.network( Uri.parse('https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json')),
     forceTileSize: Size(32,32),
 )
 ```
