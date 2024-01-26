@@ -19,7 +19,8 @@
 
 [GitHub](https://github.com/RafaelBarbosatec/mini_fantasy)   -   [PLAY](https://bonfire-engine.github.io/examples/mini_fantasy/)
 
-![](../../_media/example_mini_fantasy.gif)
+<img src="../../_media/example_mini_fantasy.gif" alt="" height="500"/>
+
 
 ## Light Shooter
 
@@ -28,7 +29,7 @@ Online game that use [Nakama game server](https://flutter-nakama.gitbook.io/flut
 [GitHub](https://github.com/RafaelBarbosatec/light_shooter) - 
 [Video](https://twitter.com/RafaBarbosaTec/status/1656049304413274113)
 
-![](../../_media/light_shoot.png)
+<img src="../../_media/light_shoot.png" alt="" width="500"/>
 
 ## Defector
 
@@ -36,13 +37,13 @@ Game submitted to [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-ga
 
 [GitHub](https://github.com/RafaelBarbosatec/defector)   -   [PLAY](https://rafaelbarbosatec.itch.io/defector)
 
-![](../../_media/defector.gif)
+<img src="../../_media/defector.gif" alt="" width="500"/>
 
 ## Turn game
 
 [GitHub](https://github.com/RafaelBarbosatec/turn_game)
 
-![](https://raw.githubusercontent.com/RafaelBarbosatec/turn_game/main/img/screen%20_shot.png)
+<img src="https://raw.githubusercontent.com/RafaelBarbosatec/turn_game/main/img/screen%20_shot.png" alt="" width="500"/>
 
 
 ## Npc neural
@@ -53,4 +54,13 @@ Simple implementation of the training of NPC using Neural Network perceptron and
 [GitHub](https://github.com/RafaelBarbosatec/npc_neural_training)    -   [Play other tab](https://bonfire-engine.github.io/examples/neural-network)
 
 ![Bonfire example](https://bonfire-engine.github.io/examples/neural-network ':include :type=iframe width=100% height=600px') 
+
+## Multiplayer game
+
+Simple example how create a multiplayer game with Bonfire using only Dart code.
+
+[GitHub](https://github.com/RafaelBarbosatec/bonfire_multiplayer)
+
+<img src="https://raw.githubusercontent.com/RafaelBarbosatec/bonfire_multiplayer/main/imgs/screenshot1.png" alt="" width="500"/>
+<img src="https://raw.githubusercontent.com/RafaelBarbosatec/bonfire_multiplayer/main/imgs/screenshot2.png" alt="" width="500"/>
 
