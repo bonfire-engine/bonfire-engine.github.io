@@ -8,6 +8,7 @@
 
 [![](https://img.shields.io/github/forks/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=forks)](https://github.com/RafaelBarbosatec/bonfire)
 [![](https://img.shields.io/github/stars/rafaelbarbosatec/bonfire.svg?style=flat&logo=github&colorB=orange&label=stars)](https://github.com/RafaelBarbosatec/bonfire)
+[![Telegram](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2Fbonfire_engine)](https://t.me/bonfire_engine)
 
 
 [Github](https://github.com/RafaelBarbosatec/bonfire)
