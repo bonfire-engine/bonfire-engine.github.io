@@ -18,6 +18,7 @@ You can configure some settings in the camera:
       target: GameComponent(), // per default the target is the Player.
       initPosition: Vector2(),
       initialMapZoomFit = InitialMapZoomFitEnum.none, // none,fitWidth,fitHeight,fit
+      resolution: Vector2()
    ),
   );
 ```

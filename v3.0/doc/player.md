@@ -11,7 +11,7 @@ Represents the character controlled by the user in the game. Instances of this c
 We can create three types of enemies `SimplePlayer`, `RotationPlayer` and `PlatformPlayer`:
 
 ## SimplePlayer 
-> <small>This is a [Player](#Player) and use [DirectionAnimation](mixins?id=directionanimation)</small>
+> <small>This is a [Player](#Player) and use [DirectionAnimation](doc/mixins?id=directionanimation)</small>
 
 
 Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
@@ -144,7 +144,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](#TODO)
+And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 ### Change animations
 
@@ -179,8 +179,8 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ## RotationPlayer
 
 > <small>This is a [Player](#Player) and use
-[UseSpriteAnimation](mixins?id=usespriteanimation),
-[UseAssetsLoader](mixins?id=useassetsloader)</small>
+[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
+[UseAssetsLoader](doc/mixins?id=useassetsloader)</small>
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 
@@ -258,9 +258,9 @@ To update the `RotationPlayer` just update the variables `animIdle` and `animRun
 ## PlatformPlayer
 
 > <small>This is a [SimplePlayer](#SimplePlayer) and use
-[BlockMovementCollision](#TODO),
-[Jump](#TODO)
-and [JumpAnimation](#TODO)</small>
+[BlockMovementCollision](doc/collision_system?id=collision-system),
+Jump,
+JumpAnimation</small>
 
 Used for platform games. And we can configure Motion animations for run, idle and jump.
 
@@ -321,7 +321,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](#TODO)
+> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](doc/forces?id=forces)
 
 ## Custom
 

@@ -72,7 +72,7 @@ Your can add a component that represents a background. It's useful to create par
 
 Represents a map (or world) where the game occurs.
 
-For more details click [here](map).
+For more details click [here](doc/map?id=map).
 
 ## Decoration
 
@@ -80,7 +80,7 @@ For more details click [here](map).
 
 Anything that you may add to the scenery. For example a Barrel in the way or even a NPC in which you can use to interact with your player.
 
-For more details click [here](decoration).
+For more details click [here](doc/decoration?id=decoration).
 
 ## Enemy
 
@@ -88,7 +88,7 @@ For more details click [here](decoration).
 
 Represents enemies characters in the game. Instances of this class has actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
 
-For more details click [here](enemy).
+For more details click [here](doc/enemy?id=enemy).
 
 ## Player
 
@@ -96,7 +96,7 @@ For more details click [here](enemy).
 
 Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured.
 
-For more details click [here](player).
+For more details click [here](doc/player?id=player).
 
 ## Objects
 
@@ -104,7 +104,7 @@ For more details click [here](player).
 
 In this layer includes all 'GameComponent' added in the game like a custom `GameComponent` or util objects already available to use like `AnimatedGameObject`.
 
-For more details click [here](objects).
+For more details click [here](doc/util?id=gameobject).
 
 ## Lighting
 
@@ -112,7 +112,7 @@ For more details click [here](objects).
 
 Layer responsible for adding lighting to the game.
 
-For more details click [here](lighting).
+For more details click [here](doc/lighting?id=lighting).
 
 ## Game interface
 
@@ -120,7 +120,7 @@ For more details click [here](lighting).
 
 The way you can draw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
 
-For more details click [here](game_interface).
+Is recomended use Flutter widgets to build it, you configure it using `overlayBuilderMap` and `initialActiveOverlays` in your `BonfireWidget`
 
 ## Joystick
 
@@ -128,4 +128,4 @@ For more details click [here](game_interface).
 
 The player-controlling component.
 
-For more details click [here](joystick).
+For more details click [here](doc/joystick?id=joystick).

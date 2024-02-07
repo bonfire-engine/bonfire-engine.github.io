@@ -33,25 +33,22 @@ flutter:
     - assets/images/tiled/img_tile_set.png
 ```
 
-For maps built with Tiled we must use the Widget `BonfireWidget` (example [here](https://bonfire-engine.github.io/#/get-started?id=creating-your-map)):
+For maps built with Tiled we must use the Widget `BonfireWidget` (example [here](doc/getting-started?id=creating-your-map)):
 
 ```dart
-  WorldMapByTiled map = WorldMapByTiled(
-    'tiled/map.json', // main file path or url (example: http://rafaelbarbosatec.github.io/tiled/my_map.json)
-    forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
-    objectsBuilder: {
-        'goblin': (TiledObjectProperties properties) => Goblin(properties.position),
-        'torch': (TiledObjectProperties properties) => Torch(properties.position),
-        'barrel': (TiledObjectProperties properties) => BarrelDraggable(properties.position,),
-    },
-  );
-
   return BonfireWidget(
     joystick: Joystick(
       directional: JoystickDirectional()
     ),
-    map: map,
-    lightingColorGame: Colors.black.withOpacity(0.5),
+    map: WorldMapByTiled(
+      TiledReader.asset('tiled/map.json'),
+      forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
+      objectsBuilder: {
+          'goblin': (TiledObjectProperties properties) => Goblin(properties.position),
+          'torch': (TiledObjectProperties properties) => Torch(properties.position),
+          'barrel': (TiledObjectProperties properties) => BarrelDraggable(properties.position,),
+      },
+    ),
   );
 ```
 
@@ -66,11 +63,32 @@ Result:
 ![](../../_media/print_result_tiled.png)
 
 
+## Load map from network
+
+You can storage your map files in a server and load. Just load using `TiledReader.network`:
+
+```dart
+  return BonfireWidget(
+    joystick: Joystick(
+      directional: JoystickDirectional()
+    ),
+    map: WorldMapByTiled(
+      TiledReader.network(
+         Uri.parse('http://rafaelbarbosatec.github.io/tiled/my_map.json'),
+       // cacheProvider: TiledMemoryCacheProvider()
+      ),
+    ),
+  );
+```
+
+
+You can manager cache of this too. by defaul it uses `TiledMemoryCacheProvider`. You can create your own cache system only creating a class and extending by `TiledCacheProvider`.
+
 ## Useful
 
 You can set `class` in your tile to `above` to render this tile above all components in your game. 
 If you need that the all tiles of layer render above all components you can create a `Custom Property` in your layer and create one named `class` with value `above`.
 
 You can set `class` in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
-
 You can set `class` in your Object to `collision`. This object will be add in the game with transparency and collision.
+You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be add in the game with transparency and collision.

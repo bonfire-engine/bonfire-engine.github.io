@@ -11,7 +11,7 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget` in the `map` parameter:
 
 ```dart
-WorldMapByTiled('tile/map.json', forceTileSize: Size(32,32))
+WorldMapByTiled(TiledReader.asset('tile/map.json'), forceTileSize: Size(32,32))
 ```
 
 The first parameter (`tile/map.json`) is the path of the `.json` file exported by Tiled.
@@ -24,19 +24,19 @@ You can load a map from url. Just pass the url in path. Example:
 
 ```dart
 WorldMapByTiled(
-    'https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json',
+    TiledReader.network( Uri.parse('https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json')),
     forceTileSize: Size(32,32),
 )
 ```
 
 ## Adding objects
 
-You can add objects like [Decorations](decoration) and [Enemies](enemy) to the map using the `registerObject` method:
+You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemies](doc/enemy?id=enemy) to the map using the `registerObject` method:
 
 ```dart
     return BonfireWidget(
         map: WorldMapByTiled(
-            'tiled/map.json',
+            TiledReader.asset('tiled/map.json'),
             forceTileSize: Size(32,32),
             objectsBuilder: {
                 'orc': (TiledObjectProperties properties) => Orc(properties.position),
@@ -48,7 +48,7 @@ You can add objects like [Decorations](decoration) and [Enemies](enemy) to the m
 
 Just create a layer of objects on your map and position it as in the example in the image above.
 
-For more details about our Tiled support click [here](tiled_support).
+For more details about our Tiled support click [here](doc/tiled_support?id=tiled-support).
 
 ## Creating map by matrix
 

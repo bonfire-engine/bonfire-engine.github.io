@@ -29,11 +29,18 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
          super.onContactExit(component);
     }
 
+}
+```
+
+
+Automatically the sensor use your component size. If you want use a custom size just add your `ShapeHitbox`:
+
+```dart
+
     @override
     Future<void> onLoad() {
-        add(RectangleHitbox(size:size));
+        add(RectangleHitbox(size:Vector2()));
         return super.onLoad();
     }
 
-}
 ```

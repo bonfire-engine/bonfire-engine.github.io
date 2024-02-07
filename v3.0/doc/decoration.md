@@ -1,6 +1,6 @@
 # Decoration
 
-> <small>This is an [AnimatedGameObject](objects#AnimatedGameObject)</small>
+> <small>This is an [AnimatedGameObject](doc/util?id=animatedgameobject)</small>
 
 Anything that you may want to add to your scenery. For example, a simple barrel or a NPC that interacts with your player.
 

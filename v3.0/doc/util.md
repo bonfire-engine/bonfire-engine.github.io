@@ -31,6 +31,8 @@ GameComponets extensions:
     double end = 1.0,
     Curve curve = Curves.linear,
     bool autoStart = true,
+    bool infinite = false,
+    Curve? reverseCurve,
     VoidCallback? onFinish,
     ValueChanged<double>? onChange,
   })
@@ -50,7 +52,8 @@ GameComponets extensions:
   void showDamage(
     double damage, {
     TextStyle? config,
-    double initVelocityTop = -5,
+    double initVelocityVertical = -5,
+    double initVelocityHorizontal = 1,
     double gravity = 0.5,
     double maxDownSize = 20,
     DirectionTextDamage direction = DirectionTextDamage.RANDOM,

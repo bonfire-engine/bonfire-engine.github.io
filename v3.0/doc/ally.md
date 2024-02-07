@@ -1,7 +1,7 @@
 # Ally
 
 > <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and use
-[Attackable](mixins?id=attackable) mixin.</small>
+[Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
 This is a NPC that is a player ally. So, can receive damage from enemy and can inflige damage in enemy.
@@ -11,7 +11,7 @@ There are three types of enemies: `SimpleAlly`, `RotationAlly` and `PlatformAlly
 ## SimpleAlly
 
 > <small>This is a [Ally](#ally) and use 
-[DirectionAnimation](mixins?id=directionanimation) mixin.</small>
+[DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
 
 Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
 
@@ -121,7 +121,7 @@ Executes a distance attack. It will add a `FlyingAttackObject` to the game and t
 When the enemy is within the radiusVision, the ally will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](#TODO)
+And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
@@ -158,8 +158,8 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ## RotationAlly
 
 > <small>This is a [Ally](#ally) and use 
-[UseSpriteAnimation](mixins?id=usespriteanimation),
-[UseAssetsLoader](mixins?id=useassetsloader).</small>
+[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
+[UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
@@ -249,7 +249,7 @@ There are several useful extensions that we can use in `update` that will help u
   
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](#TODO)
+And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 ## Custom
 
