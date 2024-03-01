@@ -60,6 +60,12 @@ GameComponets extensions:
     bool onlyUp = false,
   })
 
+  /// Get the direction that another component is in relation to you
+  Direction getComponentDirectionFromMe(GameComponent comp)
+
+  // Get angle between this comp to target
+  double getAngleFromTarget(GameComponent target) {
+
 ```
 
 Others:
