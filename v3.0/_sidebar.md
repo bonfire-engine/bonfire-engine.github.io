@@ -24,5 +24,6 @@
 * [Particles](doc/particles.md?id=particles)
 * [TalkDialog](doc/talk_dialog.md?id=talkdialog)
 * [Text Rendering](doc/text_rendering.md?id=text-rendering)
+* [Parallax](doc/parallax.md?id=parallax)
 * [Util](doc/util.md?id=util)
 * [Examples](doc/examples.md?id=bonfire-example)
