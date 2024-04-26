@@ -36,7 +36,7 @@ Now you can run to see your map:
         directional: JoystickDirectional(),
       ), // required
       map: WorldMapByTiled(
-        TiledReader.asset('tile/map.json')
+        WorldMapReader.fromAsset('tile/map.json')
       ),
     );
   }
@@ -113,7 +113,9 @@ Now you just need add your player in the game:
       joystick: Joystick(
         directional: JoystickDirectional(),
       ), 
-      map: WorldMapByTiled('tile/map.json'),
+      map: WorldMapByTiled(
+        WorldMapReader.fromAsset('tile/map.json')
+      ),
       player: Knight(Vector2(40,40))
     );
   }

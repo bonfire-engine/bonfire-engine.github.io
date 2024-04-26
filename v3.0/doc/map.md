@@ -11,21 +11,20 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget` in the `map` parameter:
 
 ```dart
-WorldMapByTiled(TiledReader.asset('tile/map.json'), forceTileSize: Size(32,32))
+WorldMapByTiled(WorldMapReader.fromAsset('tile/map.json'))
 ```
 
 The first parameter (`tile/map.json`) is the path of the `.json` file exported by Tiled.
 
 > IMPORTANT: Bonfire only supports .json files.
 
-The second parameter (`Size(32,32)`) is optional and determines the size of each Tile on the map (squares). If not set it takes the default size defined by your TileSet.
-
 You can load a map from url. Just pass the url in path. Example:
 
 ```dart
 WorldMapByTiled(
-    TiledReader.network( Uri.parse('https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json')),
-    forceTileSize: Size(32,32),
+     WorldMapReader.fromNetwork( 
+        Uri.parse('https://raw.githubusercontent.com/RafaelBarbosatec/rafaelbarbosatec.github.io/master/tiled/my_map.json')
+    ),
 )
 ```
 
@@ -36,8 +35,7 @@ You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemie
 ```dart
     return BonfireWidget(
         map: WorldMapByTiled(
-            TiledReader.asset('tiled/map.json'),
-            forceTileSize: Size(32,32),
+            WorldMapReader.fromAsset('tiled/map.json'),
             objectsBuilder: {
                 'orc': (TiledObjectProperties properties) => Orc(properties.position),
             },
@@ -85,18 +83,22 @@ To use this resource is very easy:
 return BonfireWidget(
       map: MatrixMapGenerator.generate(
         axisInverted: true,
-        matrix: [
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        layers: [
+          MatrixLayer(
+            matrix: [
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            ],
+          )
         ],
         builder: (ItemMatrixProperties prop){
 
@@ -220,18 +222,22 @@ After that you pass the 'build' method of the `terrainBuilder` to `builder`:
 return BonfireWidget(
       map: MatrixMapGenerator.generate(
         axisInverted: true, // This is `true` to create the map same as seen in the matrix. Because the normal axis is `matrix[x][y]`, When `axisInverted` is `true` it's turn `matrix[y][x]`
-        matrix: [
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        layers: [
+          MatrixLayer(
+            matrix: [
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            ],
+          )
         ],
         builder: terrainBuilder.build,
       ),

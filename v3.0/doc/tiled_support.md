@@ -41,7 +41,7 @@ For maps built with Tiled we must use the Widget `BonfireWidget` (example [here]
       directional: JoystickDirectional()
     ),
     map: WorldMapByTiled(
-      TiledReader.asset('tiled/map.json'),
+      WorldMapReader.fromAsset('tiled/map.json'),
       forceTileSize: DungeonMap.tileSize, // if you want to force the size of the Tile to be larger or smaller than the original
       objectsBuilder: {
           'goblin': (TiledObjectProperties properties) => Goblin(properties.position),
@@ -73,7 +73,7 @@ You can storage your map files in a server and load. Just load using `TiledReade
       directional: JoystickDirectional()
     ),
     map: WorldMapByTiled(
-      TiledReader.network(
+      WorldMapReader.fromNetwork(
          Uri.parse('http://rafaelbarbosatec.github.io/tiled/my_map.json'),
        // cacheProvider: TiledMemoryCacheProvider()
       ),

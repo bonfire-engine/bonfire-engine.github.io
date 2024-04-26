@@ -237,22 +237,23 @@ Adds these methods in your component:
     void addLife(double life)
     void updateLife(double life,{bool verifyDieOrRevive = true})
     void removeLife(double life)
-
-    /// This method is used to check if this component can receive damage from any attacker.
-    @override
-    bool checkCanReceiveDamage(
-        AttackFromEnum attacker,
-        double damage,
-        dynamic from,
-    )
     
     /// You can listen if this component receive attack
+    // If returns true, this component received damage.
     @override
-    void receiveDamage(double damage, dynamic from)
+    bool receiveDamage(
+        AttackOriginEnum attacker,
+        double damage,
+        dynamic identify,
+    )
 
     /// If your life stay minor than 0 this method is called
     @override
-    void die()
+    void onDie()
+
+    /// If you dead and revive
+    @override
+    void onRevive()
 ```
 
 ## Vision
