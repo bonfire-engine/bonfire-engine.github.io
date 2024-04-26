@@ -6,7 +6,11 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 
 ![](../../_media/map.png)
 
-## Using
+✅ [Tiled support](https://www.mapeditor.org/)
+✅ [SpriteFusion support](https://www.spritefusion.com/)
+
+
+## Using Tiled
 
 We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget` in the `map` parameter:
 
@@ -47,6 +51,16 @@ You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemie
 Just create a layer of objects on your map and position it as in the example in the image above.
 
 For more details about our Tiled support click [here](doc/tiled_support?id=tiled-support).
+
+
+## Using SpriteFusion
+
+Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON', put in your assets/image folder. To load use `WorldMapBySpritefusion` in `BonfireWidget` in the `map` parameter:
+
+```dart
+WorldMapBySpritefusion(WorldMapReader.fromAsset('spritefusion/map.json'))
+```
+[Example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/pages/map/spritefusion/spritefusion_page.dart)
 
 ## Creating map by matrix
 
