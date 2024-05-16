@@ -148,7 +148,7 @@ void setupBarLife({
 ```
 
 
-## AutomaticRandomMovement
+## RandomMovement
 
 > To use this mixin your component must contain `Movement` mixin.
 
@@ -158,7 +158,7 @@ To use just need add `runRandomMovement` method in your update:
 
 ```dart
 
-class MyComponent extends GameComponent with Movement, AutomaticRandomMovement{
+class MyComponent extends GameComponent with Movement, RandomMovement{
     
     @override
     void update(double dt) {
@@ -175,7 +175,6 @@ All parameters:
 
 void runRandomMovement(
     double dt, {
-    bool runOnlyVisibleInCamera = true,
     double? speed,
     int maxDistance = 50,
     int minDistance = 25,
@@ -184,7 +183,7 @@ void runRandomMovement(
     int timeKeepStopped = 2000,
     bool updateAngle = false,
     bool checkPositionWithRaycast = false,
-    RandomMovementDirectionEnum direction = RandomMovementDirectionEnum.all,
+    RandomMovementDirections directions = RandomMovementDirections.all,
     Function(Vector2 target)? onStartMove,
     Function()? onArrivedTarget,
   })

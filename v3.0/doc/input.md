@@ -165,7 +165,9 @@ By the dafault the game already listen keyboard and you can move your player wit
           acceptedKeys: [ // You can pass specific Keys accepted. If null accept all keys
             LogicalKeyboardKey.space,
           ],
-          keyboardDirectionalType: KeyboardDirectionalType.arrows, // Type of the directional (arrows or wasd)
+          directionalKeys: [
+            KeyboardDirectionalType.arrows()
+          ], // Type of the directional (arrows or wasd)
         ), // Here you enable receive keyboard interaction
         ....
       )
