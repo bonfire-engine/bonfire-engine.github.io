@@ -32,9 +32,11 @@ Now you can run to see your map:
 @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      joystick: Joystick(
-        directional: JoystickDirectional(),
-      ), // required
+      playerControllers: [
+        Joystick(
+          directional: JoystickDirectional(),
+        )
+      ],
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('tile/map.json')
       ),
@@ -110,9 +112,11 @@ Now you just need add your player in the game:
 @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      joystick: Joystick(
-        directional: JoystickDirectional(),
-      ), 
+      playerControllers: [
+        Joystick(
+          directional: JoystickDirectional(),
+        )
+      ], 
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('tile/map.json')
       ),

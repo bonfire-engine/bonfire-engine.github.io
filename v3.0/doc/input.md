@@ -156,19 +156,23 @@ If you want to listen to the interactions with the object, you can override thes
 
 ## Keyboard
 
-By the dafault the game already listen keyboard and you can move your player with  directional keys. If you need configure this you can pass the param `keyboardConfire` in `BonfireWidget` to disable or change direcional keys.
+If you need that the Player move by keyboard you can pass the `Keyboard` in `playerControllers` param.
 
 ```dart
       BonfireWidget(
-        keyboardConfig: KeyboardConfig(
-          enable: true, // Use to enable ou disable keyboard events (default is true)
-          acceptedKeys: [ // You can pass specific Keys accepted. If null accept all keys
-            LogicalKeyboardKey.space,
-          ],
-          directionalKeys: [
-            KeyboardDirectionalType.arrows()
-          ], // Type of the directional (arrows or wasd)
-        ), // Here you enable receive keyboard interaction
+        playerControllers:[
+          Keyboard(
+            config: KeyboardConfig(
+              enable: true, // Use to enable ou disable keyboard events (default is true)
+              acceptedKeys: [ // You can pass specific Keys accepted. If null accept all keys
+                LogicalKeyboardKey.space,
+              ],
+              directionalKeys: [
+                KeyboardDirectionalType.arrows()
+              ], // Type of the directional (arrows or wasd)
+            ), // Here you enable receive keyboard interaction
+          )
+        ]
         ....
       )
 
@@ -178,7 +182,7 @@ To listen keyboard events in your component just use the mixin `KeyboardEventLis
 
 ```dart
 
-class HumanPlayer extends SimplePlayer with KeyboardEventListener{
+class Computer extends GameDecoration with KeyboardEventListener{
   //...
   @override
   bool onKeyboard(
