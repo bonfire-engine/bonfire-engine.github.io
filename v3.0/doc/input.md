@@ -84,6 +84,23 @@ void endDrag(GestureEvent event) {}
 void cancelDrag(GestureEvent event) {}
 ```
 
+### PinchGesture
+
+To listen pinch gesture in the screen just add `PinchGesture` mixin in your component like this:
+
+```dart
+
+class MyCustomDecoration extends GameComponent with PinchGesture {
+
+  void onPinchUpdate(PinchEvent event) {}
+  void onPinchStart(PinchEvent event) {}
+  void onPinchEnd() {}
+  
+}
+
+```
+
+
 ### Custom
 
 All components extends `PointerDetectorHandler`,so to recieve gestures events do override `hasGesture` returning `true`:
