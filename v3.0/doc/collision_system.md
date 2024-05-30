@@ -105,6 +105,17 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 }
 ```
 
+You can configure somethings using:
+
+```dart
+
+ setupBlockMovementCollision(enabled:true, bodyType: BodyType.dynamic});
+
+```
+
+To adds `Elastic collision` take a look the mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
+
+
 ## Testing and debugging
 
 To verify if collisions are in the right position, you can enable `showCollisionArea` in `BonfireWidget`:

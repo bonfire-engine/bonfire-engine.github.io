@@ -430,15 +430,15 @@ In the Tiled program used to build your map, you can set a `class` or set custom
 
 ```
 
-### BouncingObject
+### ElasticCollision
 
-Mixin responsable to give the bounce behavior. (experimental). You can configure ir using the method `setupBouncingObject`.
+Mixin responsable to give the elastic collision behavior. (experimental). You can configure ir using the method `setupElasticCollision`.
 
 ```dart
 
-void setupBouncingObject({
+void setupElasticCollision({
     bool enabled = true,
-    double reflectFactor = 1.0,
+    double restitution = 2.0,
   })
 
 ```
