@@ -1,6 +1,6 @@
-# Get Started
+# Getting Started
 
-> An awesome project.
+> Visualize your awesome project.
 
 ## Installing
 
@@ -23,10 +23,15 @@ import 'package:bonfire/bonfire.dart';
 ## Using
 
 ### Creating your map
-You need create your map using [Tiled](https://www.mapeditor.org/). After that you can export your map to json file. [You might see more detail about using Tiled in Bonfire](doc/tiled_support?id=tiled-support) [Take a look the tutorial video about export map to json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
+You need create your map using [Tiled](https://www.mapeditor.org/). After that, you can export your map as a json file.
 
-Now you can run to see your map:
+[How to use Tiled in Bonfire](doc/tiled_support?id=tiled-support) 
 
+[Tutorial video about exporting maps as json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
+
+> IMPORTANT: Make sure your map file is correctly named, and placed in assets/images directory to avoid any loading issues.
+
+Now you can run the app, and see your map:
 
 ```dart
 @override
@@ -44,14 +49,14 @@ Now you can run to see your map:
   }
 ```
 
-This way you can see your map be rendering and can use directional joystick to explorer.
+This way you can see your map is rendering, and use the directional joystick to explore.
 
 
 ### Creating your player
 
-To create a player you will need SpriteAnimations. You can see how load Sprites in [Flame doc](https://docs.flame-engine.org/main/flame/rendering/images.html).
+To create a player you will need SpriteAnimations. You can see how to load Sprites in [Flame doc](https://docs.flame-engine.org/main/flame/rendering/images.html).
 
-Imagens used in this example:
+Images used in this example:
 
 
 [![Idle](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)
@@ -89,7 +94,7 @@ class PlayerSpriteSheet {
 ```
 
 
-To create a player just need create a class and extends by `SimplePlayer`. [See more detail about Player in Bonfire](doc/player?id=player)
+To create a player, just create a class and add the `extends SimplePlayer`. [See more details about Player in Bonfire](doc/player?id=player)
 
 
 ```dart
@@ -105,7 +110,7 @@ class Knight extends SimplePlayer {
 
 ```
 
-Now you just need add your player in the game:
+Now you just need to add your player in the game. Keep in mind that the ``Vector2(40,40)`` is the initial position of the player.
 
 
 ```dart
@@ -125,10 +130,10 @@ Now you just need add your player in the game:
   }
 ```
 
-And then you can see your player in the map and move that with directional of the Joystick.
+You can see your player in the map and move it with the directional Joystick.
 
-## Next step
+## Next steps
 
-Know all components that you can use in Bonfire [See here](doc/overview?id=overview)
+Familiarize yourself with all components that you can use in Bonfire [See here](doc/overview?id=overview)
 
-You might see all examples [here](doc/examples?id=bonfire-example).
+Or check out our examples [here](doc/examples?id=bonfire-example).
