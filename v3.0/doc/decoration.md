@@ -2,7 +2,7 @@
 
 > <small>This is an [AnimatedGameObject](doc/util?id=animatedgameobject)</small>
 
-Anything that you may want to add to your scenery. For example, a simple barrel or a NPC that interacts with your player.
+Anything that you may want to add to your scenery. For example, a simple barrel or an NPC that interacts with your player.
 
 You can create decorative or interactive objects using the following builders:
 

@@ -48,6 +48,7 @@ Now you can run the app, and see your map:
     );
   }
 ```
+> Note: You can also add a [Keyboard Controller](doc/input?id=keyboard).
 
 This way you can see your map is rendering, and use the directional joystick to explore.
 

@@ -1,28 +1,29 @@
 # Player
 
-> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) and use 
+> <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) and uses `mixins` like 
 [Movement](mixins?id=movement), 
 [Attackable](mixins?id=attackable), 
 [Vision](mixins?id=vision), 
 [MovementByJoystick](mixins?id=movementbyjoystick) and 
 [JoystickListener](joystick?id=joysticklistener)</small>
 
-Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured. 
+Represents the character controlled by the user in the game. Instances of this class have actions and movements ready to be used and configured. 
+
 We can create three types of enemies `SimplePlayer`, `RotationPlayer` and `PlatformPlayer`:
 
 ## SimplePlayer 
-> <small>This is a [Player](#Player) and use [DirectionAnimation](doc/mixins?id=directionanimation)</small>
+> <small>This is a [Player](#Player) and uses [DirectionAnimation](doc/mixins?id=directionanimation)</small>
 
 
-Used for 45º and 67.5º perspectives. And we can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
+Used for 45º and 67.5º perspectives. We can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
 
 To use it, simply create a class that will represent your enemy and extend SimplePlayer:
 
 ```dart
 
-class Kinght extends SimplePlayer {
+class Knight extends SimplePlayer {
 
-    Kinght(Vector2 position)
+    Knight(Vector2 position)
       : super(
           position: position, //required
           size: Vector2(32.0,32.0), //required
@@ -77,9 +78,9 @@ class Kinght extends SimplePlayer {
 
 ```
 
-All movement of the player is already done automatically listening to the user's interaction with the joystick.
+All movement of the player is already done automatically, listening to the user's interaction with the joystick.
 
-Player instances can receive action configured on the Joystick by overriding the following method:
+Player instances can receive actions configured on the Joystick by overriding the following method:
 
 ```dart
 
@@ -112,7 +113,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
     }
   )
   
-  // Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+  // Executes a ranged attack. Will add a `FlyingAttackObject` proyectile to the game, which will be sent in the configured direction, and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
   void simpleAttackRange(
     {
       required Future<SpriteAnimation> animationRight,
@@ -138,7 +139,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
         VoidCallback? notObserved,
         double radiusVision = 32,
         double? angle, // direction
-        double? visionAngle, // default 6,28319 (360 graus)
+        double? visionAngle, // default 6.28319 (360 degrees)
       }
     )
 
@@ -161,7 +162,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ```dart
 
   animation.playOnce(
-    FutureOr<SpriteAnimation> animation, {
+    FutureOr<SpriteAnimation> animation, 
     VoidCallback? onFinish,
     VoidCallback? onStart,
     bool runToTheEnd = false,
@@ -178,7 +179,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ## RotationPlayer
 
-> <small>This is a [Player](#Player) and use
+> <small>This is a [Player](#Player) and uses
 [UseSpriteAnimation](doc/mixins?id=usespriteanimation),
 [UseAssetsLoader](doc/mixins?id=useassetsloader)</small>
 
@@ -220,7 +221,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
      }
   )
   
-  // Executes a distance attack. Will add a `FlyingAttackObject` to the game and will be send in the configures direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+  // Executes a ranged attack. Will add a `FlyingAttackObject` proyectile to the game, which is sent in the configured direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
   void simpleAttackRange(
      {
       required Future<SpriteAnimation> animation,
@@ -257,18 +258,18 @@ To update the `RotationPlayer` just update the variables `animIdle` and `animRun
 
 ## PlatformPlayer
 
-> <small>This is a [SimplePlayer](#SimplePlayer) and use
+> <small>This is a [SimplePlayer](#SimplePlayer) and uses
 [BlockMovementCollision](doc/collision_system?id=collision-system),
 Jump,
 JumpAnimation</small>
 
-Used for platform games. And we can configure Motion animations for run, idle and jump.
+Used for platform games. Here, we can configure Motion animations for run, idle and jump.
 
 ```dart
 
 class MarioPlayer extends PlatformPlayer {
 
-    MarioPlayer(vector2 position)
+    MarioPlayer(Vector2 position)
       : super(
         position: position, //required
         animation: PlatformAnimations(), //required
@@ -283,7 +284,7 @@ class MarioPlayer extends PlatformPlayer {
 
 ### Jumping
 
-To do the player jump you ccan use the [Jumper mixin](#TODO) method :
+To make the player jump you can use the [Jumper mixin](#TODO) method :
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -306,7 +307,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ```dart
 
   animation.playOnce(
-    FutureOr<SpriteAnimation> animation, {
+    FutureOr<SpriteAnimation> animation, 
     VoidCallback? onFinish,
     VoidCallback? onStart,
     bool runToTheEnd = false,
@@ -321,7 +322,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](doc/forces?id=forces)
+> OBS: Remember to add a gravity force in this component to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
 
 ## Custom
 
