@@ -4,11 +4,12 @@
 
 <img src="_media/git_move_along_the_path.gif" width="600"/>
 
-Bonfire uses the package [a_star_algorithm](https://pub.dev/packages/a_star_algorithm) to find  the path.
+Bonfire uses the package [a_star_algorithm](https://pub.dev/packages/a_star_algorithm) to find the path.
 
 
-To uses just add the Mixin `PathFinding` and call the method `moveToPositionWithPathFinding` (never use this method in update method. just one time to start). 
-To this work, the component must contain the Mixin `Movement` (by defauld `Player` and `Enemy` uses).
+To use this, just add the Mixin `PathFinding` and call the method `moveToPositionWithPathFinding` (never use this method in update method. just one time to start). 
+
+For this to work, the component must contain the Mixin `Movement` (by default `Player` and `Enemy` use these mixins).
 
 ## Configuring 
 
@@ -16,9 +17,9 @@ You can configure PathFinding calling the method `setupMoveToPositionAlongThePat
 
 ```dart
 
-class Kinght extends SimplePlayer with PathFinding, TapGesture{
+class Knight extends SimplePlayer with PathFinding, TapGesture {
 
-    Kinght(Vector2 position)
+    Knight(Vector2 position)
     : super(
         ...
     );
@@ -35,7 +36,7 @@ class Kinght extends SimplePlayer with PathFinding, TapGesture{
 
 ```
 
-You can do settings using the method `setupPathFinding`:
+You can then use the method `setupPathFinding`:
 
 ``` dart
 
@@ -43,7 +44,7 @@ setupPathFinding(
     pathLineColor: Colors.lightBlueAccent.withOpacity(0.5),
     barriersCalculatedColor: Colors.blue.withOpacity(0.5),
     pathLineStrokeWidth: 4,
-    showBarriersCalculated: false, // uses this to debug. This enable show in the map the tiles considered collision by algorithm.
+    showBarriersCalculated: false, // use this to debug. This enable showing in the map the tiles considered collisions by the algorithm.
     tileSizeIsSizeCollision: false,
 )
 ```

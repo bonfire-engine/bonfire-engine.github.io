@@ -24,7 +24,7 @@
 
 ## Light Shooter
 
-Online game that use [Nakama game server](https://flutter-nakama.gitbook.io/flutter-nakama/)
+Online game that uses the [Nakama game server](https://flutter-nakama.gitbook.io/flutter-nakama/)
 
 [GitHub](https://github.com/RafaelBarbosatec/light_shooter) - 
 [Video](https://twitter.com/RafaBarbosaTec/status/1656049304413274113)
@@ -57,7 +57,7 @@ Simple implementation of the training of NPC using Neural Network perceptron and
 
 ## Multiplayer game
 
-Simple example how create a multiplayer game with Bonfire using only Dart code.
+Simple example of how to create a multiplayer game with Bonfire using only Dart code.
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire_multiplayer)
 

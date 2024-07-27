@@ -82,13 +82,14 @@ You can storage your map files in a server and load. Just load using `TiledReade
 ```
 
 
-You can manager cache of this too. by defaul it uses `TiledMemoryCacheProvider`. You can create your own cache system only creating a class and extending by `TiledCacheProvider`.
+You can manage the cache of this too. By default, it uses `TiledMemoryCacheProvider`. You can create your own cache system only creating a class and extending by `TiledCacheProvider`.
 
 ## Useful
 
 You can set `class` in your tile to `above` to render this tile above all components in your game. 
-If you need that the all tiles of layer render above all components you can create a `Custom Property` in your layer and create one named `class` with value `above`.
+
+If you need that all tiles of a layer render above all components you can create a `Custom Property` in your layer and create one named `class` with value `above`.
 
 You can set `class` in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
-You can set `class` in your Object to `collision`. This object will be add in the game with transparency and collision.
-You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be add in the game with transparency and collision.
+You can set `class` in your Object to `collision`. This object will be added in the game with transparency and collision.
+You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be added in the game with transparency and collision.

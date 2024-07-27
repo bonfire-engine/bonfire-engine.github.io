@@ -1,6 +1,6 @@
 # Parallax
 
-In the Bonfire you can adds two types of parallax in your game: with velocity pre-defined or with velocity based on camera movement.
+In Bonfire, you can add two types of parallax in your game: with velocity pre-defined or with velocity based on camera movement.
 
 To pre-defined velocity you can use 'loadParallaxComponent'. Example:
 
