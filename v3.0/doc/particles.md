@@ -6,7 +6,6 @@ Take a look the [Flame Particles](https://docs.flame-engine.org/latest/flame/ren
 
 To use it in Bonfire you can use this methods in your component:
 
-
 ```dart
 
 void addParticle(

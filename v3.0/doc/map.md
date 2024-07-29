@@ -2,7 +2,7 @@
 
 > Represents a map (or world) where the game occurs.
 
-It is a matrix of small tiles that toghether assembles the map as seen below:
+It is a matrix of small tiles that together assembles the map as seen below:
 
 ![](../../_media/map.png)
 
@@ -12,7 +12,7 @@ It is a matrix of small tiles that toghether assembles the map as seen below:
 
 ## Using Tiled
 
-We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget` in the `map` parameter:
+We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget`, passing the json map in the `map` parameter:
 
 ```dart
 WorldMapByTiled(WorldMapReader.fromAsset('tile/map.json'))
@@ -22,7 +22,9 @@ The first parameter (`tile/map.json`) is the path of the `.json` file exported b
 
 > IMPORTANT: Bonfire only supports .json files.
 
-You can load a map from url. Just pass the url in path. Example:
+> IMPORTANT: Make sure your map file is correctly named, and placed in `assets/images` directory to avoid any loading issues.
+
+You can also load a map from a url. Just pass the url in path. Example:
 
 ```dart
 WorldMapByTiled(
@@ -50,12 +52,14 @@ You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemie
 
 Just create a layer of objects on your map and position it as in the example in the image above.
 
-For more details about our Tiled support click [here](doc/tiled_support?id=tiled-support).
+For more details about using Tiled [here](doc/tiled_support?id=tiled-support).
 
 
 ## Using SpriteFusion
 
-Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON', put in your assets/image folder. To load use `WorldMapBySpritefusion` in `BonfireWidget` in the `map` parameter:
+Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON', place it in your assets/image folder. 
+
+To load use `WorldMapBySpritefusion` in `BonfireWidget` in the `map` parameter:
 
 ```dart
 WorldMapBySpritefusion(WorldMapReader.fromAsset('spritefusion/map.json'))
@@ -84,7 +88,9 @@ You can create maps using matrix of the double like this:
 
 ```
 
-This feature open possibility to create radom maps. Just use any algorithm to create you matrix like [fast_noise](https://pub.dev/packages/fast_noise). There is a example using this package in [Bonfire repositoy](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
+This feature opens the possibility of creating radom maps. Just use any algorithm to create you matrix like [fast_noise](https://pub.dev/packages/fast_noise). 
+
+There is a example using this package in [Bonfire repositoy](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
 
 And to stay better we implement a class that help to adds sprites in this maps. The `TerrainBuilder`.
 
@@ -152,7 +158,7 @@ return BonfireWidget(
     );
 ```
 
-In the 'builder' you can create each 'tile' of the map returning the 'TileModel' with your properties.
+In the 'builder' you can create each 'tile' of the map, returning the 'TileModel' with your properties.
 
 ### Using TerrainBuilder
 
@@ -170,7 +176,7 @@ This SpriteSheet is tile sand to water:
 
 Now just register the tiles sprites and tiles sprites corners like this:
 
-Firt create the TerrainBuilder:
+First create the TerrainBuilder:
 
 ```dart
 
@@ -265,9 +271,9 @@ And then, this is the result:
 
 ### MapTerrain
 
-`MapTerrain` is each type of terrain that you map could have.
-Basic exist to types:
+`MapTerrain` is each type of terrain that your map could have.
 
+There are two types:
 - MapTerrain: The basic terrain when have no corners.
 - MapTerrainCorners: The terrain that handle the corners.
 
@@ -280,8 +286,8 @@ MapTerrain(
     type: 'water',
     collisions: [],
     properties: Map<String, dynamic>(),
-    spritesProportion: [0.6,0.4],
-    sprites: [  /// Here is expect a array beause you can pass many sprites to this type. Configurando a proporção da ocorrencia de cada um configurando `spritesProportion`
+    spritesProportion: [0.6,0.4], // Sets the odds of each sprite appearing. If not set, the odds are equal.
+    sprites: [  /// Here we use an array because we can pass many sprites on this type.
         TileModelSprite(
             path: 'tile_water.png',
             size: Vector2.all(16),
@@ -301,7 +307,7 @@ MapTerrain(
 ```dart
 MapTerrainCorners(
     value: TILE_SAND, // number origin
-    to: TILE_WATER, // number destine
+    to: TILE_WATER, // number destination
     type: 'water',
     collisions: [],
     properties: Map<String, dynamic>(),
@@ -315,5 +321,8 @@ MapTerrainCorners(
 
 ## Custom
 
-You can create your own map creating a class extending of `WordMap` and fill `List<TileModel> tiles`. This way your will reuse QuadTree algorithm used to draw map.
+You can create your own map creating a class extending the `WorldMap` and filling `List<TileModel> tiles`. 
+
+This way your will reuse QuadTree algorithm used to draw map.
+
 Or you can use the base creating your own map extending of `GameMap`.

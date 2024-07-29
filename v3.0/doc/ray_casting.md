@@ -1,8 +1,8 @@
 # Ray casting
 
-Ray casting and ray tracing are methods for sending out rays from a point in your game and being able to see what these rays collide with and how they reflect after hitting something.
+Ray casting and ray tracing are methods for sending out rays from a point in your game and seeing what these rays collide with and how they reflect after hitting something.
 
-Bonfire have all support to [Ray casting and Ray tracing](https://docs.flame-engine.org/latest/flame/collision_detection.html#ray-casting-and-ray-tracing)
+Bonfire supports [Ray casting and Ray tracing](https://docs.flame-engine.org/latest/flame/collision_detection.html#ray-casting-and-ray-tracing)
 
 To throw raycast or raytrace you can use this methods in your component:
 

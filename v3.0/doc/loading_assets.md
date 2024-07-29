@@ -2,7 +2,9 @@
 
 > Loading your images to create your sprite or animations
 
-To load any images you need to follow a pattern of folders defined by [flame](https://docs.flame-engine.org/main/flame/rendering/images.html) (base `assets/images/`).
+To load any images you need to follow a pattern of folders defined by [flame](https://docs.flame-engine.org/main/flame/rendering/images.html) 
+
+> IMPORTANT: The root folder of your images, maps, spritesheets and other assets is `assets/images/`.
 
 ```yaml
 
@@ -14,7 +16,7 @@ flutter:
 
 ## Sprites
 
-To load yours Sprites:
+To load your Sprites:
 
 ```dart
 
@@ -87,10 +89,10 @@ SpriteAnimation runLeft = imagePlayerRunLeft.getAnimation(
 
 ## Merging images
 
-You can merging images to build a dynamic Sprite or SpriteAnimation.
-This is very useful for taking a character's base and whether or not to add a specific outfit to it.
+You can merge images to build a dynamic Sprite or SpriteAnimation.
+This is very useful for taking a character's base and adding a specific outfit to it.
 
-To do it use the Flame [ImageComposition](https://docs.flame-engine.org/1.0.0/images.html#imagecomposition)
+To do it use the Flame [ImageComposition](https://docs.flame-engine.org/latest/flame/rendering/images.html#imagecomposition)
 
 
 ## FireAtlas

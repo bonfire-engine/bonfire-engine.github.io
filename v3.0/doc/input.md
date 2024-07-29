@@ -3,13 +3,13 @@
 
 ## Gestures
 
-> At Bonfire we use mixins to enable this interaction.
+> At Bonfire we use mixins to enable these interactions.
 
-Bonfire use [Listener](https://api.flutter.dev/flutter/widgets/Listener-class.html) Widget to recieve gestures.
+Bonfire uses [Listener](https://api.flutter.dev/flutter/widgets/Listener-class.html) Widget to recieve gestures.
 
 ### TapGesture
 
-To enable TapGesture just add `TapGesture` mixin in your component like this:
+To enable TapGesture just add the `TapGesture` mixin in your component like this:
 
 ```dart
 
@@ -22,28 +22,28 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
         );
 
 
-  // It's called when happen tap down in the component
-  // If return 'true' this event is not relay to others components.(default = false)
+  // It's called when the user taps down the component
+  // If return 'true', this event is not relayed to others components.(default = false)
   @override
   bool onTapDown(GestureEvent event){
     return super.onTapDown(event);
   }
 
-  // It's called when happen tap up in the component
+  // It's called when the user stops tapping the component
   @override
   void onTapUp(GestureEvent event){}
 
-  // It's called when happen canceled tap in the component
+  // It's called when the user cancels tap in the component
   @override
   void onTapCancel(){}
 
-  // It's called when happen tap in the component
+  // It's called when the user taps the component
   @override
   void onTap(){}
 
-  // It's called when happen tap down in the screen
+  // It's called when the user tap down in the screen
   void onTapDownScreen(GestureEvent event) {}
-  // It's called when happen tap up in the screen
+  // It's called when the user stops tapping the screen
   void onTapUpScreen(GestureEvent event) {}
 
 }
@@ -71,14 +71,14 @@ Your component can be automatically dragged on the map with the drag gesture.
 If you want to listen to the interactions with the object, you can override these methods:
 
 ```dart
-// Called when star drag gesture in the component
-// If return 'true' this event is not relay to others components.(default = false)
+// Called when the drag gesture is started in the component
+// If return 'true', this event is not relayed to others components.(default = false)
 bool startDrag(GestureEvent event) {
   return super.startDrag(event);
 }
 // Called when component is moved
 void moveDrag(GestureEvent event) {}
-// Called when component finish drag
+// Called when component finishes the drag
 void endDrag(GestureEvent event) {}
 // Called when drag is canceled
 void cancelDrag(GestureEvent event) {}
@@ -103,7 +103,7 @@ class MyCustomDecoration extends GameComponent with PinchGesture {
 
 ### Custom
 
-All components extends `PointerDetectorHandler`,so to recieve gestures events do override `hasGesture` returning `true`:
+All components extends `PointerDetectorHandler`, so to recieve gestures events do override `hasGesture` returning `true`:
 
 ```dart
   @override
@@ -147,25 +147,26 @@ If you want to listen to the interactions with the object, you can override thes
   /// Listen to the mouse move with some button clicked across the screen
   void onMouseMoveScreen(int pointer, Vector2 position, MouseButton button) {}
 
-  /// Listen when the mouse cursor hover in this component
+  /// Listen when the mouse cursor hovers in this component
   void onMouseHoverEnter(int pointer, Vector2 position);
 
   /// Listen when the mouse cursor passes outside this component
   void onMouseHoverExit(int pointer, Vector2 position);
 
-  /// Listen when use scroll of the mouse across the screen
+  /// Listen when the scroll wheel of the mouse is used across the screen
   void onMouseScrollScreen(
       int pointer, Vector2 position, Vector2 scrollDelta) {}
 
-  /// Listen when use scroll of the mouse in your component
+  /// Listen when the scroll whell of the mouse is used in your component
   void onMouseScroll(int pointer, Vector2 position, Vector2 scrollDelta);
 
   /// Listen when mouse is clicked down in your component
   void onMouseTapDown(int pointer, Vector2 position, MouseButton button) {}
+
   /// Listen when mouse is clicked up in your component
   void onMouseTapUp(int pointer, Vector2 position, MouseButton button) {}
 
-    // Listen when mouse clicked in your component
+  // Listen when mouse clicked in your component
   void onMouseTap(MouseButton button);
 
   void onMouseCancel() {}
@@ -180,7 +181,7 @@ If you need that the Player move by keyboard you can pass the `Keyboard` in `pla
         playerControllers:[
           Keyboard(
             config: KeyboardConfig(
-              enable: true, // Use to enable ou disable keyboard events (default is true)
+              enable: true, // Use to enable or disable keyboard events (default is true)
               acceptedKeys: [ // You can pass specific Keys accepted. If null accept all keys
                 LogicalKeyboardKey.space,
               ],

@@ -1,16 +1,16 @@
 # Ally
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and use
+> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses
 [Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
-This is a NPC that is a player ally. So, can receive damage from enemy and can inflige damage in enemy.
+This is an NPC that is a player ally. So, it can receive damage from enemies and can inflict damage to enemies.
 
 There are three types of enemies: `SimpleAlly`, `RotationAlly` and `PlatformAlly`:
 
 ## SimpleAlly
 
-> <small>This is a [Ally](#ally) and use 
+> <small>This is a [Ally](#ally) and uses the
 [DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
 
 Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
@@ -63,14 +63,14 @@ class Human extends SimpleAlly {
 
 ```
 
-Now that you have a class that represents your enemy, you can configure their behavior.
+Now that you have a class that represents your ally, you can configure their behavior.
 
 There are several useful extensions that you can use inside the `update` method that will help you with this task:
 
 
 ```dart 
   void simpleAttackMelee({
-     required double damage,
+    required double damage,
     required Vector2 size,
     int? id,
     int interval = 1000,
@@ -82,7 +82,7 @@ There are several useful extensions that you can use inside the `update` method 
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
+Executes a physical attack to the enemy, making the configured damage with the configured frequency. You can add animations to represent this attack.
 
 
 ```dart 
@@ -103,7 +103,7 @@ Executes a physical attack to the player, making the configured damage with the 
     LightingConfig? lightingConfig,
   })
 ```
-Executes a distance attack. It will add a `FlyingAttackObject` to the game and this will be sent in the configured direction, making some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
@@ -118,10 +118,10 @@ Executes a distance attack. It will add a `FlyingAttackObject` to the game and t
     bool runOnlyVisibleInScreen = true,
   })
 ```
-When the enemy is within the radiusVision, the ally will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
+When the enemy is within the radiusVision, the ally will position itself to perform a ranged attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent' methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
@@ -194,7 +194,7 @@ class Tank extends RotationAlly {
 
 ```
 
-Now that we have our class that represents our enemy, we can configure their behavior.
+Now that we have our class that represents our ally, we can configure their behavior.
 
 There are several useful extensions that we can use in `update` that will help us to configure these movements:
 

@@ -9,13 +9,11 @@
 
 ![](../_media/example.gif)
 
-## What it is
+## What is Bonfire
 
-Bonfire was created with purpose that create Flutter games on easy,objective and fast way!
+Bonfire was created with the purpose that create Flutter games on easy, objective and fast way!
 
-This tool was built over [FlameEngine](https://flame-engine.org/) and all its resources and classes are available to be used along with Bonfire. With that said, it is recommended to give a look into [FlameEngine](https://flame-engine.org/) before you start doing something with Bonfire.
-
-This is ideal for building games from the following perspectives:
+This tool was built over [FlameEngine](https://flame-engine.org/) and all its resources and classes are available to be used along with Bonfire. It is recommended to familiarize yourself with [FlameEngine](https://flame-engine.org/) before you start doing something with Bonfire.
 
 ![](../_media/perspectiva.png)
 
@@ -29,6 +27,6 @@ Please consider donating if you think Bonfire is helpful to you or that my work 
 
 ## Community
 
-We have a Bonfire help channel on Fireslime's Discord, join it [here](https://discord.com/invite/pxrBmy4) or telegram group [here](https://t.me/bonfire_engine)
+We have a Bonfire help channel on BlueFlame's Discord, join it [here](https://discord.gg/5drde4ev) or Telegram group [here](https://t.me/bonfire_engine)
 
 Bonfire presentation at [FlameCon](https://www.youtube.com/watch?v=2DdiNrAAuBg&t=2s).
