@@ -8,7 +8,7 @@ The player-controlling component.
 
 <img src="../../_media/screeShot_joystick.jpg" width="600"/>
 
-There is a pre-included implementation (`Joystick`) ready to use, but also configurable to add a custom looking or even add as many actions as you will.
+There is a pre-included implementation (`Joystick`) ready to use, but also configurable to add a custom look or even add as many actions as you need.
 
 Or you can implement `PlayerController` yourself and emit event trough a `joystickChangeDirectional`, `joystickAction`.
 
@@ -27,8 +27,8 @@ Joystick is configurable by the following parameters:
         actions: [
           JoystickAction(
             actionId: 1, //(required) Action identifier, will be sent to 'void joystickAction(JoystickActionEvent event) {}' when pressed
-            sprite: Sprite.load('joystick_atack_range.png'), // the action image
-            spritePressed: Sprite.load('joystick_atack_range.png'), // Optional image to be shown when the action is fired
+            sprite: Sprite.load('joystick_attack_range.png'), // the action image
+            spritePressed: Sprite.load('joystick_attack_range.png'), // Optional image to be shown when the action is fired
             spriteBackgroundDirection: Sprite.load('joystick_background.png'), //directinal control background
             enableDirection: true, // enable directional in action
             alignment = Alignment.bottomRight,
@@ -37,14 +37,14 @@ Joystick is configurable by the following parameters:
             margin: EdgeInsets.only(bottom: 50, right: 160),
           )
         ],
-        // observer: MyOtherPlayer() , If pass [oberver] this param, the joystick will controll this observer and not the Component passed in `player` param.
+        // observer: MyOtherPlayer() , If you configure [oberver], the joystick will control this observer and not the Component passed in `player` param.
       ),
     ]
     ...
   );
 ```
 
-Check a [example](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/player_controllers).
+Check an [example](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/player_controllers).
 
 ## JoystickListener
 

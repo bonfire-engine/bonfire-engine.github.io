@@ -1,15 +1,15 @@
 # Forces
 
-Bonfire have a simple forces system. You can add in your games linear, acceleration or resistance forces.
+Bonfire has a simple forces system that you can add in your games: linear, acceleration or resistance forces.
 
 | AccelerationForce2D | LinearForce2D    | ResistanceForce2D    |
 | :---:   | :---: | :---: |
 | ![](../../_media/force_acceleration.gif) | ![](../../_media/force_linear.gif)   | ![](../../_media/force_resistance.gif)   |
 
 
-## Using
+## Using The Force
 
-To add global forces just adds them at the `globalForces` param of Bonfire Widget:
+To add global forces just add them at the `globalForces` param of BonfireWidget:
 
 
 ```dart
@@ -17,25 +17,25 @@ To add global forces just adds them at the `globalForces` param of Bonfire Widge
   Widget build(BuildContext context) {
     return BonfireWidget(
       //...
-      globalForces: [] // Here you can adds forces like accelerations(AccelerationForce2D), resistences
+      globalForces: [] // Here you can add forces like accelerations(AccelerationForce2D), resistences
     );
   }
 ```
 
-Done, all components that use `HandleForces` mixin will be affected by this force. Like this:
+All components that use the `HandleForces` mixin will be affected by this force. Like this:
 
 ```dart
-class MyCustomDecoration extends GameDecoration with  HandleForces{
+class MyCustomDecoration extends GameDecoration with HandleForces {
 
 
 }
 ```
 
-You can adds a force in a especificy component. Just adds `HandleForces` mixin and call `addForce` function:
+You can add a force in a specific component. Just add a `HandleForces` mixin and call `addForce` function:
 
 
 ```dart
-class MyCustomDecoration extends GameDecoration with  HandleForces{
+class MyCustomDecoration extends GameDecoration with HandleForces {
 
   MyCustomDecoration(){
     addForce((AccelerationForce2D('gravity',Vector2(0,50))))

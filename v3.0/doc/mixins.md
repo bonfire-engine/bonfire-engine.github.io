@@ -83,10 +83,10 @@ In the `SimpleDirectionAnimation` there are some methods util to control the ani
 
 ```dart
 
-/// Method used to play animation once time using `other` map
+/// Method used to play animation one time using `other` map
 animation.playOnceOther()
 
-/// Method used to play animation once time
+/// Method used to play animation one time
 animation.playOnce(
     FutureOr<SpriteAnimation> animation, {
     VoidCallback? onFinish,
@@ -116,7 +116,7 @@ animation.resume();
 
 ## MoveToPositionAlongThePath
 
-> To use this mixin your component must contain `Movement` mixin.
+> To use this mixin, your component must contain `Movement` mixin.
 
 Mixin responsible for find path using `a_star_algorithm` and moving the component through the path.
 
@@ -124,7 +124,7 @@ See [PathFinding](doc/path_finding)
 
 ## UseLifeBar
 
-Mixin used to adds a BarLife to the attacable component
+Mixin used to adds a BarLife to the attackable component
 
 With this mixin you can configure the life bar view using the method `setupBarLife`:
 
@@ -276,7 +276,7 @@ Your can draw the component vision do this:
     );
 ```
 
-When you use any method like `seeComponent` or `seeComponentType` will draw the vision.
+When you use any method like `seeComponent` or `seeComponentType`, the engine will determine the vision.
 
 ## Sensor
 
@@ -311,11 +311,11 @@ You can configure your target like this:
 
 ```dart
 
-setupFollower(target: myPLayer, offset: Vector2());
+setupFollower(target: myPlayer, offset: Vector2());
 
 ```
 
-If a component that have this mixin is added as a child of other component. He will follow the parent position.
+If a component that has this mixin is added as a child of other component, it will follow the parent position.
 
 
 ## UseAssetsLoader
@@ -323,7 +323,7 @@ If a component that have this mixin is added as a child of other component. He w
 Mixin used to load assets:
 
 ```dart
-class MyComponent extends GameComponent with UseAssetsLoader{
+class MyComponent extends GameComponent with UseAssetsLoader {
     SpriteAnimation animation;
     MyComponent(Vector2 position,Future<SpriteAnimation> animIdle){
         this.position = position;
@@ -336,12 +336,12 @@ class MyComponent extends GameComponent with UseAssetsLoader{
 
 ## UseSpriteAnimation
 
-Mixin that adds to your Component the use of the SpriteAnimation in easier way.
+Mixin that adds to your Component the use of the SpriteAnimation in an easier way.
 Your Component gains the `animation` property and `playSpriteAnimationOnce` method
 
 ```dart
 
-class MyComponent extends GameComponent with UseSpriteAnimation{
+class MyComponent extends GameComponent with UseSpriteAnimation {
     MyComponent(Vector2 position){
         this.position = position;
     }
@@ -369,19 +369,19 @@ You can know the current index animation or if is the last frame:
 
 ## UseSprite
 
-Mixin that adds to your Component the use of the Sprite in easier way.
+Mixin that adds to your Component the use of the Sprite in an easier way.
 Your Component gains the `sprite`.
 
 ```dart
 
-class MyComponent extends GameComponent with UseSprite{
+class MyComponent extends GameComponent with UseSprite {
     MyComponent(Vector2 position){
         this.position = position;
     }
 
     @override
     Future onLoad() async {
-        sprite = await MySpriteSheetLoader.geSrite();
+        sprite = await MySpriteSheetLoader.geSprite();
         return super.onLoad();
     }
 }
@@ -415,7 +415,7 @@ void setupLifeBar({
 
 ### TileRecognizer
 
-Mixin used to recognize the of tiles is below.
+Mixin used to recognize the type of tiles below.
 
 In the Tiled program used to build your map, you can set a `class` or set custom properties. With this mixin you can access this `Tile` information that the component is above.
 

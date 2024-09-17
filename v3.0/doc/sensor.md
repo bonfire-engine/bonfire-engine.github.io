@@ -1,6 +1,6 @@
 # Sensor
 
-> Mixin useful to detect if any object came into contact but without blocking its passage.
+> Mixin useful to detect if any object came into contact, but without blocking it's passage.
 Example: Fire on the ground, spikes, etc. Things that the character or enemy can go through and take damage or activate any other type of behavior.
 
 <img src="../../_media/sensor.gif" width="600"/>
@@ -33,7 +33,7 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
 ```
 
 
-Automatically the sensor use your component size. If you want use a custom size just add your `ShapeHitbox`:
+By default, the sensor uses your component size. If you want use a custom size just add your `ShapeHitbox`:
 
 ```dart
 

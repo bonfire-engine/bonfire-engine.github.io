@@ -48,7 +48,7 @@ status.currentAction;
 
 ## SceneAction
 
-Already exist basic actions created:
+Some basic scene actions already exist:
 
 - CameraSceneAction // Used to move camera to position or to follow a target.
 - DelaySceneAction // Used to apply delay

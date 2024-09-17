@@ -1,13 +1,13 @@
 # Collision System
 
-> System responsible for determining and configuring the collision between objects
+> System responsible for determining and configuring the collision between objects.
 
 
 ## How to use
 
-In the 3.0 version all collision system using [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
+In the 3.0 version of Bonfire, all collision system are using [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
 
-To add collision in your component just adds a `ShapeHitbox` (PolygonHitbox,RectangleHitbox or CircleHitbox) like this:
+To add collisions in your component just add a `ShapeHitbox` (PolygonHitbox,RectangleHitbox or CircleHitbox) like this:
 
 ```dart
 
@@ -22,7 +22,7 @@ class MyComponent extends SimplePlayer {
 
 ```
 
-After that the Flame will detect all collision between hitboxes in the game. You can listen this doing override of this methods:
+After that, the Flame Engine will detect all collision between hitboxes in the game. You can listen to this by overriding these methods:
 
 
 ```dart
@@ -50,11 +50,11 @@ class MyCollidable extends SimplePlayer {
 
 ```
 
-So, now you can know when happen collision, but it not do components stop your movement when it happen. To do it just adds the `BlockMovementCollision` mixin like this:
+So, now you can know when collisions happen, but it will not stop component movement. To do block movement, add the `BlockMovementCollision` mixin like this:
 
 ```dart
 
-class MyComponent extends SimplePlayer with  BlockMovementCollision{
+class MyComponent extends SimplePlayer with BlockMovementCollision{
   //...
   @override
   Future<void> onLoad() {
@@ -65,9 +65,9 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 
 ```
 
-Great! Now when you move the player and colliding with wall or other component with `ShapeHitbox` the movement is stoped.
+Great! Now when you move the player and collide with a wall or another component with `ShapeHitbox` the movement is stopped.
 
-## Knowing who crashed
+## Knowing who collided
 
 You can know what `GameComponent` collided by overriding `onBlockMovement` or `onBlockedMovement`:
 
@@ -87,7 +87,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
     Set<Vector2> intersectionPoints,
     GameComponent other,
   ) {
-    // You can do something when occurs the collision. Se you return false the blocking movement will not happen.
+    // You can do something when the collision occurs. If you return false the blocking movement will not happen.
     return super.onBlockMovement(intersectionPoints,other);
   }
 
@@ -97,7 +97,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
     CollisionData collisionData,
   ) {
      super.onBlockedMovement(other,collisionData);
-     // You can do something when movement is bloked by collision.
+     // You can do something when movement is blocked by collision.
      // data.direction
      // data.normal
      // data.intersectionPoints 
@@ -105,15 +105,15 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 }
 ```
 
-You can configure somethings using:
+You can configure some things, using:
 
 ```dart
 
- setupBlockMovementCollision(enabled:true, bodyType: BodyType.dynamic});
+ setupBlockMovementCollision(enabled:true, bodyType: BodyType.dynamic);
 
 ```
 
-To adds `Elastic collision` take a look the mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
+To add `Elastic collision` take a look the mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
 
 
 ## Testing and debugging

@@ -78,7 +78,7 @@ double getZoomFromMaxVisibleTile(
   int maxTile,
 )
 
-// Could be helpful to render some sprite rotanting using angle.
+// Could be helpful to render some sprite rotating using angle.
 void renderSpriteByRadAngle(
   Canvas canvas,
   double radAngle,
@@ -106,7 +106,7 @@ ValueGeneratorComponent generateValues(
 
 ### ComponentSpawner
 
-Sometimes we need spaw something like enemy or items in your map dynamically. To do it you can use the `ComponentSpawner`:
+Sometimes we need spawn something, like enemy or items in your map, dynamically. To do it you can use the `ComponentSpawner`:
 
 ```dart
 
@@ -164,7 +164,6 @@ Object that renders a `SpriteAnimation`.
 
 ### FollowerGameObject
 
-
 Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
 
 
@@ -203,8 +202,7 @@ AnimatedFollowerGameObject({
 
 ### FlyingAttackGameObject
 
-
-A component that is in a certain direction set at a certain speed also configurable and only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
+A component that is in a certain direction set at a certain speed also configurable to only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
 
 This move from `angle` or `direction`.
 
@@ -235,7 +233,7 @@ FlyingAttackGameObject({
 
 You can show a widget to follow a component in the game. This is useful to create dialogs, inventory, interactions, etc.
 
-To show is easy, just call `FollowerWidget.show`. See below:
+To show a widget, just call `FollowerWidget.show`. See below:
 
 ```dart
    FollowerWidget.show(

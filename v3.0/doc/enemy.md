@@ -1,6 +1,6 @@
 # Enemy
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and use
+> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses the
 [Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
@@ -10,7 +10,7 @@ There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEn
 
 ## SimpleEnemy
 
-> <small>This is a [Enemy](#enemy) and use 
+> <small>This is a [Enemy](#enemy) and uses the
 [DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
@@ -100,7 +100,7 @@ The enemy will move in the direction of the player once it gets within the radiu
 
 ```dart 
   void simpleAttackMelee({
-     required double damage,
+    required double damage,
     required Vector2 size,
     int? id,
     int interval = 1000,
@@ -133,7 +133,7 @@ Executes a physical attack to the player, making the configured damage with the 
     LightingConfig? lightingConfig,
   })
 ```
-Executes a distance attack. It will add a `FlyingAttackObject` to the game and this will be sent in the configured direction, making some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
@@ -169,7 +169,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ```dart
 
   animation.playOnce(
-    FutureOr<SpriteAnimation> animation, {
+    FutureOr<SpriteAnimation> animation, 
     VoidCallback? onFinish,
     VoidCallback? onStart,
     bool runToTheEnd = false,
@@ -184,16 +184,16 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-Note: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
+> IMPORTANT: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
 
 Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
 
 
 ## RotationEnemy
 
-> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and use 
+> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and uses the
 [UseSpriteAnimation](doc/mixins?id=usespriteanimation),
-[UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
+[UseAssetsLoader](doc/mixins?id=useassetsloader) `mixins`.</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
@@ -300,15 +300,15 @@ There are several useful extensions that we can use in `update` that will help u
   
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent' methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ## PlatformEnemy
 
-> <small>This is a [SimpleEnemy](#SimpleEnemy) and use
+> <small>This is a [SimpleEnemy](#SimpleEnemy) and uses the
 [BlockMovementCollision](doc/collision_system?id=collision-system),
 Jump
-and JumpAnimation</small>
+and JumpAnimation `mixins`</small>
 
 Used for platform games. And we can configure Motion animations for run, idle and jump.
 
@@ -331,7 +331,7 @@ class BowserEnemy extends PlatformEnemy {
 
 ### Jumping
 
-To do the player jump you ccan use the [Jumper mixin](#TODO) method :
+To do the player jump you can use the [Jumper mixin](#TODO) method :
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -354,7 +354,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ```dart
 
   animation.playOnce(
-    FutureOr<SpriteAnimation> animation, {
+    FutureOr<SpriteAnimation> animation,
     VoidCallback? onFinish,
     VoidCallback? onStart,
     bool runToTheEnd = false,
@@ -369,7 +369,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: You need remember adds a gravity force in this component to be the correct behavior. Take a look [HandleForces](doc/forces?id=forces)
+> IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
 
 
 ## Custom

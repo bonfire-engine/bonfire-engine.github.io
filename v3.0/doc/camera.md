@@ -8,8 +8,8 @@ You can configure some settings in the camera:
   return BonfireWidget(
     ...
    cameraConfig: CameraConfig(
-      moveOnlyMapArea: false, // The camera try move only the map area, without show areas outside map.
-      movementWindow: Vector2(50,50), // Area what player can move in the center screen without move camera.
+      moveOnlyMapArea: false, // The camera moves only the map area, without showing areas outside map.
+      movementWindow: Vector2(50,50), // Area that the player can move in the center screen, without moving the camera.
       speed: 1.0, // Camera speed
       zoom:  1.0,
       angle: 45 * pi/180, // rotate view 45 degrees
