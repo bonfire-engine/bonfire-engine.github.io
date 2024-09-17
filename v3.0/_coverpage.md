@@ -12,7 +12,7 @@
 
 
 [Github](https://github.com/RafaelBarbosatec/bonfire)
-[Games](doc/examples?id=bonfire-example)
+[Demo](https://bonfire-engine.github.io/examples/bonfire-v3)
 [Learn more](#welcome-to-bonfire)
 
 ![color](#3f3f3f)

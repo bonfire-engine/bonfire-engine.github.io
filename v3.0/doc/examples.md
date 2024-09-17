@@ -1,7 +1,3 @@
-## Bonfire Example
-[GitHub](https://github.com/RafaelBarbosatec/bonfire/tree/v3.0.0/example)    -   [Play other tab](https://bonfire-engine.github.io/examples/bonfire-v3/)
-
-![Bonfire example](https://bonfire-engine.github.io/examples/bonfire-v3 ':include :type=iframe width=100% height=500px') 
 
 ## SunnyPlace [In development]
 > Game case
