@@ -237,14 +237,18 @@ Adds these methods in your component:
     void updateLife(double life,{bool verifyDieOrRevive = true})
     void removeLife(double life)
     
-    /// You can listen if this component receive attack
-    // If returns true, this component received damage.
-    @override
-    bool receiveDamage(
+    // Called when the component receives damage
+     void onReceiveDamage(
         AttackOriginEnum attacker,
         double damage,
         dynamic identify,
     )
+
+    // Called when life is removed
+    void onRemoveLife(double life) {}
+
+    // Called when life is restored
+    void onRestoreLife(double life) {}
 
     /// If your life stay minor than 0 this method is called
     @override

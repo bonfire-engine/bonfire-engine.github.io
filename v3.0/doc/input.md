@@ -100,6 +100,28 @@ class MyCustomDecoration extends GameComponent with PinchGesture {
 
 ```
 
+### MoveCameraUsingGesture
+
+Mixin used to move camera with gestures (touch or mouse)
+
+```dart
+
+class MyPlayer extends SimplePlayer with MoveCameraUsingGesture {
+
+}
+
+```
+
+Settings:
+
+```dart
+
+void setupMoveCameraUsingGesture({
+    bool onlyMouse = false,
+    MouseButton mouseButton = MouseButton.left,
+  })
+
+```
 
 ### Custom
 
