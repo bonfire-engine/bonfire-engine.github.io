@@ -1,6 +1,6 @@
 # TalkDialog
 
-Bonfire offer a basic implementation to show dialogs in your game.
+Bonfire 提供了基本的实现来在您的游戏中显示对话框。
 
 
 ![](../../_media/talk_dialog.gif)

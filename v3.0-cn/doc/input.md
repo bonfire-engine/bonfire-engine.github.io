@@ -1,16 +1,15 @@
-# Input
+# 输入（Input）
 
 
-## Gestures
+## 手势（Gestures）
 
 > At Bonfire we use mixins to enable these interactions.
 
-Bonfire uses [Listener](https://api.flutter.dev/flutter/widgets/Listener-class.html) Widget to recieve gestures.
+Bonfire 使用 [Listener](https://api.flutter.dev/flutter/widgets/Listener-class.html) 小部件来接收手势。
 
-### TapGesture
+### TapGesture（点击手势）
 
-To enable TapGesture just add the `TapGesture` mixin in your component like this:
-
+要启用点击手势，只需在你的组件中添加 TapGesture 混入，如下所示：
 ```dart
 
 class MyCustomDecoration extends GameDecoration with TapGesture {
@@ -22,37 +21,36 @@ class MyCustomDecoration extends GameDecoration with TapGesture {
         );
 
 
-  // It's called when the user taps down the component
-  // If return 'true', this event is not relayed to others components.(default = false)
+  // 当用户按下组件时调用
+  // 如果返回 'true'，则事件不会传递给其他组件。（默认值为 false）
   @override
   bool onTapDown(GestureEvent event){
     return super.onTapDown(event);
   }
 
-  // It's called when the user stops tapping the component
+  // 当用户停止按下组件时调用
   @override
   void onTapUp(GestureEvent event){}
 
-  // It's called when the user cancels tap in the component
+  // 当用户取消点击组件时调用
   @override
   void onTapCancel(){}
 
-  // It's called when the user taps the component
+  // 当用户点击组件时调用
   @override
   void onTap(){}
 
-  // It's called when the user tap down in the screen
+  // 当用户在屏幕上按下时调用
   void onTapDownScreen(GestureEvent event) {}
-  // It's called when the user stops tapping the screen
+  // 当用户停止在屏幕上按下时调用
   void onTapUpScreen(GestureEvent event) {}
 
 }
 ```
 
-### DragGesture
+### DragGesture（拖动手势）
 
-To enable DragGesture just add `DragGesture` mixin in your component like this:
-
+要启用拖动手势，只需在你的组件中添加 DragGesture 混入，如下所示：
 ```dart
 
 class MyCustomDecoration extends GameDecoration with DragGesture {
@@ -66,9 +64,9 @@ class MyCustomDecoration extends GameDecoration with DragGesture {
 }
 ```
 
-Your component can be automatically dragged on the map with the drag gesture.
+你的组件可以通过拖动手势在地图上自动移动。
 
-If you want to listen to the interactions with the object, you can override these methods:
+如果你希望监听与对象的交互，可以重写以下方法：
 
 ```dart
 // Called when the drag gesture is started in the component
@@ -84,9 +82,10 @@ void endDrag(GestureEvent event) {}
 void cancelDrag(GestureEvent event) {}
 ```
 
-### PinchGesture
+### PinchGesture（捏合手势）
 
-To listen pinch gesture in the screen just add `PinchGesture` mixin in your component like this:
+
+要在屏幕上监听捏合手势，只需在你的组件中添加 PinchGesture 混入，如下所示：
 
 ```dart
 
@@ -100,10 +99,10 @@ class MyCustomDecoration extends GameComponent with PinchGesture {
 
 ```
 
-### MoveCameraUsingGesture
+### MoveCameraUsingGesture（使用手势移动相机）
 
-Mixin used to move camera with gestures (touch or mouse)
 
+此混入用于通过手势（触摸或鼠标）移动相机：
 ```dart
 
 class MyPlayer extends SimplePlayer with MoveCameraUsingGesture {
@@ -112,7 +111,7 @@ class MyPlayer extends SimplePlayer with MoveCameraUsingGesture {
 
 ```
 
-Settings:
+设置方法：
 
 ```dart
 
@@ -123,17 +122,17 @@ void setupMoveCameraUsingGesture({
 
 ```
 
-### Custom
+### 自定义手势（Custom）
 
-All components extends `PointerDetectorHandler`, so to recieve gestures events do override `hasGesture` returning `true`:
+
+所有组件都继承自 PointerDetectorHandler，因此要接收手势事件时只需重写 hasGesture 方法并返回 true：
 
 ```dart
   @override
   bool hasGesture() => true;
 ```
 
-this way you can listen gestures events on the screen doing override this methods:
-
+这样，你就可以在屏幕上监听手势事件，通过重写以下方法：
 ```dart
   void handlerPointerDown(PointerDownEvent event) {}
   void handlerPointerMove(PointerMoveEvent event) {}
@@ -143,9 +142,9 @@ this way you can listen gestures events on the screen doing override this method
   void handlerPointerSignal(PointerSignalEvent event) {}
 ```
 
-## Mouse
+## 鼠标（Mouse）
 
-To enable DragGesture just add `MouseListener` mixin in your component like this:
+要启用拖动手势，只需在组件中添加 MouseListener 混入，如下所示：
 
 ```dart
 
@@ -160,7 +159,7 @@ class MyCustomDecoration extends GameDecoration with MouseEventListener {
 }
 ```
 
-If you want to listen to the interactions with the object, you can override these methods:
+如果您想监听与对象的交互，可以重写以下方法：
 
 ```dart
   /// Listen to the mouse cursor across the screen
@@ -194,9 +193,9 @@ If you want to listen to the interactions with the object, you can override thes
   void onMouseCancel() {}
 ```
 
-## Keyboard
+## 键盘
 
-If you need that the Player move by keyboard you can pass the `Keyboard` in `playerControllers` param.
+如果您需要让玩家通过键盘移动，可以将 Keyboard 作为 playerControllers 参数传递。
 
 ```dart
       BonfireWidget(
@@ -218,7 +217,7 @@ If you need that the Player move by keyboard you can pass the `Keyboard` in `pla
 
 ```
 
-To listen keyboard events in your component just use the mixin `KeyboardEventListener`.
+要在您的组件中监听键盘事件，只需使用混入 KeyboardEventListener。
 
 ```dart
 

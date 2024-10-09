@@ -1,10 +1,10 @@
 # Util
 
-There are some functions and Components that can be helpful in your game development process.
+在游戏开发过程中，有一些函数和组件可以帮助您。
 
 ## Functions
 
-There are many functions that can be helpful in `BonfireUtil`:
+在 BonfireUtil 中，有许多有用的函数：
 
 ```dart
 
@@ -21,7 +21,7 @@ Vector2 vector2ByAngle(double angle, {double intencity = 1})
 
 ```
 
-GameComponets extensions:
+GameComponents 扩展：
 
 ```dart
 /// Used to generate numbers to create your animations or anythings
@@ -106,7 +106,7 @@ ValueGeneratorComponent generateValues(
 
 ### ComponentSpawner
 
-Sometimes we need spawn something, like enemy or items in your map, dynamically. To do it you can use the `ComponentSpawner`:
+有时我们需要在地图上动态生成一些东西，例如敌人或物品。为此，您可以使用 ComponentSpawner：
 
 ```dart
 
@@ -125,7 +125,7 @@ Sometimes we need spawn something, like enemy or items in your map, dynamically.
 
 ### GameObject
 
-Object that renders a `Sprite`.
+“渲染 Sprite 的对象。”
 
 
 ```dart
@@ -143,7 +143,7 @@ Object that renders a `Sprite`.
 
 ### AnimatedGameObject
 
-Object that renders a `SpriteAnimation`.
+“渲染 SpriteAnimation 的对象。”
 
 ```dart
    AnimatedGameObject({
@@ -164,8 +164,7 @@ Object that renders a `SpriteAnimation`.
 
 ### FollowerGameObject
 
-Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
-
+“与之前的类似，这个对象可以在销毁之前播放一次动画，也可以循环播放。最重要的功能是，这个组件可以跟随地图上的其他元素，比如玩家、敌人或装饰物。”
 
 ```dart
 FollowerGameObject({
@@ -180,7 +179,7 @@ FollowerGameObject({
 
 ### AnimatedFollowerObject
 
-The same `FollowerObject` with animation.
+“具有动画的相同 FollowerObject。”
 
 ```dart
 AnimatedFollowerGameObject({
@@ -202,9 +201,9 @@ AnimatedFollowerGameObject({
 
 ### FlyingAttackGameObject
 
-A component that is in a certain direction set at a certain speed also configurable to only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
+“一个以特定速度朝某个方向移动的组件，可以配置为只攻击敌人或玩家并造成伤害，或者在与有碰撞的组件（如砖块或装饰物）接触时被销毁。
 
-This move from `angle` or `direction`.
+该组件的移动方向由 angle 或 direction 控制。”
 
 ```dart
 
@@ -231,9 +230,9 @@ FlyingAttackGameObject({
 
 ## FollowerWidget
 
-You can show a widget to follow a component in the game. This is useful to create dialogs, inventory, interactions, etc.
+你可以显示一个小部件来跟随游戏中的组件。这对于创建对话框、库存、交互等非常有用。
 
-To show a widget, just call `FollowerWidget.show`. See below:
+要显示小部件，只需调用 FollowerWidget.show。请参见以下内容：
 
 ```dart
    FollowerWidget.show(
@@ -245,7 +244,7 @@ To show a widget, just call `FollowerWidget.show`. See below:
    );
 ```
 
-To hide:
+隐藏FollowerWidget:
 
 ```dart
    FollowerWidget.remove('PLAYER_INVENTORY');

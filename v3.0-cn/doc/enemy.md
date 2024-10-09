@@ -1,12 +1,12 @@
-# Enemy
+# 敌人
 
 > <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses the
 [Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
-Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
+在游戏中创建一个敌人。该类的实例具有预定义的行为，可以根据需要进行使用和配置。所有的动作和移动方式都可以自定义。
 
-There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEnemy`:
+敌人分为三种类型：`SimpleEnemy`、`RotationEnemy` 和 `PlatformEnemy`：
 
 ## SimpleEnemy
 
@@ -15,9 +15,9 @@ There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEn
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
-Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
+用于 45º 和 67.5º 视角。我们可以为所有方向（上、下、左、右、右上、左上、左下、右下）配置移动动画。
 
-To use it, simply create a class that will represent your enemy and extend SimpleEnemy:
+要使用它，只需创建一个表示敌人的类，并继承 `SimpleEnemy`：
 
 ```dart
 
@@ -65,9 +65,9 @@ class Goblin extends SimpleEnemy {
 
 ```
 
-Now that you have a class that represents your enemy, you can configure their behavior.
+现在你已经创建了一个表示敌人的类，可以开始配置它们的行为了。
 
-There are several useful extensions that you can use inside the `update` method that will help you with this task:
+在 update 方法中，有几个非常有用的扩展函数可以帮助你完成这个任务：
 
 
 ```dart 
@@ -79,8 +79,7 @@ There are several useful extensions that you can use inside the `update` method 
     double? angle,
   })
 ```
-It will trigger a callback function once the player is within the enemy's radiusVision.
-
+一旦玩家进入敌人的视野半径 (radiusVision) 内，就会触发一个回调函数。
 
 ```dart 
   void seeAndMoveToPlayer({
@@ -95,8 +94,7 @@ It will trigger a callback function once the player is within the enemy's radius
     bool runOnlyVisibleInScreen = true, 
   })
 ```
-The enemy will move in the direction of the player once it gets within the radiusVision. When it gets close to the player, `closePlayer` will be fired.
-
+当玩家进入敌人的视野半径 (radiusVision) 内时，敌人会向玩家的方向移动。当靠近玩家时，将触发 closePlayer 回调。
 
 ```dart 
   void simpleAttackMelee({
@@ -112,8 +110,7 @@ The enemy will move in the direction of the player once it gets within the radiu
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
-
+对玩家执行一次物理攻击，按照配置的伤害值和频率造成伤害。你可以添加动画来展示此攻击效果。
 
 ```dart 
   void simpleAttackRange({
@@ -133,8 +130,7 @@ Executes a physical attack to the player, making the configured damage with the 
     LightingConfig? lightingConfig,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
-
+执行一次远程攻击。它会在游戏中添加一个 `FlyingAttackObject` 类型的投射物，并按照配置的方向发射，对命中的目标造成伤害，或者在撞到障碍物（带有碰撞的瓷砖）时被销毁。
 
 ```dart 
   void seeAndMoveToAttackRange({
@@ -148,15 +144,14 @@ Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the g
     bool runOnlyVisibleInScreen = true,
   })
 ```
-When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
+当玩家进入视野半径 (`radiusVision`) 内时，敌人会移动到合适的位置以执行远程攻击。一旦到达攻击位置，将触发 `positioned` 回调。
 
-
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+以及所有 GameComponent 的方法。请查看 [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
 
-To update the `SimpleEnemy` animation you should use this method:
+要更新 `SimpleEnemy` 的动画，你应该使用以下方法：
 
 ```dart
 
@@ -164,7 +159,7 @@ To update the `SimpleEnemy` animation you should use this method:
 
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+要播放当前动作的动画，你应该使用 SimpleDirectionAnimation 的方法。例如：
 
 ```dart
 
@@ -184,12 +179,12 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> IMPORTANT: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
+> 重要提示：敌人只有在相机视野内时才会移动。如果你想禁用这个限制，可以在碰撞配置中的 collisionOnlyVisibleScreen 设置为 false。详见 [Colission System](doc/collision_system?id=collision-system).
 
-Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
+完整的 SimpleEnemy 示例： [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
 
 
-## RotationEnemy
+## RotationEnemy旋转敌人
 
 > <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and uses the
 [UseSpriteAnimation](doc/mixins?id=usespriteanimation),
@@ -197,7 +192,7 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
-Used for 90º perspectives. And we can configure Motion animations for run and idle.
+用于 90º 视角。我们可以为“跑动”和“静止”状态配置运动动画。
 
 ```dart
 
@@ -229,9 +224,9 @@ class Tank extends RotationEnemy {
 
 ```
 
-Now that we have our class that represents our enemy, we can configure their behavior.
+现在我们已经有了表示敌人的类，可以开始配置它们的行为了。
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+在 update 方法中，有几个非常有用的扩展函数可以帮助我们配置这些移动行为：
 
 ```dart 
   void seePlayer({
@@ -300,17 +295,17 @@ There are several useful extensions that we can use in `update` that will help u
   
 ```
 
-And all of the `GameComponent' methods. Take a look [GameComponent functions](doc/util?id=functions)
+所有 GameComponent 的方法。请查看 [GameComponent functions](doc/util?id=functions)
 
 
-## PlatformEnemy
+## 平台敌人
 
 > <small>This is a [SimpleEnemy](#SimpleEnemy) and uses the
 [BlockMovementCollision](doc/collision_system?id=collision-system),
 Jump
 and JumpAnimation `mixins`</small>
 
-Used for platform games. And we can configure Motion animations for run, idle and jump.
+用于平台类游戏。我们可以为“跑动”、“静止”和“跳跃”状态配置运动动画。
 
 ```dart
 
@@ -331,7 +326,7 @@ class BowserEnemy extends PlatformEnemy {
 
 ### Jumping
 
-To do the player jump you can use the [Jumper mixin](#TODO) method :
+要让玩家跳跃，你可以使用以下方法： [Jumper mixin](#TODO)  :
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -339,9 +334,9 @@ To do the player jump you can use the [Jumper mixin](#TODO) method :
 ```
 
 
-### Change animations
+### 更换动画
 
-To update the `PlatformEnemy` animation you should use this method:
+要更新 `PlatformEnemy` 的动画，你应该使用以下方法：
 
 ```dart
 
@@ -349,7 +344,7 @@ To update the `PlatformEnemy` animation you should use this method:
 
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+要播放当前动作的动画，你应该使用 `SimpleDirectionAnimation` 的方法。例如：
 
 ```dart
 
@@ -369,9 +364,9 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
+> 重要提示：请记得在该组件中添加重力作用力，以修正其行为。查看以下内容了解更多。[HandleForces](doc/forces?id=forces)
 
 
-## Custom
+## 自定义
 
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Enemy` class.
+如果这些类型的敌人都无法满足你的需求，你可以通过继承 `Enemy` 类来创建自定义敌人类型。

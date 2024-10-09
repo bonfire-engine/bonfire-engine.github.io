@@ -1,37 +1,37 @@
-# Getting Started
+# 入门指南
 
-> Visualize your awesome project.
+> 展示你出色的项目。
 
 ## Installing
 
-1. Depend on it
+1. 依赖这个库
 
-Add Bonfire to your game's `pubspec.yaml` file by running the following command:
+通过运行以下命令将 Bonfire 添加到你的游戏的 `pubspec.yaml` 文件中：
 
 ```console
 $ flutter pub add bonfire
 ```
 
-2. Import it
+2. 导入
 
-Now in your Dart code, you can use:
+你应该看到下面这一行内容:
 
 ```dart
 import 'package:bonfire/bonfire.dart';
 ```
 
-## Using
+## 使用方法：
 
-### Creating your map
-You need create your map using [Tiled](https://www.mapeditor.org/). After that, you can export your map as a json file.
+### 创建你的地图
+使用 [Tiled](https://www.mapeditor.org/)创建你的地图.并且把导出json格式的地图.
 
 [How to use Tiled in Bonfire](doc/tiled_support?id=tiled-support) 
 
 [Tutorial video about exporting maps as json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
 
-> IMPORTANT: Make sure your map file is correctly named, and placed in assets/images directory to avoid any loading issues.
+> 重要提示：请确保地图文件命名正确，并放置在 `assets/images` 目录中，以避免加载问题。
 
-Now you can run the app, and see your map:
+运行app看看地图:
 
 ```dart
 @override
@@ -48,16 +48,16 @@ Now you can run the app, and see your map:
     );
   }
 ```
-> Note: You can also add a [Keyboard Controller](doc/input?id=keyboard).
+> 注意：你还可以添加一个 [Keyboard Controller](doc/input?id=keyboard).
 
-This way you can see your map is rendering, and use the directional joystick to explore.
+这样你就可以看到地图的渲染效果，并使用方向摇杆来进行探索。
 
 
-### Creating your player
+### 创建玩家
 
-To create a player you will need SpriteAnimations. You can see how to load Sprites in [Flame doc](https://docs.flame-engine.org/main/flame/rendering/images.html).
+要创建一个玩家角色，你需要使用 `SpriteAnimations`。你可以在 [Flame 文档](https://docs.flame-engine.org/main/flame/rendering/images.html) 中了解如何加载精灵图。
 
-Images used in this example:
+本示例中使用的图片：
 
 
 [![Idle](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)
@@ -95,7 +95,7 @@ class PlayerSpriteSheet {
 ```
 
 
-To create a player, just create a class and add the `extends SimplePlayer`. [See more details about Player in Bonfire](doc/player?id=player)
+要创建一个玩家角色，只需创建一个类并添加 extends SimplePlayer。 [See more details about Player in Bonfire](doc/player?id=player)
 
 
 ```dart
@@ -111,8 +111,7 @@ class Knight extends SimplePlayer {
 
 ```
 
-Now you just need to add your player in the game. Keep in mind that the ``Vector2(40,40)`` is the initial position of the player.
-
+现在你只需要将玩家添加到游戏中。请注意，`Vector2(40,40)` 是玩家的初始位置。
 
 ```dart
 @override
@@ -131,10 +130,9 @@ Now you just need to add your player in the game. Keep in mind that the ``Vector
   }
 ```
 
-You can see your player in the map and move it with the directional Joystick.
+你现在可以在地图中看到你的玩家，并通过方向摇杆来移动它。
+## 下一步
 
-## Next steps
+熟悉 Bonfire 中可以使用的所有组件。 [See here](doc/overview?id=overview)
 
-Familiarize yourself with all components that you can use in Bonfire [See here](doc/overview?id=overview)
-
-Or check out our examples [here](doc/examples?id=bonfire-example).
+或者查看我们的示例。 [here](doc/examples?id=bonfire-example).

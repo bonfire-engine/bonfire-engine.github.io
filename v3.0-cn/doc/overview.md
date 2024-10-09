@@ -1,7 +1,6 @@
-# Overview
+# 概述
 
-Bonfire is basically a Widget where you are passing the parameters and configuring it, according to what kind of game you want to build.
-
+Bonfire 基本上是一个小部件（Widget），您可以根据想要构建的游戏类型传递参数并进行配置。
 
 ## BonfireWidget
 
@@ -38,13 +37,13 @@ Bonfire is basically a Widget where you are passing the parameters and configuri
 
 ### Dynamically adding game elements
 
-If it is necessary to add components dynamically in the game. Inside any component you can use:
+如果需要在游戏中动态添加组件，可以在任何组件内使用：
 
 ```dart
   gameRef.add(MyComponent())
 ```
 
-or you can add components inside other components like a child just using this:
+或者，您可以通过以下方式将组件作为子组件添加到其他组件中：
 
 ```dart
   add(MyComponent())
@@ -54,78 +53,78 @@ or you can add components inside other components like a child just using this:
 
 ### Components layer
 
-Bonfire is composed of several components that are rendered according to this layer diagram:
+Bonfire 由多个组件组成，这些组件根据以下层级图进行渲染：
 
 <img src="_media/layers.png" width="600"/>
 
-Each layer will be rendered according to the priority defined in the component. The lower the priority, the earlier it will be rendered.
+每个层级将根据组件中定义的优先级进行渲染。优先级越低，渲染的顺序越靠前。
 
 ## Background
 
 > render_priority = 10
 
-Your can add a component that represents a background. It's useful to create parallax and interactive backgrounds.
+您可以添加一个表示背景的组件。这对于创建视差效果和交互式背景非常有用。
 
 ## Map
 
 > render_priority = 20
 
-Represents a map (or world) where the game occurs.
+表示游戏发生的地图（或世界）。
 
-For more details click [here](doc/map?id=map).
+点击查看更多信息 [here](doc/map?id=map).
 
 ## Decoration
 
 > render_priority = Dynamic ( 30 + Axis Y)
 
-Anything that you may add to the scenery. For example a Barrel in the way or even an NPC, which can interact with your player.
+您可以添加到场景中的任何物体。例如，路上的一个桶，甚至是一个可以与玩家互动的 NPC。
 
-For more details click [here](doc/decoration?id=decoration).
+点击查看更多信息 [here](doc/decoration?id=decoration).
 
 ## Enemy
 
 > render_priority = Dynamic ( 30 + Axis Y)
 
-Represents enemy characters in the game. Instances of this class have actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
+表示游戏中的敌对角色。此类的实例具有可随时使用和配置的动作和移动。同时，您可以根据自己的需求自定义所有动作和移动方式。
 
-For more details click [here](doc/enemy?id=enemy).
+点击查看更多信息 [here](doc/enemy?id=enemy).
 
 ## Player
 
 > render_priority = Dynamic (30 + Axis Y)
 
-Represents the character controlled by the user in the game. Instances of this class have actions and movements ready to be used and configured.
+表示游戏中由用户控制的角色。此类的实例具有可随时使用和配置的动作和移动。
 
-For more details click [here](doc/player?id=player).
+点击查看更多信息 [here](doc/player?id=player).
 
 ## Objects
 
 > render_priority = Dynamic (30 +  Axis Y)
 
-In this layer includes all 'GameComponent' added in the game like a custom `GameComponent` or util objects already available to use like `AnimatedGameObject`.
+在此层中，包括游戏中添加的所有 GameComponent，例如自定义的 GameComponent 或已可用的实用对象，如 AnimatedGameObject。
 
-For more details click [here](doc/util?id=gameobject).
+点击查看更多信息 [here](doc/util?id=gameobject).
 
 ## Lighting
 
 > render_priority = (highestPriority + 10)
 
-Layer responsible for adding lighting to the game.
+负责为游戏添加照明的层。
 
-For more details click [here](doc/lighting?id=lighting).
+点击查看更多信息 [here](doc/lighting?id=lighting).
 
 ## Game interface
 
 > render_priority = (highestPriority + 30)
 
-The way you can draw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+用于绘制生命值条、耐力和设置等内容的层。换句话说，您可以在游戏界面中添加的任何内容。
 
-Is recomended use Flutter widgets to build it, you configure it using `overlayBuilderMap` and `initialActiveOverlays` in your `BonfireWidget`
+建议使用 Flutter 小部件来构建它，您可以在 BonfireWidget 中使用 overlayBuilderMap 和 initialActiveOverlays 进行配置。
 
 ## Joystick
 
 > render_priority = highestPriority + 40
 
-The player-controlling component.
+控制玩家的组件。
 
-For more details click [here](doc/joystick?id=joystick).
+点击查看更多信息  [here](doc/joystick?id=joystick).

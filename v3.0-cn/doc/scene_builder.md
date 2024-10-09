@@ -1,8 +1,8 @@
 # Scene builder
 
-> Used to create cutscenes.
+> 用于创建过场动画（cutscenes）。
 
-To create a scene just call `gameRef.startScene()`:
+要创建一个场景，只需调用 gameRef.startScene()：
 
 ```dart
 
@@ -28,7 +28,7 @@ Result:
 
 <img src="../../_media/scene_example.gif" width="600"/>
 
-- To stop current scene:
+- 要停止当前场景：
 
 ```dart
 
@@ -36,7 +36,7 @@ gameRef.stopScene();
 
 ```
 
-- To access status and current `SceneAction`:
+- 要访问状态和当前的 SceneAction：
 
 ```dart
 
@@ -48,11 +48,11 @@ status.currentAction;
 
 ## SceneAction
 
-Some basic scene actions already exist:
+一些基本的场景动作已经存在：
 
-- CameraSceneAction // Used to move camera to position or to follow a target.
-- DelaySceneAction // Used to apply delay
-- MoveComponentSceneAction // Used to move any component that use `Movement` mixin
-- AwaitCallbackSceneAction // Used to do anything and when completed just call the function `completed` that will pass to next action.
+- CameraSceneAction // 用于将相机移动到指定位置或跟随目标。
+- DelaySceneAction // 用于应用延迟。
+- MoveComponentSceneAction //  // 用于移动任何使用 Movement 混入的组件。
+- AwaitCallbackSceneAction //用于执行某些操作，完成后调用 completed 函数以继续下一个动作。
 
-You can create your own `SceneAction` creating a class and extending `SceneAction`.
+您可以通过创建一个类并扩展 SceneAction 来创建自己的 SceneAction。

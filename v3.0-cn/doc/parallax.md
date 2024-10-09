@@ -1,8 +1,8 @@
 # Parallax
 
-In Bonfire, you can add two types of parallax in your game: with velocity pre-defined or with velocity based on camera movement.
+在 Bonfire 中，您可以在游戏中添加两种类型的视差效果：基于预定义速度或基于相机移动的速度。
 
-To pre-defined velocity you can use 'loadParallaxComponent'. Example:
+对于预定义速度，您可以使用 loadParallaxComponent。示例：
 
 ```dart
 
@@ -27,7 +27,7 @@ To pre-defined velocity you can use 'loadParallaxComponent'. Example:
 }
 ```
 
-To camera velocity you can use 'loadCameraParallaxComponent'. Example:
+对于相机速度，您可以使用 loadCameraParallaxComponent。示例：
 
 ```dart
 

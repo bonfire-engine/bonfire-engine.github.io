@@ -1,19 +1,19 @@
 # PathFinding
 
-> Algorithm to find your way around obstacles
+> 用于绕过障碍物的算法。
 
 <img src="_media/git_move_along_the_path.gif" width="600"/>
 
-Bonfire uses the package [a_star_algorithm](https://pub.dev/packages/a_star_algorithm) to find the path.
+Bonfire 使用该软件包： [a_star_algorithm](https://pub.dev/packages/a_star_algorithm) 来寻找路径。
 
 
-To use this, just add the Mixin `PathFinding` and call the method `moveToPositionWithPathFinding` (never use this method in update method. just one time to start). 
+要使用此功能，只需添加混入 PathFinding 并调用方法 moveToPositionWithPathFinding（切勿在更新方法中使用此方法，只需调用一次以启动）。
 
-For this to work, the component must contain the Mixin `Movement` (by default `Player` and `Enemy` use these mixins).
+为了使其正常工作，组件必须包含混入 Movement（默认情况下，Player 和 Enemy 使用这些混入）。
 
 ## Configuring 
 
-You can configure PathFinding calling the method `setupMoveToPositionAlongThePath`. See below:
+您可以通过调用方法 setupMoveToPositionAlongThePath 来配置路径寻找功能。请看下面的示例：
 
 ```dart
 
@@ -36,7 +36,7 @@ class Knight extends SimplePlayer with PathFinding, TapGesture {
 
 ```
 
-You can then use the method `setupPathFinding`:
+然后，您可以使用方法 setupPathFinding：
 
 ``` dart
 

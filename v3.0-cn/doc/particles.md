@@ -1,10 +1,10 @@
 # Particles
 
-The basic, yet robust and extendable particle system offered by Flame.
+Flame 提供的基本但强大且可扩展的粒子系统。
 
-Take a look the [Flame Particles](https://docs.flame-engine.org/latest/flame/rendering/particles.html#particles)
+查看 [Flame Particles](https://docs.flame-engine.org/latest/flame/rendering/particles.html#particles)
 
-To use it in Bonfire you can use this methods in your component:
+要在 Bonfire 中使用它，您可以在组件中使用以下方法：
 
 ```dart
 
@@ -21,7 +21,7 @@ void addParticle(
 
 ```
 
-or
+或
 
 ```dart
 

@@ -1,12 +1,12 @@
-# Decoration
+# 装饰物（Decoration）
 
 > <small>This is an [AnimatedGameObject](doc/util?id=animatedgameobject)</small>
 
-Anything that you may want to add to your scenery. For example, a simple barrel or an NPC that interacts with your player.
+任何你可能希望添加到场景中的物体。例如，一个简单的木桶或者一个可以与玩家互动的 NPC。
 
-You can create decorative or interactive objects using the following builders:
+你可以使用以下构建器来创建装饰性或互动性对象：
 
-Decoration with a common Sprite:
+使用普通精灵进行:
 ```dart
 GameDecoration.withSprite(
     FutureOr<Sprite> sprite, {
@@ -15,7 +15,7 @@ GameDecoration.withSprite(
   })
 ```
 
-Decoration with a SpriteAnimation:
+使用 SpriteAnimation :
 ```dart
 import 'package:flame/animation.dart' as FlameAnimation;
 
@@ -26,7 +26,7 @@ GameDecoration.withAnimation(
   })
 ```
 
-To add custom behaviors to your Decoration, just extend from `GameDecoration` and create your own class:
+要为你的装饰物添加自定义行为，只需继承 GameDecoration 并创建自己的类:
 ```dart
 class MyCustomDecoration extends GameDecoration {
   MyCustomDecoration(Vector2 position)
@@ -57,4 +57,4 @@ class MyCustomDecoration extends GameDecoration {
 }
 ```
 
-See more examples of custom Decorations: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/torch.dart) & [chest](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/chest.dart)
+查看更多自定义装饰物的示例: [torch](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/torch.dart) & [chest](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/decoration/chest.dart)

@@ -20,7 +20,7 @@
 
 ## Light Shooter
 
-Online game that uses the [Nakama game server](https://flutter-nakama.gitbook.io/flutter-nakama/)
+在线游戏 [Nakama game server](https://flutter-nakama.gitbook.io/flutter-nakama/)
 
 [GitHub](https://github.com/RafaelBarbosatec/light_shooter) - 
 [Video](https://twitter.com/RafaBarbosaTec/status/1656049304413274113)
@@ -29,7 +29,7 @@ Online game that uses the [Nakama game server](https://flutter-nakama.gitbook.io
 
 ## Defector
 
-Game submitted to [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-game-jam/rate/1672215)
+游戏提交至： [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-game-jam/rate/1672215)
 
 [GitHub](https://github.com/RafaelBarbosatec/defector)   -   [PLAY](https://rafaelbarbosatec.itch.io/defector)
 
@@ -44,8 +44,7 @@ Game submitted to [Midyear 2022 Flame Game Jam](https://itch.io/jam/2nd-flame-ga
 
 ## Npc neural
 
-Simple implementation of the training of NPC using Neural Network perceptron and Bonfire
-
+使用神经网络感知器（Neural Network perceptron）和 Bonfire 实现 NPC 训练的简单示例。
 
 [GitHub](https://github.com/RafaelBarbosatec/npc_neural_training)    -   [Play other tab](https://bonfire-engine.github.io/examples/neural-network)
 
@@ -53,7 +52,7 @@ Simple implementation of the training of NPC using Neural Network perceptron and
 
 ## Multiplayer game
 
-Simple example of how to create a multiplayer game with Bonfire using only Dart code.
+使用纯 Dart 代码结合 Bonfire 创建多人游戏的简单示例。
 
 [GitHub](https://github.com/RafaelBarbosatec/bonfire_multiplayer)
 

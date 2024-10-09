@@ -1,43 +1,43 @@
-# Joystick
+# 摇杆
 
 > <small>This is a [PlayerController](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/input/player_controller.dart)</small>
 
-The player-controlling component.
+控制玩家的组件。
 
-## Joystick
+## 摇杆
 
 <img src="../../_media/screeShot_joystick.jpg" width="600"/>
 
-There is a pre-included implementation (`Joystick`) ready to use, but also configurable to add a custom look or even add as many actions as you need.
+有一个预先包含的实现（Joystick），可以直接使用，但也可以进行配置，以添加自定义外观或根据需要添加多个操作。
 
-Or you can implement `PlayerController` yourself and emit event trough a `joystickChangeDirectional`, `joystickAction`.
+或者，您可以自己实现 PlayerController，通过 joystickChangeDirectional 和 joystickAction 发出事件。
 
-Joystick is configurable by the following parameters:
+摇杆可以通过以下参数进行配置：
 ```dart
   return BonfireWidget(
     playerControllers:[
       Joystick(
         directional: JoystickDirectional(
-          spriteBackgroundDirectional: Sprite.load('joystick_background.png'), //directinal control background
-          spriteKnobDirectional: Sprite.load('joystick_knob.png'), // directional indicator circle background
-          color: Colors.black, // if you do not pass  'pathSpriteBackgroundDirectional' or  'pathSpriteKnobDirectional' you can define a color for the directional.
-          size: 100, // directional control size
+          spriteBackgroundDirectional: Sprite.load('joystick_background.png'), //// 方向控制背景
+          spriteKnobDirectional: Sprite.load('joystick_knob.png'), //方向指示器圆形背景
+          color: Colors.black, // 如果不传递 'pathSpriteBackgroundDirectional' 或 'pathSpriteKnobDirectional'，可以定义方向的颜色。
+          size: 100, //  方向控制大小
           alignment = Alignment.bottomLeft,
         ),
         actions: [
           JoystickAction(
-            actionId: 1, //(required) Action identifier, will be sent to 'void joystickAction(JoystickActionEvent event) {}' when pressed
-            sprite: Sprite.load('joystick_attack_range.png'), // the action image
-            spritePressed: Sprite.load('joystick_attack_range.png'), // Optional image to be shown when the action is fired
-            spriteBackgroundDirection: Sprite.load('joystick_background.png'), //directinal control background
-            enableDirection: true, // enable directional in action
+            actionId: 1, //（必需）动作标识符，按下时将发送到 'void joystickAction(JoystickActionEvent event) {}'
+            sprite: Sprite.load('joystick_attack_range.png'), // 动作图像
+            spritePressed: Sprite.load('joystick_attack_range.png'), // 可选图像，当动作触发时显示
+            spriteBackgroundDirection: Sprite.load('joystick_background.png'), //方向控制背景
+            enableDirection: true, // 在动作中启用方向
             alignment = Alignment.bottomRight,
             color: Colors.blue,
             size: 50,
             margin: EdgeInsets.only(bottom: 50, right: 160),
           )
         ],
-        // observer: MyOtherPlayer() , If you configure [oberver], the joystick will control this observer and not the Component passed in `player` param.
+        // observer: MyOtherPlayer() , 如果配置了 [observer]，摇杆将控制此观察者，而不是传递给 'player' 参数的组件。
       ),
     ]
     ...
@@ -46,11 +46,11 @@ Joystick is configurable by the following parameters:
 
 Check an [example](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/player_controllers).
 
-## JoystickListener
+## 摇杆监听器（JoystickListener）
 
-Mixin used to listen the joystick interactions.
+用于监听摇杆交互的混入（Mixin）。
 
-A component that use this mixin can listen the Joystick events adding as observer:
+使用此混入的组件可以通过添加观察者来监听摇杆事件：
 
 ```dart
 

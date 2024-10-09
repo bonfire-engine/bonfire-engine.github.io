@@ -1,10 +1,10 @@
-# Loading Sprites and SpriteAnimations
+# 加载精灵和精灵动画
 
-> Loading your images to create your sprite or animations
+> 加载您的图像以创建精灵或动画。
 
-To load any images you need to follow a pattern of folders defined by [flame](https://docs.flame-engine.org/main/flame/rendering/images.html) 
+要加载任何图像，您需要遵循由以下内容定义的文件夹模式： [flame](https://docs.flame-engine.org/main/flame/rendering/images.html) 
 
-> IMPORTANT: The root folder of your images, maps, spritesheets and other assets is `assets/images/`.
+> 重要提示：您图像、地图、精灵表和其他资产的根文件夹是 assets/images/。
 
 ```yaml
 
@@ -16,7 +16,7 @@ flutter:
 
 ## Sprites
 
-To load your Sprites:
+要加载您的精灵：
 
 ```dart
 
@@ -45,7 +45,7 @@ final potion = image.getSprite(
 
 ## SpritesAnimation
 
-They are sequences of Sprites that form an animation. You can create this in this way:
+它们是形成动画的精灵序列。您可以通过以下方式创建它们：
 
 ```dart
 
@@ -87,10 +87,9 @@ SpriteAnimation runLeft = imagePlayerRunLeft.getAnimation(
 ```
 
 
-## Merging images
+## 合并图像
 
-You can merge images to build a dynamic Sprite or SpriteAnimation.
-This is very useful for taking a character's base and adding a specific outfit to it.
+您可以合并图像来构建动态精灵或精灵动画。这对于将角色的基础形象与特定服装结合起来非常有用。
 
 To do it use the Flame [ImageComposition](https://docs.flame-engine.org/latest/flame/rendering/images.html#imagecomposition)
 
@@ -99,4 +98,4 @@ To do it use the Flame [ImageComposition](https://docs.flame-engine.org/latest/f
 
 You can use [FireAtlas](https://github.com/flame-engine/fire-atlas).
 
-Fire Atlas is a tool to create Texture Atlases for games.
+火焰图集（Fire Atlas）是一个用于为游戏创建纹理图集的工具。

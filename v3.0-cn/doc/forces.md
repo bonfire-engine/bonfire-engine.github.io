@@ -1,15 +1,15 @@
 # Forces
 
-Bonfire has a simple forces system that you can add in your games: linear, acceleration or resistance forces.
+Bonfire 拥有一个简单的力系统，你可以在游戏中添加线性力、加速度或阻力。
 
 | AccelerationForce2D | LinearForce2D    | ResistanceForce2D    |
 | :---:   | :---: | :---: |
 | ![](../../_media/force_acceleration.gif) | ![](../../_media/force_linear.gif)   | ![](../../_media/force_resistance.gif)   |
 
 
-## Using The Force
+## 使用力系统
 
-To add global forces just add them at the `globalForces` param of BonfireWidget:
+要添加全局力，只需将它们添加到 `BonfireWidget` 的 `globalForces` 参数中：
 
 
 ```dart
@@ -22,8 +22,7 @@ To add global forces just add them at the `globalForces` param of BonfireWidget:
   }
 ```
 
-All components that use the `HandleForces` mixin will be affected by this force. Like this:
-
+所有使用 HandleForces 混入的组件都会受到该力的影响。例如：
 ```dart
 class MyCustomDecoration extends GameDecoration with HandleForces {
 
@@ -31,8 +30,7 @@ class MyCustomDecoration extends GameDecoration with HandleForces {
 }
 ```
 
-You can add a force in a specific component. Just add a `HandleForces` mixin and call `addForce` function:
-
+你可以在某个特定组件中添加一个力。只需添加 HandleForces 混入，并调用 addForce 函数：
 
 ```dart
 class MyCustomDecoration extends GameDecoration with HandleForces {
@@ -46,10 +44,9 @@ class MyCustomDecoration extends GameDecoration with HandleForces {
 
 ## Available forces 
 
-- `AccelerationForce2D` -> Apply acceleration to velocity
-- `ResistanceForce2D` -> Apply resistance to velocity trying to zero
-- `LinearForce2D` -> Apply linear force to velocity
+- `AccelerationForce2D` -> 将加速度应用到速度上。
+- `ResistanceForce2D` -> 对速度应用阻力，使其逐渐减为零。
+- `LinearForce2D` -> 将线性力应用到速度上。
 
-You can create your own `force` creating a class and extending from `Force2D`.
-
-> You can edit the mass of component also. Just do `mass = 2`;
+你可以创建一个类并继承自 `Force2D`，从而创建你自己的 `force`。
+> > 你也可以编辑组件的质量。只需使用 `mass = 2;` 即可。

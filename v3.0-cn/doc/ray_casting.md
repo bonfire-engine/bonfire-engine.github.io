@@ -1,10 +1,10 @@
 # Ray casting
 
-Ray casting and ray tracing are methods for sending out rays from a point in your game and seeing what these rays collide with and how they reflect after hitting something.
+射线投射（Ray Casting）和射线追踪（Ray Tracing）是从游戏中的一个点发出射线的方法，用于查看这些射线与哪些物体发生碰撞，以及它们在碰撞后如何反射。
 
-Bonfire supports [Ray casting and Ray tracing](https://docs.flame-engine.org/latest/flame/collision_detection.html#ray-casting-and-ray-tracing)
+Bonfire 支持 [Ray casting and Ray tracing](https://docs.flame-engine.org/latest/flame/collision_detection.html#ray-casting-and-ray-tracing)
 
-To throw raycast or raytrace you can use this methods in your component:
+要进行射线投射或射线追踪，您可以在组件中使用以下方法：
 
 ```dart
 

@@ -1,9 +1,8 @@
-# Camera
+# 相机
 
-> Camera control.
+> 相机控制.
 
-You can configure some settings in the camera:
-
+你可以在相机中配置一些设置：
 ```dart
   return BonfireWidget(
     ...
@@ -23,7 +22,7 @@ You can configure some settings in the camera:
   );
 ```
 
-Useful functions to be used during the game:
+游戏过程中可以使用的一些实用函数：
 
 ```dart
    gameRef.camera.moveToPositionAnimated(

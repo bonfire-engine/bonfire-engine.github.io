@@ -1,13 +1,13 @@
-# Collision System
+# 碰撞系统
 
-> System responsible for determining and configuring the collision between objects.
+> 专门用于检测和处理对象间碰撞的系统.
 
 
-## How to use
+## 如何使用
 
-In the 3.0 version of Bonfire, all collision system are using [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
+在 Bonfire 3.0 版本中，所有碰撞系统都使用了 [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
 
-To add collisions in your component just add a `ShapeHitbox` (PolygonHitbox,RectangleHitbox or CircleHitbox) like this:
+要在你的组件中添加碰撞，只需添加一个 ShapeHitbox（如 PolygonHitbox、RectangleHitbox 或 CircleHitbox），如下所示：
 
 ```dart
 
@@ -22,8 +22,7 @@ class MyComponent extends SimplePlayer {
 
 ```
 
-After that, the Flame Engine will detect all collision between hitboxes in the game. You can listen to this by overriding these methods:
-
+之后，Flame 引擎会检测游戏中所有碰撞盒之间的碰撞。你可以通过重写以下方法来监听这些碰撞事件：
 
 ```dart
 
@@ -50,7 +49,7 @@ class MyCollidable extends SimplePlayer {
 
 ```
 
-So, now you can know when collisions happen, but it will not stop component movement. To do block movement, add the `BlockMovementCollision` mixin like this:
+现在你可以知道何时发生碰撞，但这并不会阻止组件的移动。要阻止移动，可以像下面这样添加 BlockMovementCollision 混入：
 
 ```dart
 
@@ -65,12 +64,11 @@ class MyComponent extends SimplePlayer with BlockMovementCollision{
 
 ```
 
-Great! Now when you move the player and collide with a wall or another component with `ShapeHitbox` the movement is stopped.
+很好！现在，当你移动玩家并与墙壁或其他带有 ShapeHitbox 的组件发生碰撞时，移动将会被阻止。
 
-## Knowing who collided
+## 知道是谁发生了碰撞。
 
-You can know what `GameComponent` collided by overriding `onBlockMovement` or `onBlockedMovement`:
-
+你可以通过重写 `onBlockMovement` 或 `onBlockedMovement` 来知道是哪一个 `GameComponent` 发生了碰撞：
 
 ```dart
 
@@ -105,7 +103,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 }
 ```
 
-You can configure some things, using:
+你可以使用以下方式配置一些内容：
 
 ```dart
 
@@ -113,13 +111,12 @@ You can configure some things, using:
 
 ```
 
-To add `Elastic collision` take a look the mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
+要添加 弹性碰撞，请查看该混入（mixin） [ElasticCollision](doc/mixins?id=ElasticCollision)
 
 
-## Testing and debugging
+## 测试与调试。
 
-To verify if collisions are in the right position, you can enable `showCollisionArea` in `BonfireWidget`:
-
+要验证碰撞区域是否处于正确位置，可以在 BonfireWidget 中启用 showCollisionArea：
 ```dart
     BonfireWidget(
         ...

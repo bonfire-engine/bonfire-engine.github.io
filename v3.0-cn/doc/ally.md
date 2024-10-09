@@ -157,8 +157,7 @@ class Human extends SimpleAlly {
 [UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
 
-Used for 90º perspectives. And we can configure Motion animations for run and idle.
-
+用于 90º 视角。我们可以为“跑动”和“静止”状态配置运动动画。
 ```dart
 
 class Tank extends RotationAlly {
@@ -189,9 +188,9 @@ class Tank extends RotationAlly {
 
 ```
 
-Now that we have our class that represents our ally, we can configure their behavior.
+现在我们已经有了表示盟友的类，可以开始配置它们的行为了。
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+在 update 方法中，有几个非常有用的扩展可以帮助我们配置这些移动行为：
 
 
 ```dart 
@@ -243,9 +242,8 @@ There are several useful extensions that we can use in `update` that will help u
   })
   
 ```
+GameComponent的所有方法，请查看[GameComponent functions](doc/util?id=functions)
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+## 自定义
 
-## Custom
-
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Ally` class.
+如果这些类型的敌人都无法满足你的需求，你可以通过继承 Ally 类来创建自己的敌人类型。

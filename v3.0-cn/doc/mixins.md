@@ -1,18 +1,18 @@
-# Mixins
+# 混入
 
-> With mixin you can add different behaviors to your component
+> 通过混入（mixin），您可以为您的组件添加不同的行为。
 
 
-Below you will see the tree of the main mixins currently available::
+下面您将看到当前可用的主要混入（mixins）树：
 
 <img src="_media/mixin_diagram.png"></img>
 
 
-## Movement
+## 移动
 
-Mixin responsible for adding movements.
+负责添加移动的混入（mixin）。
 
-Your component will gain properties like:
+您的组件将获得以下属性：
 
 ```dart
     double speed = 100;
@@ -21,7 +21,7 @@ Your component will gain properties like:
     Direction lastDirectionVertical = Direction.down;
 ```
 
-And methods to movement your component. (These movements take collisions into account. If returns `true` the movement was did with success)
+以及用于移动组件的方法。（这些移动会考虑碰撞。如果返回 true，则表示移动成功。）
 
 ```dart
     void moveUp({double? speed})
@@ -39,7 +39,7 @@ And methods to movement your component. (These movements take collisions into ac
     bool moveToPosition(Vector2 position, {double? speed,bool useCenter = true})
 ```
 
-You can listen the movement is changing:
+您可以监听移动状态的变化：
 
 ```dart
 @override
@@ -52,13 +52,13 @@ void onMove(
 
 ```
 
-## DirectionAnimation
+## 方向动画（DirectionAnimation）
 
 > To use this mixin your component must contain `Movement` mixin.
 
-Mixin responsible for adding animations to movements.
+要使用此混入，您的组件必须包含 Movement 混入。
 
-You need set a SimpleDirectionAnimation:
+你需要设置一个SimpleDirectionAnimation:
 
 ```dart
 class MyComponent extends GameComponent with Movement, DirectionAnimation{
@@ -68,7 +68,7 @@ class MyComponent extends GameComponent with Movement, DirectionAnimation{
 }
 ```
 
-You can replace the `SimpleDirectionAnimation` using:
+您可以使用以下方法替换 SimpleDirectionAnimation：
 
 ```dart
 
@@ -79,7 +79,7 @@ Future<void> replaceAnimation(
 
 ```
 
-In the `SimpleDirectionAnimation` there are some methods util to control the animation:
+在 SimpleDirectionAnimation 中，有一些实用的方法用于控制动画：
 
 ```dart
 
@@ -114,19 +114,19 @@ animation.resume();
 
 ```
 
-## MoveToPositionAlongThePath
+## 沿路径移动到指定位置（MoveToPositionAlongThePath）
 
-> To use this mixin, your component must contain `Movement` mixin.
+> 要使用此混入，您的组件必须包含 Movement 混入。
 
-Mixin responsible for find path using `a_star_algorithm` and moving the component through the path.
+负责使用 a_star_algorithm 寻找路径并通过该路径移动组件的混入（mixin）。
 
 See [PathFinding](doc/path_finding)
 
-## UseLifeBar
+## 使用生命值条（UseLifeBar）
 
-Mixin used to adds a BarLife to the attackable component
+用于为可攻击组件添加生命值条的混入（mixin）。
 
-With this mixin you can configure the life bar view using the method `setupBarLife`:
+使用此混入，您可以通过 setupBarLife 方法配置生命值条的视图：
 
 ```dart
 
@@ -148,13 +148,13 @@ void setupBarLife({
 ```
 
 
-## RandomMovement
+## 随机移动（RandomMovement）
 
-> To use this mixin your component must contain `Movement` mixin.
+> 要使用此混入，您的组件必须包含 Movement 混入。
 
-Mixin responsible for adding random movement like enemy walking through the scene.
+负责添加随机移动的混入（mixin），例如敌人在场景中行走。
 
-To use just need add `runRandomMovement` method in your update:
+只需在您的更新中添加 runRandomMovement 方法即可使用：
 
 ```dart
 
@@ -169,7 +169,7 @@ class MyComponent extends GameComponent with Movement, RandomMovement{
 
 ```
 
-All parameters:
+所有参数：
 
 ```dart
 
@@ -190,11 +190,11 @@ void runRandomMovement(
 
 ```
 
-## MovementByJoystick
+## 通过摇杆移动（MovementByJoystick）
 
-> To use this mixin your component must contain `Movement` and `JoystickListener` mixin.
+> 要使用此混入，您的组件必须包含 Movement 和 JoystickListener 混入。
 
-Mixin responsible for adding movements through joystick events.
+负责通过摇杆事件添加移动的混入（mixin）。
 
 ```dart
 class MyComponent extends GameComponent with Movement, JoystickListener, MovementByJoystick{
@@ -203,7 +203,7 @@ class MyComponent extends GameComponent with Movement, JoystickListener, Movemen
 
 ```
 
-That way if you add this component as a Joystick observer it will move when interacting with the joystick:
+这样，如果您将该组件作为摇杆观察者添加，它将在与摇杆交互时移动：
 
 ```dart
 
@@ -213,15 +213,15 @@ That way if you add this component as a Joystick observer it will move when inte
 
 ```
 
-You can disable this behavior setting `movementByJoystickEnabled` false.
+您可以通过将 movementByJoystickEnabled 设置为 false 来禁用此行为。
 
-## Attackable
+## 可攻击（Attackable）
 
-> how use it: `Player`, `Ally`, `Enemy`
+> 如何使用它：Player、Ally、Enemy
 
-Mixin responsible for adding damage-taking behavior to the component.
+负责为组件添加受伤行为的混入（mixin）。
 
-Your component will gain properties like:
+您的组件将获得以下属性：
 
 ```dart
     double maxLife;
@@ -229,7 +229,7 @@ Your component will gain properties like:
     double life;
 ```
 
-Adds these methods in your component:
+在您的组件中添加以下方法：
 
 ```dart
     void initialLife(double life)
@@ -259,12 +259,13 @@ Adds these methods in your component:
     void onRevive()
 ```
 
-## Vision
+## 视野（Vision）
 
-Mixin responsible for adding vision to component. Components like `Player`, `Npc` and `Decoration` use this mixin.
-Your component gain `seeComponent` and `seeComponentType` method.
+负责为组件添加视野的混入（mixin）。像 Player、Npc 和 Decoration 这样的组件使用此混入。
 
-Your can draw the component vision do this:
+您的组件将获得 seeComponent 和 seeComponentType 方法。
+
+您可以通过以下方式绘制组件的视野：
 
 ```dart
     setupVision(
@@ -276,38 +277,36 @@ Your can draw the component vision do this:
     );
 ```
 
-When you use any method like `seeComponent` or `seeComponentType`, the engine will determine the vision.
+当您使用 seeComponent 或 seeComponentType 等方法时，引擎将确定视野。
 
-## Sensor
+## 传感器（Sensor）
 
-Mixin responsible for adding trigger to detect other objects above.
+负责添加触发器以检测上方其他对象的混入（mixin）。
 
 See [Sensor](doc/sensor)
 
 ## Lighting
 
-Mixin used to configure lighting in your component.
+用于在组件中配置照明的混入（mixin）。
 
 See [Lighting](doc/lighting)
 
 ## BlockMovementCollision
 
-Mixin responsible for adding stop the movement when happen collision.
+负责在发生碰撞时停止移动的混入（mixin）。
 
 See [ObjectCollision](doc/collision_system)
 
 ## Pushable
-> To use this mixin your component must contain `Movement` mixin.
+> 要使用此混入，您的组件必须包含 Movement 混入。
 
-Mixin responsible for enable push in the component.
+负责在组件中启用推送的混入（mixin）。
 
-You can do override the method `bool onPush(GameComponent component)` to control when can pushable. Returning true if the component is pushable, false otherwise. (default return true).
+您可以重写方法 bool onPush(GameComponent component) 来控制何时可以推送。如果组件可推送，返回 true；否则返回 false。（默认返回 true）。
 
 ## Follower
 
-This mixin do your component follow the position of the yout target.
-Your component gain the properties: `followerTarget` and `followerOffset`.
-You can configure your target like this:
+该混入使您的组件跟随目标的位置。您的组件将获得属性：followerTarget 和 followerOffset。您可以通过以下方式配置您的目标：
 
 ```dart
 
@@ -315,12 +314,11 @@ setupFollower(target: myPlayer, offset: Vector2());
 
 ```
 
-If a component that has this mixin is added as a child of other component, it will follow the parent position.
-
+如果带有此混入的组件作为其他组件的子组件添加，它将跟随父组件的位置。
 
 ## UseAssetsLoader
 
-Mixin used to load assets:
+用于加载资源的混入（mixin）：
 
 ```dart
 class MyComponent extends GameComponent with UseAssetsLoader {
@@ -336,8 +334,7 @@ class MyComponent extends GameComponent with UseAssetsLoader {
 
 ## UseSpriteAnimation
 
-Mixin that adds to your Component the use of the SpriteAnimation in an easier way.
-Your Component gains the `animation` property and `playSpriteAnimationOnce` method
+将 SpriteAnimation 更加简单地添加到您的组件的混入（mixin）。您的组件将获得 animation 属性和 playSpriteAnimationOnce 方法。
 
 ```dart
 
@@ -359,7 +356,7 @@ class MyComponent extends GameComponent with UseSpriteAnimation {
 
 ```
 
-You can know the current index animation or if is the last frame:
+您可以知道当前的动画索引或是否是最后一帧：
 
 ```dart
   bool get isAnimationLastFrame
@@ -369,8 +366,7 @@ You can know the current index animation or if is the last frame:
 
 ## UseSprite
 
-Mixin that adds to your Component the use of the Sprite in an easier way.
-Your Component gains the `sprite`.
+将精灵更简单地添加到您的组件的混入（mixin）。您的组件将获得 sprite 属性。
 
 ```dart
 
@@ -390,8 +386,7 @@ class MyComponent extends GameComponent with UseSprite {
 
 ### UseLifeBar
 
-Mixin use to adds BarLife in a Attackable component.
-With this mixin you can configure the life bar view using the method `setupLifeBar`:
+用于在可攻击组件中添加生命值条的混入（mixin）。使用此混入，您可以通过 setupLifeBar 方法配置生命值条的视图：
 
 ```dart
 
@@ -415,9 +410,9 @@ void setupLifeBar({
 
 ### TileRecognizer
 
-Mixin used to recognize the type of tiles below.
+用于识别下面瓷砖类型的混入（mixin）。
 
-In the Tiled program used to build your map, you can set a `class` or set custom properties. With this mixin you can access this `Tile` information that the component is above.
+在用于构建地图的 Tiled 程序中，您可以设置一个 class 或自定义属性。通过这个混入，您可以访问组件上方的 Tile 信息。
 
 ```dart
 
@@ -436,7 +431,7 @@ In the Tiled program used to build your map, you can set a `class` or set custom
 
 ### ElasticCollision
 
-Mixin responsable to give the elastic collision behavior. (experimental). You can configure ir using the method `setupElasticCollision`.
+负责提供弹性碰撞行为的混入（mixin）（实验性）。您可以通过 setupElasticCollision 方法进行配置。
 
 ```dart
 

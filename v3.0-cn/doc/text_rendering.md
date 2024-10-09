@@ -1,5 +1,5 @@
 # Text Rendering
 
-To render text you can use the all structure offered by Flame. 
+要渲染文本，您可以使用 Flame 提供的。
 
-Take a look [Flame Text Rendering](https://docs.flame-engine.org/latest/flame/rendering/text_rendering.html)
+请查看 [Flame Text Rendering](https://docs.flame-engine.org/latest/flame/rendering/text_rendering.html)

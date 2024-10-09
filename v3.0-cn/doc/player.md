@@ -7,17 +7,17 @@
 [MovementByJoystick](mixins?id=movementbyjoystick) and 
 [JoystickListener](joystick?id=joysticklistener)</small>
 
-Represents the character controlled by the user in the game. Instances of this class have actions and movements ready to be used and configured. 
+表示游戏中由用户控制的角色。此类的实例具有可随时使用和配置的动作和移动。
 
-We can create three types of enemies `SimplePlayer`, `RotationPlayer` and `PlatformPlayer`:
+我们可以创建三种类型的玩家：SimplePlayer、RotationPlayer 和 PlatformPlayer：
 
 ## SimplePlayer 
 > <small>This is a [Player](#Player) and uses [DirectionAnimation](doc/mixins?id=directionanimation)</small>
 
 
-Used for 45º and 67.5º perspectives. We can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
+用于 45º 和 67.5º 视角。我们可以为所有方向（上、下、左、右、上右、上左、下左、下右）配置运动动画。
 
-To use it, simply create a class that will represent your enemy and extend SimplePlayer:
+要使用它，只需创建一个表示您的玩家的类并扩展 SimplePlayer：
 
 ```dart
 
@@ -78,9 +78,9 @@ class Knight extends SimplePlayer {
 
 ```
 
-All movement of the player is already done automatically, listening to the user's interaction with the joystick.
+玩家的所有移动已经自动完成，监听用户与摇杆的交互。
 
-Player instances can receive actions configured on the Joystick by overriding the following method:
+玩家实例可以通过重写以下方法来接收在摇杆上配置的动作：
 
 ```dart
 
@@ -93,7 +93,7 @@ Player instances can receive actions configured on the Joystick by overriding th
 ```
 
 
-Actions can be fired when a joystick action is received. Just like `Enemy`, here we have some pre-included actions:
+当接收到摇杆动作时，可以触发相应的动作。与 Enemy 类似，这里也有一些预先包含的动作：
 
 ```dart
 
@@ -145,11 +145,11 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+以及所有 GameComponent 的方法。请看一下： [GameComponent functions](doc/util?id=functions)
 
 ### Change animations
 
-To update the `SimplePlayer` animation you should use this method:
+要更新 SimplePlayer 动画，您应该使用以下方法：
 
 ```dart
 
@@ -157,7 +157,7 @@ To update the `SimplePlayer` animation you should use this method:
 
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+要播放瞬间动画，您应该使用 SimpleDirectionAnimation 的方法。例如：
 
 ```dart
 
@@ -183,7 +183,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 [UseSpriteAnimation](doc/mixins?id=usespriteanimation),
 [UseAssetsLoader](doc/mixins?id=useassetsloader)</small>
 
-Used for 90º perspectives. And we can configure Motion animations for run and idle.
+用于 90º 视角。我们可以为奔跑和静止状态配置运动动画。
 
 ```dart
 
@@ -203,11 +203,12 @@ class PlayerTank extends RotationPlayer {
 
 ```
 
-Actions can be fired when a joystick action is received. Just like `Enemy`, here we have some pre-included actions:
+当接收到摇杆动作时，可以触发相应的动作。与 Enemy 类似，这里也有一些预先包含的动作：
 
 ```dart
 
 // Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
+// 对玩家执行物理攻击，造成配置的伤害和频率。您可以添加动画来表示该攻击。
   void simpleAttackMelee(
      {
       required Future<SpriteAnimation> attackEffectTopAnim,
@@ -254,7 +255,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ### Change animations
 
-To update the `RotationPlayer` just update the variables `animIdle` and `animRun`.
+要更新 RotationPlayer，只需更新变量 animIdle 和 animRun。
 
 ## PlatformPlayer
 
@@ -263,7 +264,7 @@ To update the `RotationPlayer` just update the variables `animIdle` and `animRun
 Jump,
 JumpAnimation</small>
 
-Used for platform games. Here, we can configure Motion animations for run, idle and jump.
+用于平台游戏。在这里，我们可以为奔跑、静止和跳跃配置运动动画。
 
 ```dart
 
@@ -284,7 +285,7 @@ class MarioPlayer extends PlatformPlayer {
 
 ### Jumping
 
-To make the player jump you can use the [Jumper mixin](#TODO) method :
+要使玩家跳跃，您可以使用以下方法： [Jumper mixin](#TODO)  :
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -294,7 +295,7 @@ To make the player jump you can use the [Jumper mixin](#TODO) method :
 
 ### Change animations
 
-To update the `PlatformPlayer` animation you should use this method:
+要更新 PlatformPlayer 动画，您应该使用以下方法：
 
 ```dart
 
@@ -302,7 +303,7 @@ To update the `PlatformPlayer` animation you should use this method:
 
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+要播放瞬间动画，您应该使用 SimpleDirectionAnimation 的方法。例如：
 
 ```dart
 
@@ -322,8 +323,8 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: Remember to add a gravity force in this component to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
+> 注意：请记得在此组件中添加重力以纠正行为。请查看以下内容：查看 [HandleForces](doc/forces?id=forces)
 
 ## Custom
 
-If none of these types of player do not meet your needs. You can create your own by extending the `Player` class.
+如果这些类型的玩家都不满足您的需求，您可以通过扩展 Player 类来创建自己的玩家类型。
