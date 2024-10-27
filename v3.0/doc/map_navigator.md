@@ -45,7 +45,7 @@ class MyGameWidget extends StatelessWidget {
   }
 }
 
-```dart
+```
 
 Now when you need navigate to some map just get the `MapNavigator` by context and call `toNamed` method.
 
@@ -56,6 +56,6 @@ MapNavigator.of(context).toNamed(
   //  arguments:true // Here you can pass some arguments if needed.
 )
 
-```dart
+```
 
 Full example [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/mini_games/multi_scenario).
