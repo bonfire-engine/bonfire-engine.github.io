@@ -14,7 +14,7 @@ class MyGameWidget extends StatelessWidget {
     return MapNavigator(
       // initialMap: '/map1', By default, if you do not pass these parameters, it will use the first map.
       maps: {
-        '/map1':(context,args) =>apItem(
+        '/map1':(context,args) => MapItem(
             id: 'map1',
             map: WorldMapByTiled(
                 'maps/map1.json',
@@ -23,7 +23,7 @@ class MyGameWidget extends StatelessWidget {
                 'player_position': Vector2(2,2),
             }
         ),
-        '/map2':(context,args) =>apItem(
+        '/map2':(context,args) => MapItem(
             id: 'map2',
             map: WorldMapByTiled(
                 'maps/map2.json',
