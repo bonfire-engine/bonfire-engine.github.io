@@ -25,5 +25,6 @@
 * [TalkDialog](doc/talk_dialog.md?id=talkdialog)
 * [Text Rendering](doc/text_rendering.md?id=text-rendering)
 * [Parallax](doc/parallax.md?id=parallax)
+* [Map Navigator](doc/map_navigator.md?id=map-navigator)
 * [Util](doc/util.md?id=util)
 * [Examples](doc/examples.md?id=bonfire-example)
