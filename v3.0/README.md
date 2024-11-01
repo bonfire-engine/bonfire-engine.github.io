@@ -27,6 +27,6 @@ Please consider donating if you think Bonfire is helpful to you or that my work 
 
 ## Community
 
-We have a Bonfire help channel on BlueFlame's Discord, join it [here](https://discord.gg/5drde4ev) or Telegram group [here](https://t.me/bonfire_engine)
+We have a Bonfire help channel on BlueFlame's Discord, join it Telegram group [here](https://t.me/bonfire_engine)
 
 Bonfire presentation at [FlameCon](https://www.youtube.com/watch?v=2DdiNrAAuBg&t=2s).
