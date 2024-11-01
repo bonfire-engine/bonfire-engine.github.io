@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bonfire</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="(RPG maker) Create RPG-style or similar games with Flutter.">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/custom-style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XW6XTLBWR6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-XW6XTLBWR6');
+    </script>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-container > a {
+            text-decoration: none;
+            color: #333; /* 글자 색상 */
+            padding: 10px 15px;
+            border: none;
+            background-color: #f8f8f8; /* 배경색 */
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-dropdown-container > a:hover {
+            background-color: #e7e7e7; /* 호버 시 배경색 변경 */
+        }
+
+        .nav-dropdown {
+            display: none;
+            position: absolute;
+            right: 0; /* 우측 정렬 */
+            top: 100%; /* 상위 요소 바로 아래 */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            z-index: 1000; /* 다른 요소 위에 표시 */
+        }
+
+        .nav-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-dropdown a:hover {
+            background-color: #e7e7e7;
+        }
+
+        /* 마우스 호버 시 드롭다운 표시 */
+        .nav-dropdown-container:hover .nav-dropdown {
+            display: block;
+        }
+
+        .version-selector {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app"></div>
+<script>
+    let versions = [
+        // {folder: '', label: 'v2.x', default: false},
+        {folder: 'v3.0-cn/', label: 'v3.x', default: true}
+    ];
+    let basePath = sessionStorage.getItem('basePath');
+    if (basePath == null) {
+        let defaultVersion = versions.find((v) => v.default).folder;
+        sessionStorage.setItem('basePath', defaultVersion);
+    }
+    const versionFolder = sessionStorage.getItem('basePath');
+
+    window.$docsify = {
+        name       : 'Bonfire',
+        repo       : 'https://github.com/bonfire-engine/bonfire-engine.github.io',
+        loadSidebar: true,
+        coverpage  : true,
+        // auto2top: true,
+        loadNavbar          : true,
+        maxLevel            : 4,
+        subMaxLevel         : 2,
+        basePath            : '/v3.0-cn/',
+        versions            : versions,
+        versionSelectorLabel: 'Version',
+    };
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
+</body>
+
+</html>
