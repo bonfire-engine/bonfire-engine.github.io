@@ -5,6 +5,8 @@
 To use shader in your component just use the mixin `UseShader`.
 Did this, you can access to 3 new params: `shader`,`shaderComponentStatic`,`shaderCanvasScale`.
 
+OBS: Some componente already have this mixin. They are `GameMap` and `TileLayerComponent`. This turn possible add shader in the map or in specific layer of map.
+
 
 - `shader` : After load yout `FragmentShader` set it here;
 - `shaderComponentStatic`: If your componente is static (don't have changes in the course of time) set this `true` to better performance. This way is not necessary send to the shader the component texture every frame.
