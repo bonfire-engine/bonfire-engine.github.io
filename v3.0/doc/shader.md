@@ -61,9 +61,9 @@ class MyComponente extends GameDecoration with UseShader {
 }
 ```
 
-Done, Now your component will be rendered by yout shader file and your will have all of powers os shaders to apply effects at the component.
+Done, Now your component will be rendered by your shader file and your will have all of powers os shaders to apply effects at the component.
 
-Take a look in the our example [here](https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/shader).
+Take a look at the our example [here](https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/shader).
 
 ## Setting values to the shader.
 
