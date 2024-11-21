@@ -1,9 +1,8 @@
-# TalkDialog
+# Caixa de Diálogo
 
-Bonfire offers a basic implementation to show dialogs in your game.
+Bonfire oferece uma implementação básica para mostrar diálogos no seu jogo.
 
 ![](../../_media/talk_dialog.gif)
-
 
 ```dart
   TalkDialog.show(
@@ -23,7 +22,7 @@ Bonfire offers a basic implementation to show dialogs in your game.
   });
 ```
 
-#### Say
+#### Dizer algo
 
 ```dart
   Say({

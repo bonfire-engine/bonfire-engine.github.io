@@ -28,7 +28,7 @@ Result:
 
 <img src="../../_media/scene_example.gif" width="600"/>
 
-- To stop current scene:
+- To stop the current scene:
 
 ```dart
 
@@ -36,7 +36,7 @@ gameRef.stopScene();
 
 ```
 
-- To access status and current `SceneAction`:
+- To access the status and the current `SceneAction`:
 
 ```dart
 
@@ -50,9 +50,9 @@ status.currentAction;
 
 Some basic scene actions already exist:
 
-- CameraSceneAction // Used to move camera to position or to follow a target.
-- DelaySceneAction // Used to apply delay
-- MoveComponentSceneAction // Used to move any component that use `Movement` mixin
-- AwaitCallbackSceneAction // Used to do anything and when completed just call the function `completed` that will pass to next action.
+- **CameraSceneAction**: Used to move the camera to position or to follow a target.
+- **DelaySceneAction**: Used to apply delay
+- **MoveComponentSceneAction**: Used to move any component that use `Movement` mixin
+- **AwaitCallbackSceneAction**: Used to do anything and when completed just call the function `completed` that will pass to the next action.
 
 You can create your own `SceneAction` creating a class and extending `SceneAction`.

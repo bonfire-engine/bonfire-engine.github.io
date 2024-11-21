@@ -1,7 +1,8 @@
-# Sensor
+# Sensores
 
-> Is a useful mixin to detect if any object comes into contact, but without blocking its passage.
-Examples: Fire on the ground, spikes, etc. Things that the character or enemy can go through and take damage or activate any other type of behavior.
+> Mixin é útil para detectar se algum objeto entrou em contato, mas sem bloquear sua passagem.
+
+Exemplos: Fogo no chão, espinhos, etc. Coisas pelas quais o personagem ou inimigo pode passar e sofrer dano ou ativar qualquer outro tipo de comportamento.
 
 <img src="../../_media/sensor.gif" width="600"/>
 
@@ -13,7 +14,7 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
           size: Vector2.all(32),
           position: position,
         ){
-            // call this method to configure interval sensor check contact. default 100 milliseconds.
+            // Chame este método para configurar o intervalo de verificação do sensor de contato. Padrão: 100 milissegundos.
             setSensorInterval(100);
         }
 
@@ -32,7 +33,7 @@ class Spikes extends GameDecoration with Sensor<Myplayer> {
 ```
 
 
-By default, the sensor uses your component size. If you want to use a custom size just add your `ShapeHitbox`:
+Por padrão, o sensor usa o tamanho do seu componente. Se você quiser usar um tamanho personalizado, basta adicionar seu `ShapeHitbox`:
 
 ```dart
     @override

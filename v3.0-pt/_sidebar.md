@@ -22,7 +22,7 @@
 * [Efeitos](doc/effects.md?id=effects)
 * [Projeção de Raios (Ray Casting)](doc/ray_casting.md?id=ray-casting)
 * [Partículas](doc/particles.md?id=particles)
-* [Diálogo de Conversa](doc/talk_dialog.md?id=talkdialog)
+* [Caixa de Diálogo](doc/talk_dialog.md?id=talkdialog)
 * [Renderização de Texto](doc/text_rendering.md?id=text-rendering)
 * [Parallax](doc/parallax.md?id=parallax)
 * [Navegar entre Mapas](doc/map_navigator.md?id=map-navigator)
