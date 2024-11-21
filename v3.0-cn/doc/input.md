@@ -222,7 +222,7 @@ class MyCustomDecoration extends GameDecoration with MouseEventListener {
 ```dart
 
 class Computer extends GameDecoration with KeyboardEventListener{
-  //...
+  // ...
   @override
   bool onKeyboard(
     RawKeyEvent event,

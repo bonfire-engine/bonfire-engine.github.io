@@ -1,37 +1,37 @@
-# Getting Started
+# Começando
 
-> Visualize your awesome project.
+> Visualize seu projeto incrível.
 
-## Installing
+## Instalando
 
-1. Depend on it
+1. Adicione como dependência
 
-Add Bonfire to your game's `pubspec.yaml` file by running the following command:
+Adicione o Bonfire ao `pubspec.yaml` do seu jogo executando o seguinte comando:
 
 ```console
 $ flutter pub add bonfire
 ```
 
-2. Import it
+2. Importe o Bonfire
 
-Now in your Dart code, you can use:
+Agora, no seu código Dart, você pode usar:
 
 ```dart
 import 'package:bonfire/bonfire.dart';
 ```
 
-## Using
+## Usando
 
-### Creating your map
-You need to create your map using [Tiled](https://www.mapeditor.org/). After that, you can export your map as a json file.
+### Criando seu mapa
+Você precisa criar seu mapa usando o [Tiled](https://www.mapeditor.org/). Depois disso, você pode exportar seu mapa como um arquivo json.
 
-[How to use Tiled in Bonfire](doc/tiled_support?id=tiled-support) 
+[Como usar Tiled no Bonfire](doc/tiled_support?id=tiled-support) 
 
-[Tutorial video about exporting maps as json files](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
+[Vídeo tutorial sobre como exportar mapas como arquivos json](https://www.youtube.com/watch?v=hVCmLqZ0JVw)
 
-> IMPORTANT: Make sure your map file is correctly named, and placed in assets/images directory to avoid any loading issues.
+> IMPORTANTE: Certifique-se de que o arquivo do mapa esteja nomeado corretamente e colocado no diretório `assets/images` para evitar problemas de carregamento.
 
-Now you can run the app, and see your map:
+Agora você pode executar o jogo e ver seu mapa:
 
 ```dart
 @override
@@ -48,17 +48,15 @@ Now you can run the app, and see your map:
     );
   }
 ```
-> Note: You can also add a [Keyboard Controller](doc/input?id=keyboard).
+> Nota: Você também pode adicionar um [Controlador do Teclado](doc/input?id=keyboard).
 
-This way you can see how your map is rendering, and use the directional joystick to explore.
+Dessa forma, você pode ver como seu mapa está sendo renderizado e usar o joystick direcional para explorar.
 
+### Criando seu jogador
 
-### Creating your player
+Para criar um jogador você precisará de Animações de Sprite. Você pode ver como carregar Sprites na [Documentação do Flame](https://docs.flame-engine.org/main/flame/rendering/images.html).
 
-To create a player you will need SpriteAnimations. You can see how to load Sprites in [Flame doc](https://docs.flame-engine.org/main/flame/rendering/images.html).
-
-Images used in this example:
-
+Imagens usadas neste exemplo:
 
 [![Idle](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)](https://raw.githubusercontent.com/RafaelBarbosatec/bonfire/master/example/assets/images/player/knight_idle.png)
 
@@ -95,11 +93,10 @@ class PlayerSpriteSheet {
 ```
 
 
-To create a player, just create a class and add the `extends SimplePlayer`. [See more details about Player in Bonfire](doc/player?id=player)
+Para criar um jogador, basta criar uma classe e adicionar o `extends SimplePlayer`. [Veja mais detalhes sobre o `Player` no Bonfire](doc/player?id=player)
 
 
 ```dart
-
 class Knight extends SimplePlayer {
     Knight(Vector2 position)
       : super(
@@ -108,11 +105,9 @@ class Knight extends SimplePlayer {
           animation: PlayerSpriteSheet.simpleDirectionAnimation,
       );
 }
-
 ```
 
-Now you just need to add your player to the game. Keep in mind that the `Vector2(40, 40)` is the initial position of the player.
-
+Agora você só precisa adicionar seu jogador no jogo. Tenha em mente que o `Vector2(40, 40)` é a posição inicial do jogador.
 
 ```dart
 @override
@@ -126,15 +121,15 @@ Now you just need to add your player to the game. Keep in mind that the `Vector2
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('tile/map.json')
       ),
-      player: Knight(Vector2(40,40))
+      player: Knight(Vector2(40, 40))
     );
   }
 ```
 
-You can see your player on the map and move it with the directional Joystick.
+Você pode ver seu jogador no mapa e movê-lo com o joystick direcional.
 
-## Next steps
+## Próximos passos
 
-Familiarize yourself with all the components that you can use in Bonfire [See here](doc/overview?id=overview)
+Familiarize-se com todos os componentes que você pode usar no Bonfire. [Veja aqui](doc/overview?id=overview).
 
-Or check out our examples [here](doc/examples?id=bonfire-example).
+Ou confira nossos exemplos [aqui](doc/examples?id=bonfire-example).

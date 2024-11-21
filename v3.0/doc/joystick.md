@@ -10,7 +10,7 @@ The player-controlling component.
 
 There is a pre-included implementation (`Joystick`) ready to use, but also configurable to add a custom look or even add as many actions as you need.
 
-Or you can implement `PlayerController` yourself and emit event trough a `joystickChangeDirectional`, `joystickAction`.
+Or you can implement `PlayerController` yourself and emit an event trough a `joystickChangeDirectional`, `joystickAction`.
 
 Joystick is configurable by the following parameters:
 ```dart
@@ -18,7 +18,7 @@ Joystick is configurable by the following parameters:
     playerControllers:[
       Joystick(
         directional: JoystickDirectional(
-          spriteBackgroundDirectional: Sprite.load('joystick_background.png'), //directinal control background
+          spriteBackgroundDirectional: Sprite.load('joystick_background.png'), // directional control background
           spriteKnobDirectional: Sprite.load('joystick_knob.png'), // directional indicator circle background
           color: Colors.black, // if you do not pass  'pathSpriteBackgroundDirectional' or  'pathSpriteKnobDirectional' you can define a color for the directional.
           size: 100, // directional control size
@@ -29,7 +29,7 @@ Joystick is configurable by the following parameters:
             actionId: 1, //(required) Action identifier, will be sent to 'void joystickAction(JoystickActionEvent event) {}' when pressed
             sprite: Sprite.load('joystick_attack_range.png'), // the action image
             spritePressed: Sprite.load('joystick_attack_range.png'), // Optional image to be shown when the action is fired
-            spriteBackgroundDirection: Sprite.load('joystick_background.png'), //directinal control background
+            spriteBackgroundDirection: Sprite.load('joystick_background.png'), // directional control background
             enableDirection: true, // enable directional in action
             alignment = Alignment.bottomRight,
             color: Colors.blue,
@@ -48,12 +48,10 @@ Check an [example](https://github.com/RafaelBarbosatec/bonfire/tree/master/examp
 
 ## JoystickListener
 
-Mixin used to listen the joystick interactions.
+Mixin used to listen to the joystick interactions.
 
-A component that use this mixin can listen the Joystick events adding as observer:
+A component that uses this mixin can listen to the Joystick events adding as an observer:
 
 ```dart
-
 gameRef.addJoystickObserver(myComponentJoystickListener);
-
 ```

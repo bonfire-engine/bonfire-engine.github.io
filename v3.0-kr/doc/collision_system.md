@@ -12,7 +12,7 @@
 ```dart
 
 class MyComponent extends SimplePlayer {
-  //...
+  // ...
   @override
   Future<void> onLoad() {
     add(RectangleHitbox(size:size));
@@ -28,22 +28,22 @@ class MyComponent extends SimplePlayer {
 ```dart
 
 class MyCollidable extends SimplePlayer {
-  //...
+  // ...
   @override
   void onCollision(Set<Vector2> points, PositionComponent other) {
     if (other is ScreenHitbox) {
-      //...
+      // ...
     } else if (other is YourOtherComponent) {
-      //...
+      // ...
     }
   }
 
   @override
   void onCollisionEnd(PositionComponent other) {
     if (other is ScreenHitbox) {
-      //...
+      // ...
     } else if (other is YourOtherComponent) {
-      //...
+      // ...
     }
   }
 }
@@ -55,7 +55,7 @@ class MyCollidable extends SimplePlayer {
 ```dart
 
 class MyComponent extends SimplePlayer with  BlockMovementCollision{
-  //...
+  // ...
   @override
   Future<void> onLoad() {
     add(RectangleHitbox(size:size));
@@ -75,7 +75,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 ```dart
 
 class MyComponent extends SimplePlayer with  BlockMovementCollision{
-  //...
+  // ...
   @override
   Future<void> onLoad() {
     add(RectangleHitbox(size:size));
