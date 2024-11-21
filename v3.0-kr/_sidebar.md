@@ -1,5 +1,5 @@
 
-* [환영합니다!](/?id=welcome-to-bonfire-under-construction)
+* [환영합니다!](/?id=welcome-to-bonfire)
 * [시작하기](doc/getting-started.md?id=get-started)
 * [시작하기 전에](doc/overview.md?id=overview)
 * [지도](doc/map.md?id=map)

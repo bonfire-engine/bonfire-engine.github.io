@@ -1,5 +1,5 @@
 
-* [Welcome](/?id=welcome-to-bonfire-under-construction)
+* [Welcome](/?id=welcome-to-bonfire)
 * [Getting Started](doc/getting-started.md?id=getting-started)
 * [Overview](doc/overview.md?id=overview)
 * [Map](doc/map.md?id=map)
