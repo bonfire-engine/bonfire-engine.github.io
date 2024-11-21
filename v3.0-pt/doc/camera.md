@@ -1,21 +1,21 @@
-# Camera
+# Câmera
 
-> Camera control.
+> Controle de câmera
 
-You can configure some settings in the camera:
+Você pode configurar algumas coisas na câmera:
 
 ```dart
   return BonfireWidget(
    // ...
    cameraConfig: CameraConfig(
-      moveOnlyMapArea: false, // The camera moves only the map area, without showing areas outside map.
-      movementWindow: Vector2(50,50), // Area that the player can move in the center screen, without moving the camera.
-      speed: 1.0, // Camera speed
+      moveOnlyMapArea: false, // A câmera move apenas a área do mapa, sem mostrar áreas fora do mapa.
+      movementWindow: Vector2(50,50), // Área que o jogador pode mover no centro da tela, sem mover a câmera.
+      speed: 1.0, // Velocidade da câmera
       zoom:  1.0,
-      angle: 45 * pi/180, // Rotate view 45 degrees
+      angle: 45 * pi/180, // Gira a vista em 45 graus
       startFollowPlayer: true,
       speed: double.infinity,
-      target: GameComponent(), // By default the target is the Player.
+      target: GameComponent(), // Por padrão o alvo é o Jogador.
       initPosition: Vector2(),
       initialMapZoomFit = InitialMapZoomFitEnum.none, // none,fitWidth,fitHeight,fit
       resolution: Vector2()
@@ -23,7 +23,7 @@ You can configure some settings in the camera:
   );
 ```
 
-Useful functions to be used during the game:
+Funções úteis para serem utilizadas durante o jogo:
 
 ```dart
    gameRef.camera.moveToPositionAnimated({

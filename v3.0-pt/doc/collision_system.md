@@ -1,13 +1,12 @@
-# Collision System
+# Sistema de Colisão
 
-> System responsible for determining and configuring the collision between objects.
+> Sistema responsável por determinar e configurar a colisão entre objetos.
 
+## Como usar
 
-## How to use
+Na versão 3.0 do Bonfire, todos os sistemas de colisão estão usando o [CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html) do [Flame](https://docs.flame-engine.org/latest/).
 
-In the version 3.0 of Bonfire, the collision system is using [Flame CollisionDetection](https://docs.flame-engine.org/latest/flame/collision_detection.html).
-
-To add collisions in your component just add a `ShapeHitbox` (PolygonHitbox,RectangleHitbox or CircleHitbox) like this:
+Para adicionar colisões em seu componente, basta adicionar um `ShapeHitbox` (`PolygonHitbox`, `RectangleHitbox` ou `CircleHitbox`) como no exemplo:
 
 ```dart
 class MyComponent extends SimplePlayer {
@@ -20,8 +19,7 @@ class MyComponent extends SimplePlayer {
 }
 ```
 
-After that, the Flame Engine will detect all collisions between hitboxes in the game. You can listen to this by overriding these methods:
-
+Depois disso, o Flame detectará todas as colisões entre hitboxes no jogo. Você pode ouvir isso sobrescrevendo estes métodos:
 
 ```dart
 class MyCollidable extends SimplePlayer {
@@ -46,7 +44,7 @@ class MyCollidable extends SimplePlayer {
 }
 ```
 
-So, now you can know when collisions happen, but it will not stop component movement. To block the component movement, add the `BlockMovementCollision` mixin like this:
+Então, agora você pode saber quando as colisões acontecem, mas isso não vai parar o movimento do componente. Para parar o movimento do bloco, adicione o mixin `BlockMovementCollision` assim:
 
 ```dart
 class MyComponent extends SimplePlayer with BlockMovementCollision{
@@ -59,12 +57,11 @@ class MyComponent extends SimplePlayer with BlockMovementCollision{
 }
 ```
 
-Great! Now when you move the player and collide with a wall or another component with `ShapeHitbox` the movement is stopped.
+Ótimo! Agora, quando você move o player e colide com uma parede ou outro componente com `ShapeHitbox`, o movimento é interrompido.
 
-## Knowing who collided
+## Sabendo quem colidiu
 
-You can know what `GameComponent` collided by overriding `onBlockMovement` or `onBlockedMovement`:
-
+Você pode saber qual `GameComponent` colidiu substituindo (overriding) o `onBlockMovement` ou o `onBlockedMovement`:
 
 ```dart
 class MyComponent extends SimplePlayer with  BlockMovementCollision{
@@ -80,7 +77,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
     Set<Vector2> intersectionPoints,
     GameComponent other,
   ) {
-    // You can do something when the collision occurs. If you return false the blocking movement will not happen.
+    // Você pode fazer algo quando a colisão ocorrer. Se você retornar false o movimento de bloqueio não acontecerá.
     return super.onBlockMovement(intersectionPoints, other);
   }
 
@@ -90,7 +87,7 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
     CollisionData collisionData,
   ) {
      super.onBlockedMovement(other, collisionData);
-     // You can do something when movement is blocked by collision.
+     // Você pode fazer algo quando o movimento é bloqueado por uma colisão.
      // data.direction
      // data.normal
      // data.intersectionPoints 
@@ -98,24 +95,23 @@ class MyComponent extends SimplePlayer with  BlockMovementCollision{
 }
 ```
 
-You can configure some things:
+Você pode configurar algumas coisas:
 
 ```dart
  setupBlockMovementCollision(enabled:true, bodyType: BodyType.dynamic);
 ```
 
-To add **Elastic collision** take a look at the mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
+Para adicionar uma **colisão elástica**, dê uma olhada no mixin [ElasticCollision](doc/mixins?id=ElasticCollision)
 
+## Teste e depuração
 
-## Testing and debugging
-
-To verify if collisions are in the right position, you can enable `showCollisionArea` in `BonfireWidget`:
+Para verificar se as colisões estão na posição correta, você pode habilitar o `showCollisionArea` no `BonfireWidget`:
 
 ```dart
     BonfireWidget(
-        ...
+        // ...
         showCollisionArea:true,
-        ...
+        // ...
     ),
 ```
 

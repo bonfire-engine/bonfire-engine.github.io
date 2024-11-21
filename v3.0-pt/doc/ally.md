@@ -1,22 +1,21 @@
-# Ally
+# Aliado
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses
-[Attackable](doc/mixins?id=attackable) mixin.</small>
+> <small>Um aliado é um [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) e usa o mixin
+[Attackable](doc/mixins?id=attackable).</small>
 
-
-This is an NPC that is a player ally. So, it can receive damage from enemies and can inflict damage to enemies.
+Este é um NPC que é um aliado do jogador. Portanto, ele pode receber dano de inimigos e pode infingir dano aos inimigos.
 
 <!-- TODO: add a section for PlatformAlly -->
-There are three types of allyes: `SimpleAlly`, `RotationAlly` and `PlatformAlly`:
+Existem três tipos de aliados: `SimpleAlly`, `RotationAlly` e `PlatformAlly`:
 
 ## SimpleAlly
 
-> <small>This is a [Ally](#ally) and uses the
-[DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
+> <small>Este é um [Aliado](#aliado) e usa o mixin
+[DirectionAnimation](doc/mixins?id=directionanimation).</small>
 
-Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
+É usado para perspectivas de 45º e 67.5º. Podem ser configuradas animações de movimento para todas as direções (up, down, left, right, up_right, up_left, down_left, down_right).
 
-To use it, simply create a class that will represent your ally and extend SimpleAlly:
+Para criar este tipo de aliado, crie uma classe para representar o aliado e extenda ela com `SimpleAlly`:
 
 ```dart
 class Human extends SimpleAlly {
@@ -60,12 +59,12 @@ class Human extends SimpleAlly {
       super.render(canvas);
     }
 }
+
 ```
 
-Now that you have a class that represents your ally, you can configure their behavior.
+Agora com uma classe que representa um aliado, podemos configurar seu comportamento.
 
-There are several useful extensions that you can use inside the `update` method that will help you with this task:
-
+Existem várias extensões úteis que podem ser usadas dentro do método `update` que vão ajudar com esta tarefa:
 
 ```dart 
   void simpleAttackMelee({
@@ -81,7 +80,7 @@ There are several useful extensions that you can use inside the `update` method 
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack to the enemy, making the configured damage with the configured frequency. You can add animations to represent this attack.
+Executa um ataque físico ao inimigo, causando o dano configurado com a frequência configurada. Você pode adicionar animações para representar esse ataque.
 
 
 ```dart 
@@ -102,7 +101,7 @@ Executes a physical attack to the enemy, making the configured damage with the c
     LightingConfig? lightingConfig,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executa um ataque à distância. Ele adicionará um prprojétil `FlyingAttackObject` ao jogo e este será enviado na direção configurada, causando algum dano a quem quer que acerte ou sendo destruído ao atingir barreiras (tiles com colisão).
 
 
 ```dart 
@@ -117,21 +116,21 @@ Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the g
     bool runOnlyVisibleInScreen = true,
   })
 ```
-When the enemy is within the radiusVision, the ally will position itself to perform a ranged attack. Once it reaches the attack position, the `positioned` callback will be fired.
+Quando o inimigo estiver dentro do `radiusVision`, o aliado se posicionará para executar um ataque à distância. Quando atingir a posição de ataque, o callback `positioned` será disparado.
 
 
-And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+E todos os métodos do `GameComponent`. Dê uma olhada nas [funções do GameComponent](doc/util?id=functions)
 
 
-### Change animations
+### Mudar as animações
 
-To update the `SimpleAlly` animation you should use this method:
+Para mudar a animação do `SimpleAlly` você deve usar o seguinte método:
 
 ```dart
   replaceAnimation(SimpleDirectionAnimation());
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+Para executar uma animação momentânea, você deve usar os métodos do `SimpleDirectionAnimation`. Por exemplo:
 
 ```dart
   animation.playOnce(
@@ -152,12 +151,11 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ## RotationAlly
 
-> <small>This is a [Ally](#ally) and use 
-[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
+> <small>Este é um [Aliado](#aliado) e usa os mixins 
+[UseSpriteAnimation](doc/mixins?id=usespriteanimation) e
 [UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
-
-Used for 90º perspectives. We can configure Motion animations for run and idle.
+Usado em perspectivas de 90º. Podemos confirar animações de movimento para correr e inatividade (idle).
 
 ```dart
 class Tank extends RotationAlly {
@@ -187,9 +185,9 @@ class Tank extends RotationAlly {
 }
 ```
 
-Now that we have our class that represents our ally, we can configure their behavior.
+Agora com uma classe que representa um aliado, podemos configurar seu comportamento.
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+Existem várias extensões úteis que podem ser usadas dentro do método `update` que vão ajudar com esta tarefa:
 
 ```dart 
   void seeAndMoveToAttackRange({
@@ -240,8 +238,8 @@ There are several useful extensions that we can use in `update` that will help u
   })
 ```
 
-And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+E todos os métodos do `GameComponent`. Dê uma olhada nas [funções do GameComponent](doc/util?id=functions)
 
 ## Custom
 
-If none of these types of allyes meet your needs, you can create your own by extending the `Ally` class.
+Se nenhum desses tipos de aliados atender às suas necessidades, você pode criar o seu próprio estendendo a classe `Ally`.
