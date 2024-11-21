@@ -89,14 +89,15 @@ animation.playOnceOther()
 /// Method used to play animation one time
 animation.playOnce(
     FutureOr<SpriteAnimation> animation, {
-    VoidCallback? onFinish,
-    VoidCallback? onStart,
-    bool runToTheEnd = false,
-    bool flipX = false,
-    bool flipY = false,
-    bool useCompFlip = false,
-    Vector2? size,
-    Vector2? offset,
+        VoidCallback? onFinish,
+        VoidCallback? onStart,
+        bool runToTheEnd = false,
+        bool flipX = false,
+        bool flipY = false,
+        bool useCompFlip = false,
+        Vector2? size,
+        Vector2? offset,
+    },
   );
 
 /// Method used to play specific animation registred in `others`
@@ -436,7 +437,7 @@ In the Tiled program used to build your map, you can set a `class` or set custom
 
 ### ElasticCollision
 
-Mixin responsable to give the elastic collision behavior. (experimental). You can configure ir using the method `setupElasticCollision`.
+Mixin responsible for giving the elastic collision behavior. (experimental). You can configure it using the method `setupElasticCollision`.
 
 ```dart
 

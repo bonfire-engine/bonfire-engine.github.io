@@ -1,13 +1,12 @@
-# Util
+# Utilitários
 
-There are some functions and Components that can be helpful in your game development process.
+Existem algumas funções e Componentes que podem ser úteis no processo de desenvolvimento do seu jogo.
 
-## Functions
+## Funções
 
-There are many functions that can be helpful in `BonfireUtil`:
+Há várias funções disponíveis em `BonfireUtil` que podem ser úteis:
 
 ```dart
-
  Direction getDirectionFromAngle(double angle);
  double getAngleFromDirection(Direction direction);
  double angleBetweenPoints(Vector2 p1, Vector2 p2);
@@ -18,13 +17,12 @@ There are many functions that can be helpful in `BonfireUtil`:
     double angle,
   );
 Vector2 vector2ByAngle(double angle, {double intencity = 1})
-
 ```
 
-GameComponets extensions:
+Extensões de `GameComponent`:
 
 ```dart
-/// Used to generate numbers to create your animations or anythings
+/// Usado para gerar números que criam suas animações ou qualquer outra coisa
   ValueGeneratorComponent generateValues(
     Duration duration, {
     double begin = 0.0,
@@ -37,7 +35,7 @@ GameComponets extensions:
     ValueChanged<double>? onChange,
   })
 
-  /// Used to add particles in your component.
+  /// Usado para adicionar partículas em seu componente.
   void addParticle(
     Particle particle, {
     Vector2? position,
@@ -48,7 +46,7 @@ GameComponets extensions:
     int? priority,
   })
 
-  /// Add in the game a text with animation representing damage received
+  /// Adiciona no jogo um texto com animação representando o dano recebido
   void showDamage(
     double damage, {
     TextStyle? config,
@@ -60,24 +58,24 @@ GameComponets extensions:
     bool onlyUp = false,
   })
 
-  /// Get the direction that another component is in relation to you
+  /// Obtém a direção em que outro componente está em relação a você
   Direction getComponentDirectionFromMe(GameComponent comp)
 
-  // Get angle between this comp to target
+  // Obtém o ângulo entre este componente e o alvo
   double getAngleFromTarget(GameComponent target) {}
 ```
 
-Others:
+Outras funções:
 
 ```dart
-// Help you to calculate zoom by max tiles can be visible
+// Ajuda a calcular o zoom pelo número máximo de tiles visíveis
 double getZoomFromMaxVisibleTile(
   BuildContext context,
   double tileSize,
   int maxTile,
 )
 
-// Could be helpful to render some sprite rotating using angle.
+// Pode ser útil para renderizar um sprite rotacionando com base no ângulo
 void renderSpriteByRadAngle(
   Canvas canvas,
   double radAngle,
@@ -86,7 +84,7 @@ void renderSpriteByRadAngle(
   Paint? overridePaint,
 })
 
-// Useful for generating animations.
+// Útil para gerar animações
 ValueGeneratorComponent generateValues(
     Duration duration, {
     double begin = 0.0,
@@ -96,19 +94,15 @@ ValueGeneratorComponent generateValues(
     VoidCallback? onFinish,
     ValueChanged<double>? onChange,
   })
-
 ```
 
-
-## Components
-
+## Componentes
 
 ### ComponentSpawner
 
-Sometimes we need spawn something, like enemy or items in your map, dynamically. To do it you can use the `ComponentSpawner`:
+Às vezes, precisamos spawnar algo, como inimigos ou itens no mapa, dinamicamente. Para isso, você pode usar o `ComponentSpawner`:
 
 ```dart
-
     ComponentSpawner({
         required Vector2 position,
         required this.area,
@@ -117,15 +111,11 @@ Sometimes we need spawn something, like enemy or items in your map, dynamically.
         this.spawCondition,
         this.onlyVisible = true,
     })
-
-
 ```
-
 
 ### GameObject
 
-Object that renders a `Sprite`.
-
+Objeto que renderiza um `Sprite`.
 
 ```dart
  GameObject({
@@ -142,7 +132,7 @@ Object that renders a `Sprite`.
 
 ### AnimatedGameObject
 
-Object that renders a `SpriteAnimation`.
+Objeto que renderiza uma `SpriteAnimation`.
 
 ```dart
    AnimatedGameObject({
@@ -158,13 +148,11 @@ Object that renders a `SpriteAnimation`.
     bool loop = true,
     super.objectPriority,
   })
-
 ```
 
 ### FollowerGameObject
 
-Like the previous one, this can play an animation once before it destroys itself and can also can can keep playing in a loop. But the most important feature is that this component follows another element on the map, like a player, enemy or decoration.
-
+Semelhante ao anterior, pode reproduzir uma animação antes de se destruir ou pode continuar em loop. Mas a característica mais importante é que este componente segue outro elemento no mapa, como um jogador, inimigo ou decoração.
 
 ```dart
 FollowerGameObject({
@@ -179,7 +167,7 @@ FollowerGameObject({
 
 ### AnimatedFollowerObject
 
-The same `FollowerObject` with animation.
+O mesmo que `FollowerObject`, mas com animação.
 
 ```dart
 AnimatedFollowerGameObject({
@@ -197,16 +185,13 @@ AnimatedFollowerGameObject({
   })
 ```
 
-
-
 ### FlyingAttackGameObject
 
-A component that is in a certain direction set at a certain speed also configurable to only to hit an enemy or player inflicting damage, or it can be destroyed when hitting a component that has a collision (Tiles, Decorations).
+Um componente que se move em uma direção específica com uma velocidade configurável, podendo acertar um inimigo ou jogador causando dano, ou ser destruído ao atingir um componente com colisão (Tiles, Decorações).
 
-This move from `angle` or `direction`.
+Este movimento pode ser baseado no `angle` ou na `direction`.
 
 ```dart
-
 FlyingAttackGameObject({
     required super.position,
     required super.size,
@@ -225,29 +210,26 @@ FlyingAttackGameObject({
     super.lightingConfig,
     this.collision,
   })
-
 ```
 
 ## FollowerWidget
 
-You can show a widget to follow a component in the game. This is useful to create dialogs, inventory, interactions, etc.
+Você pode exibir um widget que segue um componente no jogo. Isso é útil para criar diálogos, inventários, interações, etc.
 
-To show a widget, just call `FollowerWidget.show`. See below:
+Para exibir um widget deste tipo, basta chamar `FollowerWidget.show`. Veja abaixo:
 
 ```dart
    FollowerWidget.show(
-      identify: 'PLAYER_INVENTORY', // identify used to remove
+      identify: 'PLAYER_INVENTORY', // identificador usado para remoção
       context: context,
-      target: player, // You can add here any GameComponent
-      child: MyWidget(), // Add here your widget
-      align: Offset.zero, // Align from targe
+      target: player, // Você pode adicionar aqui qualquer GameComponent
+      child: MyWidget(), // Adicione aqui seu widget
+      align: Offset.zero, // Alinhamento em relação ao alvo
    );
 ```
 
-To hide:
+Para remover:
 
 ```dart
    FollowerWidget.remove('PLAYER_INVENTORY');
 ```
-
-
