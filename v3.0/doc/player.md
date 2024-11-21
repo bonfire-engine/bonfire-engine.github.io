@@ -145,7 +145,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 ### Change animations
 

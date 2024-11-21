@@ -1,23 +1,22 @@
-# Enemy
+# Inimigo
 
-> <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses the
-[Attackable](doc/mixins?id=attackable) mixin.</small>
+> <small>Um inimigo é um [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) que usa o mixin
+[Attackable](doc/mixins?id=attackable).</small>
 
+Crie um inimigo no jogo. Instâncias dessa classe têm comportamentos predefinidos prontos para serem usados ​​e configurados como desejado. Todas as ações e movimentos são personalizáveis.
 
-Create an enemy in the game. Instances of this class have predefined behaviors that are ready to be used and configured as wanted. All the actions and movements are customizable.
-
-There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEnemy`:
+Existem três tipos de inimigos: `SimpleEnemy`, `RotationEnemy` e `PlatformEnemy`:
 
 ## SimpleEnemy
 
-> <small>This is a [Enemy](#enemy) and uses the
-[DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
+> <small>Este é um [Inimigo](#inimigo) que usa o mixin
+[DirectionAnimation](doc/mixins?id=directionanimation).</small>
 
 <img width=100 src="_media/simple_enemy.png"></img>
 
-Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
+Usado para perspectivas de 45º e 67.5º. Podem ser configuradas animações de movimento para todas as direções (up, down, left, right, up_right, up_left, down_left, down_right).
 
-To use it, simply create a class that will represent your enemy and extend SimpleEnemy:
+Para criar este tipo de inimigo, crie uma classe para representar o inimigo e extenda ela com `SimpleEnemy`:
 
 ```dart
 class Goblin extends SimpleEnemy {
@@ -63,10 +62,9 @@ class Goblin extends SimpleEnemy {
 }
 ```
 
-Now that you have a class that represents your enemy, you can configure their behavior.
+Agora com uma classe que representa um inimigo, podemos configurar seu comportamento.
 
-There are several useful extensions that you can use inside the `update` method that will help you with this task:
-
+Existem várias extensões úteis que podem ser usadas dentro do método `update` que vão ajudar com esta tarefa:
 
 ```dart 
   void seePlayer({
@@ -77,7 +75,7 @@ There are several useful extensions that you can use inside the `update` method 
     double? angle,
   })
 ```
-It will trigger a callback function once the player is within the enemy's radiusVision.
+Ele acionará uma função de retorno de chamada quando o jogador estiver dentro do raio de visão (`radiusVision`) do inimigo.
 
 
 ```dart 
@@ -93,7 +91,7 @@ It will trigger a callback function once the player is within the enemy's radius
     bool runOnlyVisibleInScreen = true, 
   })
 ```
-The enemy will move in the direction of the player once it gets within the radiusVision. When it gets close to the player, `closePlayer` will be fired.
+O inimigo se moverá na direção do jogador assim que estiver dentro do `radiusVision`. Quando ele se aproximar do jogador, `closePlayer` será disparado.
 
 
 ```dart 
@@ -110,7 +108,7 @@ The enemy will move in the direction of the player once it gets within the radiu
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack on the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
+Executa um ataque físico no jogador, causando o dano configurado com a frequência configurada. Você pode adicionar animações para representar esse ataque.
 
 
 ```dart 
@@ -131,7 +129,7 @@ Executes a physical attack on the player, making the configured damage with the 
     LightingConfig? lightingConfig,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executa um ataque à distância. Ele adicionará um projétil do tipo `FlyingAttackObject` ao jogo e este será enviado na direção configurada, causando algum dano a quem quer que acerte ou sendo destruído ao atingir barreiras (tiles com colisão).
 
 
 ```dart 
@@ -146,21 +144,19 @@ Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the g
     bool runOnlyVisibleInScreen = true,
   })
 ```
-When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
+Quando o jogador estiver dentro do `radiusVision`, o inimigo se posicionará para executar um ataque à distância. Quando ele atingir a posição de ataque, o callback `positioned` será disparado.
 
+E todos os métodos do `GameComponent`. Dê uma olhada nas [funções do GameComponent](doc/util?id=functions)
 
-And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+### Mudar as animações
 
-
-### Change animations
-
-To update the `SimpleEnemy` animation you should use this method:
+Para mudar a animação do `SimpleEnemy` você deve usar o seguinte método:
 
 ```dart
   replaceAnimation(SimpleDirectionAnimation());
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+Para executar uma animação momentânea, você deve usar os métodos do `SimpleDirectionAnimation`. Por exemplo:
 
 ```dart
   animation.playOnce(
@@ -178,20 +174,19 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
   animation.resume();
 ```
 
-> IMPORTANT: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
+> IMPORTANTE: Os inimigos só se movem se estiverem visíveis na câmera. Se você quiser desabilitar isso, adicione `false` em `collisionOnlyVisibleScreen` na sua configuração de colisão. Veja sobre o [Sistema de Colisão](doc/collision_system?id=collision-system).
 
-Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
+Exemplo completo de um `SimpleEnemy` [aqui](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/shared/enemy/goblin.dart).
 
 
 ## RotationEnemy
 
-> <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and uses the
-[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
-[UseAssetsLoader](doc/mixins?id=useassetsloader) `mixins`.</small>
+> <small>Este é um [Inimigo](#inimigo) que usa os mixins
+[UseSpriteAnimation](doc/mixins?id=usespriteanimation) e [UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
 <img width=100 src="_media/rotation_enemy.png"></img>
 
-Used for 90º perspectives. And we can configure Motion animations for run and idle.
+Usado em perspectivas de 90º. Podemos confirar animações de movimento para correr e ficar ocioso (idle).
 
 ```dart
 class Tank extends RotationEnemy {
@@ -221,9 +216,9 @@ class Tank extends RotationEnemy {
 }
 ```
 
-Now that we have our class that represents our enemy, we can configure their behavior.
+Agora com uma classe que representa um aliado, podemos configurar seu comportamento.
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+Existem várias extensões úteis que podem ser usadas dentro do método `update` que vão ajudar com esta tarefa:
 
 ```dart 
   void seePlayer({
@@ -291,15 +286,15 @@ There are several useful extensions that we can use in `update` that will help u
   })
 ```
 
-And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+E todos os métodos do `GameComponent`. Dê uma olhada nas [funções do GameComponent](doc/util?id=functions)
 
 
 ## PlatformEnemy
 
-> <small>This is a [SimpleEnemy](#SimpleEnemy) and uses the
-[BlockMovementCollision](doc/collision_system?id=collision-system), Jump and JumpAnimation `mixins`</small>
+> <small>Este é um [Inimigo](#inimigo) que usa os mixins
+[BlockMovementCollision](doc/collision_system?id=collision-system), Jump e JumpAnimation</small>
 
-Used for platform games. We can configure Motion animations for run, idle and jump.
+Usado para jogos de plataforma. Podemos configurar animações de movimento como correr, ficar ocioso (idle) e pular.
 
 ```dart
 class BowserEnemy extends PlatformEnemy {
@@ -316,25 +311,25 @@ class BowserEnemy extends PlatformEnemy {
 }
 ```
 
-### Jumping
+### Pulando
 
 <!-- TODO: Add documentation for the Jumper mixin -->
-To do the player jump you can use the [Jumper mixin]() method:
+Para fazer o player pular você deve usar o método do [mixin Jumper]():
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
 ```
 
 
-### Change animations
+### Mudar animações
 
-To update the `PlatformEnemy` animation you should use this method:
+Para mudar a animação do `PlatformEnemy` você deve usar o seguinte método:
 
 ```dart
   replacePlatformAnimation(PlatformAnimations());
 ```
 
-To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
+Para executar uma animação momentânea, você deve usar os métodos do `SimpleDirectionAnimation`. Por exemplo:
 
 ```dart
   animation.playOnce(
@@ -352,9 +347,8 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
   animation.resume();
 ```
 
-> IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
+> IMPORTANTE: Lembre-se de adicionar uma força de gravidade neste componente, para corrigir o comportamento. Dê uma olhada em [Forças](doc/forces?id=forces)
 
+## Customização
 
-## Custom
-
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Enemy` class.
+Se nenhum desses tipos de inimigos não atender às suas necessidades. Você pode criar o seu próprio estendendo a classe `Enemy`.

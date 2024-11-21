@@ -101,7 +101,7 @@ Executa um ataque físico ao inimigo, causando o dano configurado com a frequên
     LightingConfig? lightingConfig,
   })
 ```
-Executa um ataque à distância. Ele adicionará um prprojétil `FlyingAttackObject` ao jogo e este será enviado na direção configurada, causando algum dano a quem quer que acerte ou sendo destruído ao atingir barreiras (tiles com colisão).
+Executa um ataque à distância. Ele adicionará um projétil do tipo `FlyingAttackObject` ao jogo e este será enviado na direção configurada, causando algum dano a quem quer que acerte ou sendo destruído ao atingir barreiras (tiles com colisão).
 
 
 ```dart 
@@ -155,7 +155,7 @@ Para executar uma animação momentânea, você deve usar os métodos do `Simple
 [UseSpriteAnimation](doc/mixins?id=usespriteanimation) e
 [UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
-Usado em perspectivas de 90º. Podemos confirar animações de movimento para correr e inatividade (idle).
+Usado em perspectivas de 90º. Podemos confirar animações de movimento para correr e ficar ocioso (idle).
 
 ```dart
 class Tank extends RotationAlly {
@@ -240,6 +240,6 @@ Existem várias extensões úteis que podem ser usadas dentro do método `update
 
 E todos os métodos do `GameComponent`. Dê uma olhada nas [funções do GameComponent](doc/util?id=functions)
 
-## Custom
+## Customização
 
 Se nenhum desses tipos de aliados atender às suas necessidades, você pode criar o seu próprio estendendo a classe `Ally`.
