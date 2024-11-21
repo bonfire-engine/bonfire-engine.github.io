@@ -16,7 +16,7 @@ Bonfire 拥有一个简单的力系统，你可以在游戏中添加线性力、
 @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      //...
+      // ...
       globalForces: [] // Here you can add forces like accelerations(AccelerationForce2D), resistences
     );
   }

@@ -13,7 +13,7 @@ For this to work, the component must contain the Mixin `Movement` (by default `P
 
 ## Configuring 
 
-You can configure PathFinding calling the method `setupMoveToPositionAlongThePath`. See below:
+You can configure PathFinding by calling the method `setupMoveToPositionAlongThePath`. See below:
 
 ```dart
 

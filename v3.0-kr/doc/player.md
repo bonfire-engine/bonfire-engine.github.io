@@ -144,7 +144,7 @@ class Kinght extends SimplePlayer {
 
 ```
 
-그리고 모든 `GameComponent' 메소드. [GameComponent 함수](#TODO) 살펴보기
+그리고 모든 `GameComponent` 메소드. [GameComponent 함수](#TODO) 살펴보기
 
 ### 애니메이션 변경
 

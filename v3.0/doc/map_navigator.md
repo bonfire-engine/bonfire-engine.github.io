@@ -47,7 +47,7 @@ class MyGameWidget extends StatelessWidget {
 
 ```
 
-Now when you need navigate to some map just get the `MapNavigator` by context and call `toNamed` method.
+Now when you need to navigate to some map just get the `MapNavigator` by context and call the `toNamed` method.
 
 ```dart
 

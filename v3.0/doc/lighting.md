@@ -24,7 +24,7 @@ class MyCustomDecoration extends GameDecoration with Lighting {
               color: Colors.transparent,
               // blurBorder: 20, // this is a default value
               // type: LightingType.circle, // this is a default value
-              // useComponentAngle: false, // this is a default value. When true, light rotates together when component changes it's `angle` param.
+              // useComponentAngle: false, // this is a default value. When true, light rotates together when a component changes its `angle` param.
             ),
           );
         }

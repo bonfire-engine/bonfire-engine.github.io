@@ -29,4 +29,4 @@ Check out the web [Examples](/doc/examples?id=bonfire-example) to see Bonfire in
 ## Community
 我们在 BlueFlame 的 Discord[here](https://discord.gg/5drde4ev) 上有一个 Bonfire 的帮助频道，或者加入我们的 Telegram[here](https://t.me/bonfire_engine) 群组
 
-演示 [FlameCon](https://www.youtube.com/watch?v=2DdiNrAAuBg&t=2s).
+演示 [FlameCon](https://www.youtube.com/live/2DdiNrAAuBg?t=2989s).

@@ -65,7 +65,7 @@ Result:
 
 ## Load map from network
 
-You can storage your map files in a server and load. Just load using `TiledReader.network`:
+You can store your map files in a server and load them. Just load using `TiledReader.network`:
 
 ```dart
   return BonfireWidget(
@@ -82,14 +82,12 @@ You can storage your map files in a server and load. Just load using `TiledReade
 ```
 
 
-You can manage the cache of this too. By default, it uses `TiledMemoryCacheProvider`. You can create your own cache system only creating a class and extending by `TiledCacheProvider`.
+You can manage the cache of this too. By default, it uses `TiledMemoryCacheProvider`. You can create your own cache system only by creating a class and extending it by `TiledCacheProvider`.
 
 ## Useful
 
-You can set `class` in your tile to `above` to render this tile above all components in your game. 
-
-If you need that all tiles of a layer render above all components you can create a `Custom Property` in your layer and create one named `class` with value `above`.
-
-You can set `class` in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
-You can set `class` in your Object to `collision`. This object will be added in the game with transparency and collision.
-You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be added in the game with transparency and collision.
+- You can set `class` in your tile to `above` to render this tile above all components in your game. 
+- If you need all tiles of a layer rendered above all components you can create a `Custom Property` in your layer and create one named `class` with the value `above`.
+- You can set `class` in your tile to `dynamicAbove` to render this tile dynamic by Y axis.
+- You can set `class` in your Object to `collision`. This object will be added in the game with transparency and collision.
+- You can set `class` in your ObjectLayer to `collision`. All objects of this layer will be added in the game with transparency and collision.

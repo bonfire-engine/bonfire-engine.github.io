@@ -151,7 +151,7 @@ class Goblin extends SimpleEnemy {
 플레이어가 반경 내에 있으면 적이 원거리 공격을 수행할 위치를 잡습니다. 공격 위치에 도달하면 `positioned` 콜백이 실행됩니다.
 
 
-그리고 모든 `GameComponent' 메소드. [GameComponent 함수](#TODO) 살펴보기
+그리고 모든 `GameComponent` 메소드. [GameComponent 함수](#TODO) 살펴보기
 
 
 ### 애니메이션 변경
@@ -300,7 +300,7 @@ class Tank extends RotationEnemy {
   
 ```
 
-그리고 모든 `GameComponent' 메소드. [GameComponent 함수](#TODO) 살펴보기
+그리고 모든 `GameComponent` 메소드. [GameComponent 함수](#TODO) 살펴보기
 
 
 ## 플랫폼 적(PlatformEnemy)

@@ -23,7 +23,7 @@ import 'package:bonfire/bonfire.dart';
 ## Using
 
 ### Creating your map
-You need create your map using [Tiled](https://www.mapeditor.org/). After that, you can export your map as a json file.
+You need to create your map using [Tiled](https://www.mapeditor.org/). After that, you can export your map as a json file.
 
 [How to use Tiled in Bonfire](doc/tiled_support?id=tiled-support) 
 
@@ -50,7 +50,7 @@ Now you can run the app, and see your map:
 ```
 > Note: You can also add a [Keyboard Controller](doc/input?id=keyboard).
 
-This way you can see your map is rendering, and use the directional joystick to explore.
+This way you can see how your map is rendering, and use the directional joystick to explore.
 
 
 ### Creating your player
@@ -111,7 +111,7 @@ class Knight extends SimplePlayer {
 
 ```
 
-Now you just need to add your player in the game. Keep in mind that the ``Vector2(40,40)`` is the initial position of the player.
+Now you just need to add your player to the game. Keep in mind that the `Vector2(40, 40)` is the initial position of the player.
 
 
 ```dart
@@ -131,10 +131,10 @@ Now you just need to add your player in the game. Keep in mind that the ``Vector
   }
 ```
 
-You can see your player in the map and move it with the directional Joystick.
+You can see your player on the map and move it with the directional Joystick.
 
 ## Next steps
 
-Familiarize yourself with all components that you can use in Bonfire [See here](doc/overview?id=overview)
+Familiarize yourself with all the components that you can use in Bonfire [See here](doc/overview?id=overview)
 
 Or check out our examples [here](doc/examples?id=bonfire-example).

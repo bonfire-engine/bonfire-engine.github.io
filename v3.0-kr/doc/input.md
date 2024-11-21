@@ -161,7 +161,7 @@ class MyCustomDecoration extends GameDecoration with MouseEventListener {
 ```dart
 
 class HumanPlayer extends SimplePlayer with KeyboardEventListener{
-  //...
+  // ...
   @override
   bool onKeyboard(
     RawKeyEvent event,

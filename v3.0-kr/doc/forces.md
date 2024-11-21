@@ -16,7 +16,7 @@
 @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      //...
+      // ...
       globalForces: [] // 여기서 가속(Acceleration Force 2D), 저항과 같은 힘을 추가할 수 있습니다.
     );
   }

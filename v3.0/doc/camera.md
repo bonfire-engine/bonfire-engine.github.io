@@ -6,16 +6,16 @@ You can configure some settings in the camera:
 
 ```dart
   return BonfireWidget(
-    ...
+   // ...
    cameraConfig: CameraConfig(
       moveOnlyMapArea: false, // The camera moves only the map area, without showing areas outside map.
       movementWindow: Vector2(50,50), // Area that the player can move in the center screen, without moving the camera.
       speed: 1.0, // Camera speed
       zoom:  1.0,
-      angle: 45 * pi/180, // rotate view 45 degrees
+      angle: 45 * pi/180, // Rotate view 45 degrees
       startFollowPlayer: true,
       speed: double.infinity,
-      target: GameComponent(), // per default the target is the Player.
+      target: GameComponent(), // By default the target is the Player.
       initPosition: Vector2(),
       initialMapZoomFit = InitialMapZoomFitEnum.none, // none,fitWidth,fitHeight,fit
       resolution: Vector2()
@@ -26,15 +26,13 @@ You can configure some settings in the camera:
 Useful functions to be used during the game:
 
 ```dart
-   gameRef.camera.moveToPositionAnimated(
-   {
+   gameRef.camera.moveToPositionAnimated({
       required Vector2 position,
       EffectController? effectController,
       double? zoom,
       double? angle,
       Function()? onComplete,
-   }
-   )
+   })
 
    gameRef.camera.moveToTargetAnimated({
       required PositionComponent target,

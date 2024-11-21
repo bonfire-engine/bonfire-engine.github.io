@@ -30,4 +30,4 @@ Bonfire 가 도움이 된다고 생각하거나 가치 있다고 생각한다면
 
 Fireslime's Discord에 Bonfire 도움말 채널이 있습니다. [여기](https://discord.com/invite/pxrBmy4) 또는 텔레그램 그룹 [여기](https://t.me/bonfire_engine)에 가입하세요.
 
-[FlameCon](https://www.youtube.com/watch?v=2DdiNrAAuBg&t=2s)에서 Bonfire 프레젠테이션을 진행했습니다.
+[FlameCon](https://www.youtube.com/live/2DdiNrAAuBg?t=2989s)에서 Bonfire 프레젠테이션을 진행했습니다.

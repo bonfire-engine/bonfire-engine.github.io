@@ -24,7 +24,7 @@ The first parameter (`tile/map.json`) is the path of the `.json` file exported b
 
 > IMPORTANT: Make sure your map file is correctly named, and placed in `assets/images` directory to avoid any loading issues.
 
-You can also load a map from a url. Just pass the url in path. Example:
+You can also load a map from a URL. Just pass the URL in the path. Example:
 
 ```dart
 WorldMapByTiled(
@@ -57,7 +57,7 @@ For more details about using Tiled [here](doc/tiled_support?id=tiled-support).
 
 ## Using SpriteFusion
 
-Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON', place it in your assets/image folder. 
+Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON' and place it in your assets/image folder. 
 
 To load use `WorldMapBySpritefusion` in `BonfireWidget` in the `map` parameter:
 
@@ -68,7 +68,7 @@ WorldMapBySpritefusion(WorldMapReader.fromAsset('spritefusion/map.json'))
 
 ## Creating map by matrix
 
-You can create maps using matrix of the double like this:
+You can create maps using a matrix of the double like this:
 
 ```dart
 
@@ -88,18 +88,17 @@ You can create maps using matrix of the double like this:
 
 ```
 
-This feature opens the possibility of creating radom maps. Just use any algorithm to create you matrix like [fast_noise](https://pub.dev/packages/fast_noise). 
+This feature opens the possibility of creating random maps. Just use any algorithm to create you matrix like [fast_noise](https://pub.dev/packages/fast_noise). 
 
-There is a example using this package in [Bonfire repositoy](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
+There is an example using this package in [Bonfire repositoy](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
 
-And to stay better we implement a class that help to adds sprites in this maps. The `TerrainBuilder`.
+To make it easier we implemented a class that helps to add sprites in these maps. The `TerrainBuilder`.
 
 ### Basic use
 
-To use this resource is very easy:
+It's ver'y easy to use this resource:
 
 ```dart
-
 return BonfireWidget(
       map: MatrixMapGenerator.generate(
         axisInverted: true,
@@ -123,8 +122,8 @@ return BonfireWidget(
         builder: (ItemMatrixProperties prop){
 
             // prop.value; // This is matrix value;
-            // prop.position; // This is a position x and y;
-            // You can access the neighbors values:
+            // prop.position; // This is the position x and y;
+            // You can access the neighbor's values:
             // prop.valueTop;
             // prop.valueTopLeft; 
             // prop.valueTopRight;
@@ -158,7 +157,7 @@ return BonfireWidget(
     );
 ```
 
-In the 'builder' you can create each 'tile' of the map, returning the 'TileModel' with your properties.
+In the `builder` you can create each `tile` of the map, returning the `TileModel` with your properties.
 
 ### Using TerrainBuilder
 
@@ -274,8 +273,8 @@ And then, this is the result:
 `MapTerrain` is each type of terrain that your map could have.
 
 There are two types:
-- MapTerrain: The basic terrain when have no corners.
-- MapTerrainCorners: The terrain that handle the corners.
+- MapTerrain: The basic terrain that has no corners.
+- MapTerrainCorners: The terrain that handles the corners.
 
 ##### MapTerrain
 
@@ -321,8 +320,8 @@ MapTerrainCorners(
 
 ## Custom
 
-You can create your own map creating a class extending the `WorldMap` and filling `List<TileModel> tiles`. 
+You can create your own map by creating a class extending the `WorldMap` and filling `List<TileModel> tiles`. 
 
-This way your will reuse QuadTree algorithm used to draw map.
+This way you will reuse the QuadTree algorithm used to draw the map.
 
-Or you can use the base creating your own map extending of `GameMap`.
+Or you can use the base to create your own map extending of `GameMap`.

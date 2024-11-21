@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Bonfire</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="(RPG maker) Create RPG-style or similar games with Flutter.">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
@@ -42,7 +42,7 @@
         gtag('config', 'G-XW6XTLBWR6');
     </script>
     <style>
-        /* 기본 스타일 설정 */
+        /* Set basic styles */
         body {
             font-family: 'Arial', sans-serif;
         }
@@ -52,30 +52,36 @@
             display: inline-block;
         }
 
-        .nav-dropdown-container > a {
+        .nav-dropdown-container>a {
             text-decoration: none;
-            color: #333; /* 글자 색상 */
+            color: #333;
+            /* Text color */
             padding: 10px 15px;
             border: none;
-            background-color: #f8f8f8; /* 배경색 */
+            background-color: #f8f8f8;
+            /* Background color */
             cursor: pointer;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
 
-        .nav-dropdown-container > a:hover {
-            background-color: #e7e7e7; /* 호버 시 배경색 변경 */
+        .nav-dropdown-container>a:hover {
+            background-color: #e7e7e7;
+            /* Change background color on hover */
         }
 
         .nav-dropdown {
             display: none;
             position: absolute;
-            right: 0; /* 우측 정렬 */
-            top: 100%; /* 상위 요소 바로 아래 */
+            right: 0;
+            /* Right aligned */
+            top: 100%;
+            /* Just below the parent element */
             border: 1px solid #ccc;
             border-radius: 4px;
             background-color: #f8f8f8;
-            z-index: 1000; /* 다른 요소 위에 표시 */
+            z-index: 1000;
+            /* Display on top of other elements */
         }
 
         .nav-dropdown a {
@@ -89,7 +95,7 @@
             background-color: #e7e7e7;
         }
 
-        /* 마우스 호버 시 드롭다운 표시 */
+        /* Show dropdown on mouse hover */
         .nav-dropdown-container:hover .nav-dropdown {
             display: block;
         }
@@ -101,37 +107,40 @@
 </head>
 
 <body>
-<div id="app"></div>
-<script>
-    let versions = [
-        // {folder: '', label: 'v2.x', default: false},
-        {folder: 'v3.0-cn/', label: 'v3.x', default: true}
-    ];
-    let basePath = sessionStorage.getItem('basePath');
-    if (basePath == null) {
-        let defaultVersion = versions.find((v) => v.default).folder;
-        sessionStorage.setItem('basePath', defaultVersion);
-    }
-    const versionFolder = sessionStorage.getItem('basePath');
+    <div id="app"></div>
+    <script>
+        let versions = [
+            // {folder: '', label: 'v2.x', default: false},
+            {
+                folder: 'v3.0-cn/',
+                label: 'v3.x',
+                default: true
+            }
+        ];
+        let basePath = sessionStorage.getItem('basePath');
+        if (basePath == null) {
+            let defaultVersion = versions.find((v) => v.default).folder;
+            sessionStorage.setItem('basePath', defaultVersion);
+        }
 
-    window.$docsify = {
-        name       : 'Bonfire',
-        repo       : 'https://github.com/bonfire-engine/bonfire-engine.github.io',
-        loadSidebar: true,
-        coverpage  : true,
-        // auto2top: true,
-        loadNavbar          : true,
-        maxLevel            : 4,
-        subMaxLevel         : 2,
-        basePath            : '/v3.0-cn/',
-        versions            : versions,
-        versionSelectorLabel: 'Version',
-    };
-</script>
-<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
+        window.$docsify = {
+            name: 'Bonfire',
+            repo: 'https://github.com/bonfire-engine/bonfire-engine.github.io',
+            loadSidebar: true,
+            coverpage: true,
+            // auto2top: true,
+            loadNavbar: true,
+            maxLevel: 4,
+            subMaxLevel: 2,
+            basePath: sessionStorage.getItem('basePath'),
+            versions: versions,
+            versionSelectorLabel: 'Version',
+        };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
 </body>
 
 </html>

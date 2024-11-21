@@ -1,13 +1,11 @@
 # TalkDialog
 
-Bonfire offer a basic implementation to show dialogs in your game.
-
+Bonfire offers a basic implementation to show dialogs in your game.
 
 ![](../../_media/talk_dialog.gif)
 
 
 ```dart
-
   TalkDialog.show(
     BuildContext context,
     List<Say> sayList, {
@@ -23,13 +21,11 @@ Bonfire offer a basic implementation to show dialogs in your game.
     TextStyle? style,
     int speed = 50,
   });
-
 ```
 
 #### Say
 
 ```dart
-
   Say({
     required this.text,
     this.personSayDirection = PersonSayDirection.LEFT,
@@ -41,6 +37,5 @@ Bonfire offer a basic implementation to show dialogs in your game.
     this.header,
     this.bottom,
     this.speed,
-  })
-
+  });
 ```

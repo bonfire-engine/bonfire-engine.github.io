@@ -113,7 +113,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
     }
   )
   
-  // Executes a ranged attack. Will add a `FlyingAttackObject` proyectile to the game, which will be sent in the configured direction, and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+  // Executes a ranged attack. Will add a `FlyingAttackObject` projectile to the game, which will be sent in the configured direction, and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
   void simpleAttackRange(
     {
       required Future<SpriteAnimation> animationRight,
@@ -145,7 +145,7 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods . Take a look [GameComponent functions](doc/util?id=functions)
 
 ### Change animations
 

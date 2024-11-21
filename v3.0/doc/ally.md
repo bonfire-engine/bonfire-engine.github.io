@@ -6,7 +6,8 @@
 
 This is an NPC that is a player ally. So, it can receive damage from enemies and can inflict damage to enemies.
 
-There are three types of enemies: `SimpleAlly`, `RotationAlly` and `PlatformAlly`:
+<!-- TODO: add a section for PlatformAlly -->
+There are three types of allyes: `SimpleAlly`, `RotationAlly` and `PlatformAlly`:
 
 ## SimpleAlly
 
@@ -15,24 +16,23 @@ There are three types of enemies: `SimpleAlly`, `RotationAlly` and `PlatformAlly
 
 Used for 45º and 67.5º perspectives. We can configure motion animations for all directions (up, down, left, right, up_right, up_left, down_left, down_right).
 
-To use it, simply create a class that will represent your enemy and extend SimpleAlly:
+To use it, simply create a class that will represent your ally and extend SimpleAlly:
 
 ```dart
-
 class Human extends SimpleAlly {
 
     Human(Vector2 position)
       : super(
-          position: position, //required
-          size: Vector2(32.0,32.0), //required
+          position: position, // required
+          size: Vector2(32.0,32.0), // required
           life: 100,
           speed: 100,
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
             idleLeft: Future<SpriteAnimation>(), 
-            idleRight: Future<SpriteAnimation>(), //required
+            idleRight: Future<SpriteAnimation>(), // required
             runLeft: Future<SpriteAnimation>(), 
-            runRight: Future<SpriteAnimation>(), //required
+            runRight: Future<SpriteAnimation>(), // required
             idleUp: Future<SpriteAnimation>(),
             idleDown: Future<SpriteAnimation>(),
             idleUpLeft: Future<SpriteAnimation>(),
@@ -60,7 +60,6 @@ class Human extends SimpleAlly {
       super.render(canvas);
     }
 }
-
 ```
 
 Now that you have a class that represents your ally, you can configure their behavior.
@@ -103,7 +102,7 @@ Executes a physical attack to the enemy, making the configured damage with the c
     LightingConfig? lightingConfig,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
@@ -121,7 +120,7 @@ Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the g
 When the enemy is within the radiusVision, the ally will position itself to perform a ranged attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-And all of the `GameComponent' methods. Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
@@ -129,31 +128,27 @@ And all of the `GameComponent' methods. Take a look [GameComponent functions](do
 To update the `SimpleAlly` animation you should use this method:
 
 ```dart
-
   replaceAnimation(SimpleDirectionAnimation());
-
 ```
 
 To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
 
 ```dart
-
   animation.playOnce(
     FutureOr<SpriteAnimation> animation, {
-    VoidCallback? onFinish,
-    VoidCallback? onStart,
-    bool runToTheEnd = false,
-    bool flipX = false,
-    bool flipY = false,
-    bool useCompFlip = false,
-    Vector2? size,
-    Vector2? offset,
+      VoidCallback? onFinish,
+      VoidCallback? onStart,
+      bool runToTheEnd = false,
+      bool flipX = false,
+      bool flipY = false,
+      bool useCompFlip = false,
+      Vector2? size,
+      Vector2? offset,
+    },
   );
   animation.pause();
   animation.resume();
-
 ```
-
 
 ## RotationAlly
 
@@ -162,18 +157,17 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 [UseAssetsLoader](doc/mixins?id=useassetsloader).</small>
 
 
-Used for 90º perspectives. And we can configure Motion animations for run and idle.
+Used for 90º perspectives. We can configure Motion animations for run and idle.
 
 ```dart
-
 class Tank extends RotationAlly {
 
     Tank(Vector2 position)
       : super(
-          position: position, //required
-          animIdle: Future<SpriteAnimation>(), //required
-          animRun: Future<SpriteAnimation>(), //required
-          size: Vector2(32.0,32.0), //required
+          position: position, // required
+          animIdle: Future<SpriteAnimation>(), // required
+          animRun: Future<SpriteAnimation>(), // required
+          size: Vector2(32.0,32.0), // required
           life: 100,
           speed: 100,
           currentRadAngle: -1.55, 
@@ -191,13 +185,11 @@ class Tank extends RotationAlly {
       super.render(canvas);
     }
 }
-
 ```
 
 Now that we have our class that represents our ally, we can configure their behavior.
 
 There are several useful extensions that we can use in `update` that will help us to configure these movements:
-
 
 ```dart 
   void seeAndMoveToAttackRange({
@@ -246,11 +238,10 @@ There are several useful extensions that we can use in `update` that will help u
     Vector2? centerOffset,
     double marginFromOrigin = 16, 
   })
-  
 ```
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 ## Custom
 
-If none of these types of enemies do not meet your needs. You can create your own by extending the `Ally` class.
+If none of these types of allyes meet your needs, you can create your own by extending the `Ally` class.

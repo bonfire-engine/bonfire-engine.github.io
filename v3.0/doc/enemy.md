@@ -4,7 +4,7 @@
 [Attackable](doc/mixins?id=attackable) mixin.</small>
 
 
-Create an enemy in the game. Instances of this class have predefined behaviors ready to be used and configured as wanted. All the actions and movements are customizable.
+Create an enemy in the game. Instances of this class have predefined behaviors that are ready to be used and configured as wanted. All the actions and movements are customizable.
 
 There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEnemy`:
 
@@ -20,21 +20,20 @@ Used for 45º and 67.5º perspectives. We can configure motion animations for al
 To use it, simply create a class that will represent your enemy and extend SimpleEnemy:
 
 ```dart
-
 class Goblin extends SimpleEnemy {
 
     Goblin(Vector2 position)
       : super(
-          position: position, //required
-          size: Vector2(32.0,32.0), //required
+          position: position, // required
+          size: Vector2(32.0,32.0), // required
           life: 100,
           speed: 100,
           initDirection: Direction.right,
           animation: SimpleDirectionAnimation(
             idleLeft: Future<SpriteAnimation>(), 
-            idleRight: Future<SpriteAnimation>(), //required
+            idleRight: Future<SpriteAnimation>(), // required
             runLeft: Future<SpriteAnimation>(), 
-            runRight: Future<SpriteAnimation>(), //required
+            runRight: Future<SpriteAnimation>(), // required
             idleUp: Future<SpriteAnimation>(),
             idleDown: Future<SpriteAnimation>(),
             idleUpLeft: Future<SpriteAnimation>(),
@@ -62,7 +61,6 @@ class Goblin extends SimpleEnemy {
       super.render(canvas);
     }
 }
-
 ```
 
 Now that you have a class that represents your enemy, you can configure their behavior.
@@ -75,7 +73,7 @@ There are several useful extensions that you can use inside the `update` method 
     required Function(Player) observed,
     VoidCallback? notObserved,
     double radiusVision = 32,
-    double? visionAngle, // default 6,28319 (360 graus)
+    double? visionAngle, // default 6,28319 (360 degrees)
     double? angle,
   })
 ```
@@ -90,7 +88,7 @@ It will trigger a callback function once the player is within the enemy's radius
     VoidCallback? notCanMove,
     double radiusVision = 32,
     double margin = 10,
-    double? visionAngle, // default 6,28319 (360 graus)
+    double? visionAngle, // default 6,28319 (360 degrees)
     double? angle,
     bool runOnlyVisibleInScreen = true, 
   })
@@ -112,7 +110,7 @@ The enemy will move in the direction of the player once it gets within the radiu
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
+Executes a physical attack on the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
 
 
 ```dart 
@@ -133,7 +131,7 @@ Executes a physical attack to the player, making the configured damage with the 
     LightingConfig? lightingConfig,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
@@ -151,7 +149,7 @@ Executes a ranged attack. It will add a `FlyingAttackObject` proyectile to the g
 When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
-And all of the `GameComponent' methods . Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ### Change animations
@@ -159,15 +157,12 @@ And all of the `GameComponent' methods . Take a look [GameComponent functions](d
 To update the `SimpleEnemy` animation you should use this method:
 
 ```dart
-
   replaceAnimation(SimpleDirectionAnimation());
-
 ```
 
 To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
 
 ```dart
-
   animation.playOnce(
     FutureOr<SpriteAnimation> animation, 
     VoidCallback? onFinish,
@@ -181,7 +176,6 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
   );
   animation.pause();
   animation.resume();
-
 ```
 
 > IMPORTANT: Enemies only move if they are visible in the camera. if you want to disable this, add false in `collisionOnlyVisibleScreen` in your collision config. See [Colission System](doc/collision_system?id=collision-system).
@@ -200,15 +194,14 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 
 ```dart
-
 class Tank extends RotationEnemy {
 
     Tank(Vector2 position)
       : super(
-          position: position, //required
-          animIdle: Future<SpriteAnimation>(), //required
-          animRun: Future<SpriteAnimation>(), //required
-          size: Vector2(32.0,32.0), //required
+          position: position, // required
+          animIdle: Future<SpriteAnimation>(), // required
+          animRun: Future<SpriteAnimation>(), // required
+          size: Vector2(32.0,32.0), // required
           life: 100,
           speed: 100,
           currentRadAngle: -1.55, 
@@ -226,7 +219,6 @@ class Tank extends RotationEnemy {
       super.render(canvas);
     }
 }
-
 ```
 
 Now that we have our class that represents our enemy, we can configure their behavior.
@@ -238,7 +230,7 @@ There are several useful extensions that we can use in `update` that will help u
     required Function(Player) observed,
     VoidCallback? notObserved,
     double radiusVision = 32,
-    double? visionAngle, // default 6,28319 (360 graus)
+    double? visionAngle, // default 6,28319 (360 degrees)
     double? angle,
   })
 ```
@@ -297,45 +289,40 @@ There are several useful extensions that we can use in `update` that will help u
     Vector2? centerOffset,
     double marginFromOrigin = 16, 
   })
-  
 ```
 
-And all of the `GameComponent' methods. Take a look [GameComponent functions](doc/util?id=functions)
+And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
 
 
 ## PlatformEnemy
 
 > <small>This is a [SimpleEnemy](#SimpleEnemy) and uses the
-[BlockMovementCollision](doc/collision_system?id=collision-system),
-Jump
-and JumpAnimation `mixins`</small>
+[BlockMovementCollision](doc/collision_system?id=collision-system), Jump and JumpAnimation `mixins`</small>
 
-Used for platform games. And we can configure Motion animations for run, idle and jump.
+Used for platform games. We can configure Motion animations for run, idle and jump.
 
 ```dart
-
 class BowserEnemy extends PlatformEnemy {
 
     BowserEnemy(vector2 position)
       : super(
-        position: position, //required
-        animation: PlatformAnimations(), //required
-        size: Vector.all(32), //required
+        position: position, // required
+        animation: PlatformAnimations(), // required
+        size: Vector.all(32), // required
         life: 100,
         speed: 100,
         countJumps: 1,
       );
 }
-
 ```
 
 ### Jumping
 
-To do the player jump you can use the [Jumper mixin](#TODO) method :
+<!-- TODO: Add documentation for the Jumper mixin -->
+To do the player jump you can use the [Jumper mixin]() method:
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
-
 ```
 
 
@@ -344,15 +331,12 @@ To do the player jump you can use the [Jumper mixin](#TODO) method :
 To update the `PlatformEnemy` animation you should use this method:
 
 ```dart
-
   replacePlatformAnimation(PlatformAnimations());
-
 ```
 
 To play the moment animation you should use the `SimpleDirectionAnimation` methods. For example:
 
 ```dart
-
   animation.playOnce(
     FutureOr<SpriteAnimation> animation,
     VoidCallback? onFinish,
@@ -366,7 +350,6 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
   );
   animation.pause();
   animation.resume();
-
 ```
 
 > IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
