@@ -1,30 +1,30 @@
-# Map
+# Mapa
 
-> Represents a map (or world) where the game occurs.
+> Representa um mapa (ou mundo) onde o jogo ocorre.
 
-It is a matrix of small tiles that together assembles the map as seen below:
+É uma matriz de pequenos blocos que juntos montam o mapa como visto abaixo:
 
 ![](../../_media/map.png)
 
-✅ [Tiled support](https://www.mapeditor.org/)
-✅ [SpriteFusion support](https://www.spritefusion.com/)
+✅ [Suporta o Tiled](https://www.mapeditor.org/)
+✅ [Suporta o SpriteFusion](https://www.spritefusion.com/)
 
 
-## Using Tiled
+## Usando o Tiled
 
-We currently recommend creating the map using [Tiled](https://www.mapeditor.org/). For that we use `WorldMapByTiled` in `BonfireWidget`, passing the json map in the `map` parameter:
+Atualmente, recomendamos criar o mapa usando o [Tiled](https://www.mapeditor.org/). Para isso usamos `WorldMapByTiled` em `BonfireWidget`, passando o mapa json no parâmetro `map`:
 
 ```dart
 WorldMapByTiled(WorldMapReader.fromAsset('tile/map.json'))
 ```
 
-The first parameter (`tile/map.json`) is the path of the `.json` file exported by Tiled.
+O primeiro parâmetro (`tile/map.json`) é o caminho do arquivo `.json` exportado pelo Tiled.
 
-> IMPORTANT: Bonfire only supports .json files.
+> IMPORTANTE: O Bonfire suporta apenas arquivos .json.
 
-> IMPORTANT: Make sure your map file is correctly named, and placed in `assets/images` directory to avoid any loading issues.
+> IMPORTANTE: Certifique-se de que o arquivo do mapa esteja nomeado corretamente e colocado no diretório `assets/images` para evitar problemas de carregamento.
 
-You can also load a map from a URL. Just pass the URL in the path. Example:
+Você também pode carregar um mapa de uma URL. Basta passar a URL no caminho. Exemplo:
 
 ```dart
 WorldMapByTiled(
@@ -34,9 +34,9 @@ WorldMapByTiled(
 )
 ```
 
-## Adding objects
+## Adicionando Objetos
 
-You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemies](doc/enemy?id=enemy) to the map using the `registerObject` method:
+Você pode adicionar objetos como [Decorações](doc/decoration?id=decoration) e [Inimigos](doc/enemy?id=enemy) ao mapa usando o método `registerObject`:
 
 ```dart
     return BonfireWidget(
@@ -46,32 +46,31 @@ You can add objects like [Decorations](doc/decoration?id=decoration) and [Enemie
                 'orc': (TiledObjectProperties properties) => Orc(properties.position),
             },
         ),
-        ...
+        // ...
     );
 ```
 
-Just create a layer of objects on your map and position it as in the example in the image above.
+Basta criar uma camada de objetos no seu mapa e posicioná-la como no exemplo da imagem acima.
 
-For more details about using Tiled [here](doc/tiled_support?id=tiled-support).
+Para mais detalhes sobre o uso do Tiled [clique aqui](doc/tiled_support?id=tiled-support).
 
 
-## Using SpriteFusion
+## Usando o SpriteFusion
 
-Just create a map in  [spritefusion](https://www.spritefusion.com/), export 'JSON' and place it in your assets/image folder. 
+Basta criar um mapa no [spritefusion](https://www.spritefusion.com/), exporte como JSON e coloque-o na sua pasta `assets/image`.
 
-To load use `WorldMapBySpritefusion` in `BonfireWidget` in the `map` parameter:
+Para carregar use `WorldMapBySpritefusion` no `BonfireWidget` no parâmetro `map`:
 
 ```dart
 WorldMapBySpritefusion(WorldMapReader.fromAsset('spritefusion/map.json'))
 ```
-[Example](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/pages/map/spritefusion/spritefusion_page.dart)
+[Exemplo](https://github.com/RafaelBarbosatec/bonfire/blob/master/example/lib/pages/map/spritefusion/spritefusion_page.dart)
 
-## Creating map by matrix
+## Criando mapas por matriz
 
-You can create maps using a matrix of the double like this:
+Você pode criar mapas usando a matriz de double assim:
 
 ```dart
-
 [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
@@ -85,18 +84,17 @@ You can create maps using a matrix of the double like this:
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
-
 ```
 
-This feature opens the possibility of creating random maps. Just use any algorithm to create you matrix like [fast_noise](https://pub.dev/packages/fast_noise). 
+Este recurso abre a possibilidade de criar mapas radom. Basta usar qualquer algoritmo para criar sua matriz como o [fast_noise](https://pub.dev/packages/fast_noise). 
 
-There is an example using this package in [Bonfire repositoy](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
+Há um exemplo usando este pacote no [repositório do Bonfire](https://github.com/RafaelBarbosatec/bonfire/tree/master/example).
 
-To make it easier we implemented a class that helps to add sprites in these maps. The `TerrainBuilder`.
+Para ficar mais fácil, implementamos uma classe que ajuda a adicionar sprites nesses mapas. O `TerrainBuilder`.
 
-### Basic use
+### Uso Básico
 
-It's ver'y easy to use this resource:
+É muito simples utilizar este recurso:
 
 ```dart
 return BonfireWidget(
@@ -119,11 +117,11 @@ return BonfireWidget(
             ],
           )
         ],
-        builder: (ItemMatrixProperties prop){
+        builder: (ItemMatrixProperties prop) {
 
-            // prop.value; // This is matrix value;
-            // prop.position; // This is the position x and y;
-            // You can access the neighbor's values:
+            // prop.value; // Este é o valor da matriz
+            // prop.position; Esta é a posição x e y;
+            // Você pode acessar os valores dos vizinhos
             // prop.valueTop;
             // prop.valueTopLeft; 
             // prop.valueTopRight;
@@ -150,32 +148,32 @@ return BonfireWidget(
                 x: prop.position.x,
                 y: prop.position.y,
                 sprite: sprite,
-                // color: Colors.blue, // You could use only color also
+                // color: Colors.blue, // Você também pode usar apenas cores
             );
         },
       ),
     );
 ```
 
-In the `builder` you can create each `tile` of the map, returning the `TileModel` with your properties.
+No `builder` você pode criar cada `tile` do mapa, retornando o `TileModel` com suas propriedades.
 
-### Using TerrainBuilder
+### Usando o TerrainBuilder
 
-To use this feature you will need the SpriteSheet of the tiles corners with this pattern:
+Para usar esse recurso, você precisará do SpriteSheet dos cantos dos ladrilhos com esse padrão:
 
-This SpriteSheet is tile sand to grass:
+Este SpriteSheet é um tile de areia para grama:
 
 ![](../../_media/earth_to_grass.png)
 
-This SpriteSheet is tile sand to water:
+Este SpriteSheet é um tile de areia para água:
 
 ![](../../_media/earth_to_water.png)
 
 ---
 
-Now just register the tiles sprites and tiles sprites corners like this:
+Agora é só registrar os sprites dos tiles e os cantos dos sprites dos tiles assim:
 
-First create the TerrainBuilder:
+Primeiro crie o TerrainBuilder:
 
 ```dart
 
@@ -234,13 +232,13 @@ final terrainBuilder = TerrainBuilder(
 
 ```
 
-After that you pass the 'build' method of the `terrainBuilder` to `builder`:
+Depois disso você passa o método 'build' do `terrainBuilder` para `builder`:
 
 ```dart
 
 return BonfireWidget(
       map: MatrixMapGenerator.generate(
-        axisInverted: true, // This is `true` to create the map same as seen in the matrix. Because the normal axis is `matrix[x][y]`, When `axisInverted` is `true` it's turn `matrix[y][x]`
+        axisInverted: true, // Isto é `true` para criar o mapa igual ao visto na matriz. Como o eixo normal é `matrix[x][y]`, quando `axisInverted` é `true` é a vez de `matrix[y][x]`
         layers: [
           MatrixLayer(
             matrix: [
@@ -263,30 +261,29 @@ return BonfireWidget(
     );
 ```
 
-And then, this is the result:
+E então, este é o resultado:
 
 ![](../../_media/random_map_example.png)
 
 
 ### MapTerrain
 
-`MapTerrain` is each type of terrain that your map could have.
+`MapTerrain` é cada tipo de terreno que seu mapa pode ter.
 
-There are two types:
-- MapTerrain: The basic terrain that has no corners.
-- MapTerrainCorners: The terrain that handles the corners.
+Existem dois tipos:
+- MapTerrain: O terreno básico que não tem cantos.
+- MapTerrainCorners: O terreno que lida com os cantos.
 
 ##### MapTerrain
 
 ```dart
-
 MapTerrain(
-    value: TILE_WATER, /// number in matrix that must be this terrain
+    value: TILE_WATER, /// número na matriz que deve ser este terreno
     type: 'water',
     collisions: [],
     properties: Map<String, dynamic>(),
-    spritesProportion: [0.6,0.4], // Sets the odds of each sprite appearing. If not set, the odds are equal.
-    sprites: [  /// Here we use an array because we can pass many sprites on this type.
+    spritesProportion: [0.6,0.4], // Define as probabilidades de cada sprite aparecer. Se não definido, as probabilidades são iguais.
+    sprites: [  /// Aqui usamos um array porque podemos passar muitos sprites neste tipo.
         TileModelSprite(
             path: 'tile_water.png',
             size: Vector2.all(16),
@@ -296,9 +293,7 @@ MapTerrain(
             size: Vector2.all(16),
         ),
     ],
-
 ),
-
 ```
 
 ##### MapTerrainCorners
@@ -315,13 +310,12 @@ MapTerrainCorners(
         tileSize: Vector2.all(16), // tileSize in the image
     ),
 )
-
 ```
 
-## Custom
+## Customização
 
-You can create your own map by creating a class extending the `WorldMap` and filling `List<TileModel> tiles`. 
+Você pode criar seu próprio mapa criando uma classe estendendo o `WorldMap` e preenchendo os tiles `List<TileModel>`.
 
-This way you will reuse the QuadTree algorithm used to draw the map.
+Dessa forma, você reutilizará o algoritmo QuadTree usado para desenhar o mapa.
 
-Or you can use the base to create your own map extending of `GameMap`.
+Ou você pode usar a base criando seu próprio mapa estendendo o `GameMap`.

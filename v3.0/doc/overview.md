@@ -16,22 +16,22 @@ Bonfire is basically a Widget where you are passing the parameters and configuri
       background: GameComponent(), // You can create your own background (to use parallax for example) extending from `GameComponent`
       backgroundColor: Colors.black,
       debugMode: false, // If true, draw the components grid
-      showCollisionArea: false, // If true, draw collision area of the elements
+      showCollisionArea: false, // If true, draw the collision area of the elements
       collisionAreaColor: Colors.blue, // If you want to customize the collision area color.
       lightingColorGame: Colors.black.withOpacity(0.4), // If you want to add general lighting for the game
-      colorFilter: GameColorFilter(), // You can add a color filter in your game to give it a special touch.
+      colorFilter: GameColorFilter(), // You can add a color filter to your game to give it a special touch.
       components: [], // Here you can add any GameComponent that you need.
-      overlayBuilderMap: { // Here you can add Flutter Widgets to build you game interface.
+      overlayBuilderMap: { // Here you can add Flutter Widgets to build your game interface.
         'barLife':(game)=> MyBarLifeWidget(),
       },
       initialActiveOverlays:['barLife'], // Here you define which interfaces, passed in `overlayBuilderMap`, will be shown when starting the game.
       cameraConfig: CameraConfig(), // Here you can configure the game camera. You can set zoom, speed, etc.
-      globalForces: [] // Here you can add forces like accelerations(AccelerationForce2D), resistences(ResistenceForce2D) or linear(LinearForce2D) that will be effect all GameComponents that are using the `HandleForces` mixin
-      onReady: (game){} // Call that notify when game is ready.
+      globalForces: [] // Here you can add forces like accelerations (AccelerationForce2D), resistances (ResistenceForce2D) or linear(LinearForce2D) that will affect all GameComponents that are using the `HandleForces` mixin
+      onReady: (game) {} // Call that notify when the game is ready.
       focusNode: FocusNode(),
       autofocus:true,
       mouseCursor: MouseCursor.uncontrolled, // Set the mouse cursor.
-      progress: ProgressWidget() // Progress that show while loading map.
+      progress: ProgressWidget() // The progress that shows while loading the map.
     );
   }
 ```
@@ -64,7 +64,7 @@ Each layer will be rendered according to the priority defined in the component. 
 
 > render_priority = 10
 
-Your can add a component that represents a background. It's useful to create parallax and interactive backgrounds.
+You can add a component that represents a background. It's useful to create parallax and interactive backgrounds.
 
 ## Map
 
@@ -78,7 +78,7 @@ For more details click [here](doc/map?id=map).
 
 > render_priority = Dynamic ( 30 + Axis Y)
 
-Anything that you may add to the scenery. For example a Barrel in the way or even an NPC, which can interact with your player.
+Anything that you may add to the scene, for example, a Barrel in the way or even an NPC, which can interact with your player.
 
 For more details click [here](doc/decoration?id=decoration).
 
@@ -86,7 +86,7 @@ For more details click [here](doc/decoration?id=decoration).
 
 > render_priority = Dynamic ( 30 + Axis Y)
 
-Represents enemy characters in the game. Instances of this class have actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in the way that fits your needs.
+Represents enemy characters in the game. Instances of this class have actions and movements ready to be used and configured whenever you want. At the same time, you can customize all actions and movements in a way that fits your needs.
 
 For more details click [here](doc/enemy?id=enemy).
 
@@ -118,9 +118,9 @@ For more details click [here](doc/lighting?id=lighting).
 
 > render_priority = (highestPriority + 30)
 
-The way you can draw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+The way you can draw things like life bars, stamina, and settings. In other words, anything that you may add to the interface of the game.
 
-Is recomended use Flutter widgets to build it, you configure it using `overlayBuilderMap` and `initialActiveOverlays` in your `BonfireWidget`
+Is recommended to use Flutter widgets to build it, you configure it using `overlayBuilderMap` and `initialActiveOverlays` in your `BonfireWidget`
 
 ## Joystick
 

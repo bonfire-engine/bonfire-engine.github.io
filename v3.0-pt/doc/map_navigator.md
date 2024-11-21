@@ -1,18 +1,17 @@
-# Map Navigator
+# Navegar entre Mapas
 
-This widget can help you navigate between maps.
+Este widget vai ajudar você a navegar entre mapas.
 
-Just wrap your `BonfireWidget` with `MapNavigator`:
+Basta envolver seu `BonfireWidget` com o `MapNavigator`:
 
 ```dart
-
 class MyGameWidget extends StatelessWidget {
   const MultiScenario({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MapNavigator(
-      // initialMap: '/map1', By default, if you do not pass these parameters, it will use the first map.
+      // initialMap: '/map1', Por padrão, se você não passar esse parâmetro, ele usará o primeiro mapa.
       maps: {
         '/map1':(context,args) => MapItem(
             id: 'map1',
@@ -37,25 +36,24 @@ class MyGameWidget extends StatelessWidget {
         return BonfireWidget(
           map: map.map,
           player: MyPlayer(
-            position: map.properties['player_position'], // Here is an example of using properties.
+            position: map.properties['player_position'], // Aqui está um exemplo de uso de propriedades.
           ),
         );
       },
     );
   }
 }
-
 ```
 
-Now when you need to navigate to some map just get the `MapNavigator` by context and call the `toNamed` method.
+Agora, quando você precisar navegar para algum mapa, basta obter o `MapNavigator` pelo contexto e chamar o método `toNamed`.
 
 ```dart
 
 MapNavigator.of(context).toNamed(
-    '/map2',
-  //  arguments:true // Here you can pass some arguments if needed.
+  '/map2',
+  // arguments: true // Aqui você pode passar alguns argumentos, se necessário.
 )
 
 ```
 
-Full example [here](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/mini_games/multi_scenario).
+Exemplo completo [aqui](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/mini_games/multi_scenario).
