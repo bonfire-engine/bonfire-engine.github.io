@@ -52176,7 +52176,7 @@ this.a6L()},
 R(a){var s,r,q,p,o=null,n=this.d
 n===$&&A.b()
 s=A.a([A.eb(B.aY,A.ec(B.aa,B.Y,!0,80,o,o),o)],t.T)
-r=A.ds(A.aVf(A.f0("http://rafaelbarbosatec.github.io/tiled/my_map.json",0,o),t.g),o,A.am(["spikes",new A.awE()],t.N,t.yV))
+r=A.ds(A.aVf(A.f0("https://rafaelbarbosatec.github.io/tiled/my_map.json",0,o),t.g),o,A.am(["spikes",new A.awE()],t.N,t.yV))
 q=A.dv(a,16,20)
 p=new A.c(new Float64Array(2))
 p.p(80,80)
