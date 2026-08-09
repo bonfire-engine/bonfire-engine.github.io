@@ -2,17 +2,17 @@
 
 > <small>This is a [GameComponent](https://github.com/RafaelBarbosatec/bonfire/blob/master/lib/base/game_component.dart) and uses `mixins` like 
 [Movement](mixins?id=movement), 
-[Attackable](mixins?id=attackable), 
+[WithLife](mixins?id=withlife), 
 [Vision](mixins?id=vision), 
 [MovementByJoystick](mixins?id=movementbyjoystick) and 
-[PlayerControllerListener](joystick?id=joysticklistener)</small>
+[JoystickListener](joystick?id=joysticklistener)</small>
 
 Represents the character controlled by the user in the game. Instances of this class have actions and movements ready to be used and configured. 
 
 We can create three types of enemies `SimplePlayer`, `RotationPlayer` and `PlatformPlayer`:
 
 ## SimplePlayer 
-> <small>This is a [Player](#Player) and uses [DirectionAnimation](doc/mixins?id=directionanimation)</small>
+> <small>This is a [Player](#Player) and uses [WithDirectionAnimation](doc/mixins?id=withdirectionanimation)</small>
 
 
 Used for 45º and 67.5º perspectives. We can configure Motion animations for all directions (top, bottom, left, right, top_right, top_left, bottom_left, bottom_right).
@@ -180,8 +180,8 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 ## RotationPlayer
 
 > <small>This is a [Player](#Player) and uses
-[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
-[UseAssetsLoader](doc/mixins?id=useassetsloader)</small>
+[UseSpriteAnimation](doc/mixins?id=withspriteanimation),
+[WithAssetsLoader](doc/mixins?id=withassetsloader)</small>
 
 Used for 90º perspectives. And we can configure Motion animations for run and idle.
 
@@ -259,7 +259,7 @@ To update the `RotationPlayer` just update the variables `animIdle` and `animRun
 ## PlatformPlayer
 
 > <small>This is a [SimplePlayer](#SimplePlayer) and uses
-[BlockMovementCollision](doc/collision_system?id=collision-system),
+[WithCollision](doc/collision_system?id=collision-system),
 Jump,
 JumpAnimation</small>
 
@@ -284,7 +284,7 @@ class MarioPlayer extends PlatformPlayer {
 
 ### Jumping
 
-To make the player jump you can use the [Jumper mixin](#TODO) method :
+To make the player jump you can use the [WithJumper](doc/mixins?id=withjumper) mixin:
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -322,7 +322,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
 
 ```
 
-> OBS: Remember to add a gravity force in this component to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
+> OBS: Remember to add a gravity force in this component to correct the behavior. Take a look [WithForces](doc/forces?id=forces)
 
 ## Custom
 

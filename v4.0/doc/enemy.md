@@ -1,7 +1,7 @@
 # Enemy
 
 > <small>This is a [Npc](https://github.com/RafaelBarbosatec/bonfire/blob/v3.0.0/lib/npc/npc.dart) and uses the
-[Attackable](doc/mixins?id=attackable) mixin.</small>
+[WithLife](doc/mixins?id=withlife) mixin.</small>
 
 
 Create an enemy in the game. Instances of this class have predefined behaviors that are ready to be used and configured as wanted. All the actions and movements are customizable.
@@ -11,7 +11,7 @@ There are three types of enemies: `SimpleEnemy`, `RotationEnemy` and `PlatformEn
 ## SimpleEnemy
 
 > <small>This is a [Enemy](#enemy) and uses the
-[DirectionAnimation](doc/mixins?id=directionanimation) mixin.</small>
+[WithDirectionAnimation](doc/mixins?id=withdirectionanimation) mixin.</small>
 
 <img width=100 src="../../_media/simple_enemy.png"></img>
 
@@ -186,8 +186,8 @@ Complete SimpleEnemy example [here](https://github.com/RafaelBarbosatec/bonfire/
 ## RotationEnemy
 
 > <small>This is a [Enemy](https://github.com/RafaelBarbosatec/bonfire/blob/v2.4.0/lib/npc/enemy/enemy.dart) and uses the
-[UseSpriteAnimation](doc/mixins?id=usespriteanimation),
-[UseAssetsLoader](doc/mixins?id=useassetsloader) `mixins`.</small>
+[UseSpriteAnimation](doc/mixins?id=withspriteanimation),
+[WithAssetsLoader](doc/mixins?id=withassetsloader) `mixins`.</small>
 
 <img width=100 src="../../_media/rotation_enemy.png"></img>
 
@@ -297,7 +297,7 @@ And all of the `GameComponent` methods. Take a look [GameComponent functions](do
 ## PlatformEnemy
 
 > <small>This is a [SimpleEnemy](#SimpleEnemy) and uses the
-[BlockMovementCollision](doc/collision_system?id=collision-system), Jump and JumpAnimation `mixins`</small>
+[WithCollision](doc/collision_system?id=collision-system), WithJumper and JumperAnimation `mixins`</small>
 
 Used for platform games. We can configure Motion animations for run, idle and jump.
 
@@ -319,7 +319,7 @@ class BowserEnemy extends PlatformEnemy {
 ### Jumping
 
 <!-- TODO: Add documentation for the Jumper mixin -->
-To do the player jump you can use the [Jumper mixin]() method:
+To do the player jump you can use the [WithJumper](doc/mixins?id=withjumper) method:
 
 ```dart
   jump({double? jumpSpeed, bool force = false});
@@ -352,7 +352,7 @@ To play the moment animation you should use the `SimpleDirectionAnimation` metho
   animation.resume();
 ```
 
-> IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [HandleForces](doc/forces?id=forces)
+> IMPORTANT: Remember to add a gravity force in this component, to correct the behavior. Take a look [WithForces](doc/forces?id=forces)
 
 
 ## Custom

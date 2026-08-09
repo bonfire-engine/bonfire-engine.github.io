@@ -26,7 +26,7 @@ Bonfire is basically a Widget where you are passing the parameters and configuri
       },
       initialActiveOverlays:['barLife'], // Here you define which interfaces, passed in `overlayBuilderMap`, will be shown when starting the game.
       cameraConfig: CameraConfig(), // Here you can configure the game camera. You can set zoom, speed, etc.
-      globalForces: [] // Here you can add forces like accelerations (AccelerationForce2D), resistances (ResistenceForce2D) or linear(LinearForce2D) that will affect all GameComponents that are using the `HandleForces` mixin
+      globalForces: GlobalForcesSettings() // Here you can configure global gravity, wind, friction and drag that will affect all components using the `WithForces` mixin
       onReady: (game) {} // Call that notify when the game is ready.
       focusNode: FocusNode(),
       autofocus:true,

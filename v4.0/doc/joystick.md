@@ -46,12 +46,12 @@ Joystick is configurable by the following parameters:
 
 Check an [example](https://github.com/RafaelBarbosatec/bonfire/tree/master/example/lib/pages/player_controllers).
 
-## PlayerControllerListener
+## JoystickListener
 
 Mixin used to listen to the joystick interactions.
 
 A component that uses this mixin can listen to the Joystick events adding as an observer:
 
 ```dart
-gameRef.addJoystickObserver(myComponentPlayerControllerListener);
+gameRef.addJoystickObserver(myComponentJoystickListener);
 ```
