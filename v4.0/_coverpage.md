@@ -1,6 +1,6 @@
 ![logo](../_media/bonfire.gif)
 
-# Bonfire <small>v3.x</small>
+# Bonfire <small>v4.x</small>
 
 > Create RPG-style or similar games easily with Flutter.
 
