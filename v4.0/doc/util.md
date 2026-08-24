@@ -250,4 +250,81 @@ To hide:
    FollowerWidget.remove('PLAYER_INVENTORY');
 ```
 
+## IntervalTick
+
+The `InternalChecker` mixin and the `checkInterval` method were removed in Bonfire 4.0. To control the frequency of an action (attacks, spawning, state checks, etc.) create your own `IntervalTick` instance and call `update(dt)` inside your component's `update`.
+
+```dart
+class MyEnemy extends SimpleEnemy {
+  final IntervalTick _attackTick = IntervalTick(1000); // attacks every 1 second
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    if (_attackTick.update(dt)) {
+      simpleAttackMelee(
+        damage: 10,
+        size: Vector2(20, 20),
+      );
+    }
+  }
+}
+```
+
+You can also execute a callback automatically every time the interval ticks, without checking the return of `update`:
+
+```dart
+final IntervalTick _tick = IntervalTick(
+  1000,
+  onTick: () {
+    // runs every 1 second
+  },
+);
+
+@override
+void update(double dt) {
+  super.update(dt);
+  _tick.update(dt);
+}
+```
+
+### Migrating from `checkInterval`
+
+| Bonfire 3.x | Bonfire 4.0 |
+|-------------|-------------|
+| `checkInterval('key', 1000, dt)` | `final _tick = IntervalTick(1000);` … `_tick.update(dt)` |
+| `checkInterval('key', 1000, dt, firstCheckIsTrue: true)` | `IntervalTick(1000, tickFirstUpdate: true)` |
+| `resetInterval('key')` | `_tick.reset()` |
+| `pauseInterval('key')` | `_tick.pause()` |
+| `playInterval('key')` | `_tick.play()` |
+| `tickInterval('key')` | `_tick.tick()` |
+| `invervalIsRunning('key')` | `_tick.running` |
+
+Main API:
+
+```dart
+IntervalTick(int interval, {VoidCallback? onTick, bool tickFirstUpdate = false})
+
+// Returns true every `interval` milliseconds. Call it inside `update(dt)`.
+bool update(double dt)
+
+// Change the interval at runtime.
+void updateInterval(int interval)
+
+// Restart the countdown.
+void reset()
+
+// Pause / resume the countdown.
+void pause()
+void play()
+
+// Finish the current countdown immediately (fires the tick on the next update).
+void tick()
+
+// Whether the countdown is running.
+bool get running
+```
+
+> **Note:** `tickFirstUpdate` makes `update` return `true` on the first call, which replaces the old `firstCheckIsTrue` behavior of `checkInterval`.
+
 

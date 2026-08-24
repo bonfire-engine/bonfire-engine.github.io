@@ -72,16 +72,14 @@ There are several useful extensions that you can use inside the `update` method 
     required double damage,
     required Vector2 size,
     int? id,
-    int interval = 1000,
     bool withPush = false,
     double? sizePush,
     Direction? direction,
     Future<SpriteAnimation>? animationRight,
-    VoidCallback? execute,
     Vector2? centerOffset,
   })
 ```
-Executes a physical attack to the enemy, making the configured damage with the configured frequency. You can add animations to represent this attack.
+Executes a physical attack to the enemy, making the configured damage. The execution frequency is no longer controlled internally: use an `IntervalTick` to limit how often the attack runs (see [IntervalTick](doc/util?id=intervaltick)). You can add animations to represent this attack.
 
 
 ```dart 
@@ -94,11 +92,9 @@ Executes a physical attack to the enemy, making the configured damage with the c
     double speed = 150,
     double damage = 1,
     Direction? direction,
-    int interval = 1000,
     bool withCollision = true,
     ShapeHitbox? collision,
     VoidCallback? onDestroy,
-    VoidCallback? execute,
     LightingConfig? lightingConfig,
   })
 ```
@@ -212,8 +208,6 @@ There are several useful extensions that we can use in `update` that will help u
     int? id,
     bool withPush = true,
     double? radAngleDirection,
-    VoidCallback? execute,
-    int interval = 1000,
     double marginFromCenter = 16,
     Vector2? centerOffset,
   })
@@ -229,14 +223,12 @@ There are several useful extensions that we can use in `update` that will help u
     int? id,
     double speed = 150,
     double damage = 1,
-    int interval = 1000,
     bool withDecorationCollision = true,
     VoidCallback? onDestroy,
     ShapeHitbox? collision,
-    VoidCallback? onExecute,
     LightingConfig? lightingConfig,
     Vector2? centerOffset,
-    double marginFromOrigin = 16, 
+    double marginFromOrigin = 16,
   })
 ```
 

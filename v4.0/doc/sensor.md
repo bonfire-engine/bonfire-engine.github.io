@@ -47,7 +47,7 @@ sensor.onContactEndListener(SensorContactCallback<T> callback)
 sensor.enabled = true;
 
 // Interval in milliseconds between contact checks
-sensor.interval = 100;
+sensor.setup(interval: 100);
 ```
 
 ## Type safety
