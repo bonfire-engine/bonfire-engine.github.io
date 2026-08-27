@@ -40,6 +40,9 @@ player.pathFinding.setup(linePathEnabled: true);
 | `UseAssetsLoader` | `WithAssetsLoader` | `assetsLoader` | `add(AssetToLoad(...))` |
 | `UseLifeBar` | `WithLifeBar` | `lifeBar` | `setup(...)` |
 | `UseShader` / `WithShader` | `WithShader` | `shader` | `shader`, `canvasScale`, `componentStatic` |
+| `Attack extensions` | `WithAttack` | `attack` | `melee(...)`, `range(...)`, `meleeByAngle(...)`, `rangeByAngle(...)` |
+| `GameComponent extensions` | `WithUtil` | `util` | `showDamage(...)`, `generateValues(...)`, `getDirectionToTarget(...)` |
+| `Vision extensions` | `WithVision` | `vision` | `seePlayer(...)`, `seeAndMoveToPlayer(...)`, `seeAndMoveToEnemy(...)` |
 
 > **Note:** `Movement` is the only mixin that remains directly accessible. It keeps its original API because it is the foundation used by almost every other mixin and by user code.
 
@@ -60,7 +63,7 @@ class MyEnemy extends SimpleEnemy with WithLife {
   }
 
   void _onDamage(double amount) {
-    showDamage(amount);
+    util.showDamage(amount);
   }
 }
 ```

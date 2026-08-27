@@ -64,53 +64,63 @@ class Human extends SimpleAlly {
 
 Now that you have a class that represents your ally, you can configure their behavior.
 
-There are several useful extensions that you can use inside the `update` method that will help you with this task:
+There are several useful methods that you can use inside the `update` method that will help you with this task:
 
 
 ```dart 
-  void simpleAttackMelee({
+  void attack.melee({
     required double damage,
     required Vector2 size,
-    int? id,
-    bool withPush = false,
-    double? sizePush,
+    Future<SpriteAnimation>? animation,
+    dynamic id,
     Direction? direction,
-    Future<SpriteAnimation>? animationRight,
+    double? angle,
+    bool withPush = true,
+    double? sizePush,
     Vector2? centerOffset,
+    double? marginFromCenter,
+    bool diagonalEnabled = true,
+    AttackOriginEnum? attackFrom,
   })
 ```
 Executes a physical attack to the enemy, making the configured damage. The execution frequency is no longer controlled internally: use an `IntervalTick` to limit how often the attack runs (see [IntervalTick](doc/util?id=intervaltick)). You can add animations to represent this attack.
 
 
 ```dart 
-  void simpleAttackRange({
-    required Future<SpriteAnimation> animationRight,
-    required Future<SpriteAnimation> animationDestroy,
+  void attack.range({
+    required Future<SpriteAnimation> animation,
     required Vector2 size,
+    Future<SpriteAnimation>? animationDestroy,
     Vector2? destroySize,
-    int? id,
+    dynamic id,
     double speed = 150,
     double damage = 1,
     Direction? direction,
+    double? angle,
+    bool useAngle = false,
     bool withCollision = true,
+    bool withDecorationCollision = true,
     ShapeHitbox? collision,
     VoidCallback? onDestroy,
     LightingConfig? lightingConfig,
+    Vector2? centerOffset,
+    double marginFromOrigin = 16,
+    AttackOriginEnum? attackFrom,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackGameObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
-  void seeAndMoveToAttackRange({
-    Function(Enemy)? positioned,
-    Function(Enemy)? observed,
-    VoidCallback? notObserved,
+  void vision.seeAndMoveToAttackRange<T extends GameComponent>({
+    Function(T)? positioned,
+    Function(T)? observed,
+    BoolCallback? notObserved, // return true to stop move
     double radiusVision = 32,
     double? visionAngle,
     double? angle,
     double? minDistanceFromPlayer,
-    bool runOnlyVisibleInScreen = true,
+    bool useDiagonal = true,
   })
 ```
 When the enemy is within the radiusVision, the ally will position itself to perform a ranged attack. Once it reaches the attack position, the `positioned` callback will be fired.
@@ -185,50 +195,57 @@ class Tank extends RotationAlly {
 
 Now that we have our class that represents our ally, we can configure their behavior.
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+There are several useful methods that we can use in `update` that will help us to configure these movements:
 
 ```dart 
-  void seeAndMoveToAttackRange({
-    Function(Enemy)? positioned,
-    VoidCallback? notObserved,
-    Function(Enemy)? observed,
+  void vision.seeAndMoveToAttackRange<T extends GameComponent>({
+    Function(T)? positioned,
+    Function(T)? observed,
+    BoolCallback? notObserved, // return true to stop move
     double radiusVision = 32,
     double? visionAngle,
     double? angle,
     double? minDistanceFromPlayer,
-    bool runOnlyVisibleInScreen = true,
+    bool useDiagonal = true,
   })
 ```
 
 ```dart 
-  void simpleAttackMelee({
-    required Future<SpriteAnimation> animationRight,
+  void attack.melee({
     required double damage,
     required Vector2 size,
-    int? id,
+    Future<SpriteAnimation>? animation,
+    dynamic id,
+    Direction? direction,
+    double? angle,
     bool withPush = true,
-    double? radAngleDirection,
-    double marginFromCenter = 16,
+    double? sizePush,
     Vector2? centerOffset,
+    double? marginFromCenter,
+    bool diagonalEnabled = true,
+    AttackOriginEnum? attackFrom,
   })
 ```
 
 ```dart 
-  void simpleAttackRange({
+  void attack.range({
     required Future<SpriteAnimation> animation,
-    required Future<SpriteAnimation> animationDestroy,
     required Vector2 size,
+    Future<SpriteAnimation>? animationDestroy,
     Vector2? destroySize,
-    double? radAngleDirection,
-    int? id,
+    dynamic id,
     double speed = 150,
     double damage = 1,
+    Direction? direction,
+    double? angle,
+    bool useAngle = false,
     bool withDecorationCollision = true,
-    VoidCallback? onDestroy,
     ShapeHitbox? collision,
+    VoidCallback? onDestroy,
     LightingConfig? lightingConfig,
     Vector2? centerOffset,
     double marginFromOrigin = 16,
+    AttackOriginEnum? attackFrom,
   })
 ```
 

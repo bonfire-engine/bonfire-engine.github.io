@@ -2,7 +2,7 @@
 
 In Bonfire, you can add two types of parallax in your game: with velocity pre-defined or with velocity based on camera movement.
 
-To pre-defined velocity you can use 'loadParallaxComponent'. Example:
+To pre-defined velocity you can use 'util.loadParallaxComponent'. Example:
 
 ```dart
 
@@ -14,7 +14,7 @@ To pre-defined velocity you can use 'loadParallaxComponent'. Example:
   }
 
   void _addParallax() async {
-    final p = await loadParallaxComponent(
+    final p = await util.loadParallaxComponent(
       [
         ParallaxImageData('platform/back.png'),
         ParallaxImageData('platform/middle.png'),
@@ -27,7 +27,7 @@ To pre-defined velocity you can use 'loadParallaxComponent'. Example:
 }
 ```
 
-To camera velocity you can use 'loadCameraParallaxComponent'. Example:
+To camera velocity you can use 'util.loadCameraParallaxComponent'. Example:
 
 ```dart
 
@@ -39,7 +39,7 @@ To camera velocity you can use 'loadCameraParallaxComponent'. Example:
   }
 
   void _addParallax() async {
-    final p = await loadCameraParallaxComponent(
+    final p = await util.loadCameraParallaxComponent(
       [
         ParallaxImageData('platform/back.png'),
         ParallaxImageData('platform/middle.png'),

@@ -21,11 +21,13 @@ Vector2 vector2ByAngle(double angle, {double intencity = 1})
 
 ```
 
-GameComponets extensions:
+GameComponent API (`util`):
+
+Every `GameComponent` exposes a `util` object with general helper functions:
 
 ```dart
 /// Used to generate numbers to create your animations or anythings
-  ValueGeneratorComponent generateValues(
+  ValueGeneratorComponent util.generateValues(
     Duration duration, {
     double begin = 0.0,
     double end = 1.0,
@@ -38,7 +40,7 @@ GameComponets extensions:
   })
 
   /// Used to add particles in your component.
-  void addParticle(
+  void util.addParticle(
     Particle particle, {
     Vector2? position,
     Vector2? size,
@@ -49,7 +51,7 @@ GameComponets extensions:
   })
 
   /// Add in the game a text with animation representing damage received
-  void showDamage(
+  void util.showDamage(
     double damage, {
     TextStyle? config,
     double initVelocityVertical = -5,
@@ -61,10 +63,31 @@ GameComponets extensions:
   })
 
   /// Get the direction that another component is in relation to you
-  Direction getComponentDirectionFromMe(GameComponent comp)
+  Direction util.getDirectionToTarget(GameComponent target)
 
-  // Get angle between this comp to target
-  double getAngleFromTarget(GameComponent target) {}
+  /// Get angle between this comp to target
+  double util.getAngleToTarget(GameComponent target)
+
+  /// Get the direction the player is in relation to this component
+  Direction? util.getDirectionToPlayer()
+
+  /// Get angle between this comp and player (player as base)
+  double util.getAngleToPlayer()
+
+  /// Get angle between this comp and player (this comp position as base)
+  double util.getInverseAngleToPlayer()
+
+  /// Checks if this component overlaps the [other] rect.
+  bool util.overlaps(Rect other)
+
+  /// Checks if this component is close to [target].
+  bool util.isCloseTo(GameComponent target, {double distance = 5})
+
+  /// Loads a [ParallaxComponent] with pre-defined velocity.
+  Future<ParallaxComponent> util.loadParallaxComponent(Iterable<ParallaxData> dataList, {...})
+
+  /// Loads a parallax based on camera movement.
+  Future<ParallaxComponent> util.loadCameraParallaxComponent(Iterable<ParallaxData> dataList, {...})
 ```
 
 Others:
@@ -87,7 +110,7 @@ void renderSpriteByRadAngle(
 })
 
 // Useful for generating animations.
-ValueGeneratorComponent generateValues(
+ValueGeneratorComponent gameRef.generateValues(
     Duration duration, {
     double begin = 0.0,
     double end = 1.0,
@@ -218,12 +241,12 @@ FlyingAttackGameObject({
     this.destroySize,
     double speed = 150,
     this.damage = 1,
-    this.attackFrom = AttackFromEnum.ENEMY,
+    this.attackFrom = AttackOriginEnum.ENEMY,
     this.withDecorationCollision = true,
     this.onDestroy,
     this.enabledDiagonal = true,
     super.lightingConfig,
-    this.collision,
+    this.shapeCollision,
   })
 
 ```
@@ -262,7 +285,7 @@ class MyEnemy extends SimpleEnemy {
   void update(double dt) {
     super.update(dt);
     if (_attackTick.update(dt)) {
-      simpleAttackMelee(
+      attack.melee(
         damage: 10,
         size: Vector2(20, 20),
       );

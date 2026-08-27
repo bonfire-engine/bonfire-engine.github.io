@@ -14,6 +14,7 @@
 * [Collision system](doc/collision_system.md?id=collision-system)
 * [Lighting](doc/lighting.md?id=lighting)
 * [Sensor](doc/sensor.md?id=sensor)
+* [Behaviors](doc/behaviors.md?id=behaviors)
 * [Forces](doc/forces.md?id=forces)
 * [Useful mixins](doc/mixins.md?id=mixins)
 * [Loading assets](doc/loading_assets.md?id=loading-sprites-and-spriteanimations)

@@ -97,26 +97,28 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```dart
 
-// Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
-  void simpleAttackMelee(
+// Executes a physical attack to the player, making the configured damage. You can add animations to represent this attack.
+  void attack.melee(
     {
-      Future<SpriteAnimation>? animationRight,
       required double damage,
       required Vector2 size,
+      Future<SpriteAnimation>? animation,
       dynamic id,
       Direction? direction,
+      double? angle,
       bool withPush = true,
       double? sizePush,
       Vector2? centerOffset,
       double? marginFromCenter,
       bool diagonalEnabled = true,
+      AttackOriginEnum? attackFrom,
     }
   )
   
-  // Executes a ranged attack. Will add a `FlyingAttackObject` projectile to the game, which will be sent in the configured direction, and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
-  void simpleAttackRange(
+  // Executes a ranged attack. Will add a `FlyingAttackGameObject` projectile to the game, which will be sent in the configured direction, and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+  void attack.range(
     {
-      required Future<SpriteAnimation> animationRight,
+      required Future<SpriteAnimation> animation,
       required Vector2 size,
       Future<SpriteAnimation>? animationDestroy,
       Vector2? destroySize,
@@ -124,16 +126,21 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
       double speed = 150,
       double damage = 1,
       Direction? direction,
+      double? angle,
+      bool useAngle = false,
       bool withCollision = true,
-      bool diagonalEnabled = true,
+      bool withDecorationCollision = true,
       VoidCallback? onDestroy,
       ShapeHitbox? collision,
       LightingConfig? lightingConfig,
+      Vector2? centerOffset,
+      double marginFromOrigin = 16,
+      AttackOriginEnum? attackFrom,
     }
   )
     
     // Will observe enemies when within the radius (radiusVision)
-    void seeEnemy(
+    PolygonShape? vision.seeEnemy(
       {
         required Function(List<Enemy>) observed,
         VoidCallback? notObserved,
@@ -207,22 +214,26 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
 
 ```dart
 
-// Executes a physical attack to the player, making the configured damage with the configured frequency. You can add animations to represent this attack.
-  void simpleAttackMelee(
+// Executes a physical attack to the player, making the configured damage. You can add animations to represent this attack.
+  void attack.melee(
      {
-      required Future<SpriteAnimation> attackEffectTopAnim,
       required double damage,
       required Vector2 size,
-      int? id,
-      bool withPush = false,
-      double? radAngleDirection,
-      double marginFromCenter = 16,
+      Future<SpriteAnimation>? animation,
+      dynamic id,
+      Direction? direction,
+      double? angle,
+      bool withPush = true,
+      double? sizePush,
       Vector2? centerOffset,
+      double? marginFromCenter,
+      bool diagonalEnabled = true,
+      AttackOriginEnum? attackFrom,
      }
   )
   
-  // Executes a ranged attack. Will add a `FlyingAttackObject` proyectile to the game, which is sent in the configured direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
-  void simpleAttackRange(
+  // Executes a ranged attack. Will add a `FlyingAttackGameObject` proyectile to the game, which is sent in the configured direction and will make some damage to whomever it hits, or be destroyed as it hits barriers (collision defined tiles).
+  void attack.range(
      {
       required Future<SpriteAnimation> animation,
       required Vector2 size,
@@ -231,18 +242,21 @@ Actions can be fired when a joystick action is received. Just like `Enemy`, here
       dynamic id,
       double speed = 150,
       double damage = 1,
-      double? radAngleDirection,
+      Direction? direction,
+      double? angle,
+      bool useAngle = false,
       bool withDecorationCollision = true,
       VoidCallback? onDestroy,
       ShapeHitbox? collision,
       LightingConfig? lightingConfig,
       Vector2? centerOffset,
       double marginFromOrigin = 16,
+      AttackOriginEnum? attackFrom,
     }
   )
     
     // Will observe enemies when within the radius (radiusVision)
-    void seeEnemy(
+    PolygonShape? vision.seeEnemy(
        {
           required Function(List<Enemy>) observed,
           VoidCallback? notObserved,

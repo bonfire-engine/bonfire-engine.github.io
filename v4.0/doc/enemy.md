@@ -65,11 +65,11 @@ class Goblin extends SimpleEnemy {
 
 Now that you have a class that represents your enemy, you can configure their behavior.
 
-There are several useful extensions that you can use inside the `update` method that will help you with this task:
+There are several useful methods that you can use inside the `update` method that will help you with this task:
 
 
 ```dart 
-  void seePlayer({
+  PolygonShape? vision.seePlayer({
     required Function(Player) observed,
     VoidCallback? notObserved,
     double radiusVision = 32,
@@ -81,71 +81,84 @@ It will trigger a callback function once the player is within the enemy's radius
 
 
 ```dart 
-  void seeAndMoveToPlayer({
-    required Function(Player) closePlayer,
-    VoidCallback? notObserved,
+  PolygonShape? vision.seeAndMoveToPlayer({
+    Function(Player)? closePlayer,
+    BoolCallback? notObserved, // return true to stop move
     VoidCallback? observed,
     VoidCallback? notCanMove,
     double radiusVision = 32,
-    double margin = 10,
+    double margin = 2,
     double? visionAngle, // default 6,28319 (360 degrees)
     double? angle,
-    bool runOnlyVisibleInScreen = true, 
+    bool runOnlyVisibleInScreen = true,
+    MovementAxis movementAxis = MovementAxis.all,
   })
 ```
 The enemy will move in the direction of the player once it gets within the radiusVision. When it gets close to the player, `closePlayer` will be fired.
 
 
 ```dart 
-  void simpleAttackMelee({
+  void attack.melee({
     required double damage,
     required Vector2 size,
-    int? id,
-    bool withPush = false,
-    double? sizePush,
+    Future<SpriteAnimation>? animation,
+    dynamic id,
     Direction? direction,
-    Future<SpriteAnimation>? animationRight,
+    double? angle,
+    bool withPush = true,
+    double? sizePush,
     Vector2? centerOffset,
+    double? marginFromCenter,
+    bool diagonalEnabled = true,
+    AttackOriginEnum? attackFrom,
   })
 ```
 Executes a physical attack on the player, making the configured damage. The execution frequency is no longer controlled internally: use an `IntervalTick` to limit how often the attack runs (see [IntervalTick](doc/util?id=intervaltick)). You can add animations to represent this attack.
 
 
 ```dart 
-  void simpleAttackRange({
+  void attack.range({
     required Future<SpriteAnimation> animation,
-    required Future<SpriteAnimation> animationDestroy,
     required Vector2 size,
+    Future<SpriteAnimation>? animationDestroy,
     Vector2? destroySize,
-    int? id,
+    dynamic id,
     double speed = 150,
     double damage = 1,
-    bool withCollision = true,
+    Direction? direction,
+    double? angle,
     bool useAngle = false,
+    bool withCollision = true,
+    bool withDecorationCollision = true,
     ShapeHitbox? collision,
     VoidCallback? onDestroy,
     LightingConfig? lightingConfig,
+    Vector2? centerOffset,
+    double marginFromOrigin = 16,
+    AttackOriginEnum? attackFrom,
   })
 ```
-Executes a ranged attack. It will add a `FlyingAttackObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
+Executes a ranged attack. It will add a `FlyingAttackGameObject` projectile to the game and this will be sent in the configured direction, dealing some damage to whomever it hits or being destroyed when hitting barriers (tiles with collision).
 
 
 ```dart 
-  void seeAndMoveToAttackRange({
-    Function(Player)? positioned,
-    Function(Player)? observed,
-    VoidCallback? notObserved,
+  void vision.seeAndMoveToAttackRange<T extends GameComponent>({
+    Function(T)? positioned,
+    BoolCallback? notObserved, // return true to stop move
+    Function(T)? observed,
     double radiusVision = 32,
     double? visionAngle,
     double? angle,
     double? minDistanceFromPlayer,
-    bool runOnlyVisibleInScreen = true,
+    bool useDiagonal = true,
   })
 ```
 When the player is within the radiusVision, the enemy will position itself to perform a distance attack. Once it reaches the attack position, the `positioned` callback will be fired.
 
 
 And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+
+> For complex AI (chase, attack, patrol, etc.), check the [Behaviors](doc/behaviors.md?id=behaviors) system — compose your enemy behavior declaratively, without `if`s in `update()`.
 
 
 ### Change animations
@@ -219,10 +232,10 @@ class Tank extends RotationEnemy {
 
 Now that we have our class that represents our enemy, we can configure their behavior.
 
-There are several useful extensions that we can use in `update` that will help us to configure these movements:
+There are several useful methods that we can use in `update` that will help us to configure these movements:
 
 ```dart 
-  void seePlayer({
+  PolygonShape? vision.seePlayer({
     required Function(Player) observed,
     VoidCallback? notObserved,
     double radiusVision = 32,
@@ -232,58 +245,67 @@ There are several useful extensions that we can use in `update` that will help u
 ```
 
 ```dart 
- void seeAndMoveToPlayer({
-    required Function(Player) closePlayer,
-    VoidCallback? notObserved,
+ PolygonShape? vision.seeAndMoveToPlayer({
+    Function(Player)? closePlayer,
+    BoolCallback? notObserved, // return true to stop move
     double radiusVision = 32,
-    double margin = 10,
+    double margin = 2,
     bool runOnlyVisibleInScreen = true,
   })
 ```
 
 ```dart 
-  void seeAndMoveToAttackRange({
-    required Function(Player) positioned,
-    VoidCallback? notObserved,
+  void vision.seeAndMoveToAttackRange<T extends GameComponent>({
+    Function(T)? positioned,
+    BoolCallback? notObserved, // return true to stop move
     double radiusVision = 32,
-    double? minDistanceCellsFromPlayer,
-    bool runOnlyVisibleInScreen = true,
+    double? minDistanceFromPlayer,
+    bool useDiagonal = true,
   })
 ```
 
 ```dart 
-  void simpleAttackMelee({
-    required Future<SpriteAnimation> animationRight,
+  void attack.melee({
     required double damage,
     required Vector2 size,
-    int? id,
+    Future<SpriteAnimation>? animation,
+    dynamic id,
+    Direction? direction,
+    double? angle,
     bool withPush = true,
-    double? radAngleDirection,
-    double marginFromCenter = 16,
+    double? sizePush,
     Vector2? centerOffset,
+    double? marginFromCenter,
+    bool diagonalEnabled = true,
+    AttackOriginEnum? attackFrom,
   })
 ```
 
 ```dart 
-  void simpleAttackRange({
+  void attack.range({
     required Future<SpriteAnimation> animation,
-    required Future<SpriteAnimation> animationDestroy,
     required Vector2 size,
+    Future<SpriteAnimation>? animationDestroy,
     Vector2? destroySize,
-    double? radAngleDirection,
-    int? id,
+    dynamic id,
     double speed = 150,
     double damage = 1,
+    Direction? direction,
+    double? angle,
+    bool useAngle = false,
     bool withDecorationCollision = true,
-    VoidCallback? onDestroy,
     ShapeHitbox? collision,
+    VoidCallback? onDestroy,
     LightingConfig? lightingConfig,
     Vector2? centerOffset,
     double marginFromOrigin = 16,
+    AttackOriginEnum? attackFrom,
   })
 ```
 
 And all of the `GameComponent` methods. Take a look [GameComponent functions](doc/util?id=functions)
+
+> For complex AI (chase, attack, patrol, etc.), check the [Behaviors](doc/behaviors.md?id=behaviors) system — compose your enemy behavior declaratively, without `if`s in `update()`.
 
 
 ## PlatformEnemy
